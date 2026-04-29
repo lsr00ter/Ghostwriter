@@ -1,14 +1,15 @@
 {% extends "base_generic.html" %}
+{% load i18n %}
 {% load custom_tags %}
 {% load determine_primary %}
 
-{% block pagetitle %}Ghostwriter Dashboard{% endblock %}
+{% block pagetitle %}{% trans "Ghostwriter Dashboard" %}{% endblock %}
 {% block navtitle %}Ghostwriter{% endblock %}
 
 {% block breadcrumbs %}
   <nav aria-label="breadcrumb">
     <ul class="breadcrumb">
-      <li class="breadcrumb-item active" aria-current="page">Welcome, {{ user|capfirst }}!</li>
+      <li class="breadcrumb-item active" aria-current="page">{% blocktrans with username=user|capfirst %}Welcome, {{ username }}!{% endblocktrans %}</li>
     </ul>
   </nav>
 {% endblock %}
@@ -24,32 +25,32 @@
         {% if not hide_quickstart %}
         <div class="dashboard__item dashboard__item--full">
           <div class="card">
-            <p class="dashboard-header text-center">Quickstart</p>
+            <p class="dashboard-header text-center">{% trans "Quickstart" %}</p>
             <div class="text-left">
-                <p>Welcome to Ghostwriter! This platform streamlines security assessment reporting and team collaboration.</p>
+                <p>{% trans "Welcome to Ghostwriter! This platform streamlines security assessment reporting and team collaboration." %}</p>
 
-                <p>Ghostwriter helps you manage the entire assessment lifecycle through:</p>
+                <p>{% trans "Ghostwriter helps you manage the entire assessment lifecycle through:" %}</p>
                 <ul>
-                  <li>Client management and project tracking</li>
-                  <li>Findings library with reusable content</li>
-                  <li>Infrastructure tracking for assessments</li>
-                  <li>Report generation and collaboration with customizable templates</li>
+                  <li>{% trans "Client management and project tracking" %}</li>
+                  <li>{% trans "Findings library with reusable content" %}</li>
+                  <li>{% trans "Infrastructure tracking for assessments" %}</li>
+                  <li>{% trans "Report generation and collaboration with customizable templates" %}</li>
                 </ul>
 
-                <p>To get started:</p>
+                <p>{% trans "To get started:" %}</p>
                 <ul>
-                  <li>Explore existing clients and projects via the sidebar</li>
-                  <li>Set your active report to track your current work</li>
-                  <li>Add findings to your report from the library or create custom ones</li>
-                  <li>Generate reports with consistent formatting</li>
+                  <li>{% trans "Explore existing clients and projects via the sidebar" %}</li>
+                  <li>{% trans "Set your active report to track your current work" %}</li>
+                  <li>{% trans "Add findings to your report from the library or create custom ones" %}</li>
+                  <li>{% trans "Generate reports with consistent formatting" %}</li>
                 </ul>
 
-                <p>Use the sidebar navigation to access all features. This dashboard will show your assignments and project calendar events to keep you organized.</p>
-                <p>If you don't see any clients or projects, you may need to create them or request access. A manager or admin can assign you to an existing project to get you started. Once you have a project and a report, you can easily access them at any time from the left-hand sidebar available on every page.</p>
+                <p>{% trans "Use the sidebar navigation to access all features. This dashboard will show your assignments and project calendar events to keep you organized." %}</p>
+                <p>{% trans "If you don't see any clients or projects, you may need to create them or request access. A manager or admin can assign you to an existing project to get you started. Once you have a project and a report, you can easily access them at any time from the left-hand sidebar available on every page." %}</p>
 
-              <p>Learn more from the <a href="https://ghostwriter.wiki/" class="dashboard-link">Ghostwriter Wiki</a>. Join our <a href="https://ghst.ly/BHSlack" class="dashboard-link">SpecterOps Slack Community</a> and the <em>#ghostwriter</em> channel to discuss Ghostwriter, ask questions, and get help.</p>
+              <p>{% blocktrans %}Learn more from the <a href="https://ghostwriter.wiki/" class="dashboard-link">Ghostwriter Wiki</a>. Join our <a href="https://ghst.ly/BHSlack" class="dashboard-link">SpecterOps Slack Community</a> and the <em>#ghostwriter</em> channel to discuss Ghostwriter, ask questions, and get help.{% endblocktrans %}</p>
 
-              <button id="hideQuickstart" csrftoken="{{ csrf_token }}" class="btn btn-primary float-right"><span aria-hidden="true">&times;</span> Don't Show This Again</button>
+              <button id="hideQuickstart" csrftoken="{{ csrf_token }}" class="btn btn-primary float-right"><span aria-hidden="true">&times;</span> {% trans "Don't Show This Again" %}</button>
             </div>
           </div>
         </div>
@@ -57,10 +58,10 @@
 
         <div class="dashboard__item dashboard__item--full">
           <div class="card">
-            <p class="dashboard-header text-center">Ready to Work?</p>
+            <p class="dashboard-header text-center">{% trans "Ready to Work?" %}</p>
             <div class="text-left">
               {% if active_projects %}
-                <p>You're assigned to some active projects. Check those out here:</p>
+                <p>{% trans "You're assigned to some active projects. Check those out here:" %}</p>
                 <ul class="dashboard-list">
                 {% for project in active_projects %}
                   <li><a
@@ -69,10 +70,10 @@
                     ({{ project.role }})</a></li>
                 {% endfor %}
                 </ul>
-                <p>Open the sidebar on the left to view/manage your reports under <em>My Active Reports</em>.</p>
-                <p>Select a report to mark it as active. If you're managing multiple reports, you can switch your active reports from there, too.</p>
+                <p>{% blocktrans %}Open the sidebar on the left to view/manage your reports under <em>My Active Reports</em>.{% endblocktrans %}</p>
+                <p>{% trans "Select a report to mark it as active. If you're managing multiple reports, you can switch your active reports from there, too." %}</p>
               {% else %}
-                <p>You're not assigned to any projects right now. If you're looking for a project, visit the <a class="dashboard-link" href="{% url 'rolodex:projects' %}">Project Library</a>. You can also contact a manager or admin to get assigned to a project.</p>
+                <p>{% url 'rolodex:projects' as projects_library_url %}{% blocktrans %}You're not assigned to any projects right now. If you're looking for a project, visit the <a class="dashboard-link" href="{{ projects_library_url }}">Project Library</a>. You can also contact a manager or admin to get assigned to a project.{% endblocktrans %}</p>
               {% endif %}
             </div>
           </div>
@@ -81,26 +82,26 @@
         {% if active_projects %}
           <div class="dashboard__item">
             <div class="card">
-              <p class="dashboard-header text-center">Assigned Findings</p>
+              <p class="dashboard-header text-center">{% trans "Assigned Findings" %}</p>
               {% if assigned_findings %}
                 {% for finding in assigned_findings %}
                   <p class="text-left mb-1"><a class="dashboard-link" href="{% url 'reporting:local_edit' finding.id %}">{{ finding.title }}</a></p>
                 {% endfor %}
               {% else %}
-                <p class="text-center healthy mb-1">All Tasks Complete!</p>
+                <p class="text-center healthy mb-1">{% trans "All Tasks Complete!" %}</p>
               {% endif %}
             </div>
           </div>
 
           <div class="dashboard__item">
             <div class="card">
-              <p class="dashboard-header text-center">Assigned Observations</p>
+              <p class="dashboard-header text-center">{% trans "Assigned Observations" %}</p>
               {% if assigned_observations %}
                 {% for observation in assigned_observations %}
                   <p class="text-left mb-1"><a class="dashboard-link" href="{% url 'reporting:local_observation_edit' observation.id %}">{{ observation.title }}</a></p>
                 {% endfor %}
               {% else %}
-                <p class="text-center healthy mb-1">All Tasks Complete!</p>
+                <p class="text-center healthy mb-1">{% trans "All Tasks Complete!" %}</p>
               {% endif %}
             </div>
           </div>
@@ -109,23 +110,23 @@
         {%  if request.user|is_privileged %}
           <div class="dashboard__item">
             <div class="card">
-              <p class="dashboard-header text-center">Recent Background Tasks</p>
+              <p class="dashboard-header text-center">{% trans "Recent Background Tasks" %}</p>
               <table>
                 {% if recent_tasks %}
                   {% for task in recent_tasks %}
                     <tr>
                       {% if task.success %}
-                        <td class="text-center healthy align-middle">SUCCESS</td>
+                        <td class="text-center healthy align-middle">{% trans "SUCCESS" %}</td>
                         <td class="align-middle text-center">{{ task.group }}</td>
                       {% else %}
                         <td class="text-center burned">
                           {% if task.result %}
                             <div class="dropdown dropleft">
                               <span id="task-status-info-btn" class="dropdown-info dropdown-info-dashboard"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">FAILED</span>
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{% trans "FAILED" %}</span>
                               <div id="task-status-info" class="dropdown-menu dropdown-info-content"
                                    aria-labelledby="task-status-info-btn">
-                                <p>Unsuccessful task returned this message/stack trace:</p>
+                                <p>{% trans "Unsuccessful task returned this message/stack trace:" %}</p>
                                 <br/>
                                 <code>{{ task.result }}</code>
                               </div>
@@ -138,7 +139,7 @@
                   {% endfor %}
                 {% else %}
                   <tr>
-                    <td class="align-middle text-center">No completed tasks.</td>
+                    <td class="align-middle text-center">{% trans "No completed tasks." %}</td>
                   </tr>
                 {% endif %}
               </table>
@@ -147,23 +148,22 @@
 
           <div class="dashboard__item">
             <div class="card">
-              <p class="dashboard-header text-center">System Status</p>
+              <p class="dashboard-header text-center">{% trans "System Status" %}</p>
               <div class="float-right {% if system_health == "OK" %}led-green{% else %}led-red{% endif %}"></div>
               {% if system_health == "OK" %}
                 <table class="align-middle">
                   <tr>
-                    <td class="text-center healthy align-middle">All Systems Go!</td>
+                    <td class="text-center healthy align-middle">{% trans "All Systems Go!" %}</td>
                   </tr>
                 </table>
               {% else %}
                 <table>
                   <tr>
-                    <td class="text-center burned align-middle">Issues Detected!</td>
+                    <td class="text-center burned align-middle">{% trans "Issues Detected!" %}</td>
                   </tr>
                 </table>
               {% endif %}
-              <p class="mt-auto">Visit the <a class="clickable italic" href="{% url 'status:healthcheck' %}">Detailed
-                Status Page</a></p>
+              <p class="mt-auto">{% url 'status:healthcheck' as healthcheck_url %}{% blocktrans %}Visit the <a class="clickable italic" href="{{ healthcheck_url }}">Detailed Status Page</a>{% endblocktrans %}</p>
             </div>
           </div>
         {% endif %}
@@ -198,10 +198,10 @@
         },
         eventDidMount: function (info) {
           $(info.el).popover({
-            title: 'Assignment: ' + info.event.title,
+            title: '{% trans "Assignment:" %} ' + info.event.title,
             placement: 'top',
             trigger: 'hover',
-            content: 'Click event in calendar to view details.',
+            content: '{% trans "Click event in calendar to view details." %}',
             container: 'body'
           });
         },

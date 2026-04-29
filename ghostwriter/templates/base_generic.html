@@ -101,20 +101,20 @@
       <div class="sidebar-body">
         <!-- Project Shortcut Section -->
         <ul class="list-unstyled components">
-          <p class="sideheader icon icon home-icon">Project Shortcuts</p>
+          <p class="sideheader icon icon home-icon">{% trans "Project Shortcuts" %}</p>
 
           <a
             class="btn btn-primary mb-3 col-9 active-report-shortcut icon ext-link-icon {% if not request.session.active_report.id and not request.session.active_report.title %}btn-disabled{% endif %}"
             href={% if request.session.active_report.id and request.session.active_report.title %}"{% url 'reporting:report_detail' request.session.active_report.id %}{% else %}"#"{% endif %}"
-            data-toggle="tooltip" data-placement="right" title="Open your active report after selecting one below"
-            >Jump to Report
+            data-toggle="tooltip" data-placement="right" title="{% trans 'Open your active report after selecting one below' %}"
+            >{% trans "Jump to Report" %}
           </a>
 
           <!-- Menu Section -->
           <li>
             <a href="#activeReportsSubmenu" data-toggle="collapse" aria-expanded="false"
                class="dropdown-toggle sidebar-dropdown-toggle" data-target="#activeReportsSubmenu">
-              My Active Reports
+              {% trans "My Active Reports" %}
               <div class="expand_caret caret"></div>
             </a>
             <ul class="collapse list-unstyled text-left" id="activeReportsSubmenu">
@@ -134,8 +134,7 @@
                   </li>
                 {% endfor %}
               {% else %}
-                <li><a href="{% url 'reporting:reports' %}">You do not have any active reports; click here to visit the
-                  library.</a>
+                <li><a href="{% url 'reporting:reports' %}">{% trans "You do not have any active reports; click here to visit the library." %}</a>
                 </li>
               {% endif %}
             </ul>
@@ -144,7 +143,7 @@
           <li>
             <a href="#activeProjectsSubmenu" data-toggle="collapse" aria-expanded="false"
                class="dropdown-toggle sidebar-dropdown-toggle" data-target="#activeProjectsSubmenu">
-              My Active Projects
+              {% trans "My Active Projects" %}
               <div class="expand_caret caret"></div>
             </a>
             <ul class="collapse list-unstyled text-left" id="activeProjectsSubmenu">
@@ -154,8 +153,7 @@
                   </li>
                 {% endfor %}
               {% else %}
-                <li><a href="{% url 'rolodex:projects' %}">You do not have any active assignments; click here to visit
-                  the library.</a></li>
+                <li><a href="{% url 'rolodex:projects' %}">{% trans "You do not have any active assignments; click here to visit the library." %}</a></li>
               {% endif %}
             </ul>
           </li>
@@ -163,44 +161,44 @@
 
         <!-- Rolodex Section -->
         <ul class="list-unstyled components">
-          <p class="sideheader icon icon tasks-icon">Pre-engagement</p>
+          <p class="sideheader icon icon tasks-icon">{% trans "Pre-engagement" %}</p>
 
           <!-- Menu Section -->
           <li>
             <a href="#clientSubmenu" data-toggle="collapse" aria-expanded="false"
                class="dropdown-toggle sidebar-dropdown-toggle" data-target="#clientSubmenu">
-              Clients
+              {% trans "Clients" %}
               <div class="expand_caret caret"></div>
             </a>
             <ul class="collapse list-unstyled text-left" id="clientSubmenu">
               {% comment %} Search for Clients {% endcomment %}
               <form class="px-6 py-2" action="{% url 'rolodex:clients' %}" method="GET">
                 <input type="search" autocomplete="off" class="form-control" id="client-search" name="name"
-                       placeholder="Search Clients..." autofocus="autofocus">
+                       placeholder="{% trans 'Search Clients...' %}" autofocus="autofocus">
               </form>
               {% comment %} Clients Submenu Items {% endcomment %}
-              <li><a class="icon list-icon" href="{% url 'rolodex:clients' %}">Client Library</a></li>
+              <li><a class="icon list-icon" href="{% url 'rolodex:clients' %}">{% trans "Client Library" %}</a></li>
               {% if request.user|is_privileged %}
-                <li><a class="icon plus-icon" href="{% url 'rolodex:client_create' %}">Add New Client</a></li>
+                <li><a class="icon plus-icon" href="{% url 'rolodex:client_create' %}">{% trans "Add New Client" %}</a></li>
               {% endif %}
             </ul>
           </li>
           <li>
             <a href="#findingsSubmenu" data-toggle="collapse" aria-expanded="false"
-               class="dropdown-toggle sidebar-dropdown-toggle">Findings</a>
+               class="dropdown-toggle sidebar-dropdown-toggle">{% trans "Findings" %}</a>
             <ul class="collapse list-unstyled text-left" id="findingsSubmenu">
               {% comment %} Search for Findings {% endcomment %}
               <form class="px-6 py-2" action="{% url 'reporting:findings' %}" method="GET">
                 <input type="search" autocomplete="off" class="form-control" id="finding-search" name="title"
-                       placeholder="Search Findings..." autofocus="autofocus">
+                       placeholder="{% trans 'Search Findings...' %}" autofocus="autofocus">
               </form>
               {% comment %} Findings Submenu Items {% endcomment %}
-              <li><a class="icon list-icon" href="{% url 'reporting:findings' %}">Finding Library</a></li>
+              <li><a class="icon list-icon" href="{% url 'reporting:findings' %}">{% trans "Finding Library" %}</a></li>
               {% if request.user|can_create_finding %}
                 <li>
                   <form action="{% url 'reporting:finding_create' %}" method="POST" style="display:contents">
                     {% csrf_token %}
-                    <button class="icon plus-icon">Add New Finding</button>
+                    <button class="icon plus-icon">{% trans "Add New Finding" %}</button>
                   </form>
                 </li>
               {% endif %}
@@ -208,20 +206,20 @@
           </li>
           <li>
             <a href="#observationsSubmenu" data-toggle="collapse" aria-expanded="false"
-               class="dropdown-toggle sidebar-dropdown-toggle">Observations</a>
+               class="dropdown-toggle sidebar-dropdown-toggle">{% trans "Observations" %}</a>
             <ul class="collapse list-unstyled text-left" id="observationsSubmenu">
               {% comment %} Search for observations {% endcomment %}
               <form class="px-6 py-2" action="{% url 'reporting:observations' %}" method="GET">
                 <input type="search" autocomplete="off" class="form-control" id="observation-search" name="title"
-                       placeholder="Search Observations..." autofocus="autofocus">
+                       placeholder="{% trans 'Search Observations...' %}" autofocus="autofocus">
               </form>
               {% comment %} observations Submenu Items {% endcomment %}
-              <li><a class="icon list-icon" href="{% url 'reporting:observations' %}">Observation Library</a></li>
+              <li><a class="icon list-icon" href="{% url 'reporting:observations' %}">{% trans "Observation Library" %}</a></li>
               {% if request.user|can_create_observation %}
                 <li>
                   <form action="{% url 'reporting:observation_create' %}" method="POST" style="display:contents">
                     {% csrf_token %}
-                    <button class="icon plus-icon">Add New Observation</button>
+                    <button class="icon plus-icon">{% trans "Add New Observation" %}</button>
                   </form>
                 </li>
               {% endif %}
@@ -231,113 +229,113 @@
 
         <!-- Operations Section -->
         <ul class="list-unstyled components">
-          <p class="sideheader icon execution-icon">Execution</p>
+          <p class="sideheader icon execution-icon">{% trans "Execution" %}</p>
 
           <!-- Menu Section -->
           {% if user.is_authenticated %}
-            <li><a href="{% url 'shepherd:user_assets' %}">My Active Assets</a></li>
+            <li><a href="{% url 'shepherd:user_assets' %}">{% trans "My Active Assets" %}</a></li>
           {% endif %}
           <li>
             <a href="#projectSubmenu" data-toggle="collapse" aria-expanded="false"
-               class="dropdown-toggle sidebar-dropdown-toggle">Projects</a>
+               class="dropdown-toggle sidebar-dropdown-toggle">{% trans "Projects" %}</a>
             <ul class="collapse list-unstyled text-left" id="projectSubmenu">
-              <li><a class="icon list-icon" href="{% url 'rolodex:projects' %}">Projects Library</a></li>
+              <li><a class="icon list-icon" href="{% url 'rolodex:projects' %}">{% trans "Projects Library" %}</a></li>
               {% if request.user|is_privileged %}
-                <li><a class="icon plus-icon" href="{% url 'rolodex:project_create_no_client' %}">Add New Project</a>
+                <li><a class="icon plus-icon" href="{% url 'rolodex:project_create_no_client' %}">{% trans "Add New Project" %}</a>
                 </li>
               {% endif %}
             </ul>
           </li>
           <li>
             <a href="#oplogSubmenu" data-toggle="collapse" aria-expanded="false"
-               class="dropdown-toggle sidebar-dropdown-toggle">Operation Logs</a>
+               class="dropdown-toggle sidebar-dropdown-toggle">{% trans "Operation Logs" %}</a>
             <ul class="collapse list-unstyled text-left" id="oplogSubmenu">
-              <li><a class="icon list-icon" href="{% url 'oplog:index' %}">Oplog Library</a></li>
-              <li><a class="icon plus-icon" href="{% url 'oplog:oplog_create_no_project' %}">Add New Oplog</a></li>
-              <li><a class="icon import-icon" href="{% url 'oplog:oplog_import' %}">Import Oplog Entries</a></li>
+              <li><a class="icon list-icon" href="{% url 'oplog:index' %}">{% trans "Oplog Library" %}</a></li>
+              <li><a class="icon plus-icon" href="{% url 'oplog:oplog_create_no_project' %}">{% trans "Add New Oplog" %}</a></li>
+              <li><a class="icon import-icon" href="{% url 'oplog:oplog_import' %}">{% trans "Import Oplog Entries" %}</a></li>
             </ul>
           </li>
         </ul>
 
         <!-- Reporting Section -->
         <ul class="list-unstyled components">
-          <p class="sideheader icon file-icon">Reporting</p>
+          <p class="sideheader icon file-icon">{% trans "Reporting" %}</p>
 
           <!-- Menu Section -->
           <li>
             <a href="#reportSubmenu" data-toggle="collapse" aria-expanded="false"
-               class="dropdown-toggle sidebar-dropdown-toggle">Reports</a>
+               class="dropdown-toggle sidebar-dropdown-toggle">{% trans "Reports" %}</a>
             <ul class="collapse list-unstyled text-left" id="reportSubmenu">
-              <li><a class="icon list-icon" href="{% url 'reporting:reports' %}">Report Library</a></li>
-              <li><a class="icon plus-icon" href="{% url 'reporting:report_create_no_project' %}">Add New Report</a>
+              <li><a class="icon list-icon" href="{% url 'reporting:reports' %}">{% trans "Report Library" %}</a></li>
+              <li><a class="icon plus-icon" href="{% url 'reporting:report_create_no_project' %}">{% trans "Add New Report" %}</a>
               </li>
             </ul>
           </li>
           <li>
             <a href="#templateSubmenu" data-toggle="collapse" aria-expanded="false"
-               class="dropdown-toggle sidebar-dropdown-toggle">Templates</a>
+               class="dropdown-toggle sidebar-dropdown-toggle">{% trans "Templates" %}</a>
             <ul class="collapse list-unstyled text-left" id="templateSubmenu">
-              <li><a class="icon list-icon" href="{% url 'reporting:templates' %}">Report Template Library</a></li>
-              <li><a class="icon plus-icon" href="{% url 'reporting:template_create' %}">Add New Report Template</a>
+              <li><a class="icon list-icon" href="{% url 'reporting:templates' %}">{% trans "Report Template Library" %}</a></li>
+              <li><a class="icon plus-icon" href="{% url 'reporting:template_create' %}">{% trans "Add New Report Template" %}</a>
               </li>
             </ul>
           </li>
-          <li><a href="{% url 'reporting:archived_reports' %}">Archived Reports</a></li>
+          <li><a href="{% url 'reporting:archived_reports' %}">{% trans "Archived Reports" %}</a></li>
         </ul>
 
         <!-- Shepherd Section -->
         <ul class="list-unstyled components">
-          <p class="sideheader icon maintain-icon">Maintain</p>
+          <p class="sideheader icon maintain-icon">{% trans "Maintain" %}</p>
 
           <!-- Menu Section -->
           <li>
             <a href="#serverSubmenu" data-toggle="collapse" aria-expanded="false"
-               class="dropdown-toggle sidebar-dropdown-toggle">Servers</a>
+               class="dropdown-toggle sidebar-dropdown-toggle">{% trans "Servers" %}</a>
             <ul class="collapse list-unstyled text-left" id="serverSubmenu">
               {% comment %} Search for All Servers {% endcomment %}
               <form class="px-6 py-2" action="{% url 'shepherd:infrastructure_search' %}" method="GET">
                 <input type="search" autocomplete="off" class="form-control" id="server-search" name="query"
-                       placeholder="Search Servers..." autofocus="autofocus">
+                       placeholder="{% trans 'Search Servers...' %}" autofocus="autofocus">
               </form>
               {% comment %} Server Submenu Items {% endcomment %}
-              <li><a class="icon list-icon" href="{% url 'shepherd:servers' %}">Server Library</a></li>
-              <li><a class="icon plus-icon" href="{% url 'shepherd:server_create' %}">Add New Server</a></li>
+              <li><a class="icon list-icon" href="{% url 'shepherd:servers' %}">{% trans "Server Library" %}</a></li>
+              <li><a class="icon plus-icon" href="{% url 'shepherd:server_create' %}">{% trans "Add New Server" %}</a></li>
             </ul>
           </li>
           <li>
             <a href="#shepSubmenu" data-toggle="collapse" aria-expanded="false"
-               class="dropdown-toggle sidebar-dropdown-toggle">Domains</a>
+               class="dropdown-toggle sidebar-dropdown-toggle">{% trans "Domains" %}</a>
             <ul class="collapse list-unstyled text-left" id="shepSubmenu">
               {% comment %} Search for Domains {% endcomment %}
               <form class="px-6 py-2" action="{% url 'shepherd:domains' %}" method="GET">
                 <input type="search" autocomplete="off" class="form-control" id="domain-search" name="domain"
-                       placeholder="Search Domains..." autofocus="autofocus">
+                       placeholder="{% trans 'Search Domains...' %}" autofocus="autofocus">
               </form>
               {% comment %} Domains Submenu Items {% endcomment %}
-              <li><a class="icon list-icon" href="{% url 'shepherd:domains' %}">Domain Library</a></li>
-              <li><a class="icon plus-icon" href="{% url 'shepherd:domain_create' %}">Add New Domain</a></li>
+              <li><a class="icon list-icon" href="{% url 'shepherd:domains' %}">{% trans "Domain Library" %}</a></li>
+              <li><a class="icon plus-icon" href="{% url 'shepherd:domain_create' %}">{% trans "Add New Domain" %}</a></li>
             </ul>
           </li>
-          <li><a href="{% url 'shepherd:update' %}">Update Controls</a></li>
+          <li><a href="{% url 'shepherd:update' %}">{% trans "Update Controls" %}</a></li>
         </ul>
 
         <!-- Admin Section -->
         <ul class="list-unstyled components">
           <!-- Admin Panel Shortcuts -->
-          <p class="sideheader icon admin-icon">Administration</p>
+          <p class="sideheader icon admin-icon">{% trans "Administration" %}</p>
           {% if request.user.is_staff or request.user.role == "admin" %}
-            <li><a href="{% url 'home:management' %}">Review Configuration</a></li>
+            <li><a href="{% url 'home:management' %}">{% trans "Review Configuration" %}</a></li>
             <li>
               <a href="#adminSubmenu" data-toggle="collapse" aria-expanded="false"
-                 class="dropdown-toggle sidebar-dropdown-toggle">Admin Panel</a>
+                 class="dropdown-toggle sidebar-dropdown-toggle">{% trans "Admin Panel" %}</a>
               <ul class="collapse list-unstyled text-left" id="adminSubmenu">
-                <li><a class="icon gears-icon" href="{% url 'admin:index' %}">Admin Panel</a></li>
-                <li><a class="icon slider-icon" href="{% url 'admin:index' %}commandcenter">Configuration Mgmt</a></li>
+                <li><a class="icon gears-icon" href="{% url 'admin:index' %}">{% trans "Admin Panel" %}</a></li>
+                <li><a class="icon slider-icon" href="{% url 'admin:index' %}commandcenter">{% trans "Configuration Mgmt" %}</a></li>
                 {% if perms.users.view_user %}
-                  <li><a class="icon users-icon" href="{% url 'admin:users_user_changelist' %}">User Mgmt</a></li>
+                  <li><a class="icon users-icon" href="{% url 'admin:users_user_changelist' %}">{% trans "User Mgmt" %}</a></li>
                 {% endif %}
                 {% if perms.django_q.view_task %}
-                  <li><a class="icon calendar-icon" href="{% url 'admin:app_list' 'django_q' %}">Scheduled Tasks</a>
+                  <li><a class="icon calendar-icon" href="{% url 'admin:app_list' 'django_q' %}">{% trans "Scheduled Tasks" %}</a>
                   </li>
                 {% endif %}
               </ul>
@@ -345,39 +343,29 @@
             <!-- Bulk Import & Export Shortcuts -->
             <li>
               <a href="#bulkSubmenu" data-toggle="collapse" aria-expanded="false"
-                 class="dropdown-toggle sidebar-dropdown-toggle">Import & Export</a>
+                 class="dropdown-toggle sidebar-dropdown-toggle">{% trans "Import & Export" %}</a>
               <ul class="collapse list-unstyled text-left" id="bulkSubmenu">
-                <li><a class="icon import-icon" href="{% url 'admin:reporting_finding_import' %}">Upload Bulk
-                  Findings</a></li>
-                <li><a class="icon export-icon" href="{% url 'reporting:export_findings_to_csv' %}">Export Findings to
-                  CSV</a></li>
+                <li><a class="icon import-icon" href="{% url 'admin:reporting_finding_import' %}">{% trans "Upload Bulk Findings" %}</a></li>
+                <li><a class="icon export-icon" href="{% url 'reporting:export_findings_to_csv' %}">{% trans "Export Findings to CSV" %}</a></li>
                 <hr>
-                <li><a class="icon import-icon" href="{% url 'admin:reporting_observation_import' %}">Upload Bulk
-                  Observations</a></li>
-                <li><a class="icon export-icon" href="{% url 'reporting:export_observations_to_csv' %}">Export
-                  Observations to
-                  CSV</a></li>
+                <li><a class="icon import-icon" href="{% url 'admin:reporting_observation_import' %}">{% trans "Upload Bulk Observations" %}</a></li>
+                <li><a class="icon export-icon" href="{% url 'reporting:export_observations_to_csv' %}">{% trans "Export Observations to CSV" %}</a></li>
                 <hr>
-                <li><a class="icon import-icon" href="{% url 'admin:shepherd_domain_import' %}">Upload Bulk Domains</a>
-                </li>
-                <li><a class="icon export-icon" href="{% url 'shepherd:export_domains_to_csv' %}">Export Domains to
-                  CSV</a></li>
+                <li><a class="icon import-icon" href="{% url 'admin:shepherd_domain_import' %}">{% trans "Upload Bulk Domains" %}</a></li>
+                <li><a class="icon export-icon" href="{% url 'shepherd:export_domains_to_csv' %}">{% trans "Export Domains to CSV" %}</a></li>
                 <hr>
-                <li><a class="icon import-icon" href="{% url 'admin:shepherd_staticserver_import' %}">Upload Bulk
-                  Servers</a></li>
-                <li><a class="icon export-icon" href="{% url 'shepherd:export_servers_to_csv' %}">Export Servers to
-                  CSV</a></li>
+                <li><a class="icon import-icon" href="{% url 'admin:shepherd_staticserver_import' %}">{% trans "Upload Bulk Servers" %}</a></li>
+                <li><a class="icon export-icon" href="{% url 'shepherd:export_servers_to_csv' %}">{% trans "Export Servers to CSV" %}</a></li>
               </ul>
             </li>
           {% endif %}
           <!-- Documentation Section -->
           <li>
             <a href="#docsSubmenu" data-toggle="collapse" aria-expanded="false"
-               class="dropdown-toggle sidebar-dropdown-toggle">Documentation</a>
+               class="dropdown-toggle sidebar-dropdown-toggle">{% trans "Documentation" %}</a>
             <ul class="collapse list-unstyled text-left" id="docsSubmenu">
-              <li><a class="icon docs-icon" href="https://ghostwriter.wiki">Ghostwriter Wiki</a></li>
-              <li><a class="icon github-icon" href="https://github.com/GhostManager/Ghostwriter">Ghostwriter on
-                GitHub</a></li>
+              <li><a class="icon docs-icon" href="https://ghostwriter.wiki">{% trans "Ghostwriter Wiki" %}</a></li>
+              <li><a class="icon github-icon" href="https://github.com/GhostManager/Ghostwriter">{% trans "Ghostwriter on GitHub" %}</a></li>
             </ul>
           </li>
         </ul>
@@ -385,9 +373,9 @@
         <!-- Sidebar Buttons -->
         <div class="align-middle text-center">
           {% if user.is_authenticated %}
-            <a href="{% url 'account_logout' %}" class="btn btn-primary col-9 icon logout-icon">Logout</a>
+            <a href="{% url 'account_logout' %}" class="btn btn-primary col-9 icon logout-icon">{% trans "Logout" %}</a>
           {% else %}
-            <a href="{% url 'account_login' %}" class="btn btn-primary col-9 icon login-icon">Login</a>
+            <a href="{% url 'account_login' %}" class="btn btn-primary col-9 icon login-icon">{% trans "Login" %}</a>
           {% endif %}
 
           <!-- Theme Toggle -->
@@ -422,14 +410,14 @@
 
             <div class="auto-checkbox-wrapper">
               <input type="checkbox" id="theme-auto-checkbox">
-              <label for="theme-auto-checkbox">Auto (follow system)</label>
+              <label for="theme-auto-checkbox">{% trans "Auto (follow system)" %}</label>
             </div>
           </div>
         </div>
       </div>
 
       <div class="sidebar-footer col d-flex align-items-center justify-content-center mt-2">
-        <span>v{{ VERSION }}, released {{ RELEASE_DATE }}</span>
+        <span>{% blocktrans with version=VERSION release_date=RELEASE_DATE %}v{{ version }}, released {{ release_date }}{% endblocktrans %}</span>
       </div>
 
       <div class="sidebar-footer col d-flex align-items-center justify-content-center mt-2"><a href="https://www.specterops.io"><img class="col-8" src="{% static 'images/domain.png' %}"
@@ -467,7 +455,7 @@
             {% if banner_config.banner_title %}<h4 class="alert-heading mt-0">{{ banner_config.banner_title|bleach }}</h4>{% endif %}
             {{ banner_config.banner_message|bleach }}
             {% if banner_config.banner_link %}
-              <p class="mt-2 mb-0"><a href="{{ banner_config.banner_link|bleach }}" class="alert-link">Learn more</a></p>
+              <p class="mt-2 mb-0"><a href="{{ banner_config.banner_link|bleach }}" class="alert-link">{% trans "Learn more" %}</a></p>
             {% endif %}
           </div>
         </div>

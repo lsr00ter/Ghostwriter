@@ -134,3 +134,315 @@ msgstr "更新头像和偏好"
 
 msgid "Manage MFA Settings"
 msgstr "管理 MFA 设置"
+
+msgid "Ghostwriter Dashboard"
+msgstr "Ghostwriter 仪表板"
+
+msgid "Welcome, %(username)s!"
+msgstr "欢迎，%(username)s！"
+
+msgid "Quickstart"
+msgstr "快速入门"
+
+msgid "Welcome to Ghostwriter! This platform streamlines security assessment reporting and team collaboration."
+msgstr "欢迎使用 Ghostwriter！本平台用于简化安全评估报告流程与团队协作。"
+
+msgid "Ghostwriter helps you manage the entire assessment lifecycle through:"
+msgstr "Ghostwriter 通过以下功能协助管理评估全生命周期："
+
+msgid "Client management and project tracking"
+msgstr "客户管理与项目跟踪"
+
+msgid "Findings library with reusable content"
+msgstr "可复用内容的发现项库"
+
+msgid "Infrastructure tracking for assessments"
+msgstr "评估基础设施跟踪"
+
+msgid "Report generation and collaboration with customizable templates"
+msgstr "基于自定义模板的报告生成与协作"
+
+msgid "To get started:"
+msgstr "开始使用："
+
+msgid "Explore existing clients and projects via the sidebar"
+msgstr "通过侧边栏浏览已有客户与项目"
+
+msgid "Set your active report to track your current work"
+msgstr "设置当前报告以跟踪正在进行的工作"
+
+msgid "Add findings to your report from the library or create custom ones"
+msgstr "从库中添加发现项到报告，或创建自定义条目"
+
+msgid "Generate reports with consistent formatting"
+msgstr "生成格式统一的报告"
+
+msgid "Use the sidebar navigation to access all features. This dashboard will show your assignments and project calendar events to keep you organized."
+msgstr "使用侧边栏导航访问所有功能。本仪表板会显示分配给你的任务与项目日历事件，便于统筹安排。"
+
+msgid "If you don't see any clients or projects, you may need to create them or request access. A manager or admin can assign you to an existing project to get you started. Once you have a project and a report, you can easily access them at any time from the left-hand sidebar available on every page."
+msgstr "若未显示任何客户或项目，可能需要创建或申请访问权限。管理员可将你加入已有项目以便开始工作。获得项目和报告后，可随时通过每个页面左侧的侧边栏快速访问。"
+
+msgid "Learn more from the <a href=\"https://ghostwriter.wiki/\" class=\"dashboard-link\">Ghostwriter Wiki</a>. Join our <a href=\"https://ghst.ly/BHSlack\" class=\"dashboard-link\">SpecterOps Slack Community</a> and the <em>#ghostwriter</em> channel to discuss Ghostwriter, ask questions, and get help."
+msgstr "更多信息请访问 <a href=\"https://ghostwriter.wiki/\" class=\"dashboard-link\">Ghostwriter Wiki</a>。可加入 <a href=\"https://ghst.ly/BHSlack\" class=\"dashboard-link\">SpecterOps Slack 社区</a> 的 <em>#ghostwriter</em> 频道交流、提问与获取帮助。"
+
+msgid "Don't Show This Again"
+msgstr "不再显示"
+
+msgid "Ready to Work?"
+msgstr "准备开始工作？"
+
+msgid "You're assigned to some active projects. Check those out here:"
+msgstr "你已被分配到部分活跃项目，可在此查看："
+
+msgid "Open the sidebar on the left to view/manage your reports under <em>My Active Reports</em>."
+msgstr "打开左侧侧边栏，可在 <em>我的活跃报告</em> 中查看与管理报告。"
+
+msgid "Select a report to mark it as active. If you're managing multiple reports, you can switch your active reports from there, too."
+msgstr "选择一份报告将其标记为活跃报告。若同时管理多份报告，也可在此切换当前活跃报告。"
+
+msgid "You're not assigned to any projects right now. If you're looking for a project, visit the <a class=\"dashboard-link\" href=\"%(projects_library_url)s\">Project Library</a>. You can also contact a manager or admin to get assigned to a project."
+msgstr "当前未被分配到任何项目。如需查找项目，请访问 <a class=\"dashboard-link\" href=\"%(projects_library_url)s\">项目库</a>，也可联系管理员申请分配。"
+
+msgid "Assigned Findings"
+msgstr "分配的发现项"
+
+msgid "All Tasks Complete!"
+msgstr "所有任务已完成！"
+
+msgid "Assigned Observations"
+msgstr "分配的观察项"
+
+msgid "Recent Background Tasks"
+msgstr "近期后台任务"
+
+msgid "SUCCESS"
+msgstr "成功"
+
+msgid "FAILED"
+msgstr "失败"
+
+msgid "Unsuccessful task returned this message/stack trace:"
+msgstr "失败任务返回的消息或调用栈："
+
+msgid "No completed tasks."
+msgstr "暂无已完成的任务。"
+
+msgid "System Status"
+msgstr "系统状态"
+
+msgid "All Systems Go!"
+msgstr "系统运行正常！"
+
+msgid "Issues Detected!"
+msgstr "检测到异常！"
+
+msgid "Visit the <a class=\"clickable italic\" href=\"%(healthcheck_url)s\">Detailed Status Page</a>"
+msgstr "查看 <a class=\"clickable italic\" href=\"%(healthcheck_url)s\">详细状态页面</a>"
+
+msgid "Assignment:"
+msgstr "任务："
+
+msgid "Click event in calendar to view details."
+msgstr "点击日历中的事件以查看详情。"
+
+msgid "Project Shortcuts"
+msgstr "项目快捷入口"
+
+msgid "Jump to Report"
+msgstr "跳转到报告"
+
+msgid "My Active Reports"
+msgstr "我的活跃报告"
+
+msgid "My Active Projects"
+msgstr "我的活跃项目"
+
+msgid "Pre-engagement"
+msgstr "前期准备"
+
+msgid "Clients"
+msgstr "客户"
+
+msgid "Search Clients..."
+msgstr "搜索客户..."
+
+msgid "Client Library"
+msgstr "客户库"
+
+msgid "Add New Client"
+msgstr "新建客户"
+
+msgid "Findings"
+msgstr "发现项"
+
+msgid "Search Findings..."
+msgstr "搜索发现项..."
+
+msgid "Findings Library"
+msgstr "发现项库"
+
+msgid "Add New Finding"
+msgstr "新建发现项"
+
+msgid "Observations"
+msgstr "观察项"
+
+msgid "Search Observations..."
+msgstr "搜索观察项..."
+
+msgid "Observations Library"
+msgstr "观察项库"
+
+msgid "Add New Observation"
+msgstr "新建观察项"
+
+msgid "Execution"
+msgstr "执行阶段"
+
+msgid "My Active Assets"
+msgstr "我的活跃资产"
+
+msgid "Projects"
+msgstr "项目"
+
+msgid "Projects Library"
+msgstr "项目库"
+
+msgid "Add New Project"
+msgstr "新建项目"
+
+msgid "Operation Logs"
+msgstr "操作日志"
+
+msgid "Oplog Library"
+msgstr "操作日志库"
+
+msgid "Add New Oplog"
+msgstr "新建操作日志"
+
+msgid "Import Oplog Entries"
+msgstr "导入操作日志条目"
+
+msgid "Reporting"
+msgstr "报告"
+
+msgid "Reports"
+msgstr "报告列表"
+
+msgid "Report Library"
+msgstr "报告库"
+
+msgid "Add New Report"
+msgstr "新建报告"
+
+msgid "Templates"
+msgstr "模板"
+
+msgid "Report Template Library"
+msgstr "报告模板库"
+
+msgid "Add New Report Template"
+msgstr "新建报告模板"
+
+msgid "Archived Reports"
+msgstr "已归档报告"
+
+msgid "Maintain"
+msgstr "维护"
+
+msgid "Servers"
+msgstr "服务器"
+
+msgid "Search Servers..."
+msgstr "搜索服务器..."
+
+msgid "Server Library"
+msgstr "服务器库"
+
+msgid "Add New Server"
+msgstr "新建服务器"
+
+msgid "Domains"
+msgstr "域名"
+
+msgid "Search Domains..."
+msgstr "搜索域名..."
+
+msgid "Domain Library"
+msgstr "域名库"
+
+msgid "Add New Domain"
+msgstr "新建域名"
+
+msgid "Update Controls"
+msgstr "更新控制"
+
+msgid "Administration"
+msgstr "系统管理"
+
+msgid "Review Configuration"
+msgstr "审阅配置"
+
+msgid "Admin Panel"
+msgstr "管理后台"
+
+msgid "Configuration Mgmt"
+msgstr "配置管理"
+
+msgid "User Mgmt"
+msgstr "用户管理"
+
+msgid "Scheduled Tasks"
+msgstr "计划任务"
+
+msgid "Import & Export"
+msgstr "导入与导出"
+
+msgid "Upload Bulk Findings"
+msgstr "批量上传发现项"
+
+msgid "Export Findings to CSV"
+msgstr "导出发现项为 CSV"
+
+msgid "Upload Bulk Observations"
+msgstr "批量上传观察项"
+
+msgid "Export Observations to CSV"
+msgstr "导出观察项为 CSV"
+
+msgid "Upload Bulk Domains"
+msgstr "批量上传域名"
+
+msgid "Export Domains to CSV"
+msgstr "导出域名为 CSV"
+
+msgid "Upload Bulk Servers"
+msgstr "批量上传服务器"
+
+msgid "Export Servers to CSV"
+msgstr "导出服务器为 CSV"
+
+msgid "Documentation"
+msgstr "文档"
+
+msgid "Ghostwriter Wiki"
+msgstr "Ghostwriter Wiki"
+
+msgid "Ghostwriter on GitHub"
+msgstr "GitHub 上的 Ghostwriter"
+
+msgid "Logout"
+msgstr "退出登录"
+
+msgid "Login"
+msgstr "登录"
+
+msgid "Auto (follow system)"
+msgstr "自动（跟随系统）"
+
+msgid "v%(version)s, released %(release_date)s"
+msgstr "v%(version)s，发布于 %(release_date)s"
+
+msgid "Learn more"
+msgstr "了解更多"
