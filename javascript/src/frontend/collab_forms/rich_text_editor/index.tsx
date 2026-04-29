@@ -44,6 +44,7 @@ import { TableCaptionBookmarkButton, TableCellBackgroundColor } from "./table";
 import CaptionButton from "./caption";
 import FootnoteButton from "./footnote";
 import PassiveVoiceButton from "./passive_voice";
+import { t } from "../../i18n";
 
 // For debugging
 //(window as any).tiptapSchema = getSchema(EXTENSIONS);
@@ -124,7 +125,7 @@ export function Toolbar(props: {
                     editor={editor}
                     chain={(c) => c.toggleBold()}
                     active="bold"
-                    tooltip="Bold"
+                    tooltip={t("editor.bold", "Bold")}
                 >
                     <FontAwesomeIcon icon={faBold} />
                 </FormatButton>
@@ -132,7 +133,7 @@ export function Toolbar(props: {
                     editor={editor}
                     chain={(c) => c.toggleItalic()}
                     active="italic"
-                    tooltip="Italic"
+                    tooltip={t("editor.italic", "Italic")}
                 >
                     <FontAwesomeIcon icon={faItalic} />
                 </FormatButton>
@@ -140,7 +141,7 @@ export function Toolbar(props: {
                     editor={editor}
                     chain={(c) => c.toggleUnderline()}
                     active="underline"
-                    tooltip="Underline"
+                    tooltip={t("editor.underline", "Underline")}
                 >
                     <FontAwesomeIcon icon={faUnderline} />
                 </FormatButton>
@@ -148,7 +149,7 @@ export function Toolbar(props: {
                     editor={editor}
                     chain={(c) => c.toggleCode()}
                     active="code"
-                    tooltip="Code Segment"
+                    tooltip={t("editor.codeSegment", "Code Segment")}
                 >
                     <FontAwesomeIcon icon={faCode} />
                 </FormatButton>
@@ -157,7 +158,7 @@ export function Toolbar(props: {
                     editor={editor}
                     chain={(c) => c.toggleSubscript()}
                     active="sub"
-                    tooltip="Subscript"
+                    tooltip={t("editor.subscript", "Subscript")}
                 >
                     <FontAwesomeIcon icon={faSubscript} />
                 </FormatButton>
@@ -165,7 +166,7 @@ export function Toolbar(props: {
                     editor={editor}
                     chain={(c) => c.toggleSuperscript()}
                     active="sup"
-                    tooltip="Superscript"
+                    tooltip={t("editor.superscript", "Superscript")}
                 >
                     <FontAwesomeIcon icon={faSuperscript} />
                 </FormatButton>
@@ -174,14 +175,14 @@ export function Toolbar(props: {
                     editor={editor}
                     chain={(c) => c.toggleHighlight()}
                     active="highlight"
-                    tooltip="Highlight"
+                    tooltip={t("editor.highlight", "Highlight")}
                 >
                     <FontAwesomeIcon icon={faHighlighter} />
                 </FormatButton>
                 <FormatButton
                     editor={editor}
                     chain={(c) => c.unsetAllMarks()}
-                    tooltip="Clear Formatting"
+                    tooltip={t("editor.clearFormatting", "Clear Formatting")}
                 >
                     <FontAwesomeIcon icon={faTextSlash} />
                 </FormatButton>
@@ -192,7 +193,10 @@ export function Toolbar(props: {
                     portal
                     menuClassName="collab-edit-toolbar-menu"
                     menuButton={
-                        <MenuButton tabIndex={-1} title="Heading">
+                        <MenuButton
+                            tabIndex={-1}
+                            title={t("editor.heading", "Heading")}
+                        >
                             <FontAwesomeIcon icon={faHeading} />
                             <FontAwesomeIcon icon={faChevronDown} />
                         </MenuButton>
@@ -206,7 +210,9 @@ export function Toolbar(props: {
                             chain={(c) => c.toggleHeading({ level })}
                             active={(e) => e.isActive("heading", { level })}
                         >
-                            Heading {level}
+                            {t("editor.headingLevel", "Heading {level}", {
+                                level,
+                            })}
                         </FormatButton>
                     ))}
 
@@ -216,7 +222,10 @@ export function Toolbar(props: {
                     portal
                     menuClassName="collab-edit-toolbar-menu"
                     menuButton={
-                        <MenuButton tabIndex={-1} title="Justification">
+                        <MenuButton
+                            tabIndex={-1}
+                            title={t("editor.justification", "Justification")}
+                        >
                             <FontAwesomeIcon icon={faAlignCenter} />
                             <FontAwesomeIcon icon={faChevronDown} />
                         </MenuButton>
@@ -229,7 +238,7 @@ export function Toolbar(props: {
                         active={{ textAlign: "left" }}
                         enable
                     >
-                        Left
+                        {t("editor.left", "Left")}
                     </FormatButton>
                     <FormatButton
                         menuItem
@@ -238,7 +247,7 @@ export function Toolbar(props: {
                         active={{ textAlign: "center" }}
                         enable
                     >
-                        Center
+                        {t("editor.center", "Center")}
                     </FormatButton>
                     <FormatButton
                         menuItem
@@ -247,7 +256,7 @@ export function Toolbar(props: {
                         active={{ textAlign: "right" }}
                         enable
                     >
-                        Right
+                        {t("editor.right", "Right")}
                     </FormatButton>
                     <FormatButton
                         menuItem
@@ -256,14 +265,14 @@ export function Toolbar(props: {
                         active={{ textAlign: "justify" }}
                         enable
                     >
-                        Justify
+                        {t("editor.justify", "Justify")}
                     </FormatButton>
                 </Menu>
                 <FormatButton
                     editor={editor}
                     chain={(c) => c.toggleCodeBlock()}
                     active="codeBlock"
-                    tooltip="Code Block"
+                    tooltip={t("editor.codeBlock", "Code Block")}
                 >
                     <FontAwesomeIcon icon={faTerminal} />
                 </FormatButton>
@@ -271,7 +280,7 @@ export function Toolbar(props: {
                     editor={editor}
                     chain={(c) => c.toggleBlockquote()}
                     active="blockquote"
-                    tooltip="Blockquote"
+                    tooltip={t("editor.blockquote", "Blockquote")}
                 >
                     <FontAwesomeIcon icon={faQuoteLeft} />
                 </FormatButton>
@@ -282,7 +291,7 @@ export function Toolbar(props: {
                     portal
                     menuClassName="collab-edit-toolbar-menu"
                     menuButton={
-                        <MenuButton tabIndex={-1} title="List">
+                        <MenuButton tabIndex={-1} title={t("editor.list", "List")}>
                             <FontAwesomeIcon icon={faList} />
                             <FontAwesomeIcon icon={faChevronDown} />
                         </MenuButton>
@@ -294,7 +303,7 @@ export function Toolbar(props: {
                         chain={(c) => c.toggleBulletList()}
                         active="bulletList"
                     >
-                        Bullet
+                        {t("editor.bullet", "Bullet")}
                     </FormatButton>
                     <FormatButton
                         menuItem
@@ -302,14 +311,14 @@ export function Toolbar(props: {
                         chain={(c) => c.toggleOrderedList()}
                         active="orderedList"
                     >
-                        Ordered
+                        {t("editor.ordered", "Ordered")}
                     </FormatButton>
                 </Menu>
                 <Menu
                     portal
                     menuClassName="collab-edit-toolbar-menu"
                     menuButton={
-                        <MenuButton tabIndex={-1} title="Table">
+                        <MenuButton tabIndex={-1} title={t("editor.table", "Table")}>
                             <FontAwesomeIcon icon={faTable} />
                             <FontAwesomeIcon icon={faChevronDown} />
                         </MenuButton>
@@ -326,19 +335,19 @@ export function Toolbar(props: {
                             })
                         }
                     >
-                        Insert
+                        {t("editor.tableInsert", "Insert")}
                     </FormatButton>
                     <FormatButton
                         menuItem
                         editor={editor}
                         chain={(c) => c.deleteTable()}
                     >
-                        Delete
+                        {t("editor.tableDelete", "Delete")}
                     </FormatButton>
                     <SubMenu
                         label={
                             <span>
-                                Columns
+                                {t("editor.columns", "Columns")}
                                 <FontAwesomeIcon icon={faChevronRight} />
                             </span>
                         }
@@ -348,34 +357,37 @@ export function Toolbar(props: {
                             editor={editor}
                             chain={(c) => c.toggleHeaderColumn()}
                         >
-                            Toggle header column
+                            {t(
+                                "editor.toggleHeaderColumn",
+                                "Toggle header column"
+                            )}
                         </FormatButton>
                         <FormatButton
                             menuItem
                             editor={editor}
                             chain={(c) => c.addColumnBefore()}
                         >
-                            Add column before
+                            {t("editor.addColumnBefore", "Add column before")}
                         </FormatButton>
                         <FormatButton
                             menuItem
                             editor={editor}
                             chain={(c) => c.addColumnAfter()}
                         >
-                            Add column after
+                            {t("editor.addColumnAfter", "Add column after")}
                         </FormatButton>
                         <FormatButton
                             menuItem
                             editor={editor}
                             chain={(c) => c.deleteColumn()}
                         >
-                            Delete column
+                            {t("editor.deleteColumn", "Delete column")}
                         </FormatButton>
                     </SubMenu>
                     <SubMenu
                         label={
                             <span>
-                                Rows
+                                {t("editor.rows", "Rows")}
                                 <FontAwesomeIcon icon={faChevronRight} />
                             </span>
                         }
@@ -385,34 +397,34 @@ export function Toolbar(props: {
                             editor={editor}
                             chain={(c) => c.toggleHeaderRow()}
                         >
-                            Toggle header row
+                            {t("editor.toggleHeaderRow", "Toggle header row")}
                         </FormatButton>
                         <FormatButton
                             menuItem
                             editor={editor}
                             chain={(c) => c.addRowBefore()}
                         >
-                            Add row before
+                            {t("editor.addRowBefore", "Add row before")}
                         </FormatButton>
                         <FormatButton
                             menuItem
                             editor={editor}
                             chain={(c) => c.addRowAfter()}
                         >
-                            Add row after
+                            {t("editor.addRowAfter", "Add row after")}
                         </FormatButton>
                         <FormatButton
                             menuItem
                             editor={editor}
                             chain={(c) => c.deleteRow()}
                         >
-                            Delete row
+                            {t("editor.deleteRow", "Delete row")}
                         </FormatButton>
                     </SubMenu>
                     <SubMenu
                         label={
                             <span>
-                                Cells
+                                {t("editor.cells", "Cells")}
                                 <FontAwesomeIcon icon={faChevronRight} />
                             </span>
                         }
@@ -422,14 +434,14 @@ export function Toolbar(props: {
                             editor={editor}
                             chain={(c) => c.mergeCells()}
                         >
-                            Merge cells
+                            {t("editor.mergeCells", "Merge cells")}
                         </FormatButton>
                         <FormatButton
                             menuItem
                             editor={editor}
                             chain={(c) => c.splitCell()}
                         >
-                            Split cell
+                            {t("editor.splitCell", "Split cell")}
                         </FormatButton>
                         <TableCellBackgroundColor editor={editor} />
                     </SubMenu>
@@ -438,25 +450,25 @@ export function Toolbar(props: {
                         editor={editor}
                         chain={(c) => c.addCaption()}
                     >
-                        Add Caption
+                        {t("editor.addCaption", "Add Caption")}
                     </FormatButton>
                     <FormatButton
                         menuItem
                         editor={editor}
                         chain={(c) => c.removeCaption()}
                     >
-                        Remove Caption
+                        {t("editor.removeCaption", "Remove Caption")}
                     </FormatButton>
                     <TableCaptionBookmarkButton editor={editor} />
                 </Menu>
                 <FormatButton editor={editor} chain={(c) => c.setPageBreak()}>
-                    Page Break
+                    {t("editor.pageBreak", "Page Break")}
                 </FormatButton>
                 <Menu
                     portal
                     menuClassName="collab-edit-toolbar-menu"
                     menuButton={
-                        <MenuButton tabIndex={-1} title="Misc">
+                        <MenuButton tabIndex={-1} title={t("editor.misc", "Misc")}>
                             <FontAwesomeIcon icon={faBars} />
                         </MenuButton>
                     }
@@ -466,14 +478,14 @@ export function Toolbar(props: {
                         editor={editor}
                         chain={(c) => c.changeCase("lower")}
                     >
-                        Lowercase Text
+                        {t("editor.lowercaseText", "Lowercase Text")}
                     </FormatButton>
                     <FormatButton
                         menuItem
                         editor={editor}
                         chain={(c) => c.changeCase("upper")}
                     >
-                        Uppercase Text
+                        {t("editor.uppercaseText", "Uppercase Text")}
                     </FormatButton>
                     <MenuDivider />
                     <CaptionButton editor={editor} />
@@ -484,7 +496,7 @@ export function Toolbar(props: {
                         editor={editor}
                         chain={(c) => c.insertGwImage("CLIENT_LOGO")}
                     >
-                        Insert Client Logo
+                        {t("editor.insertClientLogo", "Insert Client Logo")}
                     </FormatButton>
                 </Menu>
             </div>

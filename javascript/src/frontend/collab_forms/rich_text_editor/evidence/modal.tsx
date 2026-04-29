@@ -4,6 +4,8 @@ import { EvidencesContext } from "../../../../tiptap_gw/evidence";
 import { Editor } from "@tiptap/react";
 import EvidenceUploadForm from "./upload";
 
+import { t } from "../../../i18n";
+
 export default function EvidenceModal(props: {
     editor: Editor;
     initialId: null | number;
@@ -37,13 +39,15 @@ export default function EvidenceModal(props: {
         <ReactModal
             isOpen
             onRequestClose={() => props.setEvidenceId(null)}
-            contentLabel="Insert Evidence"
+            contentLabel={t("evidence.insert", "Insert Evidence")}
             className="modal-dialog modal-dialog-centered"
         >
             <div className="modal-content">
                 <div className="modal-header">
                     <h5 className="modal-title">
-                        {props.initialId === null ? "Insert" : "Edit"} Evidence
+                        {props.initialId === null
+                            ? t("evidence.insert", "Insert Evidence")
+                            : t("evidence.edit", "Edit Evidence")}
                     </h5>
                 </div>
                 {content}
@@ -64,7 +68,9 @@ function EvidenceSelectForm(props: {
         <>
             <div className="modal-body">
                 <div className="form-group">
-                    <label htmlFor={nameId}>Evidence Name</label>
+                    <label htmlFor={nameId}>
+                        {t("evidence.name", "Evidence Name")}
+                    </label>
                     <select
                         className="custom-select custom-select-lg"
                         value={selectedId?.toString()}
@@ -76,7 +82,9 @@ function EvidenceSelectForm(props: {
                             )
                         }
                     >
-                        <option value="">Select Evidence...</option>
+                        <option value="">
+                            {t("evidence.select", "Select Evidence...")}
+                        </option>
                         {evidences?.evidence?.map((e) => (
                             <option value={e.id} key={e.id}>
                                 {e.friendlyName}
@@ -94,7 +102,7 @@ function EvidenceSelectForm(props: {
                         props.switchMode();
                     }}
                 >
-                    Upload New
+                    {t("evidence.uploadNew", "Upload New")}
                 </button>
                 <button
                     className="btn btn-primary"
@@ -104,7 +112,9 @@ function EvidenceSelectForm(props: {
                         props.onSubmit(selectedId);
                     }}
                 >
-                    {props.initial === null ? "Insert" : "Save"}
+                    {props.initial === null
+                        ? t("common.insert", "Insert")
+                        : t("common.save", "Save")}
                 </button>
                 <button
                     className="btn btn-secondary-outline"
@@ -113,7 +123,7 @@ function EvidenceSelectForm(props: {
                         props.onSubmit(null);
                     }}
                 >
-                    Cancel
+                    {t("common.cancel", "Cancel")}
                 </button>
             </div>
         </>

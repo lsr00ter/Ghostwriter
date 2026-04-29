@@ -8,6 +8,8 @@ import ExtraFieldsSection from "../extra_fields";
 import ReactModal from "react-modal";
 import ErrorBoundary from "../error_boundary";
 
+import { t } from "../../i18n";
+
 function ObservationForm() {
     const { provider, status, connected, setEditing } = usePageConnection({
         model: "observation",
@@ -20,7 +22,7 @@ function ObservationForm() {
             <div className="form-row">
                 <div className="form-group col-md-6 mb-0">
                     <div className="form-group">
-                        <label htmlFor="id_title">Title</label>
+                        <label htmlFor="id_title">{t("common.title", "Title")}</label>
                         <div>
                             <PlainTextInput
                                 inputProps={{
@@ -37,7 +39,7 @@ function ObservationForm() {
                 </div>
                 <div className="form-group col-md-6 mb-0">
                     <div className="form-group">
-                        <label htmlFor="id_tags">Tags</label>
+                        <label htmlFor="id_tags">{t("common.tags", "Tags")}</label>
                         <div>
                             <TagEditor
                                 id="id_tags"
@@ -47,14 +49,17 @@ function ObservationForm() {
                                 docKey="tags"
                             />
                             <small className="form-text text-muted">
-                                Separate tags with commas
+                                {t(
+                                    "common.separateTags",
+                                    "Separate tags with commas"
+                                )}
                             </small>
                         </div>
                     </div>
                 </div>
 
                 <div className="form-group col-md-12">
-                    <label>Description</label>
+                    <label>{t("common.description", "Description")}</label>
                     <div>
                         <RichTextEditor
                             connected={connected}

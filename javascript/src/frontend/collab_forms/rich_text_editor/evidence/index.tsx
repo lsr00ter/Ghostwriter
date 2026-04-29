@@ -5,6 +5,8 @@ import { useCallback, useEffect, useState } from "react";
 import EvidenceModal from "./modal";
 import { useEditorState } from "@tiptap/react";
 
+import { t } from "../../../i18n";
+
 // null = closed, "new" = inserting, number = editing existing, { file } = paste-triggered upload
 type ModalState = null | "new" | number | { file: File };
 
@@ -76,7 +78,7 @@ export default function EvidenceButton({ editor }: { editor: Editor }) {
         <>
             <button
                 tabIndex={-1}
-                title={"Evidence"}
+                title={t("evidence.button", "Evidence")}
                 disabled={!enabled}
                 className={active ? "is-active" : undefined}
                 onClick={(e) => {

@@ -6,6 +6,8 @@ import { useId, useState } from "react";
 import ReactModal from "react-modal";
 import { sanitizeLinkHref } from "../../../tiptap_gw/link";
 
+import { t } from "../../i18n";
+
 export default function LinkButton({ editor }: { editor: Editor }) {
     const [modalMode, setModalMode] = useState<null | "new" | "edit">(null);
     const [formUrl, setFormUrl] = useState("");
@@ -31,7 +33,7 @@ export default function LinkButton({ editor }: { editor: Editor }) {
         <>
             <button
                 tabIndex={-1}
-                title="Link"
+                title={t("editor.link", "Link")}
                 type="button"
                 disabled={!enabled}
                 className={active ? "is-active" : undefined}
@@ -53,12 +55,14 @@ export default function LinkButton({ editor }: { editor: Editor }) {
             <ReactModal
                 isOpen={!!modalMode}
                 onRequestClose={() => setModalMode(null)}
-                contentLabel="Edit Link"
+                contentLabel={t("editor.editLink", "Edit Link")}
                 className="modal-dialog modal-dialog-centered"
             >
                 <div className="modal-content">
                     <div className="modal-header">
-                        <h5 className="modal-title">Edit Link</h5>
+                        <h5 className="modal-title">
+                            {t("editor.editLink", "Edit Link")}
+                        </h5>
                     </div>
                     <form
                         className="modal-body text-center"
@@ -68,7 +72,10 @@ export default function LinkButton({ editor }: { editor: Editor }) {
                                 const sanitizedHref = sanitizeLinkHref(formUrl);
                                 if (!sanitizedHref) {
                                     setValidationError(
-                                        "Use a relative URL, anchor, or an http, https, mailto, or tel link.",
+                                        t(
+                                            "editor.linkValidation",
+                                            "Use a relative URL, anchor, or an http, https, mailto, or tel link."
+                                        )
                                     );
                                     return;
                                 }
@@ -79,7 +86,9 @@ export default function LinkButton({ editor }: { editor: Editor }) {
                         }}
                     >
                         <div className="form-group">
-                            <label htmlFor={urlId}>URL</label>
+                            <label htmlFor={urlId}>
+                                {t("editor.url", "URL")}
+                            </label>
                             <input
                                 id={urlId}
                                 type="text"
@@ -99,7 +108,9 @@ export default function LinkButton({ editor }: { editor: Editor }) {
                         )}
 
                         <div className="modal-footer">
-                            <button className="btn btn-primary">Save</button>
+                            <button className="btn btn-primary">
+                                {t("common.save", "Save")}
+                            </button>
                             {modalMode === "edit" && (
                                 <button
                                     type="button"
@@ -111,7 +122,7 @@ export default function LinkButton({ editor }: { editor: Editor }) {
                                         setModalMode(null);
                                     }}
                                 >
-                                    Remove
+                                    {t("common.remove", "Remove")}
                                 </button>
                             )}
                             <button
@@ -123,7 +134,7 @@ export default function LinkButton({ editor }: { editor: Editor }) {
                                     setModalMode(null);
                                 }}
                             >
-                                Cancel
+                                {t("common.cancel", "Cancel")}
                             </button>
                         </div>
                     </form>

@@ -11,6 +11,8 @@ import { XmlFragment } from "yjs";
 import { HocuspocusProvider } from "@hocuspocus/provider";
 import { Editor } from "@tiptap/core";
 
+import { t } from "../i18n";
+
 /// Emitted from ExtraFieldsSpecSerializer
 export type ExtraFieldSpec = {
     internal_name: string;
@@ -122,7 +124,9 @@ export function ExtraFieldInput(props: {
         case "rich_text":
             let frag = map.get(props.spec.internal_name);
             if (!(frag instanceof XmlFragment)) {
-                if (!props.connected) return <p>Loading...</p>;
+                if (!props.connected) {
+                    return <p>{t("common.loading", "Loading...")}</p>;
+                }
                 frag = new XmlFragment();
                 map.set(props.spec.internal_name, frag);
             }

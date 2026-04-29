@@ -14,6 +14,8 @@ import {
 } from "../../../__generated__/graphql";
 import CvssCalculator from "../plain_editors/cvss";
 
+import { t } from "../../i18n";
+
 const GET_FINDING_TYPES = gql(`
     query GET_FINDING_TYPES {
         findingType(order_by:[{id: asc}]) {
@@ -59,13 +61,13 @@ export function FindingFormFields({
         <>
             <ConnectionStatus status={status} />
 
-            <h4 className="icon search-icon">Categorization</h4>
+            <h4 className="icon search-icon">{t("finding.categorization", "Categorization")}</h4>
             <hr />
 
             <div className="form-row">
                 <div className="form-group col-md-6 mb-0">
                     <div className="form-group">
-                        <label htmlFor="id_title">Title</label>
+                        <label htmlFor="id_title">{t("common.title", "Title")}</label>
                         <div>
                             <PlainTextInput
                                 inputProps={{
@@ -82,7 +84,7 @@ export function FindingFormFields({
                 </div>
                 <div className="form-group col-md-6 mb-0">
                     <div className="form-group">
-                        <label htmlFor="id_tags">Tags</label>
+                        <label htmlFor="id_tags">{t("common.tags", "Tags")}</label>
                         <div>
                             <TagEditor
                                 id="id_tags"
@@ -92,7 +94,10 @@ export function FindingFormFields({
                                 docKey="tags"
                             />
                             <small className="form-text text-muted">
-                                Separate tags with commas
+                                {t(
+                                    "common.separateTags",
+                                    "Separate tags with commas"
+                                )}
                             </small>
                         </div>
                     </div>
@@ -103,7 +108,7 @@ export function FindingFormFields({
                 <div className="form-group col-md-6 mb-0">
                     <div className="form-group">
                         <label htmlFor="collab-form-finding-type">
-                            Finding Type
+                            {t("finding.findingType", "Finding Type")}
                         </label>
                         <div>
                             <Dropdown
@@ -117,7 +122,10 @@ export function FindingFormFields({
                                 connected={connected}
                             />
                             <small className="form-text text-muted">
-                                Select a finding category that fits
+                                {t(
+                                    "finding.findingTypeHelp",
+                                    "Select a finding category that fits"
+                                )}
                             </small>
                         </div>
                     </div>
@@ -125,7 +133,7 @@ export function FindingFormFields({
 
                 <div className="form-group col-md-6 mb-0">
                     <div className="form-group">
-                        <label htmlFor="collab-form-severity">Severity</label>
+                        <label htmlFor="collab-form-severity">{t("finding.severity", "Severity")}</label>
                         <div>
                             <Dropdown
                                 id="collab-form-severity"
@@ -138,8 +146,10 @@ export function FindingFormFields({
                                 convertOptions={convertSeverities}
                             />
                             <small className="form-text text-muted">
-                                Select a severity rating for this finding that
-                                reflects its role in a system compromise
+                                {t(
+                                    "finding.severityHelp",
+                                    "Select a severity rating for this finding that reflects its role in a system compromise"
+                                )}
                             </small>
                         </div>
                     </div>
@@ -148,7 +158,7 @@ export function FindingFormFields({
 
             <div className="form-row">
                 <div className="form-group col-md-6 mb-0">
-                    <label htmlFor="collab-form-cvss-score">CVSS Score</label>
+                    <label htmlFor="collab-form-cvss-score">{t("finding.cvssScore", "CVSS Score")}</label>
                     <div>
                         <NumberInput
                             inputProps={{
@@ -162,13 +172,16 @@ export function FindingFormFields({
                             setEditing={setEditing}
                         />
                         <small className="form-text text-muted">
-                            Set the CVSS score for this finding
+                            {t(
+                                "finding.cvssScoreHelp",
+                                "Set the CVSS score for this finding"
+                            )}
                         </small>
                     </div>
                 </div>
 
                 <div className="form-group col-md-6 mb-0">
-                    <label htmlFor="collab-form-cvss-vector">CVSS Vector</label>
+                    <label htmlFor="collab-form-cvss-vector">{t("finding.cvssVector", "CVSS Vector")}</label>
                     <div>
                         <PlainTextInput
                             inputProps={{
@@ -182,7 +195,10 @@ export function FindingFormFields({
                             setEditing={setEditing}
                         />
                         <small className="form-text text-muted">
-                            Set the CVSS vector for this finding
+                            {t(
+                                "finding.cvssVectorHelp",
+                                "Set the CVSS vector for this finding"
+                            )}
                         </small>
                     </div>
                 </div>
@@ -198,11 +214,11 @@ export function FindingFormFields({
 
             {extraTop}
 
-            <h4 className="icon pencil-icon">General Information</h4>
+            <h4 className="icon pencil-icon">{t("finding.generalInformation", "General Information")}</h4>
             <hr />
 
             <div className="form-group col-md-12">
-                <label>Description</label>
+                <label>{t("common.description", "Description")}</label>
                 <div>
                     <RichTextEditor
                         provider={provider}
@@ -216,7 +232,7 @@ export function FindingFormFields({
             </div>
 
             <div className="form-group col-md-12">
-                <label>Impact</label>
+                <label>{t("finding.impact", "Impact")}</label>
                 <div>
                     <RichTextEditor
                         connected={connected}
@@ -227,11 +243,11 @@ export function FindingFormFields({
                 </div>
             </div>
 
-            <h4 className="icon shield-icon">Defense</h4>
+            <h4 className="icon shield-icon">{t("finding.defense", "Defense")}</h4>
             <hr />
 
             <div className="form-group col-md-12">
-                <label>Mitigation</label>
+                <label>{t("finding.mitigation", "Mitigation")}</label>
                 <div>
                     <RichTextEditor
                         connected={connected}
@@ -245,7 +261,7 @@ export function FindingFormFields({
             </div>
 
             <div className="form-group col-md-12">
-                <label>Replication Steps</label>
+                <label>{t("finding.replicationSteps", "Replication Steps")}</label>
                 <div>
                     <RichTextEditor
                         connected={connected}
@@ -259,7 +275,7 @@ export function FindingFormFields({
             </div>
 
             <div className="form-group col-md-12">
-                <label>Host Detection Techniques</label>
+                <label>{t("finding.hostDetectionTechniques", "Host Detection Techniques")}</label>
                 <div>
                     <RichTextEditor
                         connected={connected}
@@ -273,7 +289,7 @@ export function FindingFormFields({
             </div>
 
             <div className="form-group col-md-12">
-                <label>Network Detection Techniques</label>
+                <label>{t("finding.networkDetectionTechniques", "Network Detection Techniques")}</label>
                 <div>
                     <RichTextEditor
                         connected={connected}
@@ -286,11 +302,11 @@ export function FindingFormFields({
                 </div>
             </div>
 
-            <h4 className="icon link-icon">Reference Links</h4>
+            <h4 className="icon link-icon">{t("finding.referenceLinks", "Reference Links")}</h4>
             <hr />
 
             <div className="form-group col-md-12">
-                <label>References</label>
+                <label>{t("finding.references", "References")}</label>
                 <div>
                     <RichTextEditor
                         connected={connected}
@@ -310,7 +326,7 @@ export function FindingFormFields({
                 provider={provider}
                 header={
                     <>
-                        <h4 className="icon link-icon">Extra Fields</h4>
+                        <h4 className="icon link-icon">{t("finding.extraFields", "Extra Fields")}</h4>
                         <hr />
                     </>
                 }

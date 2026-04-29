@@ -25,6 +25,8 @@ import {
     NoneSeverityType,
 } from "ae-cvss-calculator/dist/types/src/cvss4p0/Cvss4P0";
 
+import { t } from "../../i18n";
+
 type Vector = Cvss3P1 | Cvss4P0;
 type SetVector = (cb: (v: Vector) => Vector) => void;
 
@@ -190,7 +192,9 @@ export default function CvssCalculator(props: {
                     setOpen((v) => !v);
                 }}
             >
-                <h5 className="mb-0 flex-grow-1">CVSS Calculator</h5>
+                <h5 className="mb-0 flex-grow-1">
+                    {t("cvss.calculator", "CVSS Calculator")}
+                </h5>
                 <span>{open ? "\u2212" : "\u002b"}</span>
             </div>
             <div
@@ -236,7 +240,7 @@ function CvssV3Form(props: {
                     props.setVector(() => new Cvss4P0());
                 }}
             >
-                Switch to v4
+                {t("cvss.switchToV4", "Switch to v4")}
             </button>
 
             <div className="cvss-buttons">
@@ -249,17 +253,17 @@ function CvssV3Form(props: {
 
             <div className="cvss-score-ratings">
                 <ScoreCard
-                    header="Base"
+                    header={t("cvss.base", "Base")}
                     score={hasBase ? json.baseScore : undefined}
                     severity={hasBase ? json.baseSeverity : undefined}
                 />
                 <ScoreCard
-                    header="Temporal"
+                    header={t("cvss.temporal", "Temporal")}
                     score={json.temporalScore}
                     severity={json.temporalSeverity}
                 />
                 <ScoreCard
-                    header="Env"
+                    header={t("cvss.environment", "Env")}
                     score={json.environmentalScore}
                     severity={json.environmentalSeverity}
                 />
@@ -287,7 +291,7 @@ function CvssV4Form(props: {
                     props.setVector(() => new Cvss3P1());
                 }}
             >
-                Switch to v3
+                {t("cvss.switchToV3", "Switch to v3")}
             </button>
 
             <div className="cvss-buttons">
@@ -300,7 +304,7 @@ function CvssV4Form(props: {
 
             <div className="cvss-score-ratings">
                 <ScoreCard
-                    header="Base"
+                    header={t("cvss.base", "Base")}
                     score={hasBase ? json.baseScore : undefined}
                     severity={hasBase ? json.baseSeverity : undefined}
                 />
@@ -333,7 +337,7 @@ function ScoreCard(props: {
                         : "cvss-rating-severity"
                 }
             >
-                {props.severity ?? "Select values to see score"}
+                {props.severity ?? t("cvss.selectValues", "Select values to see score")}
             </span>
         </div>
     );

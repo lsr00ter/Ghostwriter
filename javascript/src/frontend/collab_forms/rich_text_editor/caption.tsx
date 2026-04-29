@@ -3,6 +3,8 @@ import ReactModal from "react-modal";
 import { Editor, useEditorState } from "@tiptap/react";
 import { MenuItem } from "@szhsin/react-menu";
 
+import { t } from "../../i18n";
+
 export default function CaptionButton({ editor }: { editor: Editor }) {
     const [modalOpen, setModalOpen] = useState(false);
     const [refName, setRefName] = useState("");
@@ -16,24 +18,26 @@ export default function CaptionButton({ editor }: { editor: Editor }) {
     return (
         <>
             <MenuItem
-                title="Caption"
+                title={t("editor.caption", "Caption")}
                 disabled={!enabled}
                 onClick={() => {
                     setRefName("");
                     setModalOpen(true);
                 }}
             >
-                Insert Caption
+                {t("editor.insertCaption", "Insert Caption")}
             </MenuItem>
             <ReactModal
                 isOpen={modalOpen}
                 onRequestClose={() => setModalOpen(false)}
-                contentLabel="Insert Caption"
+                contentLabel={t("editor.insertCaption", "Insert Caption")}
                 className="modal-dialog modal-dialog-centered"
             >
                 <div className="modal-content">
                     <div className="modal-header">
-                        <h5 className="modal-title">Insert Caption</h5>
+                        <h5 className="modal-title">
+                            {t("editor.insertCaption", "Insert Caption")}
+                        </h5>
                     </div>
                     <form
                         className="modal-body text-center"
@@ -45,7 +49,10 @@ export default function CaptionButton({ editor }: { editor: Editor }) {
                     >
                         <div className="form-group">
                             <label htmlFor={fieldId}>
-                                Reference Name (Optional)
+                                {t(
+                                    "editor.referenceNameOptional",
+                                    "Reference Name (Optional)"
+                                )}
                             </label>
                             <input
                                 id={fieldId}
@@ -56,13 +63,17 @@ export default function CaptionButton({ editor }: { editor: Editor }) {
                                 onChange={(e) => setRefName(e.target.value)}
                             />
                             <small className="form-text text-muted">
-                                If supplied, links can be made to this caption
-                                by using <code>{"{{.ref name}}"}</code>
+                                {t(
+                                    "editor.captionReferenceHelp",
+                                    "If supplied, links can be made to this caption by using a reference name in the report."
+                                )}
                             </small>
                         </div>
 
                         <div className="modal-footer">
-                            <button className="btn btn-primary">Insert</button>
+                            <button className="btn btn-primary">
+                                {t("common.insert", "Insert")}
+                            </button>
                             <button
                                 type="button"
                                 className="btn btn-secondary"
@@ -71,7 +82,7 @@ export default function CaptionButton({ editor }: { editor: Editor }) {
                                     setModalOpen(false);
                                 }}
                             >
-                                Cancel
+                                {t("common.cancel", "Cancel")}
                             </button>
                         </div>
                     </form>

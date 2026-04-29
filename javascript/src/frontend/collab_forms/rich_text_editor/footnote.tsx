@@ -3,6 +3,8 @@ import ReactModal from "react-modal";
 import { Editor, useEditorState } from "@tiptap/react";
 import { MenuItem } from "@szhsin/react-menu";
 
+import { t } from "../../i18n";
+
 export default function FootnoteButton({ editor }: { editor: Editor }) {
     const [modalOpen, setModalOpen] = useState(false);
     const [footnoteContent, setFootnoteContent] = useState("");
@@ -16,24 +18,26 @@ export default function FootnoteButton({ editor }: { editor: Editor }) {
     return (
         <>
             <MenuItem
-                title="Insert Footnote"
+                title={t("editor.insertFootnote", "Insert Footnote")}
                 disabled={!enabled}
                 onClick={() => {
                     setFootnoteContent("");
                     setModalOpen(true);
                 }}
             >
-                Insert Footnote
+                {t("editor.insertFootnote", "Insert Footnote")}
             </MenuItem>
             <ReactModal
                 isOpen={modalOpen}
                 onRequestClose={() => setModalOpen(false)}
-                contentLabel="Insert Footnote"
+                contentLabel={t("editor.insertFootnote", "Insert Footnote")}
                 className="modal-dialog modal-dialog-centered"
             >
                 <div className="modal-content">
                     <div className="modal-header">
-                        <h5 className="modal-title">Insert Footnote</h5>
+                        <h5 className="modal-title">
+                            {t("editor.insertFootnote", "Insert Footnote")}
+                        </h5>
                     </div>
                     <form
                         className="modal-body text-center"
@@ -51,7 +55,9 @@ export default function FootnoteButton({ editor }: { editor: Editor }) {
                         }}
                     >
                         <div className="form-group">
-                            <label htmlFor={fieldId}>Footnote Text</label>
+                            <label htmlFor={fieldId}>
+                                {t("editor.footnoteText", "Footnote Text")}
+                            </label>
                             <textarea
                                 id={fieldId}
                                 className="form-control"
@@ -61,11 +67,16 @@ export default function FootnoteButton({ editor }: { editor: Editor }) {
                                 onChange={(e) =>
                                     setFootnoteContent(e.target.value)
                                 }
-                                placeholder="Enter the footnote content..."
+                                placeholder={t(
+                                    "editor.enterFootnote",
+                                    "Enter the footnote content..."
+                                )}
                             />
                             <small className="form-text text-muted">
-                                This text will appear at the bottom of the page
-                                in the generated report.
+                                {t(
+                                    "editor.footnoteHelp",
+                                    "This text will appear at the bottom of the page in the generated report."
+                                )}
                             </small>
                         </div>
 
@@ -75,7 +86,7 @@ export default function FootnoteButton({ editor }: { editor: Editor }) {
                                 className="btn btn-primary"
                                 disabled={!footnoteContent.trim()}
                             >
-                                Insert
+                                {t("common.insert", "Insert")}
                             </button>
                             <button
                                 type="button"
@@ -85,7 +96,7 @@ export default function FootnoteButton({ editor }: { editor: Editor }) {
                                     setModalOpen(false);
                                 }}
                             >
-                                Cancel
+                                {t("common.cancel", "Cancel")}
                             </button>
                         </div>
                     </form>

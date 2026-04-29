@@ -12,6 +12,8 @@ import PageGraphqlProvider from "../../graphql/client";
 import { Editor } from "@tiptap/core";
 import ErrorBoundary from "../error_boundary";
 
+import { t } from "../../i18n";
+
 const renderToolbarExtra = (editor: Editor) => (
     <EvidenceButton editor={editor} />
 );
@@ -28,7 +30,7 @@ function ReportObservationLinkForm() {
             <div className="form-row">
                 <div className="form-group col-md-6 mb-0">
                     <div className="form-group">
-                        <label htmlFor="id_title">Title</label>
+                        <label htmlFor="id_title">{t("common.title", "Title")}</label>
                         <div>
                             <PlainTextInput
                                 inputProps={{
@@ -45,7 +47,7 @@ function ReportObservationLinkForm() {
                 </div>
                 <div className="form-group col-md-6 mb-0">
                     <div className="form-group">
-                        <label htmlFor="id_tags">Tags</label>
+                        <label htmlFor="id_tags">{t("common.tags", "Tags")}</label>
                         <div>
                             <TagEditor
                                 id="id_tags"
@@ -55,14 +57,17 @@ function ReportObservationLinkForm() {
                                 docKey="tags"
                             />
                             <small className="form-text text-muted">
-                                Separate tags with commas
+                                {t(
+                                    "common.separateTags",
+                                    "Separate tags with commas"
+                                )}
                             </small>
                         </div>
                     </div>
                 </div>
 
                 <div className="form-group col-md-12">
-                    <label>Description</label>
+                    <label>{t("common.description", "Description")}</label>
                     <div>
                         <RichTextEditor
                             connected={connected}

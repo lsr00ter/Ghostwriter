@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import { t } from "../i18n";
+
 export default class ErrorBoundary extends React.Component<
     { children: React.ReactNode },
     { hasError: boolean }
@@ -21,9 +23,15 @@ export default class ErrorBoundary extends React.Component<
         if (this.state.hasError) {
             return (
                 <div className="alert alert-danger" role="alert">
-                    The collaborative editor has experienced an error.
+                    {t(
+                        "error.collabEditor",
+                        "The collaborative editor has experienced an error."
+                    )}
                     <br />
-                    Please check the Browser Console (F12) for more details.
+                    {t(
+                        "error.browserConsole",
+                        "Please check the Browser Console (F12) for more details."
+                    )}
                 </div>
             );
         }

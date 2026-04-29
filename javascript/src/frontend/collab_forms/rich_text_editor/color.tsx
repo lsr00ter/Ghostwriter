@@ -6,6 +6,8 @@ import ReactModal from "react-modal";
 import { Sketch } from "@uiw/react-color";
 import { useEditorState } from "@tiptap/react";
 
+import { t } from "../../i18n";
+
 export type ColorModalMode = null | "new" | "edit";
 export function ColorModal(props: {
     modalMode: ColorModalMode;
@@ -19,12 +21,14 @@ export function ColorModal(props: {
         <ReactModal
             isOpen={!!props.modalMode}
             onRequestClose={() => props.setModalMode(null)}
-            contentLabel="Edit Color"
+            contentLabel={t("editor.editColor", "Edit Color")}
             className="modal-dialog modal-dialog-centered"
         >
             <div className="modal-content">
                 <div className="modal-header">
-                    <h5 className="modal-title">Edit Color</h5>
+                    <h5 className="modal-title">
+                        {t("editor.editColor", "Edit Color")}
+                    </h5>
                 </div>
                 <div className="modal-body row justify-content-center">
                     <Sketch
@@ -42,7 +46,7 @@ export function ColorModal(props: {
                             props.setModalMode(null);
                         }}
                     >
-                        Save
+                        {t("common.save", "Save")}
                     </button>
                     {props.modalMode === "edit" && (
                         <button
@@ -53,7 +57,7 @@ export function ColorModal(props: {
                                 props.setModalMode(null);
                             }}
                         >
-                            Remove
+                            {t("common.remove", "Remove")}
                         </button>
                     )}
                     <button
@@ -63,7 +67,7 @@ export function ColorModal(props: {
                             props.setModalMode(null);
                         }}
                     >
-                        Cancel
+                        {t("common.cancel", "Cancel")}
                     </button>
                 </div>
             </div>
@@ -95,7 +99,7 @@ export default function ColorButton({ editor }: { editor: Editor }) {
         <>
             <button
                 tabIndex={-1}
-                title="Color"
+                title={t("editor.color", "Color")}
                 type="button"
                 disabled={!enabled}
                 className={active ? "is-active" : undefined}

@@ -5,6 +5,8 @@ import { MenuItem } from "@szhsin/react-menu";
 import { GwTableCell, TableCaption } from "../../../tiptap_gw/table";
 import { ColorModal, ColorModalMode } from "./color";
 
+import { t } from "../../i18n";
+
 export function TableCaptionBookmarkButton({ editor }: { editor: Editor }) {
     const [modalOpen, setModalOpen] = useState(false);
     const [bookmark, setBookmark] = useState("");
@@ -21,7 +23,7 @@ export function TableCaptionBookmarkButton({ editor }: { editor: Editor }) {
     return (
         <>
             <MenuItem
-                title="Caption Bookmark"
+                title={t("editor.captionBookmark", "Caption Bookmark")}
                 disabled={!enabled}
                 onClick={() => {
                     setBookmark(
@@ -30,21 +32,31 @@ export function TableCaptionBookmarkButton({ editor }: { editor: Editor }) {
                     setModalOpen(true);
                 }}
             >
-                Set Bookmark
+                {t("editor.setBookmark", "Set Bookmark")}
             </MenuItem>
             <ReactModal
                 isOpen={modalOpen}
                 onRequestClose={() => setModalOpen(false)}
-                contentLabel="Edit Heading Bookmark"
+                contentLabel={t(
+                    "editor.editCaptionBookmark",
+                    "Edit Caption Bookmark"
+                )}
                 className="modal-dialog modal-dialog-centered"
             >
                 <div className="modal-content">
                     <div className="modal-header">
-                        <h5 className="modal-title">Edit Heading Bookmark</h5>
+                        <h5 className="modal-title">
+                            {t(
+                                "editor.editCaptionBookmark",
+                                "Edit Caption Bookmark"
+                            )}
+                        </h5>
                     </div>
                     <div className="modal-body text-center">
                         <div className="form-group">
-                            <label htmlFor={fieldId}>Bookmark Name</label>
+                            <label htmlFor={fieldId}>
+                                {t("editor.bookmarkName", "Bookmark Name")}
+                            </label>
                             <input
                                 id={fieldId}
                                 type="text"
@@ -71,7 +83,7 @@ export function TableCaptionBookmarkButton({ editor }: { editor: Editor }) {
                                     setModalOpen(false);
                                 }}
                             >
-                                Save
+                                {t("common.save", "Save")}
                             </button>
                             <button
                                 className="btn btn-secondary"
@@ -80,7 +92,7 @@ export function TableCaptionBookmarkButton({ editor }: { editor: Editor }) {
                                     setModalOpen(false);
                                 }}
                             >
-                                Cancel
+                                {t("common.cancel", "Cancel")}
                             </button>
                         </div>
                     </div>
@@ -99,7 +111,7 @@ export function TableCellBackgroundColor({ editor }: { editor: Editor }) {
     return (
         <>
             <MenuItem
-                title="Cell Background"
+                title={t("editor.cellBackground", "Cell Background")}
                 disabled={!enabled}
                 onClick={(e) => {
                     const current =
@@ -108,7 +120,7 @@ export function TableCellBackgroundColor({ editor }: { editor: Editor }) {
                     setModalMode("edit");
                 }}
             >
-                Cell Background
+                {t("editor.cellBackground", "Cell Background")}
             </MenuItem>
             <ColorModal
                 modalMode={modalMode}

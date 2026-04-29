@@ -10,6 +10,8 @@ import EvidenceButton from "../rich_text_editor/evidence";
 import RichTextEditor from "../rich_text_editor";
 import ErrorBoundary from "../error_boundary";
 
+import { t } from "../../i18n";
+
 const renderToolbarExtra = (editor: Editor) => (
     <EvidenceButton editor={editor} />
 );
@@ -28,10 +30,10 @@ function ReportFindingLinkForm() {
             setEditing={setEditing}
             extraTop={
                 <>
-                    <h4 className="icon list-icon">Affected Entities</h4>
+                    <h4 className="icon list-icon">{t("reportFinding.affectedEntities", "Affected Entities")}</h4>
                     <div className="form-group col-md-12">
                         <label htmlFor="collab-form-affected-entities">
-                            Affected Entities
+                            {t("reportFinding.affectedEntities", "Affected Entities")}
                         </label>
                         <div>
                             <RichTextEditor
@@ -43,8 +45,10 @@ function ReportFindingLinkForm() {
                                 toolbarExtra={renderToolbarExtra}
                             />
                             <small className="form-text text-muted">
-                                Provide a list of the affected entities (e.g.
-                                domains, hostnames, IP addresses)
+                                {t(
+                                    "reportFinding.affectedEntitiesHelp",
+                                    "Provide a list of the affected entities (e.g. domains, hostnames, IP addresses)"
+                                )}
                             </small>
                         </div>
                     </div>

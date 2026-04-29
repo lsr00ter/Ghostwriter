@@ -7,6 +7,8 @@ import {
     convertRangesWithMap,
 } from "../../../tiptap_gw/text_position_mapper";
 
+import { t } from "../../i18n";
+
 interface PassiveVoiceButtonProps {
     editor: Editor;
 }
@@ -60,7 +62,10 @@ export default function PassiveVoiceButton({
             setError(
                 err instanceof Error
                     ? err.message
-                    : "Failed to detect passive voice"
+                    : t(
+                          "editor.passiveVoiceFailed",
+                          "Failed to detect passive voice"
+                      )
             );
         } finally {
             setIsScanning(false);
@@ -70,15 +75,22 @@ export default function PassiveVoiceButton({
     return (
         <>
             <MenuItem
-                title="Check for passive voice sentences"
+                title={t(
+                    "editor.passiveVoiceCheck",
+                    "Check for passive voice sentences"
+                )}
                 disabled={!editor || isScanning}
                 onClick={handleScan}
             >
-                {isScanning ? "Scanning..." : "Check Passive Voice"}
+                {isScanning
+                    ? t("editor.scanning", "Scanning...")
+                    : t("editor.checkPassiveVoice", "Check Passive Voice")}
             </MenuItem>
             {error && (
                 <MenuItem disabled>
-                    <span style={{ color: "#dc3545" }}>Error: {error}</span>
+                    <span style={{ color: "#dc3545" }}>
+                        {t("editor.errorPrefix", "Error:")} {error}
+                    </span>
                 </MenuItem>
             )}
         </>

@@ -2,6 +2,8 @@ import { useContext, useEffect, useId, useRef, useState } from "react";
 import { EvidencesContext } from "../../../../tiptap_gw/evidence";
 import { getCsrfToken } from "../../../../services/csrf";
 
+import { t } from "../../../i18n";
+
 type DjangoFormErrors = Record<string, string[]>;
 
 export default function EvidenceUploadForm(props: {
@@ -36,7 +38,14 @@ export default function EvidenceUploadForm(props: {
                     const csrf = getCsrfToken();
                     if (!csrf) {
                         console.error("CSRF token is missing; aborting evidence upload.");
-                        setState({ form: ["CSRF token not found. Please refresh the page."] });
+                        setState({
+                            form: [
+                                t(
+                                    "oplog.missingCsrf",
+                                    "CSRF token not found. Please refresh the page."
+                                ),
+                            ],
+                        });
                         return;
                     }
                     const headers = new Headers();
@@ -56,11 +65,25 @@ export default function EvidenceUploadForm(props: {
                         console.error(body);
                         setState(body);
                     } else {
-                        setState({ form: ["Could not create evidence"] });
+                        setState({
+                            form: [
+                                t(
+                                    "evidence.createFailed",
+                                    "Could not create evidence"
+                                ),
+                            ],
+                        });
                     }
                 })().catch((err) => {
                     console.error(err);
-                    setState({ form: ["Could not create evidence"] });
+                    setState({
+                        form: [
+                            t(
+                                "evidence.createFailed",
+                                "Could not create evidence"
+                            ),
+                        ],
+                    });
                 });
             }}
         >
@@ -76,7 +99,9 @@ export default function EvidenceUploadForm(props: {
                 )}
 
                 <div className="form-group">
-                    <label htmlFor={friendlyNameId}>Friendly Name</label>
+                    <label htmlFor={friendlyNameId}>
+                        {t("evidence.friendlyName", "Friendly Name")}
+                    </label>
                     <div>
                         <input
                             id={friendlyNameId}
@@ -89,21 +114,28 @@ export default function EvidenceUploadForm(props: {
                             type="text"
                             maxLength={255}
                             autoComplete="off"
-                            placeholder="Friendly Name"
+                            placeholder={t(
+                                "evidence.friendlyName",
+                                "Friendly Name"
+                            )}
                             disabled={disabled}
                             value={friendlyName}
                             onChange={(e) => setFriendlyName(e.target.value)}
                         />
                         <ErrorFeedback errors={errors?.friendly_name} />
                         <small>
-                            Provide a simple name to be used to reference this
-                            evidence
+                            {t(
+                                "evidence.friendlyNameHelp",
+                                "Provide a simple name to be used to reference this evidence"
+                            )}
                         </small>
                     </div>
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor={captionId}>Caption</label>
+                    <label htmlFor={captionId}>
+                        {t("evidence.caption", "Caption")}
+                    </label>
                     <div>
                         <input
                             id={captionId}
@@ -115,13 +147,15 @@ export default function EvidenceUploadForm(props: {
                             required
                             type="text"
                             maxLength={255}
-                            placeholder="Caption"
+                            placeholder={t("evidence.caption", "Caption")}
                             disabled={disabled}
                         />
                         <ErrorFeedback errors={errors?.caption} />
                         <small>
-                            Provide a one line caption to be used in the report
-                            - keep it brief
+                            {t(
+                                "evidence.captionHelp",
+                                "Provide a one line caption to be used in the report - keep it brief"
+                            )}
                         </small>
                     </div>
                 </div>
@@ -144,12 +178,12 @@ export default function EvidenceUploadForm(props: {
                         props.switchMode();
                     }}
                 >
-                    Select Existing
+                    {t("evidence.selectExisting", "Select Existing")}
                 </button>
                 <input
                     className="btn btn-primary"
                     type="submit"
-                    value="Submit"
+                    value={t("common.submit", "Submit")}
                 />
                 <button
                     className="btn btn-outline-secondary"
@@ -158,7 +192,7 @@ export default function EvidenceUploadForm(props: {
                         props.onSubmit(null);
                     }}
                 >
-                    Cancel
+                    {t("common.cancel", "Cancel")}
                 </button>
             </div>
         </form>
@@ -198,8 +232,10 @@ function FileInput(props: {
     return (
         <>
             <p>
-                Attach or paste text evidence (*.txt, *.log, or *.md) or image
-                evidence (*.png, *.jpg, or *.jpeg).
+                {t(
+                    "evidence.attachOrPaste",
+                    "Attach or paste text evidence (*.txt, *.log, or *.md) or image evidence (*.png, *.jpg, or *.jpeg)."
+                )}
             </p>
             <div
                 className="custom-file"
@@ -240,7 +276,11 @@ function FileInput(props: {
                                 className="custom-file-label text-truncate"
                                 htmlFor={id}
                             >
-                                {fileName ?? "No File Selected"}
+                                {fileName ??
+                                    t(
+                                        "evidence.noFileSelected",
+                                        "No File Selected"
+                                    )}
                             </label>
                         </div>
                     </div>

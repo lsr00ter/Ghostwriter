@@ -5,6 +5,8 @@ import {
 } from "@hocuspocus/provider";
 import * as Y from "yjs";
 
+import { t } from "../i18n";
+
 export type ConnectionStatus =
     | "disconnected"
     | "connecting"
@@ -223,12 +225,24 @@ function hsv_to_rgb(h: number, s: number, v: number) {
 }
 
 const STATUS_LOOKUP: { [key in ConnectionStatus]: [string, string] } = {
-    disconnected: ["Disconnected", "alert-danger"],
-    connecting: ["Connecting...", "alert-warning"],
-    syncing: ["Synchronizing...", "alert-warning"],
-    idle: ["Connected, changes saved automatically", "alert-success"],
-    dirty: ["Connected, unsaved changes", "alert-warning"],
-    error: ["Could not save data - refresh page and try again", "alert-danger"],
+    disconnected: [t("connection.disconnected", "Disconnected"), "alert-danger"],
+    connecting: [t("connection.connecting", "Connecting..."), "alert-warning"],
+    syncing: [t("connection.syncing", "Synchronizing..."), "alert-warning"],
+    idle: [
+        t("connection.idle", "Connected, changes saved automatically"),
+        "alert-success",
+    ],
+    dirty: [
+        t("connection.dirty", "Connected, unsaved changes"),
+        "alert-warning",
+    ],
+    error: [
+        t(
+            "connection.error",
+            "Could not save data - refresh page and try again"
+        ),
+        "alert-danger",
+    ],
 };
 
 export function ConnectionStatus(props: { status: ConnectionStatus }) {

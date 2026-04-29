@@ -3,6 +3,8 @@ import ReactModal from "react-modal";
 import { Editor } from "@tiptap/core";
 import { getCsrfToken } from "../../../services/csrf";
 
+import { t } from "../../i18n";
+
 type OplogChoice = {
     id: number;
     name: string;
@@ -25,7 +27,11 @@ declare global {
     }
 }
 
-function showToast(type: ToastLevel, string: string, title = "Oplog Outline") {
+function showToast(
+    type: ToastLevel,
+    string: string,
+    title = t("oplog.toastTitle", "Oplog Outline")
+) {
     window.displayToastTop?.({ type, string, title });
 }
 
@@ -49,13 +55,13 @@ export default function OplogOutlineButton({ editor }: { editor: Editor }) {
             <button
                 type="button"
                 tabIndex={-1}
-                title="Append oplog outline"
+                title={t("oplog.appendOutline", "Append Outline")}
                 onClick={(ev) => {
                     ev.preventDefault();
                     setIsOpen(true);
                 }}
             >
-                Insert Log Narrative
+                {t("oplog.button", "Insert Log Narrative")}
             </button>
             {isOpen && (
                 <OplogOutlineModal
@@ -82,28 +88,32 @@ function OplogOutlineModal(props: { editor: Editor; onClose: () => void }) {
         <ReactModal
             isOpen
             onRequestClose={props.onClose}
-            contentLabel="Append Oplog Outline"
+            contentLabel={t("oplog.title", "Append Oplog Outline")}
             className="modal-dialog modal-dialog-centered"
         >
             <div className="modal-content">
                 <div className="modal-header">
-                    <h5 className="modal-title">Append Oplog Outline</h5>
+                    <h5 className="modal-title">
+                        {t("oplog.title", "Append Oplog Outline")}
+                    </h5>
                 </div>
                 <div className="modal-body">
                     <p>
-                        Appends a narrative outline based on operation log entries tagged with
-                        <code> report </code>
-                        or
-                        <code> evidence </code>
-                        to the end of this field. Any linked evidence will be included as well.
+                        {t(
+                            "oplog.descriptionOne",
+                            "Appends a narrative outline based on operation log entries tagged with report or evidence to the end of this field. Any linked evidence will be included as well."
+                        )}
                     </p>
                     <p className="mb-3">
-                        This is useful for quickly assembling a report
-                        outline based on relevant activity recorded in the log(s).
-                        You can edit the generated outline as needed after it has been inserted.
+                        {t(
+                            "oplog.descriptionTwo",
+                            "This is useful for quickly assembling a report outline based on relevant activity recorded in the log(s). You can edit the generated outline as needed after it has been inserted."
+                        )}
                     </p>
                     <div className="form-group">
-                        <label htmlFor={selectId}>Operation Logs</label>
+                        <label htmlFor={selectId}>
+                            {t("oplog.operationLogs", "Operation Logs")}
+                        </label>
                         <select
                             id={selectId}
                             className="custom-select custom-select-lg"
@@ -117,7 +127,9 @@ function OplogOutlineModal(props: { editor: Editor; onClose: () => void }) {
                                 );
                             }}
                         >
-                            <option value="">Select Log...</option>
+                            <option value="">
+                                {t("oplog.selectLog", "Select Log...")}
+                            </option>
                             {oplogs.map((oplog) => (
                                 <option key={oplog.id} value={oplog.id}>
                                     {oplog.name}
@@ -127,8 +139,10 @@ function OplogOutlineModal(props: { editor: Editor; onClose: () => void }) {
                     </div>
                     {oplogs.length === 0 && (
                         <div className="alert alert-warning mb-0" role="alert">
-                            No oplogs are available for this report&apos;s
-                            project.
+                            {t(
+                                "oplog.noneAvailable",
+                                "No oplogs are available for this report's project."
+                            )}
                         </div>
                     )}
                 </div>
@@ -146,7 +160,7 @@ function OplogOutlineModal(props: { editor: Editor; onClose: () => void }) {
                             );
                         }}
                     >
-                        Append Outline
+                        {t("oplog.appendOutline", "Append Outline")}
                     </button>
                     <button
                         className="btn btn-outline-secondary"
@@ -156,7 +170,7 @@ function OplogOutlineModal(props: { editor: Editor; onClose: () => void }) {
                             props.onClose();
                         }}
                     >
-                        Cancel
+                        {t("common.cancel", "Cancel")}
                     </button>
                 </div>
             </div>
@@ -171,19 +185,34 @@ async function appendOutline(
     close: () => void
 ) {
     if (oplogId === null) {
-        showToast("warning", "Select an oplog before generating the outline.");
+        showToast(
+            "warning",
+            t(
+                "oplog.selectBeforeGenerate",
+                "Select an oplog before generating the outline."
+            )
+        );
         return;
     }
 
     const csrfToken = getCsrfToken();
     if (!csrfToken) {
-        showToast("error", "CSRF token not found. Please refresh the page.");
+        showToast(
+            "error",
+            t(
+                "oplog.missingCsrf",
+                "CSRF token not found. Please refresh the page."
+            )
+        );
         return;
     }
 
     const url = getGenerateUrl();
     if (!url) {
-        showToast("error", "Outline generation URL is missing.");
+        showToast(
+            "error",
+            t("oplog.missingUrl", "Outline generation URL is missing.")
+        );
         return;
     }
 
@@ -206,7 +235,11 @@ async function appendOutline(
         if (!response.ok) {
             showToast(
                 "error",
-                payload.message || "Could not generate the oplog outline."
+                payload.message ||
+                    t(
+                        "oplog.generateFailed",
+                        "Could not generate the oplog outline."
+                    )
             );
             return;
         }
@@ -215,7 +248,10 @@ async function appendOutline(
         if (blocks.length === 0) {
             showToast(
                 "info",
-                "No reportable oplog entries were found for this log."
+                t(
+                    "oplog.noEntries",
+                    "No reportable oplog entries were found for this log."
+                )
             );
             close();
             return;
@@ -243,7 +279,10 @@ async function appendOutline(
         close();
     } catch (error) {
         console.error(error);
-        showToast("error", "Could not generate the oplog outline.");
+        showToast(
+            "error",
+            t("oplog.generateFailed", "Could not generate the oplog outline.")
+        );
     } finally {
         setState("idle");
     }
