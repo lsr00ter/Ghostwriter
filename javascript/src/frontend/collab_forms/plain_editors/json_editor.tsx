@@ -2,6 +2,8 @@ import * as Y from "yjs";
 import { usePlainField } from "./field";
 import { useState } from "react";
 
+import { t } from "../../i18n";
+
 export default function JsonEditor(props: {
     connected: boolean;
     map: Y.Map<any>;
@@ -30,7 +32,7 @@ export default function JsonEditor(props: {
                         setFormValue(docValue);
                     }}
                 >
-                    Edit JSON
+                    {t("json.edit", "Edit JSON")}
                 </button>
             </>
         );
@@ -63,7 +65,7 @@ export default function JsonEditor(props: {
                     setFormValue(null);
                 }}
             >
-                Save JSON
+                {t("json.save", "Save JSON")}
             </button>
         </>
     );

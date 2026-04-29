@@ -9,6 +9,8 @@ export const zhHansMessages: Record<string, string> = {
     "common.tags": "标签",
     "common.description": "描述",
     "common.separateTags": "使用逗号分隔标签",
+    "json.edit": "编辑 JSON",
+    "json.save": "保存 JSON",
     "connection.disconnected": "已断开连接",
     "connection.connecting": "正在连接...",
     "connection.syncing": "正在同步...",
