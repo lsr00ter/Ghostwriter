@@ -1,13 +1,32 @@
 # Django Imports
-from django.http import HttpRequest, HttpResponse
 from django.conf import settings
 from django.contrib import messages
+from django.core.exceptions import ObjectDoesNotExist
+from django.http import HttpRequest, HttpResponse
 from django.shortcuts import redirect
+from django.utils import translation
 from django.utils.deprecation import MiddlewareMixin
 
 # 3rd Party Libraries
 from allauth.mfa.utils import is_mfa_enabled
 
+
+
+class UserLanguageMiddleware(MiddlewareMixin):
+    """Activate a user's preferred web interface language for the current request."""
+
+    def process_request(self, request: HttpRequest) -> None:
+        if request.user.is_anonymous:
+            return None
+
+        try:
+            language = request.user.userprofile.language_preference
+        except ObjectDoesNotExist:
+            return None
+
+        translation.activate(language)
+        request.LANGUAGE_CODE = translation.get_language()
+        return None
 
 
 class RequireMFAMiddleware(MiddlewareMixin):

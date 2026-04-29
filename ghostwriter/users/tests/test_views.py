@@ -47,6 +47,16 @@ class UserDetailViewTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "users/profile.html")
 
+    def test_view_uses_profile_language_preference(self):
+        user_profile = UserProfile.objects.get(user=self.user)
+        user_profile.language_preference = "zh-hans"
+        user_profile.save()
+
+        response = self.client_auth.get(self.uri)
+
+        self.assertEqual(response.context["LANGUAGE_CODE"], "zh-hans")
+        self.assertContains(response, "你的资料")
+
 
 class UserUpdateViewTests(TestCase):
     """Collection of tests for :view:`users.UserUpdateView`."""
@@ -141,7 +151,13 @@ class UserProfileUpdateViewTests(TestCase):
         self.assertEqual(response.status_code, 302)
 
     def test_successfull_redirect(self):
-        response = self.client_auth.post(self.uri, {"avatar": self.uploaded_image_file})
+        response = self.client_auth.post(
+            self.uri,
+            {
+                "avatar": self.uploaded_image_file,
+                "language_preference": "en",
+            },
+        )
         self.assertRedirects(response, self.success_uri)
 
 

@@ -12,6 +12,7 @@ from django.contrib.auth import get_user_model
 from django.http import FileResponse, JsonResponse
 from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse, reverse_lazy
+from django.utils.translation import gettext_lazy as _
 from django.views.generic import DetailView, RedirectView, UpdateView, View
 from django.views.generic.detail import SingleObjectMixin
 
@@ -84,7 +85,7 @@ class UserUpdateView(RoleBasedAccessControlMixin, UpdateView):
 
     def handle_no_permission(self):
         if self.request.user.username:
-            messages.warning(self.request, "You do not have permission to access that.")
+            messages.warning(self.request, _("You do not have permission to access that."))
         return redirect("users:redirect")
 
     def get_context_data(self, **kwargs):
@@ -98,7 +99,7 @@ class UserUpdateView(RoleBasedAccessControlMixin, UpdateView):
     def get_success_url(self):
         messages.success(
             self.request,
-            "Successfully updated your profile!",
+            _("Successfully updated your profile!"),
             extra_tags="alert-success",
         )
         return reverse("users:user_detail", kwargs={"username": self.request.user.username})
@@ -133,7 +134,7 @@ class UserProfileUpdateView(RoleBasedAccessControlMixin, UpdateView):
 
     def handle_no_permission(self):
         if self.request.user.username:
-            messages.warning(self.request, "You do not have permission to access that.")
+            messages.warning(self.request, _("You do not have permission to access that."))
         return redirect("users:redirect")
 
     def get_object(self, queryset=None):
@@ -148,7 +149,7 @@ class UserProfileUpdateView(RoleBasedAccessControlMixin, UpdateView):
     def get_success_url(self):
         messages.success(
             self.request,
-            "Successfully updated your profile!",
+            _("Successfully updated your profile!"),
             extra_tags="alert-success",
         )
         return reverse("users:user_detail", kwargs={"username": self.request.user.username})

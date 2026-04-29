@@ -1,13 +1,13 @@
 {% extends "base_generic.html" %}
-{% load crispy_forms_tags custom_tags bleach_tags %}
+{% load i18n crispy_forms_tags custom_tags bleach_tags %}
 
-{% block pagetitle %}User Profile{% endblock %}
+{% block pagetitle %}{% trans "User Profile" %}{% endblock %}
 
 {% block breadcrumbs %}
   <nav aria-label="breadcrumb">
     <ul class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">Dashboard</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Your Profile</li>
+      <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">{% trans "Dashboard" %}</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{% trans "Your Profile" %}</li>
     </ul>
   </nav>
 {% endblock %}
@@ -16,26 +16,26 @@
   <!-- User's Avatar -->
   {% if request.user == user %}
     <a href="{% url 'users:userprofile_update' request.user.username %}">
-      <img class="avatar" src="{%  url 'users:avatar_download' slug=request.user.username %}" alt="Avatar">
+      <img class="avatar" src="{%  url 'users:avatar_download' slug=request.user.username %}" alt="{% trans 'Avatar' %}">
     </a>
   {% else %}
-    <img class="avatar" src="{%  url 'users:avatar_download' slug=user.username %}" alt="Avatar">
+    <img class="avatar" src="{%  url 'users:avatar_download' slug=user.username %}" alt="{% trans 'Avatar' %}">
   {% endif %}
 
   {% comment %} Users Profile Section {% endcomment %}
   <div class="container profile-container mt-4">
     <div class="row align-items-center text-left text-left">
       <div class="col-sm">
-        <p class="bold icon user-icon">Full Name</p>
+        <p class="bold icon user-icon">{% trans "Full Name" %}</p>
       </div>
       <div class="col-sm">
-        <p class="text-left">{% if user.name %}{{ user.name }}{% else %}Missing Full Name{% endif %}</p>
+        <p class="text-left">{% if user.name %}{{ user.name }}{% else %}{% trans "Missing Full Name" %}{% endif %}</p>
       </div>
     </div>
 
     <div class="row align-items-center text-left">
       <div class="col-sm">
-        <p class="bold icon user-icon-ninja">Username</p>
+        <p class="bold icon user-icon-ninja">{% trans "Username" %}</p>
       </div>
       <div class="col-sm">
         <p class="text-left">{{ user.username }}</p>
@@ -44,7 +44,7 @@
 
     <div class="row align-items-center text-left">
       <div class="col-sm">
-        <p class="bold icon email-icon">Email</p>
+        <p class="bold icon email-icon">{% trans "Email" %}</p>
       </div>
       <div class="col-sm">
         <p class="text-left">{{ user.email }}</p>
@@ -53,26 +53,35 @@
 
     <div class="row align-items-center text-left">
       <div class="col-sm">
-        <p class="bold icon phone-icon">Phone</p>
+        <p class="bold icon phone-icon">{% trans "Phone" %}</p>
       </div>
       <div class="col-sm">
-        <p class="text-left">{% if user.phone %}{{ user.phone }}{% else %}Unavailable{% endif %}</p>
+        <p class="text-left">{% if user.phone %}{{ user.phone }}{% else %}{% trans "Unavailable" %}{% endif %}</p>
       </div>
     </div>
 
     <div class="row align-items-center text-left">
       <div class="col-sm">
-        <p class="bold icon globe-icon">Timezone</p>
+        <p class="bold icon globe-icon">{% trans "Timezone" %}</p>
       </div>
       <div class="col-sm">
         <p class="text-left">{{ user.timezone }}</p>
       </div>
     </div>
 
+    <div class="row align-items-center text-left">
+      <div class="col-sm">
+        <p class="bold icon globe-icon">{% trans "Web Interface Language" %}</p>
+      </div>
+      <div class="col-sm">
+        <p class="text-left">{{ user.userprofile.get_language_preference_display }}</p>
+      </div>
+    </div>
+
     {% if request.user == user %}
       <div class="row align-items-center text-left">
         <div class="col-sm">
-          <p class="bold icon user-role-icon">Role</p>
+          <p class="bold icon user-role-icon">{% trans "Role" %}</p>
         </div>
         <div class="col-sm">
           <p class="text-left">
@@ -83,11 +92,11 @@
 
       <div class="row align-items-center text-left">
         <div class="col-sm">
-          <p class="bold icon access-icon">Access</p>
+          <p class="bold icon access-icon">{% trans "Access" %}</p>
         </div>
         <div class="col-sm">
           <p class="text-left">
-            {% if user.is_superuser %}Superuser{% elif user.is_staff %}Staff{% else %}Normal User{% endif %}
+            {% if user.is_superuser %}{% trans "Superuser" %}{% elif user.is_staff %}{% trans "Staff" %}{% else %}{% trans "Normal User" %}{% endif %}
           </p>
         </div>
       </div>
@@ -95,7 +104,7 @@
       {% if user|get_groups %}
         <div class="row align-items-center text-left">
           <div class="col-sm">
-            <p class="bold icon groups-icon">Groups</p>
+            <p class="bold icon groups-icon">{% trans "Groups" %}</p>
           </div>
           <div class="col-sm">
             <p class="text-center">
@@ -134,16 +143,15 @@
 
   {% comment %}  Account Information Update {% endcomment %}
   {% if request.user == user %}
-    <h4 class="icon user-edit-icon pt-4">Update Account Details</h4>
+    <h4 class="icon user-edit-icon pt-4">{% trans "Update Account Details" %}</h4>
     <hr>
 
     <div class="btn-group" role="group" aria-label="profile-mgmt">
-      <a class="btn btn-primary" href="{% url 'account_change_password' %}">Change Password</a>
-      <a class="btn btn-secondary" href="{% url 'users:user_update' request.user.username %}">Update Personal
-        Information</a>
-      <a class="btn btn-info" href="{% url 'account_email' %}">Manage Email(s)</a>
-      <a class="btn btn-info btn-extra" href="{% url 'users:userprofile_update' request.user.username %}">Update Avatar</a>
-      <a class="btn btn-primary" href="{% url 'mfa_index' %}">Manage MFA Settings</a>
+      <a class="btn btn-primary" href="{% url 'account_change_password' %}">{% trans "Change Password" %}</a>
+      <a class="btn btn-secondary" href="{% url 'users:user_update' request.user.username %}">{% trans "Update Personal Information" %}</a>
+      <a class="btn btn-info" href="{% url 'account_email' %}">{% trans "Manage Email(s)" %}</a>
+      <a class="btn btn-info btn-extra" href="{% url 'users:userprofile_update' request.user.username %}">{% trans "Update Avatar & Preferences" %}</a>
+      <a class="btn btn-primary" href="{% url 'mfa_index' %}">{% trans "Manage MFA Settings" %}</a>
     </div>
 
     <div class="col-md-12 pt-4 d-flex text-center position-relative justify-content-center">

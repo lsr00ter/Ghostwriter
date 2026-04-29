@@ -44,6 +44,7 @@ class UserProfileModelTests(TestCase):
         profile = UserProfile.objects.get(user=user)
         self.assertTrue(UserProfile.objects.all().exists())
         self.assertTrue(UserProfile.objects.filter(user=user.id).exists())
+        self.assertEqual(profile.language_preference, "en")
 
         # Update
         # profile.avatar = SimpleUploadedFile("new_avatar.png", b"lorem ipsum")

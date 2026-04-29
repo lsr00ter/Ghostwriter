@@ -1,0 +1,136 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Ghostwriter\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-30 00:00+0000\n"
+"PO-Revision-Date: 2026-04-30 00:00+0000\n"
+"Last-Translator: GitHub Copilot\n"
+"Language-Team: Chinese\n"
+"Language: zh_Hans\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "English"
+msgstr "英文"
+
+msgid "Chinese"
+msgstr "中文"
+
+msgid "Web Interface Language"
+msgstr "Web 界面语言"
+
+msgid "Set the default language for the web interface."
+msgstr "设置 Web 界面的默认语言。"
+
+msgid "Avatar Upload"
+msgstr "头像上传"
+
+msgid "Your avatar will be displayed as a circle and automatically cropped to fit. For best results, upload a square image (equal height and width) or ensure your face is centered in the image."
+msgstr "头像会显示为圆形，并自动裁剪到合适尺寸。为了获得更好的效果，请上传宽高相同的方形图片，或确保头像主体位于图片中央。"
+
+msgid "Previews for images will appear below."
+msgstr "图片预览会显示在下方。"
+
+msgid "Interface Preferences"
+msgstr "界面偏好设置"
+
+msgid "Click here or drag and drop..."
+msgstr "点击此处或拖放文件..."
+
+msgid "Submit"
+msgstr "提交"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "You do not have permission to access that."
+msgstr "您无权访问该内容。"
+
+msgid "Successfully updated your profile!"
+msgstr "个人资料已更新。"
+
+msgid "Logged-in as %(username)s"
+msgstr "当前登录用户：%(username)s"
+
+msgid "Avatar"
+msgstr "头像"
+
+msgid "Loading..."
+msgstr "加载中..."
+
+msgid "Javascript is required."
+msgstr "需要启用 Javascript。"
+
+msgid "User Profile"
+msgstr "用户资料"
+
+msgid "Dashboard"
+msgstr "仪表板"
+
+msgid "Your Profile"
+msgstr "你的资料"
+
+msgid "Profile Form"
+msgstr "资料表单"
+
+msgid "User Image"
+msgstr "用户图片"
+
+msgid "Full Name"
+msgstr "全名"
+
+msgid "Missing Full Name"
+msgstr "未填写全名"
+
+msgid "Username"
+msgstr "用户名"
+
+msgid "Email"
+msgstr "电子邮件"
+
+msgid "Phone"
+msgstr "电话"
+
+msgid "Unavailable"
+msgstr "暂无"
+
+msgid "Timezone"
+msgstr "时区"
+
+msgid "Role"
+msgstr "角色"
+
+msgid "Access"
+msgstr "访问权限"
+
+msgid "Superuser"
+msgstr "超级用户"
+
+msgid "Staff"
+msgstr "员工"
+
+msgid "Normal User"
+msgstr "普通用户"
+
+msgid "Groups"
+msgstr "用户组"
+
+msgid "Update Account Details"
+msgstr "更新账户信息"
+
+msgid "Change Password"
+msgstr "修改密码"
+
+msgid "Update Personal Information"
+msgstr "更新个人信息"
+
+msgid "Manage Email(s)"
+msgstr "管理电子邮件地址"
+
+msgid "Update Avatar & Preferences"
+msgstr "更新头像和偏好"
+
+msgid "Manage MFA Settings"
+msgstr "管理 MFA 设置"

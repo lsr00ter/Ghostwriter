@@ -62,10 +62,13 @@ class UserProfileFormTests(TestCase):
     def form_data(
         self,
         avatar=None,
+        language_preference="en",
         **kwargs,
     ):
         return UserProfileForm(
-            data={},
+            data={
+                "language_preference": language_preference,
+            },
             files={
                 "avatar": avatar,
             },

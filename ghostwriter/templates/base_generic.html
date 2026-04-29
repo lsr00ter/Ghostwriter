@@ -3,7 +3,7 @@
 {% get_solo "commandcenter.BannerConfiguration" as banner_config %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ LANGUAGE_CODE|default:'en' }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -448,9 +448,9 @@
         <!-- User Profile & Avatar -->
         <a href="{% url 'users:user_detail' request.user.username %}">
           <img class="navbar-avatar"
-               data-toggle="tooltip" data-placement="top" title="Logged-in as {{ request.user.username }}"
+           data-toggle="tooltip" data-placement="top" title="{% blocktrans with username=request.user.username %}Logged-in as {{ username }}{% endblocktrans %}"
                src="{% url 'users:avatar_download' slug=request.user.username %}"
-               alt="Avatar">
+           alt="{% trans 'Avatar' %}">
         </a>
       </div>
     {% endif %}

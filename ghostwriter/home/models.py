@@ -6,6 +6,13 @@ import os
 # Django Imports
 from django.conf import settings
 from django.db import models
+from django.utils.translation import gettext_lazy as _
+
+
+WEB_INTERFACE_LANGUAGES = (
+    ("en", _("English")),
+    ("zh-hans", _("Chinese")),
+)
 
 
 # Create your models here.
@@ -22,6 +29,13 @@ class UserProfile(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     avatar = models.ImageField(upload_to=set_upload_destination, default=None, blank=True)
     hide_quickstart = models.BooleanField(default=False)
+    language_preference = models.CharField(
+        max_length=7,
+        choices=WEB_INTERFACE_LANGUAGES,
+        default="en",
+        help_text=_("Set the default language for the web interface."),
+        verbose_name=_("Web Interface Language"),
+    )
 
     class Meta:
 

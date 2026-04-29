@@ -8,12 +8,12 @@
     this one and provide things like breadcrumbs.
 {% endcomment %}
 
-{% load static %}
+{% load static i18n %}
 
 {% block content %}
     <div id="collab-form-container" {% block collab_form_attrs %}{% endblock %} >
-        <p>Loading...</p>
-        <noscript><p>Javascript is required.</p></noscript>
+        <p>{% trans "Loading..." %}</p>
+        <noscript><p>{% trans "Javascript is required." %}</p></noscript>
     </div>
 {% endblock %}
 
