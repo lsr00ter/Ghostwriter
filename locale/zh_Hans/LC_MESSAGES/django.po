@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ghostwriter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-30 00:00+0000\n"
+"POT-Creation-Date: 2026-04-30 02:10+0000\n"
 "PO-Revision-Date: 2026-04-30 00:00+0000\n"
 "Last-Translator: GitHub Copilot\n"
 "Language-Team: Chinese\n"
@@ -12,437 +12,1523 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+#: config/settings/base.py:42 ghostwriter/home/models.py:13
 msgid "English"
 msgstr "英文"
 
+#: config/settings/base.py:43 ghostwriter/home/models.py:14
 msgid "Chinese"
 msgstr "中文"
 
-msgid "Web Interface Language"
-msgstr "Web 界面语言"
+#: ghostwriter/api/forms.py:146
+msgid "Must specify only one of either 'finding' or 'report'"
+msgstr ""
 
-msgid "Set the default language for the web interface."
-msgstr "设置 Web 界面的默认语言。"
+#: ghostwriter/api/forms.py:159 ghostwriter/reporting/forms.py:300
+msgid ""
+"This friendly name has already been used for a file attached to this report."
+msgstr ""
 
-msgid "Avatar Upload"
-msgstr "头像上传"
+#: ghostwriter/commandcenter/forms.py:43
+msgid ""
+"Your selected Word template failed linting and cannot be used as a default "
+"template"
+msgstr ""
 
-msgid "Your avatar will be displayed as a circle and automatically cropped to fit. For best results, upload a square image (equal height and width) or ensure your face is centered in the image."
-msgstr "头像会显示为圆形，并自动裁剪到合适尺寸。为了获得更好的效果，请上传宽高相同的方形图片，或确保头像主体位于图片中央。"
+#: ghostwriter/commandcenter/forms.py:54
+msgid ""
+"Your selected PowerPoint template failed linting and cannot be used as a "
+"default template"
+msgstr ""
 
-msgid "Previews for images will appear below."
-msgstr "图片预览会显示在下方。"
+#: ghostwriter/commandcenter/models.py:54
+msgid "Missing scheme on URL"
+msgstr ""
 
-msgid "Interface Preferences"
-msgstr "界面偏好设置"
+#: ghostwriter/commandcenter/models.py:56
+msgid "Missing hostname on URL"
+msgstr ""
 
-msgid "Click here or drag and drop..."
-msgstr "点击此处或拖放文件..."
+#: ghostwriter/commandcenter/models.py:58
+msgid "Paths on endpoint URL are not supported"
+msgstr ""
 
-msgid "Submit"
-msgstr "提交"
+#: ghostwriter/commandcenter/models.py:381
+msgid "Outline tag wildcard rules must include a prefix before '*' or ':'"
+msgstr ""
 
-msgid "Cancel"
-msgstr "取消"
+#: ghostwriter/commandcenter/models.py:383
+msgid "Outline tag wildcard rules may only include '*' at the end"
+msgstr ""
 
-msgid "You do not have permission to access that."
-msgstr "您无权访问该内容。"
+#: ghostwriter/commandcenter/models.py:387
+msgid "Outline tag wildcard rules must include a prefix before '*'"
+msgstr ""
 
-msgid "Successfully updated your profile!"
-msgstr "个人资料已更新。"
+#: ghostwriter/commandcenter/models.py:390
+msgid "Outline tag ':' prefixes must end with a single trailing ':'"
+msgstr ""
 
-msgid "Logged-in as %(username)s"
-msgstr "当前登录用户：%(username)s"
+#: ghostwriter/commandcenter/templates/admin/commandcenter/extrafieldspec/tabular.html:74
+msgid "Delete?"
+msgstr ""
 
-msgid "Avatar"
-msgstr "头像"
+#: ghostwriter/commandcenter/templates/admin/commandcenter/extrafieldspec/tabular.html:88
+msgid "Change"
+msgstr ""
 
+#: ghostwriter/commandcenter/templates/admin/commandcenter/extrafieldspec/tabular.html:88
+#: ghostwriter/templates/mfa/index.html:108
+msgid "View"
+msgstr ""
+
+#: ghostwriter/commandcenter/templates/admin/commandcenter/extrafieldspec/tabular.html:90
+#: ghostwriter/singleton/templates/admin/change_form.html:15
+msgid "View on site"
+msgstr ""
+
+#: ghostwriter/commandcenter/templates/collab_editing/update.html:15
 msgid "Loading..."
 msgstr "加载中..."
 
+#: ghostwriter/commandcenter/templates/collab_editing/update.html:16
 msgid "Javascript is required."
 msgstr "需要启用 Javascript。"
 
-msgid "User Profile"
-msgstr "用户资料"
+#: ghostwriter/home/forms.py:30 ghostwriter/home/models.py:37
+#: ghostwriter/users/templates/users/profile.html:75
+msgid "Web Interface Language"
+msgstr "Web 界面语言"
 
-msgid "Dashboard"
-msgstr "仪表板"
+#: ghostwriter/home/forms.py:32 ghostwriter/home/models.py:36
+msgid "Set the default language for the web interface."
+msgstr "设置 Web 界面的默认语言。"
 
-msgid "Your Profile"
-msgstr "你的资料"
+#: ghostwriter/home/forms.py:100
+msgid "Submit"
+msgstr "提交"
 
-msgid "Profile Form"
-msgstr "资料表单"
+#: ghostwriter/reporting/forms.py:289
+msgid "You must provide an evidence file"
+msgstr ""
 
-msgid "User Image"
-msgstr "用户图片"
+#: ghostwriter/reporting/forms.py:343 ghostwriter/reporting/forms.py:386
+msgid "You must provide some content for the note"
+msgstr ""
 
-msgid "Full Name"
-msgstr "全名"
+#: ghostwriter/reporting/forms.py:555
+msgid "You must provide a template file"
+msgstr ""
 
-msgid "Missing Full Name"
-msgstr "未填写全名"
+#: ghostwriter/reporting/forms.py:750
+msgid "Do not include the # symbol in the color field."
+msgstr ""
 
-msgid "Username"
-msgstr "用户名"
+#: ghostwriter/reporting/forms.py:755
+msgid "Your hex color code should be six characters in length."
+msgstr ""
 
-msgid "Email"
-msgstr "电子邮件"
+#: ghostwriter/reporting/forms.py:760
+msgid ""
+"Please enter a valid hex color, three pairs of characters using A-F and 0-9 "
+"(e.g., 7A7A7A)."
+msgstr ""
 
-msgid "Phone"
-msgstr "电话"
+#: ghostwriter/rolodex/forms_client.py:63
+#: ghostwriter/rolodex/forms_project.py:437
+msgid "This person is already assigned as a contact."
+msgstr ""
 
-msgid "Unavailable"
-msgstr "暂无"
+#: ghostwriter/rolodex/forms_client.py:74
+#: ghostwriter/rolodex/forms_project.py:448
+msgid "You can only set one primary contact."
+msgstr ""
 
-msgid "Timezone"
-msgstr "时区"
+#: ghostwriter/rolodex/forms_client.py:90
+#: ghostwriter/rolodex/forms_project.py:464
+msgid "You must designate one contact as the primary point of contact."
+msgstr ""
 
-msgid "Role"
-msgstr "角色"
+#: ghostwriter/rolodex/forms_client.py:95
+#: ghostwriter/rolodex/forms_project.py:469
+msgid ""
+"You must designate one contact as the primary point of contact. You may have "
+"marked the primary for deletion. If so, please mark a different contact as "
+"primary."
+msgstr ""
 
-msgid "Access"
-msgstr "访问权限"
+#: ghostwriter/rolodex/forms_client.py:316
+#: ghostwriter/rolodex/forms_project.py:1193
+msgid "This person is already invited."
+msgstr ""
 
-msgid "Superuser"
-msgstr "超级用户"
+#: ghostwriter/rolodex/forms_client.py:483
+#: ghostwriter/rolodex/forms_project.py:1496 ghostwriter/shepherd/forms.py:413
+#: ghostwriter/shepherd/forms_server.py:416
+msgid "You must provide some content for the note."
+msgstr ""
 
-msgid "Staff"
-msgstr "员工"
+#: ghostwriter/rolodex/forms_project.py:84
+msgid "Your project objectives must be unique."
+msgstr ""
 
-msgid "Normal User"
-msgstr "普通用户"
+#: ghostwriter/rolodex/forms_project.py:94
+msgid "You set a deadline without an objective."
+msgstr ""
 
-msgid "Groups"
-msgstr "用户组"
+#: ghostwriter/rolodex/forms_project.py:102
+msgid "Your objective still needs a deadline."
+msgstr ""
 
-msgid "Update Account Details"
-msgstr "更新账户信息"
+#: ghostwriter/rolodex/forms_project.py:111
+msgid "Your description is missing an objective"
+msgstr ""
 
+#: ghostwriter/rolodex/forms_project.py:121
+#: ghostwriter/rolodex/forms_project.py:239
+msgid "Your selected date is before the project start date."
+msgstr ""
+
+#: ghostwriter/rolodex/forms_project.py:129
+#: ghostwriter/rolodex/forms_project.py:247
+#: ghostwriter/rolodex/forms_project.py:404
+msgid "Your selected date is after the project end date."
+msgstr ""
+
+#: ghostwriter/rolodex/forms_project.py:164
+msgid "Your end date is earlier than your start date."
+msgstr ""
+
+#: ghostwriter/rolodex/forms_project.py:183
+msgid ""
+"This operator is assigned more than once for an overlapping time period."
+msgstr ""
+
+#: ghostwriter/rolodex/forms_project.py:195
+msgid "Your assigned operator is missing a start date."
+msgstr ""
+
+#: ghostwriter/rolodex/forms_project.py:203
+msgid "Your assigned operator is missing an end date."
+msgstr ""
+
+#: ghostwriter/rolodex/forms_project.py:211
+msgid "Your assigned operator is missing a project role."
+msgstr ""
+
+#: ghostwriter/rolodex/forms_project.py:220
+msgid "Your assignment is missing an operator."
+msgstr ""
+
+#: ghostwriter/rolodex/forms_project.py:229
+msgid "This description is part of an incomplete assignment form."
+msgstr ""
+
+#: ghostwriter/rolodex/forms_project.py:282
+msgid "Your names must be unique."
+msgstr ""
+
+#: ghostwriter/rolodex/forms_project.py:292
+msgid "You scope list is missing."
+msgstr ""
+
+#: ghostwriter/rolodex/forms_project.py:300
+msgid "Your scope list is missing a name."
+msgstr ""
+
+#: ghostwriter/rolodex/forms_project.py:337
+#: ghostwriter/rolodex/forms_project.py:349
+msgid "Your targets should be unique."
+msgstr ""
+
+#: ghostwriter/rolodex/forms_project.py:357
+msgid "You must provide a hostname or IP address with your description."
+msgstr ""
+
+#: ghostwriter/rolodex/forms_project.py:385
+msgid "Your white card still needs an issued date and time."
+msgstr ""
+
+#: ghostwriter/rolodex/forms_project.py:393
+msgid "Your white card still needs a title."
+msgstr ""
+
+#: ghostwriter/rolodex/forms_project.py:1426 ghostwriter/shepherd/forms.py:134
+#: ghostwriter/shepherd/forms_server.py:521
+msgid "The provided end date comes before the start date."
+msgstr ""
+
+#: ghostwriter/rolodex/forms_project.py:1436
+msgid "Slack channels should start with # or @."
+msgstr ""
+
+#: ghostwriter/rolodex/forms_project.py:1455
+msgid "Complete all BloodHound configuration fields or leave them all blank"
+msgstr ""
+
+#: ghostwriter/rolodex/forms_project.py:1596
+msgid "The response timestamp cannot be before the report timestamp."
+msgstr ""
+
+#: ghostwriter/rolodex/forms_project.py:1606
+msgid "The report timestamp cannot be before the alert timestamp."
+msgstr ""
+
+#: ghostwriter/rolodex/views.py:1489 ghostwriter/rolodex/views.py:2098
+#: ghostwriter/shepherd/views.py:1425 ghostwriter/shepherd/views.py:1492
+msgid "Invalid form data"
+msgstr ""
+
+#: ghostwriter/shepherd/forms.py:144
+msgid "This domain has expired!"
+msgstr ""
+
+#: ghostwriter/shepherd/forms.py:147
+msgid "Someone beat you to it – This domain has already been checked out!"
+msgstr ""
+
+#: ghostwriter/shepherd/forms.py:278
+msgid "Domain names must be unique and this one already exists in the library."
+msgstr ""
+
+#: ghostwriter/shepherd/forms.py:290
+msgid "The provided expiration date comes before the purchase date."
+msgstr ""
+
+#: ghostwriter/shepherd/forms.py:374
+msgid "Select only one server."
+msgstr ""
+
+#: ghostwriter/shepherd/forms.py:376
+msgid "You must select one server."
+msgstr ""
+
+#: ghostwriter/shepherd/forms_server.py:70
+msgid "This address entry is incomplete."
+msgstr ""
+
+#: ghostwriter/shepherd/forms_server.py:83
+msgid "This address is already assigned to this server."
+msgstr ""
+
+#: ghostwriter/shepherd/forms_server.py:96
+msgid "You can not mark two addresses as the primary address."
+msgstr ""
+
+#: ghostwriter/shepherd/forms_server.py:531
+msgid "Someone beat you to it – This server has already been checked out!"
+msgstr ""
+
+#: ghostwriter/shepherd/models.py:705
+msgid "Only one server can be selected per entry"
+msgstr ""
+
+#: ghostwriter/singleton/admin.py:52
+#, python-format
+msgid "%(obj)s was changed successfully."
+msgstr ""
+
+#: ghostwriter/singleton/admin.py:54
+msgid "You may edit it again below."
+msgstr ""
+
+#: ghostwriter/singleton/templates/admin/change_form.html:7
+#: ghostwriter/singleton/templates/admin/object_history.html:6
+msgid "Home"
+msgstr ""
+
+#: ghostwriter/singleton/templates/admin/change_form.html:14
+#: ghostwriter/singleton/templates/admin/object_history.html:9
+msgid "History"
+msgstr ""
+
+#: ghostwriter/singleton/templatetags/settings_tags.py:21
+#, python-format
+msgid ""
+"Templatetag requires the model dotted path: 'app_label.ModelName'. Received "
+"'%s'."
+msgstr ""
+
+#: ghostwriter/singleton/templatetags/settings_tags.py:27
+#, python-format
+msgid ""
+"Could not get the model name '%(model)s' from the application named '%(app)s'"
+msgstr ""
+
+#: ghostwriter/templates/account/account_inactive.html:8
+msgid "Account Inactive"
+msgstr ""
+
+#: ghostwriter/templates/account/account_inactive.html:10
+msgid "This account is inactive."
+msgstr ""
+
+#: ghostwriter/templates/account/base_reauthenticate.html:8
+#: ghostwriter/templates/account/base_reauthenticate.html:12
+msgid "Confirm Access"
+msgstr "确认访问权限"
+
+#: ghostwriter/templates/account/base_reauthenticate.html:15
+msgid "Please reauthenticate to safeguard your account."
+msgstr ""
+
+#: ghostwriter/templates/account/base_reauthenticate.html:22
+msgid "Alternative Methods"
+msgstr ""
+
+#: ghostwriter/templates/account/email.html:10
+msgid "Email Addresses"
+msgstr ""
+
+#: ghostwriter/templates/account/email.html:13
+msgid "The following email addresses are associated with your account:"
+msgstr ""
+
+#: ghostwriter/templates/account/email.html:24
+msgid " [Verified] "
+msgstr ""
+
+#: ghostwriter/templates/account/email.html:26
+msgid " [Unverified] "
+msgstr ""
+
+#: ghostwriter/templates/account/email.html:29
+msgid "Primary"
+msgstr ""
+
+#: ghostwriter/templates/account/email.html:36
+msgid "Make Primary"
+msgstr ""
+
+#: ghostwriter/templates/account/email.html:37
+msgid "Re-send Verification"
+msgstr ""
+
+#: ghostwriter/templates/account/email.html:38
+msgid "Remove"
+msgstr ""
+
+#: ghostwriter/templates/account/email.html:42
+msgid "Warning:"
+msgstr ""
+
+#: ghostwriter/templates/account/email.html:42
+msgid ""
+"You currently do not have any email address set up. You should really add an "
+"e-mail address so you can receive notifications, reset your password, etc."
+msgstr ""
+
+#: ghostwriter/templates/account/email.html:47
+msgid "Add Email Address"
+msgstr ""
+
+#: ghostwriter/templates/account/email.html:52
+msgid "Add Email"
+msgstr "添加电子邮件"
+
+#: ghostwriter/templates/account/email.html:61
+msgid "Do you really want to remove the selected email address?"
+msgstr ""
+
+#: ghostwriter/templates/account/email_confirm.html:9
+msgid "Confirm Email Address"
+msgstr ""
+
+#: ghostwriter/templates/account/email_confirm.html:14
+#, python-format
+msgid ""
+"Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail "
+"address for user %(user_display)s."
+msgstr ""
+
+#: ghostwriter/templates/account/email_confirm.html:18
+#: ghostwriter/templates/account/reauthenticate.html:31
+#: ghostwriter/templates/mfa/reauthenticate.html:31
+msgid "Confirm"
+msgstr ""
+
+#: ghostwriter/templates/account/email_confirm.html:24
+#, python-format
+msgid ""
+"\n"
+"            This e-mail confirmation link expired or is invalid. Please <a "
+"href=\"%(email_url)s\">issue a new e-mail confirmation request</a>.\n"
+"            "
+msgstr ""
+
+#: ghostwriter/templates/account/login.html:11
+#: ghostwriter/templates/account/login.html:62
+#: ghostwriter/templates/socialaccount/login.html:5
+msgid "Sign In"
+msgstr ""
+
+#: ghostwriter/templates/account/login.html:18
+#, python-format
+msgid ""
+"\n"
+"        Please sign in with one of your existing third-party accounts. Or, "
+"<a href=\"%(signup_url)s\">sign up</a> for a\n"
+"        %(site_name)s account and sign in below:\n"
+"      "
+msgstr ""
+
+#: ghostwriter/templates/account/login.html:29
+msgid "or"
+msgstr ""
+
+#: ghostwriter/templates/account/login.html:36
+msgid ""
+"\n"
+"        If you do not have an account yet, then please contact your "
+"administrator.\n"
+"      "
+msgstr ""
+
+#: ghostwriter/templates/account/login.html:69
+msgid "Sign in with a Passkey"
+msgstr ""
+
+#: ghostwriter/templates/account/logout.html:8
+#: ghostwriter/templates/account/logout.html:17
+msgid "Sign Out"
+msgstr ""
+
+#: ghostwriter/templates/account/logout.html:10
+msgid "Are you sure you want to sign out?"
+msgstr ""
+
+#: ghostwriter/templates/account/password_change.html:9
+#: ghostwriter/templates/account/password_change.html:36
+#: ghostwriter/templates/account/password_reset_from_key.html:8
+#: ghostwriter/templates/account/password_reset_from_key_done.html:7
+#: ghostwriter/users/templates/users/profile.html:153
 msgid "Change Password"
 msgstr "修改密码"
 
-msgid "Update Personal Information"
-msgstr "更新个人信息"
+#: ghostwriter/templates/account/password_reset.html:8
+#: ghostwriter/templates/account/password_reset_done.html:9
+msgid "Password Reset"
+msgstr ""
 
-msgid "Manage Email(s)"
-msgstr "管理电子邮件地址"
+#: ghostwriter/templates/account/password_reset.html:13
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll send you "
+"an e-mail allowing you to reset it."
+msgstr ""
 
-msgid "Update Avatar & Preferences"
-msgstr "更新头像和偏好"
+#: ghostwriter/templates/account/password_reset.html:18
+msgid "Reset My Password"
+msgstr "重置我的密码"
 
-msgid "Manage MFA Settings"
-msgstr "管理 MFA 设置"
+#: ghostwriter/templates/account/password_reset.html:21
+msgid ""
+"Please contact your admin if you have any trouble resetting your password."
+msgstr ""
 
-msgid "Ghostwriter Dashboard"
-msgstr "Ghostwriter 仪表板"
+#: ghostwriter/templates/account/password_reset_done.html:15
+msgid ""
+"We have sent you an e-mail. Please contact us if you do not receive it "
+"within a few minutes."
+msgstr ""
 
-msgid "Welcome, %(username)s!"
-msgstr "欢迎，%(username)s！"
+#: ghostwriter/templates/account/password_reset_from_key.html:8
+msgid "Bad Token"
+msgstr ""
 
-msgid "Quickstart"
-msgstr "快速入门"
+#: ghostwriter/templates/account/password_reset_from_key.html:12
+#, python-format
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
+"a>."
+msgstr ""
 
-msgid "Welcome to Ghostwriter! This platform streamlines security assessment reporting and team collaboration."
-msgstr "欢迎使用 Ghostwriter！本平台用于简化安全评估报告流程与团队协作。"
+#: ghostwriter/templates/account/password_reset_from_key.html:18
+msgid "change password"
+msgstr "修改密码"
 
-msgid "Ghostwriter helps you manage the entire assessment lifecycle through:"
-msgstr "Ghostwriter 通过以下功能协助管理评估全生命周期："
+#: ghostwriter/templates/account/password_reset_from_key.html:21
+#: ghostwriter/templates/account/password_reset_from_key_done.html:8
+msgid "Your password has been changed."
+msgstr ""
 
-msgid "Client management and project tracking"
-msgstr "客户管理与项目跟踪"
+#: ghostwriter/templates/account/password_set.html:7
+#: ghostwriter/templates/account/password_set.html:12
+msgid "Set Password"
+msgstr "设置密码"
 
-msgid "Findings library with reusable content"
-msgstr "可复用内容的发现项库"
+#: ghostwriter/templates/account/reauthenticate.html:9
+msgid "Enter your password:"
+msgstr ""
 
-msgid "Infrastructure tracking for assessments"
-msgstr "评估基础设施跟踪"
+#: ghostwriter/templates/account/signup.html:7
+#: ghostwriter/templates/account/signup.html:17
+#: ghostwriter/templates/socialaccount/signup.html:12
+#: ghostwriter/templates/socialaccount/signup.html:24
+msgid "Sign Up"
+msgstr ""
 
-msgid "Report generation and collaboration with customizable templates"
-msgstr "基于自定义模板的报告生成与协作"
+#: ghostwriter/templates/account/signup.html:9
+#, python-format
+msgid ""
+"Already have an account? Then please <a href=\"%(login_url)s\">sign in</a>."
+msgstr ""
 
-msgid "To get started:"
-msgstr "开始使用："
+#: ghostwriter/templates/account/signup_closed.html:5
+#: ghostwriter/templates/account/signup_closed.html:8
+msgid "Sign Up Unavailable"
+msgstr "注册不可用"
 
-msgid "Explore existing clients and projects via the sidebar"
-msgstr "通过侧边栏浏览已有客户与项目"
+#: ghostwriter/templates/account/signup_closed.html:11
+msgid ""
+"We are sorry, but registration is currently unavailable. Contact your "
+"administrator for an account."
+msgstr ""
 
-msgid "Set your active report to track your current work"
-msgstr "设置当前报告以跟踪正在进行的工作"
+#: ghostwriter/templates/account/signup_closed.html:12
+msgid ""
+"Registration may be closed or your account's email domain may not be allowed."
+msgstr ""
 
-msgid "Add findings to your report from the library or create custom ones"
-msgstr "从库中添加发现项到报告，或创建自定义条目"
+#: ghostwriter/templates/account/snippets/already_logged_in.html:5
+msgid "Note"
+msgstr ""
 
-msgid "Generate reports with consistent formatting"
-msgstr "生成格式统一的报告"
+#: ghostwriter/templates/account/snippets/already_logged_in.html:5
+#, python-format
+msgid "you are already logged in as %(user_display)s."
+msgstr ""
 
-msgid "Use the sidebar navigation to access all features. This dashboard will show your assignments and project calendar events to keep you organized."
-msgstr "使用侧边栏导航访问所有功能。本仪表板会显示分配给你的任务与项目日历事件，便于统筹安排。"
+#: ghostwriter/templates/account/verification_sent.html:5
+#: ghostwriter/templates/account/verification_sent.html:8
+#: ghostwriter/templates/account/verified_email_required.html:5
+#: ghostwriter/templates/account/verified_email_required.html:8
+msgid "Verify Your E-mail Address"
+msgstr ""
 
-msgid "If you don't see any clients or projects, you may need to create them or request access. A manager or admin can assign you to an existing project to get you started. Once you have a project and a report, you can easily access them at any time from the left-hand sidebar available on every page."
-msgstr "若未显示任何客户或项目，可能需要创建或申请访问权限。管理员可将你加入已有项目以便开始工作。获得项目和报告后，可随时通过每个页面左侧的侧边栏快速访问。"
+#: ghostwriter/templates/account/verification_sent.html:10
+msgid ""
+"We have sent an e-mail to you for verification. Follow the link provided to "
+"finalize the signup process. Please contact us if you do not receive it "
+"within a few minutes."
+msgstr ""
 
-msgid "Learn more from the <a href=\"https://ghostwriter.wiki/\" class=\"dashboard-link\">Ghostwriter Wiki</a>. Join our <a href=\"https://ghst.ly/BHSlack\" class=\"dashboard-link\">SpecterOps Slack Community</a> and the <em>#ghostwriter</em> channel to discuss Ghostwriter, ask questions, and get help."
-msgstr "更多信息请访问 <a href=\"https://ghostwriter.wiki/\" class=\"dashboard-link\">Ghostwriter Wiki</a>。可加入 <a href=\"https://ghst.ly/BHSlack\" class=\"dashboard-link\">SpecterOps Slack 社区</a> 的 <em>#ghostwriter</em> 频道交流、提问与获取帮助。"
+#: ghostwriter/templates/account/verified_email_required.html:12
+msgid ""
+"This part of the site requires us to verify that\n"
+"you are who you claim to be. For this purpose, we require that you\n"
+"verify ownership of your e-mail address. "
+msgstr ""
 
-msgid "Don't Show This Again"
-msgstr "不再显示"
+#: ghostwriter/templates/account/verified_email_required.html:16
+msgid ""
+"We have sent an e-mail to you for\n"
+"verification. Please click on the link inside this e-mail. Please\n"
+"contact us if you do not receive it within a few minutes."
+msgstr ""
 
-msgid "Ready to Work?"
-msgstr "准备开始工作？"
+#: ghostwriter/templates/account/verified_email_required.html:20
+#, python-format
+msgid ""
+"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-"
+"mail address</a>."
+msgstr ""
 
-msgid "You're assigned to some active projects. Check those out here:"
-msgstr "你已被分配到部分活跃项目，可在此查看："
-
-msgid "Open the sidebar on the left to view/manage your reports under <em>My Active Reports</em>."
-msgstr "打开左侧侧边栏，可在 <em>我的活跃报告</em> 中查看与管理报告。"
-
-msgid "Select a report to mark it as active. If you're managing multiple reports, you can switch your active reports from there, too."
-msgstr "选择一份报告将其标记为活跃报告。若同时管理多份报告，也可在此切换当前活跃报告。"
-
-msgid "You're not assigned to any projects right now. If you're looking for a project, visit the <a class=\"dashboard-link\" href=\"%(projects_library_url)s\">Project Library</a>. You can also contact a manager or admin to get assigned to a project."
-msgstr "当前未被分配到任何项目。如需查找项目，请访问 <a class=\"dashboard-link\" href=\"%(projects_library_url)s\">项目库</a>，也可联系管理员申请分配。"
-
-msgid "Assigned Findings"
-msgstr "分配的发现项"
-
-msgid "All Tasks Complete!"
-msgstr "所有任务已完成！"
-
-msgid "Assigned Observations"
-msgstr "分配的观察项"
-
-msgid "Recent Background Tasks"
-msgstr "近期后台任务"
-
-msgid "SUCCESS"
-msgstr "成功"
-
-msgid "FAILED"
-msgstr "失败"
-
-msgid "Unsuccessful task returned this message/stack trace:"
-msgstr "失败任务返回的消息或调用栈："
-
-msgid "No completed tasks."
-msgstr "暂无已完成的任务。"
-
-msgid "System Status"
-msgstr "系统状态"
-
-msgid "All Systems Go!"
-msgstr "系统运行正常！"
-
-msgid "Issues Detected!"
-msgstr "检测到异常！"
-
-msgid "Visit the <a class=\"clickable italic\" href=\"%(healthcheck_url)s\">Detailed Status Page</a>"
-msgstr "查看 <a class=\"clickable italic\" href=\"%(healthcheck_url)s\">详细状态页面</a>"
-
-msgid "Assignment:"
-msgstr "任务："
-
-msgid "Click event in calendar to view details."
-msgstr "点击日历中的事件以查看详情。"
-
+#: ghostwriter/templates/base_generic.html:104
 msgid "Project Shortcuts"
 msgstr "项目快捷入口"
 
+#: ghostwriter/templates/base_generic.html:109
+msgid "Open your active report after selecting one below"
+msgstr ""
+
+#: ghostwriter/templates/base_generic.html:110
 msgid "Jump to Report"
 msgstr "跳转到报告"
 
+#: ghostwriter/templates/base_generic.html:117
 msgid "My Active Reports"
 msgstr "我的活跃报告"
 
+#: ghostwriter/templates/base_generic.html:137
+msgid "You do not have any active reports; click here to visit the library."
+msgstr ""
+
+#: ghostwriter/templates/base_generic.html:146
 msgid "My Active Projects"
 msgstr "我的活跃项目"
 
+#: ghostwriter/templates/base_generic.html:156
+msgid ""
+"You do not have any active assignments; click here to visit the library."
+msgstr ""
+
+#: ghostwriter/templates/base_generic.html:164
 msgid "Pre-engagement"
 msgstr "前期准备"
 
+#: ghostwriter/templates/base_generic.html:170
 msgid "Clients"
 msgstr "客户"
 
+#: ghostwriter/templates/base_generic.html:178
 msgid "Search Clients..."
 msgstr "搜索客户..."
 
+#: ghostwriter/templates/base_generic.html:182
 msgid "Client Library"
 msgstr "客户库"
 
+#: ghostwriter/templates/base_generic.html:184
 msgid "Add New Client"
 msgstr "新建客户"
 
+#: ghostwriter/templates/base_generic.html:190
 msgid "Findings"
 msgstr "发现项"
 
+#: ghostwriter/templates/base_generic.html:196
 msgid "Search Findings..."
 msgstr "搜索发现项..."
 
-msgid "Findings Library"
+#: ghostwriter/templates/base_generic.html:200
+msgid "Finding Library"
 msgstr "发现项库"
 
+#: ghostwriter/templates/base_generic.html:205
 msgid "Add New Finding"
 msgstr "新建发现项"
 
+#: ghostwriter/templates/base_generic.html:213
 msgid "Observations"
 msgstr "观察项"
 
+#: ghostwriter/templates/base_generic.html:219
 msgid "Search Observations..."
 msgstr "搜索观察项..."
 
-msgid "Observations Library"
+#: ghostwriter/templates/base_generic.html:223
+msgid "Observation Library"
 msgstr "观察项库"
 
+#: ghostwriter/templates/base_generic.html:228
 msgid "Add New Observation"
 msgstr "新建观察项"
 
+#: ghostwriter/templates/base_generic.html:238
 msgid "Execution"
 msgstr "执行阶段"
 
+#: ghostwriter/templates/base_generic.html:242
 msgid "My Active Assets"
 msgstr "我的活跃资产"
 
+#: ghostwriter/templates/base_generic.html:246
 msgid "Projects"
 msgstr "项目"
 
+#: ghostwriter/templates/base_generic.html:248
 msgid "Projects Library"
 msgstr "项目库"
 
+#: ghostwriter/templates/base_generic.html:250
 msgid "Add New Project"
 msgstr "新建项目"
 
+#: ghostwriter/templates/base_generic.html:257
 msgid "Operation Logs"
 msgstr "操作日志"
 
+#: ghostwriter/templates/base_generic.html:259
 msgid "Oplog Library"
 msgstr "操作日志库"
 
+#: ghostwriter/templates/base_generic.html:260
 msgid "Add New Oplog"
 msgstr "新建操作日志"
 
+#: ghostwriter/templates/base_generic.html:261
 msgid "Import Oplog Entries"
 msgstr "导入操作日志条目"
 
+#: ghostwriter/templates/base_generic.html:268
 msgid "Reporting"
 msgstr "报告"
 
+#: ghostwriter/templates/base_generic.html:273
 msgid "Reports"
 msgstr "报告列表"
 
+#: ghostwriter/templates/base_generic.html:275
 msgid "Report Library"
 msgstr "报告库"
 
+#: ghostwriter/templates/base_generic.html:276
 msgid "Add New Report"
 msgstr "新建报告"
 
+#: ghostwriter/templates/base_generic.html:282
 msgid "Templates"
 msgstr "模板"
 
+#: ghostwriter/templates/base_generic.html:284
 msgid "Report Template Library"
 msgstr "报告模板库"
 
+#: ghostwriter/templates/base_generic.html:285
 msgid "Add New Report Template"
 msgstr "新建报告模板"
 
+#: ghostwriter/templates/base_generic.html:289
 msgid "Archived Reports"
 msgstr "已归档报告"
 
+#: ghostwriter/templates/base_generic.html:294
 msgid "Maintain"
 msgstr "维护"
 
+#: ghostwriter/templates/base_generic.html:299
 msgid "Servers"
 msgstr "服务器"
 
+#: ghostwriter/templates/base_generic.html:305
 msgid "Search Servers..."
 msgstr "搜索服务器..."
 
+#: ghostwriter/templates/base_generic.html:309
 msgid "Server Library"
 msgstr "服务器库"
 
+#: ghostwriter/templates/base_generic.html:310
 msgid "Add New Server"
 msgstr "新建服务器"
 
+#: ghostwriter/templates/base_generic.html:315
 msgid "Domains"
 msgstr "域名"
 
+#: ghostwriter/templates/base_generic.html:321
 msgid "Search Domains..."
 msgstr "搜索域名..."
 
+#: ghostwriter/templates/base_generic.html:325
 msgid "Domain Library"
 msgstr "域名库"
 
+#: ghostwriter/templates/base_generic.html:326
 msgid "Add New Domain"
 msgstr "新建域名"
 
+#: ghostwriter/templates/base_generic.html:329
 msgid "Update Controls"
 msgstr "更新控制"
 
+#: ghostwriter/templates/base_generic.html:335
 msgid "Administration"
 msgstr "系统管理"
 
+#: ghostwriter/templates/base_generic.html:337
 msgid "Review Configuration"
 msgstr "审阅配置"
 
+#: ghostwriter/templates/base_generic.html:340
+#: ghostwriter/templates/base_generic.html:342
 msgid "Admin Panel"
 msgstr "管理后台"
 
+#: ghostwriter/templates/base_generic.html:343
 msgid "Configuration Mgmt"
 msgstr "配置管理"
 
+#: ghostwriter/templates/base_generic.html:345
 msgid "User Mgmt"
 msgstr "用户管理"
 
+#: ghostwriter/templates/base_generic.html:348
 msgid "Scheduled Tasks"
 msgstr "计划任务"
 
+#: ghostwriter/templates/base_generic.html:356
 msgid "Import & Export"
 msgstr "导入与导出"
 
+#: ghostwriter/templates/base_generic.html:358
 msgid "Upload Bulk Findings"
 msgstr "批量上传发现项"
 
+#: ghostwriter/templates/base_generic.html:359
 msgid "Export Findings to CSV"
 msgstr "导出发现项为 CSV"
 
+#: ghostwriter/templates/base_generic.html:361
 msgid "Upload Bulk Observations"
 msgstr "批量上传观察项"
 
+#: ghostwriter/templates/base_generic.html:362
 msgid "Export Observations to CSV"
 msgstr "导出观察项为 CSV"
 
+#: ghostwriter/templates/base_generic.html:364
 msgid "Upload Bulk Domains"
 msgstr "批量上传域名"
 
+#: ghostwriter/templates/base_generic.html:365
 msgid "Export Domains to CSV"
 msgstr "导出域名为 CSV"
 
+#: ghostwriter/templates/base_generic.html:367
 msgid "Upload Bulk Servers"
 msgstr "批量上传服务器"
 
+#: ghostwriter/templates/base_generic.html:368
 msgid "Export Servers to CSV"
 msgstr "导出服务器为 CSV"
 
+#: ghostwriter/templates/base_generic.html:375
 msgid "Documentation"
 msgstr "文档"
 
+#: ghostwriter/templates/base_generic.html:377
 msgid "Ghostwriter Wiki"
 msgstr "Ghostwriter Wiki"
 
+#: ghostwriter/templates/base_generic.html:378
 msgid "Ghostwriter on GitHub"
 msgstr "GitHub 上的 Ghostwriter"
 
+#: ghostwriter/templates/base_generic.html:386
 msgid "Logout"
 msgstr "退出登录"
 
+#: ghostwriter/templates/base_generic.html:388
 msgid "Login"
 msgstr "登录"
 
+#: ghostwriter/templates/base_generic.html:424
 msgid "Auto (follow system)"
 msgstr "自动（跟随系统）"
 
+#: ghostwriter/templates/base_generic.html:431
+#, python-format
 msgid "v%(version)s, released %(release_date)s"
 msgstr "v%(version)s，发布于 %(release_date)s"
 
+#: ghostwriter/templates/base_generic.html:450
+#, python-format
+msgid "Logged-in as %(username)s"
+msgstr "当前登录用户：%(username)s"
+
+#: ghostwriter/templates/base_generic.html:452
+#: ghostwriter/users/templates/users/profile.html:19
+#: ghostwriter/users/templates/users/profile.html:22
+msgid "Avatar"
+msgstr "头像"
+
+#: ghostwriter/templates/base_generic.html:470
 msgid "Learn more"
 msgstr "了解更多"
+
+#: ghostwriter/templates/index.html:6
+msgid "Ghostwriter Dashboard"
+msgstr "Ghostwriter 仪表板"
+
+#: ghostwriter/templates/index.html:12
+#, python-format
+msgid "Welcome, %(username)s!"
+msgstr "欢迎，%(username)s！"
+
+#: ghostwriter/templates/index.html:28
+msgid "Quickstart"
+msgstr "快速入门"
+
+#: ghostwriter/templates/index.html:30
+msgid ""
+"Welcome to Ghostwriter! This platform streamlines security assessment "
+"reporting and team collaboration."
+msgstr "欢迎使用 Ghostwriter！本平台用于简化安全评估报告流程与团队协作。"
+
+#: ghostwriter/templates/index.html:32
+msgid "Ghostwriter helps you manage the entire assessment lifecycle through:"
+msgstr "Ghostwriter 通过以下功能协助管理评估全生命周期："
+
+#: ghostwriter/templates/index.html:34
+msgid "Client management and project tracking"
+msgstr "客户管理与项目跟踪"
+
+#: ghostwriter/templates/index.html:35
+msgid "Findings library with reusable content"
+msgstr "可复用内容的发现项库"
+
+#: ghostwriter/templates/index.html:36
+msgid "Infrastructure tracking for assessments"
+msgstr "评估基础设施跟踪"
+
+#: ghostwriter/templates/index.html:37
+msgid "Report generation and collaboration with customizable templates"
+msgstr "基于自定义模板的报告生成与协作"
+
+#: ghostwriter/templates/index.html:40
+msgid "To get started:"
+msgstr "开始使用："
+
+#: ghostwriter/templates/index.html:42
+msgid "Explore existing clients and projects via the sidebar"
+msgstr "通过侧边栏浏览已有客户与项目"
+
+#: ghostwriter/templates/index.html:43
+msgid "Set your active report to track your current work"
+msgstr "设置当前报告以跟踪正在进行的工作"
+
+#: ghostwriter/templates/index.html:44
+msgid "Add findings to your report from the library or create custom ones"
+msgstr "从库中添加发现项到报告，或创建自定义条目"
+
+#: ghostwriter/templates/index.html:45
+msgid "Generate reports with consistent formatting"
+msgstr "生成格式统一的报告"
+
+#: ghostwriter/templates/index.html:48
+msgid ""
+"Use the sidebar navigation to access all features. This dashboard will show "
+"your assignments and project calendar events to keep you organized."
+msgstr ""
+"使用侧边栏导航访问所有功能。本仪表板会显示分配给你的任务与项目日历事件，便于"
+"统筹安排。"
+
+#: ghostwriter/templates/index.html:49
+msgid ""
+"If you don't see any clients or projects, you may need to create them or "
+"request access. A manager or admin can assign you to an existing project to "
+"get you started. Once you have a project and a report, you can easily access "
+"them at any time from the left-hand sidebar available on every page."
+msgstr ""
+"若未显示任何客户或项目，可能需要创建或申请访问权限。管理员可将你加入已有项目"
+"以便开始工作。获得项目和报告后，可随时通过每个页面左侧的侧边栏快速访问。"
+
+#: ghostwriter/templates/index.html:51
+msgid ""
+"Learn more from the <a href=\"https://ghostwriter.wiki/\" class=\"dashboard-"
+"link\">Ghostwriter Wiki</a>. Join our <a href=\"https://ghst.ly/BHSlack\" "
+"class=\"dashboard-link\">SpecterOps Slack Community</a> and the "
+"<em>#ghostwriter</em> channel to discuss Ghostwriter, ask questions, and get "
+"help."
+msgstr ""
+"更多信息请访问 <a href=\"https://ghostwriter.wiki/\" class=\"dashboard-"
+"link\">Ghostwriter Wiki</a>。可加入 <a href=\"https://ghst.ly/BHSlack\" "
+"class=\"dashboard-link\">SpecterOps Slack 社区</a> 的 <em>#ghostwriter</em> "
+"频道交流、提问与获取帮助。"
+
+#: ghostwriter/templates/index.html:53
+msgid "Don't Show This Again"
+msgstr "不再显示"
+
+#: ghostwriter/templates/index.html:61
+msgid "Ready to Work?"
+msgstr "准备开始工作？"
+
+#: ghostwriter/templates/index.html:64
+msgid "You're assigned to some active projects. Check those out here:"
+msgstr "你已被分配到部分活跃项目，可在此查看："
+
+#: ghostwriter/templates/index.html:73
+msgid ""
+"Open the sidebar on the left to view/manage your reports under <em>My Active "
+"Reports</em>."
+msgstr "打开左侧侧边栏，可在 <em>我的活跃报告</em> 中查看与管理报告。"
+
+#: ghostwriter/templates/index.html:74
+msgid ""
+"Select a report to mark it as active. If you're managing multiple reports, "
+"you can switch your active reports from there, too."
+msgstr ""
+"选择一份报告将其标记为活跃报告。若同时管理多份报告，也可在此切换当前活跃报"
+"告。"
+
+#: ghostwriter/templates/index.html:76
+#, python-format
+msgid ""
+"You're not assigned to any projects right now. If you're looking for a "
+"project, visit the <a class=\"dashboard-link\" "
+"href=\"%(projects_library_url)s\">Project Library</a>. You can also contact "
+"a manager or admin to get assigned to a project."
+msgstr ""
+"当前未被分配到任何项目。如需查找项目，请访问 <a class=\"dashboard-link\" "
+"href=\"%(projects_library_url)s\">项目库</a>，也可联系管理员申请分配。"
+
+#: ghostwriter/templates/index.html:85
+msgid "Assigned Findings"
+msgstr "分配的发现项"
+
+#: ghostwriter/templates/index.html:91 ghostwriter/templates/index.html:104
+msgid "All Tasks Complete!"
+msgstr "所有任务已完成！"
+
+#: ghostwriter/templates/index.html:98
+msgid "Assigned Observations"
+msgstr "分配的观察项"
+
+#: ghostwriter/templates/index.html:113
+msgid "Recent Background Tasks"
+msgstr "近期后台任务"
+
+#: ghostwriter/templates/index.html:119
+msgid "SUCCESS"
+msgstr "成功"
+
+#: ghostwriter/templates/index.html:126
+msgid "FAILED"
+msgstr "失败"
+
+#: ghostwriter/templates/index.html:129
+msgid "Unsuccessful task returned this message/stack trace:"
+msgstr "失败任务返回的消息或调用栈："
+
+#: ghostwriter/templates/index.html:142
+msgid "No completed tasks."
+msgstr "暂无已完成的任务。"
+
+#: ghostwriter/templates/index.html:151
+msgid "System Status"
+msgstr "系统状态"
+
+#: ghostwriter/templates/index.html:156
+msgid "All Systems Go!"
+msgstr "系统运行正常！"
+
+#: ghostwriter/templates/index.html:162
+msgid "Issues Detected!"
+msgstr "检测到异常！"
+
+#: ghostwriter/templates/index.html:166
+#, python-format
+msgid ""
+"Visit the <a class=\"clickable italic\" "
+"href=\"%(healthcheck_url)s\">Detailed Status Page</a>"
+msgstr ""
+"查看 <a class=\"clickable italic\" href=\"%(healthcheck_url)s\">详细状态页面"
+"</a>"
+
+#: ghostwriter/templates/index.html:201
+msgid "Assignment:"
+msgstr "任务："
+
+#: ghostwriter/templates/index.html:204
+msgid "Click event in calendar to view details."
+msgstr "点击日历中的事件以查看详情。"
+
+#: ghostwriter/templates/mfa/authenticate.html:7
+#: ghostwriter/templates/mfa/index.html:7
+#: ghostwriter/templates/mfa/index.html:21
+msgid "Multi-Factor Authentication"
+msgstr ""
+
+#: ghostwriter/templates/mfa/authenticate.html:37
+msgid "Alternate Methods"
+msgstr ""
+
+#: ghostwriter/templates/mfa/authenticate.html:40
+msgid "Use security passkey"
+msgstr ""
+
+#: ghostwriter/templates/mfa/backup_tokens.html:19
+#: ghostwriter/templates/mfa/recovery_codes/index.html:19
+msgid "Multi-Factor Authentication Backup Tokens"
+msgstr ""
+
+#: ghostwriter/templates/mfa/backup_tokens.html:35
+#: ghostwriter/templates/mfa/recovery_codes/index.html:35
+msgid ""
+"Backup tokens are available; however, your administrator has turned off the "
+"display of the codes here for security reasons."
+msgstr ""
+
+#: ghostwriter/templates/mfa/backup_tokens.html:36
+#: ghostwriter/templates/mfa/recovery_codes/index.html:36
+msgid ""
+"Download the codes to view them, or press the button below to generate new "
+"ones."
+msgstr ""
+
+#: ghostwriter/templates/mfa/backup_tokens.html:41
+#: ghostwriter/templates/mfa/recovery_codes/index.html:41
+msgid "No tokens. Press the button below to generate some."
+msgstr ""
+
+#: ghostwriter/templates/mfa/backup_tokens.html:49
+#: ghostwriter/templates/mfa/recovery_codes/index.html:49
+msgid "Generate Backup Tokens"
+msgstr ""
+
+#: ghostwriter/templates/mfa/backup_tokens.html:52
+#: ghostwriter/templates/mfa/index.html:111
+#: ghostwriter/templates/mfa/recovery_codes/index.html:52
+msgid "Download"
+msgstr ""
+
+#: ghostwriter/templates/mfa/index.html:28
+msgid "Authenticator App"
+msgstr ""
+
+#: ghostwriter/templates/mfa/index.html:30
+msgid "Authentication using an authenticator app is active."
+msgstr ""
+
+#: ghostwriter/templates/mfa/index.html:32
+msgid "An authenticator app is not active."
+msgstr ""
+
+#: ghostwriter/templates/mfa/index.html:38
+msgid "Deactivate"
+msgstr ""
+
+#: ghostwriter/templates/mfa/index.html:42
+msgid "Activate"
+msgstr ""
+
+#: ghostwriter/templates/mfa/index.html:56
+#: ghostwriter/templates/mfa/webauthn/authenticator_list.html:18
+msgid "Security Keys"
+msgstr ""
+
+#: ghostwriter/templates/mfa/index.html:59
+#, python-format
+msgid ""
+"\n"
+"                                    You have added %(count)s security key.\n"
+"                                "
+msgid_plural ""
+"\n"
+"                                    You have added %(count)s security keys.\n"
+"                                "
+msgstr[0] ""
+
+#: ghostwriter/templates/mfa/index.html:66
+msgid "No security keys have been added."
+msgstr ""
+
+#: ghostwriter/templates/mfa/index.html:72
+msgid "Manage"
+msgstr ""
+
+#: ghostwriter/templates/mfa/index.html:76
+#: ghostwriter/templates/mfa/webauthn/add_form.html:45
+msgid "Add"
+msgstr ""
+
+#: ghostwriter/templates/mfa/index.html:91
+msgid "Recovery Codes"
+msgstr ""
+
+#: ghostwriter/templates/mfa/index.html:94
+#, python-format
+msgid ""
+"\n"
+"                                        There is %(unused_count)s out of "
+"%(total_count)s recovery codes available.\n"
+"                                    "
+msgid_plural ""
+"\n"
+"                                        There are %(unused_count)s out of "
+"%(total_count)s recovery codes available.\n"
+"                                    "
+msgstr[0] ""
+
+#: ghostwriter/templates/mfa/index.html:101
+msgid "No recovery codes set up."
+msgstr ""
+
+#: ghostwriter/templates/mfa/index.html:115
+msgid "Generate"
+msgstr ""
+
+#: ghostwriter/templates/mfa/reauthenticate.html:9
+msgid "Enter an authenticator code:"
+msgstr ""
+
+#: ghostwriter/templates/mfa/totp/activate_form.html:20
+msgid "Setup Multi-Factor Authentication"
+msgstr ""
+
+#: ghostwriter/templates/mfa/totp/activate_form.html:24
+msgid "Step 1"
+msgstr ""
+
+#: ghostwriter/templates/mfa/totp/activate_form.html:28
+msgid ""
+"Scan the QR code below with a token generator of your choice (for instance "
+"Google Authenticator)."
+msgstr ""
+
+#: ghostwriter/templates/mfa/totp/activate_form.html:36
+msgid "Step 2"
+msgstr ""
+
+#: ghostwriter/templates/mfa/totp/activate_form.html:40
+msgid "Input a token generated by the app:"
+msgstr ""
+
+#: ghostwriter/templates/mfa/totp/deactivate_form.html:20
+msgid "Disable Multi-Factor Authentication"
+msgstr ""
+
+#: ghostwriter/templates/mfa/totp/deactivate_form.html:24
+msgid ""
+"Please enter a valid authentication token to disable multi-factor "
+"authentication:"
+msgstr ""
+
+#: ghostwriter/templates/mfa/webauthn/add_form.html:20
+msgid "Add Security Key"
+msgstr ""
+
+#: ghostwriter/templates/mfa/webauthn/authenticator_list.html:27
+msgid "Passkey"
+msgstr ""
+
+#: ghostwriter/templates/mfa/webauthn/authenticator_list.html:29
+msgid "Key"
+msgstr ""
+
+#: ghostwriter/templates/mfa/webauthn/authenticator_list.html:31
+msgid "Unknown type"
+msgstr ""
+
+#: ghostwriter/templates/mfa/webauthn/authenticator_list.html:31
+msgid "Unknown"
+msgstr ""
+
+#: ghostwriter/templates/mfa/webauthn/authenticator_list.html:36
+#, python-format
+msgid "Added %(created)s"
+msgstr ""
+
+#: ghostwriter/templates/mfa/webauthn/authenticator_list.html:39
+#, python-format
+msgid "Used %(last)s"
+msgstr ""
+
+#: ghostwriter/templates/mfa/webauthn/authenticator_list.html:45
+msgid "Edit"
+msgstr ""
+
+#: ghostwriter/templates/mfa/webauthn/authenticator_list.html:49
+msgid "Delete"
+msgstr ""
+
+#: ghostwriter/templates/mfa/webauthn/authenticator_list.html:54
+msgid "No keys added."
+msgstr ""
+
+#: ghostwriter/templates/mfa/webauthn/edit_form.html:25
+msgid "Edit Security Key"
+msgstr ""
+
+#: ghostwriter/templates/mfa/webauthn/edit_form.html:34
+msgid "Name"
+msgstr "名称"
+
+#: ghostwriter/templates/mfa/webauthn/edit_form.html:39
+msgid "Save"
+msgstr ""
+
+#: ghostwriter/templates/mfa/webauthn/edit_form.html:42
+msgid "Cancel"
+msgstr "取消"
+
+#: ghostwriter/templates/mfa/webauthn/reauthenticate.html:12
+msgid "Use a security key"
+msgstr ""
+
+#: ghostwriter/templates/socialaccount/login.html:10
+#, python-format
+msgid "Connect %(provider)s"
+msgstr ""
+
+#: ghostwriter/templates/socialaccount/login.html:13
+#, python-format
+msgid "You are about to connect a new third-party account from %(provider)s."
+msgstr ""
+
+#: ghostwriter/templates/socialaccount/login.html:17
+#, python-format
+msgid "Sign In Via %(provider)s"
+msgstr ""
+
+#: ghostwriter/templates/socialaccount/login.html:20
+#, python-format
+msgid "You are about to sign in using a third-party account from %(provider)s."
+msgstr ""
+
+#: ghostwriter/templates/socialaccount/login.html:26
+msgid "Continue"
+msgstr ""
+
+#: ghostwriter/templates/socialaccount/signup.html:8
+msgid "Signup"
+msgstr ""
+
+#: ghostwriter/templates/socialaccount/signup.html:15
+#, python-format
+msgid ""
+"You are about to use your %(provider_name)s account to login to\n"
+"%(site_name)s. As a final step, please complete the following form:"
+msgstr ""
+
+#: ghostwriter/users/admin.py:48
+msgid "User Information"
+msgstr "用户信息"
+
+#: ghostwriter/users/admin.py:49
+msgid "Personal Information"
+msgstr "个人信息"
+
+#: ghostwriter/users/admin.py:51
+msgid "User Permissions"
+msgstr ""
+
+#: ghostwriter/users/admin.py:62
+msgid "Permission Augmentation"
+msgstr "权限增强"
+
+#: ghostwriter/users/admin.py:74
+msgid "Important Dates"
+msgstr ""
+
+#: ghostwriter/users/apps.py:10 ghostwriter/users/forms.py:108
+msgid "Users"
+msgstr "用户"
+
+#: ghostwriter/users/forms.py:78
+msgid "This username has already been taken."
+msgstr ""
+
+#: ghostwriter/users/forms.py:278
+msgid "Current Authenticator Code"
+msgstr ""
+
+#: ghostwriter/users/models.py:29
+msgid "Name of User"
+msgstr "用户名称"
+
+#: ghostwriter/users/templates/users/profile.html:4
+#: ghostwriter/users/templates/users/profile_form.html:5
+msgid "User Profile"
+msgstr "用户资料"
+
+#: ghostwriter/users/templates/users/profile.html:9
+#: ghostwriter/users/templates/users/profile_form.html:10
+msgid "Dashboard"
+msgstr "仪表板"
+
+#: ghostwriter/users/templates/users/profile.html:10
+#: ghostwriter/users/templates/users/profile_form.html:11
+msgid "Your Profile"
+msgstr "你的资料"
+
+#: ghostwriter/users/templates/users/profile.html:30
+msgid "Full Name"
+msgstr "全名"
+
+#: ghostwriter/users/templates/users/profile.html:33
+msgid "Missing Full Name"
+msgstr "未填写全名"
+
+#: ghostwriter/users/templates/users/profile.html:39
+msgid "Username"
+msgstr "用户名"
+
+#: ghostwriter/users/templates/users/profile.html:48
+msgid "Email"
+msgstr "电子邮件"
+
+#: ghostwriter/users/templates/users/profile.html:57
+msgid "Phone"
+msgstr "电话"
+
+#: ghostwriter/users/templates/users/profile.html:60
+msgid "Unavailable"
+msgstr "暂无"
+
+#: ghostwriter/users/templates/users/profile.html:66
+msgid "Timezone"
+msgstr "时区"
+
+#: ghostwriter/users/templates/users/profile.html:85
+msgid "Role"
+msgstr "角色"
+
+#: ghostwriter/users/templates/users/profile.html:96
+msgid "Access"
+msgstr "访问权限"
+
+#: ghostwriter/users/templates/users/profile.html:100
+msgid "Superuser"
+msgstr "超级用户"
+
+#: ghostwriter/users/templates/users/profile.html:100
+msgid "Staff"
+msgstr "员工"
+
+#: ghostwriter/users/templates/users/profile.html:100
+msgid "Normal User"
+msgstr "普通用户"
+
+#: ghostwriter/users/templates/users/profile.html:108
+msgid "Groups"
+msgstr "用户组"
+
+#: ghostwriter/users/templates/users/profile.html:149
+msgid "Update Account Details"
+msgstr "更新账户信息"
+
+#: ghostwriter/users/templates/users/profile.html:154
+msgid "Update Personal Information"
+msgstr "更新个人信息"
+
+#: ghostwriter/users/templates/users/profile.html:155
+msgid "Manage Email(s)"
+msgstr "管理电子邮件地址"
+
+#: ghostwriter/users/templates/users/profile.html:156
+msgid "Update Avatar & Preferences"
+msgstr "更新头像和偏好"
+
+#: ghostwriter/users/templates/users/profile.html:157
+msgid "Manage MFA Settings"
+msgstr "管理 MFA 设置"
+
+#: ghostwriter/users/templates/users/profile_form.html:12
+msgid "Profile Form"
+msgstr "资料表单"
+
+#: ghostwriter/users/templates/users/profile_form.html:19
+msgid "User Image"
+msgstr "用户图片"
+
+#: ghostwriter/users/views.py:88 ghostwriter/users/views.py:137
+msgid "You do not have permission to access that."
+msgstr "您无权访问该内容。"
+
+#: ghostwriter/users/views.py:102 ghostwriter/users/views.py:152
+msgid "Successfully updated your profile!"
+msgstr "个人资料已更新。"
+
+#~ msgid "Avatar Upload"
+#~ msgstr "头像上传"
+
+#~ msgid ""
+#~ "Your avatar will be displayed as a circle and automatically cropped to "
+#~ "fit. For best results, upload a square image (equal height and width) or "
+#~ "ensure your face is centered in the image."
+#~ msgstr ""
+#~ "头像会显示为圆形，并自动裁剪到合适尺寸。为了获得更好的效果，请上传宽高相同"
+#~ "的方形图片，或确保头像主体位于图片中央。"
+
+#~ msgid "Previews for images will appear below."
+#~ msgstr "图片预览会显示在下方。"
+
+#~ msgid "Interface Preferences"
+#~ msgstr "界面偏好设置"
+
+#~ msgid "Click here or drag and drop..."
+#~ msgstr "点击此处或拖放文件..."
