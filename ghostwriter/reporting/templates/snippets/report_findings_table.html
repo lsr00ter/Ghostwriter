@@ -1,45 +1,41 @@
-{% load report_tags %}
+{% load i18n report_tags %}
 
 {% if report.reportfindinglink_set.all %}
   <table id="findings-table" class="table table-sm table-hover"
          findings-update-url="{% url 'reporting:update_report_findings' %}">
     <tr>
       <th class="icon ol-list-icon text-center"></th>
-      <th class="align-middle text-left">Finding</th>
-      <th class="align-middle">CVSS Score</th>
+      <th class="align-middle text-left">{% trans "Finding" %}</th>
+      <th class="align-middle">{% trans "CVSS Score" %}</th>
       <th class="align-middle">
         <div class="dropdown dropleft">
           <span id="evidence-info-btn" class="dropdown-info" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">Evidence</span>
+                aria-expanded="false">{% trans "Evidence" %}</span>
           <div id="evidence-info" class="dropdown-menu dropdown-info-content"
                aria-labelledby="evidence-info-btn">
-            <p>Attach evidence to findings - such as text files, log files, script snippets, and screenshots -
-              to
-              have them included with the finding in the generated reports.</p>
+            <p>{% trans "Attach evidence to findings - such as text files, log files, script snippets, and screenshots - to have them included with the finding in the generated reports." %}</p>
           </div>
         </div>
       </th>
       <th class="align-middle text-left">
         <div class="dropdown dropleft">
           <span id="owner-info-btn" class="dropdown-info" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">Owner</span>
+                aria-expanded="false">{% trans "Owner" %}</span>
           <div id="owner-info" class="dropdown-menu dropdown-info-content" aria-labelledby="owner-info-btn">
-            <p>The assigned user is the person responsible for writing this finding. The assigned individual
-              will
-              have a link to the finding on their dashboard.</p>
+            <p>{% trans "The assigned user is the person responsible for writing this finding. The assigned individual will have a link to the finding on their dashboard." %}</p>
           </div>
         </div>
       </th>
       <th class="align-middle text-left">
         <div class="dropdown dropleft">
           <span id="status-info-btn" class="dropdown-info" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">Status</span>
+                aria-expanded="false">{% trans "Status" %}</span>
           <div id="status-info" class="dropdown-menu dropdown-info-content" aria-labelledby="status-info-btn">
-            <p>Mark a finding as ready or in need of editing.</p>
+            <p>{% trans "Mark a finding as ready or in need of editing." %}</p>
           </div>
         </div>
       </th>
-      <th class="align-middle">Options</th>
+      <th class="align-middle">{% trans "Options" %}</th>
     </tr>
 
     {% group_by_severity report.reportfindinglink_set.all as severity_groups %}
@@ -57,13 +53,13 @@
               class="holdme align-middle"
               data-toggle="tooltip"
               data-placement="top"
-              title="Click-n-drag to reposition within the severity category"
+              title="{% trans 'Click-n-drag to reposition within the severity category' %}"
             ></td>
             <td class="align-middle text-left">
               <a id="delete-target-content-finding-{{ finding.id }}"
                 {% if finding.added_as_blank %}
                  class="clickable icon flag-icon" data-toggle="tooltip" data-placement="top"
-                 title="Finding started as a blank template, not from the finding library"
+                 title="{% trans 'Finding started as a blank template, not from the finding library' %}"
                 {% else %}
                  class="clickable"
                 {% endif %}
@@ -101,7 +97,7 @@
                       <a data-toggle="collapse" href="#accordion-evidences-{{ finding.id }}"
                          aria-expanded="false" aria-controls="accordion-evidences-{{ finding.id }}"
                          class="collapsed">
-                        Evidence Files
+                        {% trans "Evidence Files" %}
                       </a>
                     </h5>
                   </div>
@@ -118,11 +114,11 @@
                           <div id="evidence-dropdown-menu-{{ evidence.id }}" class="dropdown-menu"
                                aria-labelledby="evidence-dropdown-btn-{{ evidence.id }}">
                             <a class="dropdown-item icon view-icon"
-                               href="{% url 'reporting:evidence_detail' evidence_file.id %}">View</a>
+                               href="{% url 'reporting:evidence_detail' evidence_file.id %}">{% trans "View" %}</a>
                             <a class="dropdown-item icon edit-icon"
-                               href="{% url 'reporting:evidence_update' evidence_file.id %}">Edit</a>
+                               href="{% url 'reporting:evidence_update' evidence_file.id %}">{% trans "Edit" %}</a>
                             <a class="dropdown-item icon trash-icon"
-                               href="{% url 'reporting:evidence_delete' evidence_file.id %}">Delete</a>
+                               href="{% url 'reporting:evidence_delete' evidence_file.id %}">{% trans "Delete" %}</a>
                           </div>
                         </div>
                         <hr>
@@ -132,7 +128,7 @@
                         href="{% url 'reporting:upload_evidence' 'finding' finding.id %}"
                         data-toggle="tooltip"
                         data-placement="top"
-                        title="Attach a file as evidence"></a>
+                        title="{% trans 'Attach a file as evidence' %}"></a>
                     </div>
                   </div>
                 </div>
@@ -156,21 +152,21 @@
                   {% else %}
                     burned">
                   {% endif %}
-                  You</span>
+                  {% trans "You" %}</span>
               </td>
             {% else %}
               {% if finding.assigned_to %}
                 <td class="neutral align-middle text-left">{{ finding.assigned_to }}</td>
               {% else %}
-                <td class="medium align-middle text-left">TBD</td>
+                <td class="medium align-middle text-left">{% trans "TBD" %}</td>
               {% endif %}
             {% endif %}
             <td class="align-middle text-left">
               <span id="finding-status-{{ finding.id }}" class="
                 {% if finding.complete %}
-                  healthy">Ready
+                  healthy">{% trans "Ready" %}
               {% else %}
-                burned"> Needs Editing
+                burned"> {% trans "Needs Editing" %}
               {% endif %}
               </span>
             </td>
@@ -181,30 +177,29 @@
                 <div id="finding-dropdown-menu-{{ finding.id }}" class="dropdown-menu"
                      aria-labelledby="dns-dropdown-btn_{{ finding.id }}">
                   <a class="dropdown-item icon attach-icon"
-                     href="{% url 'reporting:upload_evidence' 'finding' finding.id %}">Attach
-                    Evidence</a>
+                     href="{% url 'reporting:upload_evidence' 'finding' finding.id %}">{% trans "Attach Evidence" %}</a>
                   <a class="dropdown-item icon edit-icon"
-                     href="{% url 'reporting:local_edit' finding.id %}">Edit</a>
+                     href="{% url 'reporting:local_edit' finding.id %}">{% trans "Edit" %}</a>
                   <a class="dropdown-item icon user-icon"
-                     href="{% url 'reporting:local_assign' finding.id %}">Re-Assign</a>
+                     href="{% url 'reporting:local_assign' finding.id %}">{% trans "Re-Assign" %}</a>
                   <a class="dropdown-item icon toggle-off-icon js-set-finding-status" href="javascript:void(0);"
                      set-finding-status-csrftoken="{{ csrf_token }}"
                      set-finding-status-url="{% url 'reporting:ajax_set_finding_status' finding.id 'edit' %}"
-                     set-finding-status="edit" set-finding-status-id="{{ finding.id }}">Flag for Editing</a>
+                     set-finding-status="edit" set-finding-status-id="{{ finding.id }}">{% trans "Flag for Editing" %}</a>
                   <a class="dropdown-item icon toggle-on-icon js-set-finding-status" href="javascript:void(0);"
                      set-finding-status-csrftoken="{{ csrf_token }}"
                      set-finding-status-url="{% url 'reporting:ajax_set_finding_status' finding.id 'complete' %}"
-                     set-finding-status="complete" set-finding-status-id="{{ finding.id }}">Mark as Complete</a>
+                     set-finding-status="complete" set-finding-status-id="{{ finding.id }}">{% trans "Mark as Complete" %}</a>
                   <form style="display:contents" action="{% url 'reporting:convert_finding' finding.id %}" method="post">
                     {% csrf_token %}
-                    <button class="dropdown-item icon clone-icon">Clone to Library</button>
+                    <button class="dropdown-item icon clone-icon">{% trans "Clone to Library" %}</button>
                   </form>
                   <a id="finding-delete-button-{{ finding.id }}"
                      class="dropdown-item icon trash-icon js-confirm-delete" data-toggle="modal"
                      data-target="#confirm-delete-modal" href="javascript:void(0);"
                      delete-target-csrftoken="{{ csrf_token }}"
                      delete-target-url="{% url 'reporting:ajax_delete_local_finding' finding.id %}"
-                     delete-target-id="{{ finding.id }}" delete-target-type="finding">Delete</a>
+                     delete-target-id="{{ finding.id }}" delete-target-type="finding">{% trans "Delete" %}</a>
                 </div>
               </div>
             </td>
@@ -213,14 +208,14 @@
       {% else %}
         <tr id="{{ group|lower }}_placeholder" data-id="{{ group|lower }}_placeholder"
             class="severity-row-placeholder">
-          <td colspan="7" scope="colgroup">No findings with this severity</td>
+          <td colspan="7" scope="colgroup">{% trans "No findings with this severity" %}</td>
         </tr>
       {% endif %}
     {% endfor %}
     </tbody>
   </table>
 {% else %}
-  <p class="mt-3">No findings have been added to this report yet.</p>
+  <p class="mt-3">{% trans "No findings have been added to this report yet." %}</p>
 {% endif %}
 
 <script>
@@ -335,7 +330,7 @@
             assigneeStatusCol.addClass(data['classes']);
           }
           if (data['message']) {
-            displayToastTop({type: data['result'], string: data['message'], title: 'Finding Update'});
+            displayToastTop({type: data['result'], string: data['message'], title: '{% trans "Finding Update" %}'});
           }
         }
       });

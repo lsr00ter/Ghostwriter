@@ -9,7 +9,7 @@
     <ul class="breadcrumb">
       {% comment %} Create breadcrumbs based on the context of the request {% endcomment %}
       <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">{% trans "Dashboard" %}</a></li>
-      <li class="breadcrumb-item"><a href="{% url 'reporting:templates' %}">Report Templates</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'reporting:templates' %}">{% trans "Report Templates" %}</a></li>
       <li class="breadcrumb-item active" aria-current="page">{% trans "Report Template Form" %}</li>
     </ul>
   </nav>
@@ -17,7 +17,7 @@
 
 {% block content %}
   <!-- Instructions Section -->
-  <p>Provide information for this report template:</p>
+  <p>{% trans "Provide information for this report template:" %}</p>
 
   <!-- Form Error Section -->
   {% if form.errors %}
@@ -36,11 +36,11 @@
   <!-- Global default warning -->
   {% if object and object == report_configuration.default_docx_template %}
     <div class="alert alert-warning" role="alert">
-      This template is the global default Word template. Be careful when editing.
+      {% trans "This template is the global default Word template. Be careful when editing." %}
     </div>
   {% elif object and object == report_configuration.default_pptx_template %}
     <div class="alert alert-warning" role="alert">
-      This template is the global default PowerPoint template. Be careful when editing.
+      {% trans "This template is the global default PowerPoint template. Be careful when editing." %}
     </div>
   {% endif %}
 

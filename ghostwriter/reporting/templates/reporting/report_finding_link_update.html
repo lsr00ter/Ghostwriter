@@ -1,17 +1,17 @@
 {% extends "collab_editing/update.html" %}
 
-{% load static bleach_tags %}
+{% load i18n static bleach_tags %}
 
-{% block pagetitle %}Report Finding Form{% endblock %}
+{% block pagetitle %}{% trans "Report Finding Form" %}{% endblock %}
 
 {% block breadcrumbs %}
     <nav aria-label="breadcrumb">
         <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">{% trans "Dashboard" %}</a></li>
             <li class="breadcrumb-item"><a href="{% url 'rolodex:client_detail' object.report.project.client.id %}">{{ object.report.project.client }}</a></li>
             <li class="breadcrumb-item"><a href="{% url 'rolodex:project_detail' object.report.project.id %}">{{ report.project.start_date }} {{ object.report.project.project_type }}</a></li>
             <li class="breadcrumb-item"><a href="{% url 'reporting:report_detail' object.report.id %}">{{ object.report }}</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Edit Report Finding</li>
+            <li class="breadcrumb-item active" aria-current="page">{% trans "Edit Report Finding" %}</li>
         </ul>
     </nav>
 {% endblock %}
@@ -22,7 +22,7 @@
             <div class="card-header" id="guidance" data-toggle="collapse" data-target="#collapseGuidance">
                 <a class="accordion-toggle btn btn-link icon guidance-icon" data-toggle="collapse"
                     data-target="#collapseGuidance" aria-expanded="false" aria-controls="collapseGuidance">
-                    Finding Guidance
+                    {% trans "Finding Guidance" %}
                 </a>
             </div>
             <div id="collapseGuidance" class="collapse" aria-labelledby="guidance" data-parent="#accordion">
@@ -30,7 +30,7 @@
                     {% if reportfindinglink.finding_guidance and reportfindinglink.finding_guidance != "<p></p>" %}
                         <div class="rich-text-field-preview">{{ reportfindinglink.finding_guidance|bleach }}</div>
                     {% else %}
-                        <p>No guidance was provided for this finding in the library.</p>
+                        <p>{% trans "No guidance was provided for this finding in the library." %}</p>
                     {% endif %}
                 </div>
             </div>

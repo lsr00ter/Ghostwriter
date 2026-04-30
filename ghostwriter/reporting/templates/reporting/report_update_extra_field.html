@@ -1,14 +1,14 @@
 {% extends "collab_editing/update.html" %}
 
-{% load static %}
+{% load i18n static %}
 
-{% block pagetitle %}Report Form{% endblock %}
+{% block pagetitle %}{% trans "Report Form" %}{% endblock %}
 
 {% block breadcrumbs %}
 <nav aria-label="breadcrumb">
   <ul class="breadcrumb">
     <li class="breadcrumb-item">
-      <a href="{% url 'home:dashboard' %}">Dashboard</a>
+      <a href="{% url 'home:dashboard' %}">{% trans "Dashboard" %}</a>
     </li>
     <li class="breadcrumb-item">
       <a href="{% url 'rolodex:client_detail' report.project.client.id %}">
@@ -34,7 +34,7 @@
 
 {% block content %}
   <div class="container">
-    <h2>{{ target_field.display_name}} on {{ report }}</h2>
+    <h2>{% blocktrans with field=target_field.display_name report_name=report %}{{ field }} on {{ report_name }}{% endblocktrans %}</h2>
   </div>
   {{ block.super }}
 {% endblock %}

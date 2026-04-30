@@ -1,7 +1,7 @@
 {% extends "base_generic_empty.html" %}
-{% load crispy_forms_tags %}
+{% load i18n crispy_forms_tags %}
 
-{% block pagetitle %}Evidence Form{% endblock %}
+{% block pagetitle %}{% trans "Evidence Form" %}{% endblock %}
 
 {% block content %}
     {% include "reporting/evidence_form_template.html" with form=form %}
@@ -30,7 +30,7 @@
                         value
                     }, origin);
                 } catch(err) {
-                    displayToastTop({type:'error', string:'You must provide a friendly name, caption, and evidence file', context:'form'});
+                    displayToastTop({type:'error', string:'{% trans "You must provide a friendly name, caption, and evidence file" %}', context:'form'});
                 }
             }
         });
