@@ -20,29 +20,27 @@
   </div>
 
   {% if filter.qs|length == 0 %}
-    <div class="alert alert-warning offset-md-2 col-md-8 mt-3" role="alert">There are no findings yet, or your search
-      returned no results. Create a finding above or adjust your filters.
+    <div class="alert alert-warning offset-md-2 col-md-8 mt-3" role="alert">{% trans "There are no report templates yet, or your search returned no results. Upload a template above or adjust your filters." %}
     </div>
   {% else %}
     <!-- Report Templates Table Section -->
-    <p class="mt-3">This page lists all report templates and their current status. To investigate a status, view the
-      template's details page.</p>
+    <p class="mt-3">{% trans "This page lists all report templates and their current status. To investigate a status, view the template's details page." %}</p>
 
-    <p><strong>Note:</strong> Only admins and managers may edit protected report templates.</p>
+    <p>{% blocktrans %}<strong>Note:</strong> Only admins and managers may edit protected report templates.{% endblocktrans %}</p>
 
-    <a class="btn btn-info icon upload-icon col-2" href="{% url 'reporting:template_create' %}">Upload</a>
-    <a id="resetSortBtn" class="btn btn-secondary col-2 icon sync-icon" role="button">Reset Sort</a>
+    <a class="btn btn-info icon upload-icon col-2" href="{% url 'reporting:template_create' %}">{% trans "Upload" %}</a>
+    <a id="resetSortBtn" class="btn btn-secondary col-2 icon sync-icon" role="button">{% trans "Reset Sort" %}</a>
 
     <table id="reportTemplateTable" class="tablesorter table table-sm table-hover">
       <thead>
       <tr>
-        <th class="align-middle pr-4 text-left">Status</th>
-        <th class="align-middle pr-4">Doc Type</th>
-        <th class="align-middle pr-4 text-left">Name</th>
-        <th class="align-middle pr-4 text-left">Orientation</th>
-        <th class="align-middle pr-4 text-left">Client</th>
-        <th class="align-middle pr-4">Project-Only</th>
-        <th class="sorter-false align-middle">Options</th>
+        <th class="align-middle pr-4 text-left">{% trans "Status" %}</th>
+        <th class="align-middle pr-4">{% trans "Doc Type" %}</th>
+        <th class="align-middle pr-4 text-left">{% trans "Name" %}</th>
+        <th class="align-middle pr-4 text-left">{% trans "Orientation" %}</th>
+        <th class="align-middle pr-4 text-left">{% trans "Client" %}</th>
+        <th class="align-middle pr-4">{% trans "Project-Only" %}</th>
+        <th class="sorter-false align-middle">{% trans "Options" %}</th>
       </tr>
       </thead>
 
@@ -52,7 +50,7 @@
             {% with template.get_status as status %}
               <span class="badge
                                 {% if status == "success" %}
-                                    badge-success">Ready</span>
+                                    badge-success">{% trans "Ready" %}</span>
               {% else %}
                 {% if status == "warning" %}
                   badge-warning
@@ -70,20 +68,20 @@
           <td class="align-middle text-left"><a class="clickable"
                                                 href="{% url 'reporting:template_detail' template.id %}">{{ template.name }}</a>
           </td>
-          <td class="align-middle text-left">{% if template.landscape %}Landscsape{% else %}Portrait{% endif %}</td>
+          <td class="align-middle text-left">{% if template.landscape %}{% trans "Landscape" %}{% else %}{% trans "Portrait" %}{% endif %}</td>
           <td class="align-middle text-left">
             {% if template.client %}
               {{ template.client }}
             {% else %}
-              <span style="display:none;">N/A</span>
+              <span style="display:none;">{% trans "N/A" %}</span>
             {% endif %}
           </td>
           <td
             class="{% if template.doc_type.doc_type == "project_docx" %}icon check-icon{% endif %}">
             {% if template.doc_type.doc_type == "project_docx" %}
-              <span style="display:none;">Project Only</span>
+              <span style="display:none;">{% trans "Project Only" %}</span>
             {% else %}
-              <span style="display:none;">N/A</span>
+              <span style="display:none;">{% trans "N/A" %}</span>
             {% endif %}
           </td>
 
@@ -91,17 +89,17 @@
             <div class="d-flex justify-content-center">
               <span
                 class="icon preview-icon clickable-link"
-                title="View additional information"
+                title="{% trans 'View additional information' %}"
                 onclick="openModal('#template_detail_{{ template.id }}')"
               ></span>
               <a class="icon download-icon" href="javascript:void(0)"
-                 onclick="downloadTemplate({{ template.id }}, '{{ template.filename }}')" title="Download template"></a>
+                 onclick="downloadTemplate({{ template.id }}, '{{ template.filename }}')" title="{% trans 'Download template' %}"></a>
               {% if template.protected and request.user|is_privileged or not template.protected %}
                 <a class="icon edit-icon"
                    href="{% url 'reporting:template_update' template.id %}"></a>
                 <a class="icon trash-icon" href="{% url 'reporting:template_delete' template.id %}"></a>
               {% else %}
-                <a class="icon lock-icon" title="This template is protected and cannot be edited or deleted"
+                <a class="icon lock-icon" title="{% trans 'This template is protected and cannot be edited or deleted' %}"
                    href="javascript:void(0)"></a>
               {% endif %}
             </div>

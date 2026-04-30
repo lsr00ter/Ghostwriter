@@ -8,7 +8,7 @@
     <nav aria-label="breadcrumb">
         <ul class="breadcrumb">
             <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">{% trans "Dashboard" %}</a></li>
-            <li class="breadcrumb-item"><a href="{% url 'reporting:reports' %}">Reports</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'reporting:reports' %}">{% trans "Reports" %}</a></li>
             <li class="breadcrumb-item active" aria-current="page">{% trans "Archives" %}</li>
         </ul>
     </nav>
@@ -22,15 +22,15 @@
 
     <!-- Archive Files Section -->
     {% if filter.qs|length == 0 %}
-        <p class="mt-3">There are no archived reports to see here.</p>
+        <p class="mt-3">{% trans "There are no archived reports to see here." %}</p>
     {% else %}
-        <p class="mt-3">The following reports have been closed out, archived, and are now available below for download.</p>
+        <p class="mt-3">{% trans "The following reports have been closed out, archived, and are now available below for download." %}</p>
 
         <table class="roundedCorners table table-sm table-hover">
             <tr>
-                <th class="align-middle text-left">Client</th>
-                <th class="align-middle text-left">Project</th>
-                <th class="align-middle text-left">Zip Archive</th>
+                <th class="align-middle text-left">{% trans "Client" %}</th>
+                <th class="align-middle text-left">{% trans "Project" %}</th>
+                <th class="align-middle text-left">{% trans "Zip Archive" %}</th>
             </tr>
             {% for zip in filter.qs %}
                 <tr>

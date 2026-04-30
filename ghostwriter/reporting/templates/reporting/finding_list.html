@@ -23,21 +23,19 @@
 
   <!-- Instructions Section -->
   {% if not searching_report_findings %}
-    <p class="mt-3">Click the <span class="add-icon"></span> icon to add a finding to the <em>active report</em>
-      displayed at the top of the page.</p>
+    <p class="mt-3">{% blocktrans %}Click the <span class="add-icon"></span> icon to add a finding to the <em>active report</em> displayed at the top of the page.{% endblocktrans %}</p>
   {% else %}
-    <p class="mt-3">The following results include findings attached to reports, not findings in your library.</p>
+    <p class="mt-3">{% trans "The following results include findings attached to reports, not findings in your library." %}</p>
   {% endif %}
 
   <form action="{% url 'reporting:finding_create' %}" method="POST" style="display:contents">
     {% csrf_token %}
-    <button role="button" class="btn btn-info col-2 icon add-icon">Create Finding</button>
+    <button role="button" class="btn btn-info col-2 icon add-icon">{% trans "Create Finding" %}</button>
   </form>
-  <a id="resetSortBtn" class="btn btn-secondary col-2 icon sync-icon" role="button">Reset Sort</a>
+  <a id="resetSortBtn" class="btn btn-secondary col-2 icon sync-icon" role="button">{% trans "Reset Sort" %}</a>
 
   {% if filter.qs|length == 0 %}
-    <div class="alert alert-warning offset-md-2 col-md-8 mt-3" role="alert">There are no findings yet, or your search
-      returned no results. Create a finding above or adjust your filters.
+    <div class="alert alert-warning offset-md-2 col-md-8 mt-3" role="alert">{% trans "There are no findings yet, or your search returned no results. Create a finding above or adjust your filters." %}
     </div>
   {% else %}
     <!-- Findings Table Section -->
@@ -50,15 +48,15 @@
       >
         <thead>
         <tr>
-          <th class="sortable align-middle text-left" data-internal-name="severity">Severity</th>
-          <th class="sortable align-middle text-left" data-internal-name="type">Type</th>
-          <th class="sortable align-middle text-left" data-no-hide>Title</th>
+          <th class="sortable align-middle text-left" data-internal-name="severity">{% trans "Severity" %}</th>
+          <th class="sortable align-middle text-left" data-internal-name="type">{% trans "Type" %}</th>
+          <th class="sortable align-middle text-left" data-no-hide>{% trans "Title" %}</th>
           {% if searching_report_findings %}
-            <th class="sortable pr-4 align-middle text-left" data-internal-name="report">Report</th>
+            <th class="sortable pr-4 align-middle text-left" data-internal-name="report">{% trans "Report" %}</th>
           {% endif %}
-          <th class="sortable align-middle text-left" data-hide-default data-internal-name="cvss_vector">CVSS Vector</th>
-          <th class="sortable align-middle text-left" data-hide-default data-internal-name="tags">Tags</th>
-          <th class="sorter-false align-middle" data-no-hide>Options</th>
+          <th class="sortable align-middle text-left" data-hide-default data-internal-name="cvss_vector">{% trans "CVSS Vector" %}</th>
+          <th class="sortable align-middle text-left" data-hide-default data-internal-name="tags">{% trans "Tags" %}</th>
+          <th class="sorter-false align-middle" data-no-hide>{% trans "Options" %}</th>
         </tr>
         </thead>
         <tbody class="list">
@@ -104,7 +102,7 @@
                   style="cursor: help"
                   data-toggle="tooltip"
                   data-placement="bottom"
-                  title="Finding Type"
+                  title="{% trans 'Finding Type' %}"
               >
                 {{ finding.finding_type.finding_type|bleach }}
               </span>
@@ -132,19 +130,19 @@
               <div class="d-flex justify-content-center">
                 <span
                   class="icon preview-icon clickable-link"
-                  title="View additional information"
+                  title="{% trans 'View additional information' %}"
                   onclick="openModal('#finding_detail_{{ finding.id }}')"
                 ></span>
                 {% if not searching_report_findings %}
                   <a class="js-assign-finding icon add-icon"
-                     title="Add finding to your active report (selected in the left-hand sidebar)"
+                     title="{% trans 'Add finding to your active report (selected in the left-hand sidebar)' %}"
                      assign-finding-id="{{ finding.id }}"
                      href="javascript:void(0);"
                      assign-finding-csrftoken="{{ csrf_token }}"
                      assign-finding-url="{% url 'reporting:ajax_assign_finding' finding.id %}"></a>
                 {% endif %}
                 <a class="icon edit-icon icon-last"
-                   title="Edit the library record for this finding"
+                   title="{% trans 'Edit the library record for this finding' %}"
                    href="{{ finding.get_edit_url }}"></a>
               </div>
             </td>

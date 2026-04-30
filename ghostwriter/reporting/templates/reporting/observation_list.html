@@ -21,15 +21,14 @@
       <div class="buttonHolder">
         <form action="{% url 'reporting:observation_create' %}" method="POST" style="display:contents">
           {% csrf_token %}
-          <button class="btn btn-primary col-md-4 icon add-icon" role="button">Create Observation</button>
+          <button class="btn btn-primary col-md-4 icon add-icon" role="button">{% trans "Create Observation" %}</button>
         </form>
       </div>
     </div>
   </div>
 
   {% if filter.qs|length == 0 %}
-    <div class="alert alert-warning offset-md-2 col-md-8 mt-3" role="alert">There are no observations yet, or your search
-      returned no results. Create an observation above or adjust your filters.
+    <div class="alert alert-warning offset-md-2 col-md-8 mt-3" role="alert">{% trans "There are no observations yet, or your search returned no results. Create an observation above or adjust your filters." %}
     </div>
   {% else %}
     <!-- Observations Table -->
@@ -37,9 +36,9 @@
       <table id="observationsTable" class="table table-striped table-sm">
         <thead>
           <tr>
-            <th class="align-middle text-left">Title</th>
-            <th class="align-middle text-left">Tags</th>
-            <th class="sorter-false align-middle">Options</th>
+            <th class="align-middle text-left">{% trans "Title" %}</th>
+            <th class="align-middle text-left">{% trans "Tags" %}</th>
+            <th class="sorter-false align-middle">{% trans "Options" %}</th>
           </tr>
         </thead>
         <tbody class="list">
@@ -52,14 +51,14 @@
               <div class="d-flex justify-content-center">
                 <a
                   class="icon preview-icon clickable-link"
-                  title="Click to view additional information"
+                  title="{% trans 'Click to view additional information' %}"
                   onclick="openModal('#observation_detail_{{ observation.id }}')"
                 ></a>
                 <a class="js-assign-observation icon add-icon" assign-observation-id="{{ observation.id }}"
                   href="javascript:void(0);" assign-observation-csrftoken="{{ csrf_token }}"
-                  title="Add observation to your active report (selected in the left-hand sidebar)"
+                  title="{% trans 'Add observation to your active report (selected in the left-hand sidebar)' %}"
                   assign-observation-url="{% url 'reporting:ajax_assign_observation' observation.id %}"></a>
-                <a class="icon edit-icon icon-last" href="{% url 'reporting:observation_update' observation.id %}" title="Edit the observation"></a>
+                <a class="icon edit-icon icon-last" href="{% url 'reporting:observation_update' observation.id %}" title="{% trans 'Edit the observation' %}"></a>
               </div>
             </td>
           </tr>
