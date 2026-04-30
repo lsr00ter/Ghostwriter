@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ghostwriter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-30 02:56+0000\n"
+"POT-Creation-Date: 2026-04-30 07:45+0000\n"
 "PO-Revision-Date: 2026-04-30 00:00+0000\n"
 "Last-Translator: GitHub Copilot\n"
 "Language-Team: Chinese\n"
@@ -41,6 +41,7 @@ msgstr "创建操作日志"
 #: ghostwriter/oplog/templates/oplog/oplog_import.html:9
 #: ghostwriter/oplog/templates/oplog/oplog_list.html:11
 #: ghostwriter/reporting/templates/reporting/archives.html:10
+#: ghostwriter/reporting/templates/reporting/evidence_detail.html:11
 #: ghostwriter/reporting/templates/reporting/evidence_form.html:9
 #: ghostwriter/reporting/templates/reporting/finding_detail.html:11
 #: ghostwriter/reporting/templates/reporting/finding_list.html:10
@@ -51,6 +52,7 @@ msgstr "创建操作日志"
 #: ghostwriter/reporting/templates/reporting/report_form.html:12
 #: ghostwriter/reporting/templates/reporting/report_list.html:10
 #: ghostwriter/reporting/templates/reporting/report_observation_link_assign.html:10
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:11
 #: ghostwriter/reporting/templates/reporting/report_template_form.html:12
 #: ghostwriter/reporting/templates/reporting/report_templates_list.html:10
 #: ghostwriter/rolodex/templates/rolodex/client_detail.html:13
@@ -250,6 +252,7 @@ msgid ""
 msgstr "以下报告已关闭并归档，可在下方下载。"
 
 #: ghostwriter/reporting/templates/reporting/archives.html:31
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:76
 #: ghostwriter/reporting/templates/reporting/report_templates_list.html:41
 msgid "Client"
 msgstr "客户"
@@ -262,6 +265,100 @@ msgstr "项目"
 msgid "Zip Archive"
 msgstr "ZIP 归档"
 
+#: ghostwriter/reporting/templates/reporting/evidence_detail.html:6
+msgid "Evidence Detail"
+msgstr "证据详情"
+
+#: ghostwriter/reporting/templates/reporting/evidence_detail.html:21
+msgid "Evidence"
+msgstr "证据"
+
+#: ghostwriter/reporting/templates/reporting/evidence_detail.html:37
+#: ghostwriter/reporting/templates/reporting/finding_detail.html:27
+#: ghostwriter/reporting/templates/reporting/finding_detail.html:252
+#: ghostwriter/reporting/templates/reporting/observation_detail.html:27
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:29
+#: ghostwriter/rolodex/templates/rolodex/project_form.html:22
+#: ghostwriter/templates/mfa/webauthn/authenticator_list.html:45
+msgid "Edit"
+msgstr "编辑"
+
+#: ghostwriter/reporting/templates/reporting/evidence_detail.html:38
+#: ghostwriter/reporting/templates/reporting/finding_detail.html:32
+#: ghostwriter/reporting/templates/reporting/finding_detail.html:256
+#: ghostwriter/reporting/templates/reporting/observation_detail.html:32
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:30
+#: ghostwriter/templates/confirm_delete.html:4
+#: ghostwriter/templates/mfa/webauthn/authenticator_list.html:49
+msgid "Delete"
+msgstr "删除"
+
+#: ghostwriter/reporting/templates/reporting/evidence_detail.html:40
+msgid "Return to Report"
+msgstr "返回报告"
+
+#: ghostwriter/reporting/templates/reporting/evidence_detail.html:55
+msgid "Original Filename"
+msgstr "原始文件名"
+
+#: ghostwriter/reporting/templates/reporting/evidence_detail.html:59
+msgid "Uploaded by"
+msgstr "上传者"
+
+#: ghostwriter/reporting/templates/reporting/evidence_detail.html:63
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:68
+msgid "Upload Date"
+msgstr "上传时间"
+
+#: ghostwriter/reporting/templates/reporting/evidence_detail.html:67
+msgid "Report Caption"
+msgstr "报告题注"
+
+#: ghostwriter/reporting/templates/reporting/evidence_detail.html:77
+#: ghostwriter/reporting/templates/reporting/finding_detail.html:99
+#: ghostwriter/reporting/templates/reporting/observation_detail.html:42
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:116
+msgid "Description"
+msgstr "描述"
+
+#: ghostwriter/reporting/templates/reporting/evidence_detail.html:91
+msgid "File Preview"
+msgstr "文件预览"
+
+#: ghostwriter/reporting/templates/reporting/evidence_detail.html:95
+msgid ""
+"This is a preview of what your evidence file will look like in a report. It "
+"may not look exactly like this (depending on your template's styles), but it "
+"will give you an idea of what to expect."
+msgstr "以下为该证据文件在报告中的预览效果。实际外观可能因模板样式而有所差异，此处仅供参考。"
+
+#: ghostwriter/reporting/templates/reporting/evidence_detail.html:96
+msgid ""
+"The width is 6.5\" (165.1mm), the default full width of a Word document. If "
+"you have borders enabled for reports, images will include a border with your "
+"configured color and width. Previews also show you what captions will look "
+"like with your caption and configured labelling for figures."
+msgstr ""
+"宽度为 6.5 英寸（165.1 毫米），即 Word 文档的默认通栏宽度。若已为报告启用边"
+"框，图片将以所配置的颜色和宽度显示边框。预览同时展示题注按当前文字与图序标签"
+"配置渲染后的样式。"
+
+#: ghostwriter/reporting/templates/reporting/evidence_detail.html:100
+msgid "Click on the preview to view full size"
+msgstr "点击预览查看完整尺寸"
+
+#: ghostwriter/reporting/templates/reporting/evidence_detail.html:105
+msgid "Linked Log Entries"
+msgstr "关联的日志条目"
+
+#: ghostwriter/reporting/templates/reporting/evidence_detail.html:121
+msgid "Open in log"
+msgstr "在日志中打开"
+
+#: ghostwriter/reporting/templates/reporting/evidence_detail.html:130
+msgid "This evidence file has not been linked to any log entries."
+msgstr "该证据文件尚未关联任何日志条目。"
+
 #: ghostwriter/reporting/templates/reporting/evidence_form.html:4
 #: ghostwriter/reporting/templates/reporting/evidence_form.html:13
 msgid "Evidence Form"
@@ -273,22 +370,124 @@ msgstr "证据表单"
 msgid "%(display_title)s Details"
 msgstr "%(display_title)s 详情"
 
-#: ghostwriter/reporting/templates/reporting/finding_list.html:5
-msgid "Findings Library"
-msgstr "发现项库"
-
+#: ghostwriter/reporting/templates/reporting/finding_detail.html:12
 #: ghostwriter/reporting/templates/reporting/finding_list.html:11
 #: ghostwriter/templates/base_generic.html:190
 msgid "Findings"
 msgstr "发现项"
+
+#: ghostwriter/reporting/templates/reporting/finding_detail.html:30
+#: ghostwriter/reporting/templates/reporting/observation_detail.html:30
+msgid "Add to Report"
+msgstr "添加至报告"
+
+#: ghostwriter/reporting/templates/reporting/finding_detail.html:31
+msgid "Return to Findings"
+msgstr "返回发现项"
+
+#: ghostwriter/reporting/templates/reporting/finding_detail.html:58
+#, python-format
+msgid "CVSS Vector: %(vector)s"
+msgstr "CVSS 向量：%(vector)s"
+
+#: ghostwriter/reporting/templates/reporting/finding_detail.html:87
+#: ghostwriter/reporting/templates/reporting/finding_list.html:105
+msgid "Finding Type"
+msgstr "发现项类型"
+
+#: ghostwriter/reporting/templates/reporting/finding_detail.html:105
+#: ghostwriter/reporting/templates/reporting/observation_detail.html:48
+msgid "Description write-up is needed."
+msgstr "需要补充描述。"
+
+#: ghostwriter/reporting/templates/reporting/finding_detail.html:112
+msgid "Impact"
+msgstr "影响"
+
+#: ghostwriter/reporting/templates/reporting/finding_detail.html:118
+msgid "Impact write-up is needed."
+msgstr "需要补充影响描述。"
+
+#: ghostwriter/reporting/templates/reporting/finding_detail.html:125
+msgid "Recommendations"
+msgstr "改进建议"
+
+#: ghostwriter/reporting/templates/reporting/finding_detail.html:131
+msgid "Recommendations are needed."
+msgstr "需要补充改进建议。"
+
+#: ghostwriter/reporting/templates/reporting/finding_detail.html:138
+msgid "Detection Recommendations"
+msgstr "检测建议"
+
+#: ghostwriter/reporting/templates/reporting/finding_detail.html:142
+msgid "Host Detection"
+msgstr "主机端检测"
+
+#: ghostwriter/reporting/templates/reporting/finding_detail.html:148
+msgid "Network Detection"
+msgstr "网络端检测"
+
+#: ghostwriter/reporting/templates/reporting/finding_detail.html:154
+msgid "No host or network detections have been written for this finding."
+msgstr "尚未为该发现项编写主机或网络端检测建议。"
+
+#: ghostwriter/reporting/templates/reporting/finding_detail.html:161
+msgid "Replication Steps"
+msgstr "复现步骤"
+
+#: ghostwriter/reporting/templates/reporting/finding_detail.html:167
+msgid "Replication steps are needed."
+msgstr "需要补充复现步骤。"
+
+#: ghostwriter/reporting/templates/reporting/finding_detail.html:174
+msgid "References"
+msgstr "参考资料"
+
+#: ghostwriter/reporting/templates/reporting/finding_detail.html:180
+msgid "References are needed."
+msgstr "需要补充参考资料。"
+
+#: ghostwriter/reporting/templates/reporting/finding_detail.html:188
+msgid "Finding Guidance"
+msgstr "发现项指引"
+
+#: ghostwriter/reporting/templates/reporting/finding_detail.html:197
+#: ghostwriter/reporting/templates/reporting/observation_detail.html:54
+msgid "Extra Fields"
+msgstr "扩展字段"
+
+#: ghostwriter/reporting/templates/reporting/finding_detail.html:226
+msgid "Notes"
+msgstr "备注"
+
+#: ghostwriter/reporting/templates/reporting/finding_detail.html:230
+msgid "Add a Note"
+msgstr "添加备注"
+
+#: ghostwriter/reporting/templates/reporting/finding_detail.html:244
+msgid "Deleted"
+msgstr "已删除"
+
+#: ghostwriter/reporting/templates/reporting/finding_detail.html:261
+msgid "No notes for this finding."
+msgstr "该发现项暂无备注。"
+
+#: ghostwriter/reporting/templates/reporting/finding_detail.html:299
+msgid "Finding Assigned"
+msgstr "发现项已分配"
+
+#: ghostwriter/reporting/templates/reporting/finding_list.html:5
+msgid "Findings Library"
+msgstr "发现项库"
 
 #: ghostwriter/reporting/templates/reporting/finding_list.html:26
 msgid ""
 "Click the <span class=\"add-icon\"></span> icon to add a finding to the "
 "<em>active report</em> displayed at the top of the page."
 msgstr ""
-"点击 <span class=\"add-icon\"></span> 图标，将发现项添加至页面顶部显示的"
-"<em>当前报告</em>。"
+"点击 <span class=\"add-icon\"></span> 图标，将发现项添加至页面顶部显示的<em>"
+"当前报告</em>。"
 
 #: ghostwriter/reporting/templates/reporting/finding_list.html:28
 msgid ""
@@ -345,10 +544,6 @@ msgstr "标签"
 msgid "Options"
 msgstr "操作"
 
-#: ghostwriter/reporting/templates/reporting/finding_list.html:105
-msgid "Finding Type"
-msgstr "发现项类型"
-
 #: ghostwriter/reporting/templates/reporting/finding_list.html:133
 #: ghostwriter/reporting/templates/reporting/report_templates_list.html:92
 msgid "View additional information"
@@ -362,14 +557,23 @@ msgstr "将发现项添加至当前报告（在左侧栏中选定）"
 msgid "Edit the library record for this finding"
 msgstr "编辑该发现项的库记录"
 
-#: ghostwriter/reporting/templates/reporting/observation_list.html:5
-msgid "Observations Library"
-msgstr "观察项库"
-
+#: ghostwriter/reporting/templates/reporting/observation_detail.html:12
 #: ghostwriter/reporting/templates/reporting/observation_list.html:11
 #: ghostwriter/templates/base_generic.html:213
 msgid "Observations"
 msgstr "观察项"
+
+#: ghostwriter/reporting/templates/reporting/observation_detail.html:31
+msgid "Return to Observations"
+msgstr "返回观察项"
+
+#: ghostwriter/reporting/templates/reporting/observation_detail.html:127
+msgid "Observation Assigned"
+msgstr "观察项已分配"
+
+#: ghostwriter/reporting/templates/reporting/observation_list.html:5
+msgid "Observations Library"
+msgstr "观察项库"
 
 #: ghostwriter/reporting/templates/reporting/observation_list.html:24
 msgid "Create Observation"
@@ -457,8 +661,8 @@ msgid ""
 "Your active report is displayed at the top of your browser window and is the "
 "report that will receive a finding when you add one to the report."
 msgstr ""
-"点击下方按钮可将对应报告设为当前报告。当前报告显示于浏览器窗口顶部，新增"
-"发现项将记入该报告。"
+"点击下方按钮可将对应报告设为当前报告。当前报告显示于浏览器窗口顶部，新增发现"
+"项将记入该报告。"
 
 #: ghostwriter/reporting/templates/reporting/report_list.html:54
 msgid "Archived"
@@ -488,6 +692,126 @@ msgstr "选择报告"
 msgid "Assign Observation"
 msgstr "分配观察项"
 
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:6
+msgid "Report Template Detail"
+msgstr "报告模板详情"
+
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:12
+#: ghostwriter/reporting/templates/reporting/report_templates_list.html:11
+msgid "Report Templates"
+msgstr "报告模板"
+
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:26
+#: ghostwriter/templates/mfa/backup_tokens.html:52
+#: ghostwriter/templates/mfa/index.html:111
+#: ghostwriter/templates/mfa/recovery_codes/index.html:52
+msgid "Download"
+msgstr "下载"
+
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:27
+msgid "Lint"
+msgstr "Lint 检查"
+
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:38
+msgid "Word"
+msgstr "Word"
+
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:38
+msgid "PowerPoint"
+msgstr "PowerPoint"
+
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:47
+msgid "You may edit this protected template."
+msgstr "可编辑该受保护的模板。"
+
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:49
+msgid "This template is protected – only admins and managers may edit it."
+msgstr "该模板受保护，仅管理员和经理可编辑。"
+
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:58
+msgid "Uploaded By"
+msgstr "上传者"
+
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:63
+#: ghostwriter/templates/mfa/webauthn/authenticator_list.html:31
+msgid "Unknown"
+msgstr "未知"
+
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:72
+msgid "Last Update"
+msgstr "最近更新"
+
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:81
+#: ghostwriter/reporting/templates/reporting/report_templates_list.html:76
+#: ghostwriter/reporting/templates/reporting/report_templates_list.html:84
+msgid "N/A"
+msgstr "暂无"
+
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:86
+#: ghostwriter/reporting/templates/reporting/report_templates_list.html:40
+msgid "Orientation"
+msgstr "页面方向"
+
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:87
+#: ghostwriter/reporting/templates/reporting/report_templates_list.html:71
+msgid "Landscape"
+msgstr "横向"
+
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:87
+#: ghostwriter/reporting/templates/reporting/report_templates_list.html:71
+msgid "Portrait"
+msgstr "纵向"
+
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:91
+msgid "New Paragraph Style"
+msgstr "新段落样式"
+
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:92
+msgid "Normal"
+msgstr "默认"
+
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:96
+msgid "Evidence Image Width"
+msgstr "证据图片宽度"
+
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:99
+#, python-format
+msgid "%(width)s inches"
+msgstr "%(width)s 英寸"
+
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:101
+msgid "Use global default"
+msgstr "使用全局默认值"
+
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:106
+msgid "Evidence Image Alignment"
+msgstr "证据图片对齐方式"
+
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:110
+msgid "References BloodHound Data"
+msgstr "引用 BloodHound 数据"
+
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:123
+msgid "No description provided."
+msgstr "未提供描述。"
+
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:133
+msgid "Template CHANGELOG"
+msgstr "模板变更日志"
+
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:139
+msgid "No CHANGELOG data"
+msgstr "无变更日志"
+
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:151
+msgid "Template linting request submitted"
+msgstr "已提交模板 Lint 请求"
+
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:151
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:183
+msgid "Template Update"
+msgstr "模板更新"
+
 #: ghostwriter/reporting/templates/reporting/report_template_form.html:14
 msgid "Report Template Form"
 msgstr "报告模板表单"
@@ -495,10 +819,6 @@ msgstr "报告模板表单"
 #: ghostwriter/reporting/templates/reporting/report_templates_list.html:5
 msgid "Report Template List"
 msgstr "报告模板列表"
-
-#: ghostwriter/reporting/templates/reporting/report_templates_list.html:11
-msgid "Report Templates"
-msgstr "报告模板"
 
 #: ghostwriter/reporting/templates/reporting/report_templates_list.html:23
 msgid ""
@@ -531,10 +851,6 @@ msgstr "文档类型"
 msgid "Name"
 msgstr "名称"
 
-#: ghostwriter/reporting/templates/reporting/report_templates_list.html:40
-msgid "Orientation"
-msgstr "页面方向"
-
 #: ghostwriter/reporting/templates/reporting/report_templates_list.html:42
 msgid "Project-Only"
 msgstr "仅限项目"
@@ -542,19 +858,6 @@ msgstr "仅限项目"
 #: ghostwriter/reporting/templates/reporting/report_templates_list.html:53
 msgid "Ready"
 msgstr "就绪"
-
-#: ghostwriter/reporting/templates/reporting/report_templates_list.html:71
-msgid "Landscape"
-msgstr "横向"
-
-#: ghostwriter/reporting/templates/reporting/report_templates_list.html:71
-msgid "Portrait"
-msgstr "纵向"
-
-#: ghostwriter/reporting/templates/reporting/report_templates_list.html:76
-#: ghostwriter/reporting/templates/reporting/report_templates_list.html:84
-msgid "N/A"
-msgstr "暂无"
 
 #: ghostwriter/reporting/templates/reporting/report_templates_list.html:82
 msgid "Project Only"
@@ -755,11 +1058,6 @@ msgstr "%(client)s %(project_type)s 详情"
 #: ghostwriter/rolodex/templates/rolodex/project_form.html:5
 msgid "Project Form"
 msgstr "项目表单"
-
-#: ghostwriter/rolodex/templates/rolodex/project_form.html:22
-#: ghostwriter/templates/mfa/webauthn/authenticator_list.html:45
-msgid "Edit"
-msgstr "编辑"
 
 #: ghostwriter/rolodex/templates/rolodex/project_form.html:30
 msgid "New Project Form"
@@ -1482,11 +1780,6 @@ msgstr "了解更多"
 msgid "Archive %(object)s"
 msgstr "归档 %(object)s"
 
-#: ghostwriter/templates/confirm_delete.html:4
-#: ghostwriter/templates/mfa/webauthn/authenticator_list.html:49
-msgid "Delete"
-msgstr "删除"
-
 #: ghostwriter/templates/index.html:6
 msgid "Ghostwriter Dashboard"
 msgstr "Ghostwriter 仪表板"
@@ -1719,12 +2012,6 @@ msgstr ""
 msgid "Generate Backup Tokens"
 msgstr ""
 
-#: ghostwriter/templates/mfa/backup_tokens.html:52
-#: ghostwriter/templates/mfa/index.html:111
-#: ghostwriter/templates/mfa/recovery_codes/index.html:52
-msgid "Download"
-msgstr "下载"
-
 #: ghostwriter/templates/mfa/index.html:28
 msgid "Authenticator App"
 msgstr ""
@@ -1856,10 +2143,6 @@ msgstr ""
 
 #: ghostwriter/templates/mfa/webauthn/authenticator_list.html:31
 msgid "Unknown type"
-msgstr ""
-
-#: ghostwriter/templates/mfa/webauthn/authenticator_list.html:31
-msgid "Unknown"
 msgstr ""
 
 #: ghostwriter/templates/mfa/webauthn/authenticator_list.html:36

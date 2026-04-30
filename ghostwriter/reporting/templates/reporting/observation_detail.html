@@ -9,7 +9,7 @@
   <nav aria-label="breadcrumb">
     <ul class="breadcrumb">
       <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">{% trans "Dashboard" %}</a></li>
-      <li class="breadcrumb-item"><a href="{% url 'reporting:observations' %}">Observations</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'reporting:observations' %}">{% trans "Observations" %}</a></li>
       <li class="breadcrumb-item active" aria-current="page">{{ observation.display_title }}</li>
     </ul>
   </nav>
@@ -24,12 +24,12 @@
       <div class="bar3"></div>
     </div>
     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="observation-dropdown-btn">
-      <a class="dropdown-item icon edit-icon" href="{% url 'reporting:observation_update' observation.id %}">Edit</a>
+      <a class="dropdown-item icon edit-icon" href="{% url 'reporting:observation_update' observation.id %}">{% trans "Edit" %}</a>
       <a class="dropdown-item icon add-icon js-assign-observation" assign-observation-id="{{ observation.id }}"
          href="javascript:void(0);" assign-observation-csrftoken="{{ csrf_token }}"
-         assign-observation-url="{% url 'reporting:ajax_assign_observation' observation.id %}">Add to Report</a>
-      <a class="dropdown-item icon back-arrow-icon" href="{% url 'reporting:observations' %}">Return to Observations</a>
-      <a class="dropdown-item icon trash-icon" href="{% url 'reporting:observation_delete' observation.id %}">Delete</a>
+         assign-observation-url="{% url 'reporting:ajax_assign_observation' observation.id %}">{% trans "Add to Report" %}</a>
+      <a class="dropdown-item icon back-arrow-icon" href="{% url 'reporting:observations' %}">{% trans "Return to Observations" %}</a>
+      <a class="dropdown-item icon trash-icon" href="{% url 'reporting:observation_delete' observation.id %}">{% trans "Delete" %}</a>
     </div>
   </div>
 
@@ -39,19 +39,19 @@
 
   <div id="descriptionCard" class="card mb-3">
     <div class="card-header finding-header icon writing-icon">
-      Description
+      {% trans "Description" %}
     </div>
     <div class="card-body finding-content">
       {% if observation.description %}
         <div class="rich-text-field-preview">{{ observation.description|bleach }}</div>
       {% else %}
-        <p>Description write-up is needed.</p>
+        <p>{% trans "Description write-up is needed." %}</p>
       {% endif %}
     </div>
   </div>
 
   {% if observation_extra_fields_spec %}
-    <h4 class="icon custom-field-icon">Extra Fields</h4>
+    <h4 class="icon custom-field-icon">{% trans "Extra Fields" %}</h4>
     <hr>
 
     {% for field_spec in observation_extra_fields_spec %}
@@ -123,7 +123,7 @@
             // Do Something
           }
           if (data['message']) {
-            displayToastTop({type: data['result'], string: data['message'], title: 'Observation Assigned'});
+            displayToastTop({type: data['result'], string: data['message'], title: '{% trans "Observation Assigned" %}'});
           }
         }
       });

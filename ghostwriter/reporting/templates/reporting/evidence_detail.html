@@ -1,13 +1,14 @@
 {% extends 'base_generic.html' %}
+{% load i18n %}
 
 {% load bleach_tags report_tags settings_tags static %}
 
-{% block pagetitle %}Evidence Detail{% endblock %}
+{% block pagetitle %}{% trans "Evidence Detail" %}{% endblock %}
 
 {% block breadcrumbs %}
   <nav aria-label="breadcrumb">
     <ul class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">Dashboard</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">{% trans "Dashboard" %}</a></li>
       <li class="breadcrumb-item"><a
         href="{% url 'rolodex:client_detail' evidence.associated_report.project.client.id %}">{{ evidence.associated_report.project.client.name }}</a>
       </li>
@@ -17,7 +18,7 @@
       <li class="breadcrumb-item"><a
         href="{% url 'reporting:report_detail' evidence.associated_report.id %}">{{ evidence.associated_report }}</a>
       </li>
-      <li class="breadcrumb-item active" aria-current="page">Evidence</li>
+      <li class="breadcrumb-item active" aria-current="page">{% trans "Evidence" %}</li>
     </ul>
   </nav>
 {% endblock %}
@@ -33,10 +34,10 @@
       <div class="bar3"></div>
     </div>
     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="evidence-dropdown-btn">
-      <a class="dropdown-item icon edit-icon" href="{% url 'reporting:evidence_update' evidence.id %}">Edit</a>
-      <a class="dropdown-item icon trash-icon" href="{% url 'reporting:evidence_delete' evidence.id %}">Delete</a>
+      <a class="dropdown-item icon edit-icon" href="{% url 'reporting:evidence_update' evidence.id %}">{% trans "Edit" %}</a>
+      <a class="dropdown-item icon trash-icon" href="{% url 'reporting:evidence_delete' evidence.id %}">{% trans "Delete" %}</a>
       <a class="dropdown-item icon back-arrow-icon"
-         href="{% url 'reporting:report_detail' evidence.associated_report.id %}">Return to Report</a>
+         href="{% url 'reporting:report_detail' evidence.associated_report.id %}">{% trans "Return to Report" %}</a>
     </div>
   </div>
 
@@ -51,19 +52,19 @@
   <!-- File Information Section -->
   <table class="table table-borderless project-details-table offset-2 col-8">
     <tr>
-      <td class="text-left bold">Original Filename</td>
+      <td class="text-left bold">{% trans "Original Filename" %}</td>
       <td class="text-left" data-toggle="tooltip" data-placement="bottom" title="{{ evidence.filename|bleach }}">{{ evidence.filename|bleach|truncate_filename:50 }}</td>
     </tr>
     <tr>
-      <td class="text-left bold">Uploaded by</td>
+      <td class="text-left bold">{% trans "Uploaded by" %}</td>
       <td class="text-left">{{ evidence.uploaded_by }}</td>
     </tr>
     <tr>
-      <td class="text-left bold">Upload Date</td>
+      <td class="text-left bold">{% trans "Upload Date" %}</td>
       <td class="text-left">{{ evidence.upload_date }}</td>
     </tr>
     <tr>
-      <td class="text-left bold">Report Caption</td>
+      <td class="text-left bold">{% trans "Report Caption" %}</td>
       <td class="text-left">
         {% if evidence.caption %}
           {{ evidence.caption }}
@@ -73,7 +74,7 @@
       </td>
     </tr>
     <tr>
-      <td class="text-left bold">Description</td>
+      <td class="text-left bold">{% trans "Description" %}</td>
       <td class="text-left">
         {% if evidence.description %}
           {{ evidence.description|bleach }}
@@ -87,25 +88,21 @@
 
 
   <!-- File Content Section -->
-  <h4 class="icon file-icon">File Preview</h4>
+  <h4 class="icon file-icon">{% trans "File Preview" %}</h4>
   <hr>
 
   <div class="text-left offset-2 col-8">
-    <p>This is a preview of what your evidence file will look like in a report.
-      It may not look exactly like this (depending on your template's styles),
-      but it will give you an idea of what to expect.</p>
-    <p>The width is 6.5" (165.1mm), the default full width of a Word document. If you have borders enabled for reports,
-      images will include a border with your configured color and width. Previews also show you what captions will look
-      like with your caption and configured labelling for figures.
+    <p>{% trans "This is a preview of what your evidence file will look like in a report. It may not look exactly like this (depending on your template's styles), but it will give you an idea of what to expect." %}</p>
+    <p>{% trans 'The width is 6.5" (165.1mm), the default full width of a Word document. If you have borders enabled for reports, images will include a border with your configured color and width. Previews also show you what captions will look like with your caption and configured labelling for figures.' %}
     </p>
   </div>
 
-  <p class="text-muted"><i class="fas fa-search-plus"></i> Click on the preview to view full size</p>
+  <p class="text-muted"><i class="fas fa-search-plus"></i> {% trans "Click on the preview to view full size" %}</p>
 
   {% include "snippets/evidence_display.html" with evidence=evidence report_config=report_config clickable=True %}
 
   <!-- Linked Log Entries Section -->
-  <h4 class="icon link-icon">Linked Log Entries</h4>
+  <h4 class="icon link-icon">{% trans "Linked Log Entries" %}</h4>
   <hr>
   {% if linked_oplog_entries %}
     {% regroup linked_oplog_entries by oplog_entry.oplog_id as oplog_groups %}
@@ -121,7 +118,7 @@
               {% if entry.operator_name %}<span class="small">{{ entry.operator_name }}</span>{% endif %}
             </div>
             <a href="{% url 'oplog:oplog_entries' group.grouper.id %}?entry={{ entry.id }}#entry-{{ entry.id }}"
-               class="btn btn-sm btn-outline-secondary" target="_blank" title="Open in log">
+               class="btn btn-sm btn-outline-secondary" target="_blank" title="{% trans 'Open in log' %}">
               <i class="fas fa-external-link-alt"></i>
             </a>
           </li>
@@ -130,7 +127,7 @@
       </ul>
     {% endfor %}
   {% else %}
-    <p class="offset-2 col-8 text-muted">This evidence file has not been linked to any log entries.</p>
+    <p class="offset-2 col-8 text-muted">{% trans "This evidence file has not been linked to any log entries." %}</p>
   {% endif %}
 
   <!-- Include the lightbox modal -->

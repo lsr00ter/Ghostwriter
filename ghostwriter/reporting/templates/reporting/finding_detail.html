@@ -9,7 +9,7 @@
   <nav aria-label="breadcrumb">
     <ul class="breadcrumb">
       <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">{% trans "Dashboard" %}</a></li>
-      <li class="breadcrumb-item"><a href="{% url 'reporting:findings' %}">Findings</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'reporting:findings' %}">{% trans "Findings" %}</a></li>
       <li class="breadcrumb-item active" aria-current="page">{{ finding.display_title }}</li>
     </ul>
   </nav>
@@ -24,12 +24,12 @@
       <div class="bar3"></div>
     </div>
     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="finding-dropdown-btn">
-      <a class="dropdown-item icon edit-icon" href="{% url 'reporting:finding_update' finding.id %}">Edit</a>
+      <a class="dropdown-item icon edit-icon" href="{% url 'reporting:finding_update' finding.id %}">{% trans "Edit" %}</a>
       <a class="dropdown-item icon add-icon js-assign-finding" assign-finding-id="{{ finding.id }}"
          href="javascript:void(0);" assign-finding-csrftoken="{{ csrf_token }}"
-         assign-finding-url="{% url 'reporting:ajax_assign_finding' finding.id %}">Add to Report</a>
-      <a class="dropdown-item icon back-arrow-icon" href="{% url 'reporting:findings' %}">Return to Findings</a>
-      <a class="dropdown-item icon trash-icon" href="{% url 'reporting:finding_delete' finding.id %}">Delete</a>
+         assign-finding-url="{% url 'reporting:ajax_assign_finding' finding.id %}">{% trans "Add to Report" %}</a>
+      <a class="dropdown-item icon back-arrow-icon" href="{% url 'reporting:findings' %}">{% trans "Return to Findings" %}</a>
+      <a class="dropdown-item icon trash-icon" href="{% url 'reporting:finding_delete' finding.id %}">{% trans "Delete" %}</a>
     </div>
   </div>
 
@@ -54,7 +54,7 @@
           style="cursor: help"
           data-toggle="tooltip"
           data-placement="bottom"
-          title="CVSS Vector: {{ finding.cvss_vector }}"
+          title="{% blocktrans with vector=finding.cvss_vector %}CVSS Vector: {{ vector }}{% endblocktrans %}"
       {% endif %}
     >
       {{ finding.severity.severity }} {% if finding.cvss_score %}({{ finding.cvss_score }}){% endif %}
@@ -82,7 +82,7 @@
         style="cursor: help"
         data-toggle="tooltip"
         data-placement="bottom"
-        title="Finding Type"
+        title="{% trans 'Finding Type' %}"
     >
       {{ finding.finding_type.finding_type }}
     </span>
@@ -94,88 +94,88 @@
 
   <div id="descriptionCard" class="card mb-3">
     <div class="card-header finding-header icon writing-icon">
-      Description
+      {% trans "Description" %}
     </div>
     <div class="card-body finding-content rich-text-field-preview">
       {% if finding.description %}
         <div class="rich-text-field-preview">{{ finding.description|bleach }}</div>
       {% else %}
-        <p>Description write-up is needed.</p>
+        <p>{% trans "Description write-up is needed." %}</p>
       {% endif %}
     </div>
   </div>
 
   <div id="impactCard" class="card mb-3">
     <div class="card-header finding-header icon impact-icon">
-      Impact
+      {% trans "Impact" %}
     </div>
     <div class="card-body finding-content rich-text-field-preview">
       {% if finding.impact %}
         <div class="rich-text-field-preview">{{ finding.impact|bleach }}</div>
       {% else %}
-        <p>Impact write-up is needed.</p>
+        <p>{% trans "Impact write-up is needed." %}</p>
       {% endif %}
     </div>
   </div>
 
   <div id="mitigationCard" class="card mb-3">
     <div class="card-header finding-header icon help-icon">
-      Recommendations
+      {% trans "Recommendations" %}
     </div>
     <div class="card-body finding-content">
       {% if finding.mitigation %}
         <div class="rich-text-field-preview">{{ finding.mitigation|bleach }}</div>
       {% else %}
-        <p>Recommendations are needed.</p>
+        <p>{% trans "Recommendations are needed." %}</p>
       {% endif %}
     </div>
   </div>
 
   <div id="detectionCard" class="card mb-3">
     <div class="card-header finding-header icon shield-icon">
-      Detection Recommendations
+      {% trans "Detection Recommendations" %}
     </div>
     <div class="card-body finding-content">
       {% if finding.host_detection_techniques %}
-        <h6 class="text-center card-title">Host Detection</h6>
+        <h6 class="text-center card-title">{% trans "Host Detection" %}</h6>
         <hr>
         <div class="rich-text-field-preview">{{ finding.host_detection_techniques|bleach }}</div>
       {% endif %}
 
       {% if finding.network_detection_techniques %}
-        <h6 class="text-center card-title">Network Detection</h6>
+        <h6 class="text-center card-title">{% trans "Network Detection" %}</h6>
         <hr>
         <div class="rich-text-field-preview">{{ finding.network_detection_techniques|bleach }}</div>
       {% endif %}
 
       {% if not finding.network_detection_techniques and not finding.host_detection_techniques %}
-        <p>No host or network detections have been written for this finding.</p>
+        <p>{% trans "No host or network detections have been written for this finding." %}</p>
       {% endif %}
     </div>
   </div>
 
   <div id="replicationCard" class="card mb-3">
     <div class="card-header finding-header icon help-icon">
-      Replication Steps
+      {% trans "Replication Steps" %}
     </div>
     <div class="card-body finding-content">
       {% if finding.replication_steps %}
         <div class="rich-text-field-preview">{{ finding.replication_steps|bleach }}</div>
       {% else %}
-        <p>Replication steps are needed.</p>
+        <p>{% trans "Replication steps are needed." %}</p>
       {% endif %}
     </div>
   </div>
 
   <div id="referencesCard" class="card mb-3">
     <div class="card-header finding-header icon help-icon">
-      References
+      {% trans "References" %}
     </div>
     <div class="card-body finding-content">
       {% if finding.references %}
         <div class="rich-text-field-preview">{{ finding.references|bleach }}</div>
       {% else %}
-        <p>References are needed.</p>
+        <p>{% trans "References are needed." %}</p>
       {% endif %}
     </div>
   </div>
@@ -183,7 +183,7 @@
   {% if finding.finding_guidance %}
     <div id="guidanceCard" class="card mb-3">
       <div class="card-header finding-header icon help-icon">
-        Finding Guidance
+        {% trans "Finding Guidance" %}
       </div>
       <div class="card-body finding-content">
         <div class="rich-text-field-preview">{{ finding.finding_guidance|bleach }}</div>
@@ -192,7 +192,7 @@
   {% endif %}
 
   {% if finding_extra_fields_spec %}
-    <h4 class="icon custom-field-icon">Extra Fields</h4>
+    <h4 class="icon custom-field-icon">{% trans "Extra Fields" %}</h4>
     <hr>
 
     {% for field_spec in finding_extra_fields_spec %}
@@ -221,12 +221,11 @@
     {% endfor %}
   {% endif %}
 
-  <h4 class="icon comment-icon">Notes</h4>
+  <h4 class="icon comment-icon">{% trans "Notes" %}</h4>
   <hr>
 
   <p class="text-center">
-    <a class="icon add-icon btn btn-primary mb-1 col-2" href="{% url 'reporting:finding_note_add' finding.id %}">Add a
-      Note</a>
+    <a class="icon add-icon btn btn-primary mb-1 col-2" href="{% url 'reporting:finding_note_add' finding.id %}">{% trans "Add a Note" %}</a>
   </p>
 
   {% if finding.findingnote_set.all %}
@@ -240,7 +239,7 @@
           <div class="float-right col-2 col-md-2 col-sm-4">
             <div>{% if note.operator %}<a class="note-link"
                                           href="{% url 'users:user_detail' note.operator.username %}">{{ note.operator.username }}</a>{% else %}
-              <span class="note-link">Deleted</span>{% endif %}</div>
+              <span class="note-link">{% trans "Deleted" %}</span>{% endif %}</div>
             <div><p class="note-time">{{ note.timestamp }}</p></div>
           </div>
         </div>
@@ -248,16 +247,16 @@
 
       {% if request.user == note.operator or request.user|is_privileged %}
         <div class="pb-3">
-          <a class="note-link" href="{% url 'reporting:finding_note_edit' note.id %}">Edit</a> |
+          <a class="note-link" href="{% url 'reporting:finding_note_edit' note.id %}">{% trans "Edit" %}</a> |
           <a id="note-delete-button-{{ note.id }}" class="js-confirm-delete note-link" data-toggle="modal"
              data-target="#confirm-delete-modal" href="javascript:void(0);" delete-target-csrftoken="{{ csrf_token }}"
              delete-target-url="{% url 'reporting:ajax_delete_finding_note' note.id %}" delete-target-id="{{ note.id }}"
-             delete-target-type="note">Delete</a>
+             delete-target-type="note">{% trans "Delete" %}</a>
         </div>
       {% endif %}
     {% endfor %}
   {% else %}
-    <p>No notes for this finding.</p>
+    <p>{% trans "No notes for this finding." %}</p>
   {% endif %}
 {% endblock %}
 
@@ -293,7 +292,7 @@
             displayToastTop({
               type: data['result'],
               string: data['message'],
-              title: 'Finding Assigned',
+              title: '{% trans "Finding Assigned" %}',
               url: data['url']
             });
           }
