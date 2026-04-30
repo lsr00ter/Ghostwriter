@@ -1,14 +1,15 @@
 {% extends "base_generic.html" %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 
-{% block pagetitle %}Server Entry{% endblock %}
+{% block pagetitle %}{% trans "Server Entry" %}{% endblock %}
 
 {% block breadcrumbs %}
     <nav aria-label="breadcrumb">
         <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">{% trans "Dashboard" %}</a></li>
             <li class="breadcrumb-item"><a href="{% url 'shepherd:servers' %}">Servers</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Server Form</li>
+            <li class="breadcrumb-item active" aria-current="page">{% trans "Server Form" %}</li>
         </ul>
     </nav>
 {% endblock %}

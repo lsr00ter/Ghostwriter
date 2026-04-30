@@ -1,13 +1,14 @@
 {% extends "base_generic.html" %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 
-{% block pagetitle %}Deconfliction Form{% endblock %}
+{% block pagetitle %}{% trans "Deconfliction Form" %}{% endblock %}
 
 {% block breadcrumbs %}
     <nav aria-label="breadcrumb">
         <ul class="breadcrumb">
             {% comment %} Create breadcrumbs based on the context of the request {% endcomment %}
-            <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">{% trans "Dashboard" %}</a></li>
             {% comment %} Check if `project` is in context marking this as a `DeconflictionCreate` request {% endcomment %}
                 {% if project %}
                     <li class="breadcrumb-item"><a data-toggle="tooltip" title="{{ project.client }}" href="{% url 'rolodex:client_detail' project.client.id %}">{{ project.client }}</a></li>
@@ -18,9 +19,9 @@
                 {% endif %}
             {% comment %} Check if `object` is in context to determine if this is a `DeconflictionUpdate` request {% endcomment %}
             {% if object %}
-                <li class="breadcrumb-item active" aria-current="page">Edit Deconfliction</li>
+                <li class="breadcrumb-item active" aria-current="page">{% trans "Edit Deconfliction" %}</li>
             {% else %}
-                <li class="breadcrumb-item active" aria-current="page">New Deconfliction Form</li>
+                <li class="breadcrumb-item active" aria-current="page">{% trans "New Deconfliction Form" %}</li>
             {% endif %}
         </ul>
     </nav>

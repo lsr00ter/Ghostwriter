@@ -1,12 +1,13 @@
 {% extends "base_generic.html" %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 
-{% block pagetitle %}Oplog Creation{% endblock %}
+{% block pagetitle %}{% trans "Oplog Creation" %}{% endblock %}
 
 {% block breadcrumbs %}
     <nav aria-label="breadcrumb">
         <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">{% trans "Dashboard" %}</a></li>
             {% comment %} Check if `project` is in the context to determine if this is a new lgo for a specific project and adjust breadcrumbs accordingly {% endcomment %}
             {% if project %}
                 <li class="breadcrumb-item"><a data-toggle="tooltip" title="{{ project.client }}" href="{% url 'rolodex:client_detail' project.client.id %}">{{ project.client }}</a></li>
@@ -14,7 +15,7 @@
             {% else %}
                 <li class="breadcrumb-item"><a href="{% url 'oplog:index' %}">Operation Logs</a></li>
             {% endif %}
-            <li class="breadcrumb-item active" aria-current="page">New Log Form</li>
+            <li class="breadcrumb-item active" aria-current="page">{% trans "New Log Form" %}</li>
         </ul>
     </nav>
 {% endblock %}

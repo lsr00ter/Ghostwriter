@@ -1,14 +1,15 @@
 {% extends "base_generic.html" %}
+{% load i18n %}
 
 {% load settings_tags humanize %}
 
-{% block pagetitle %}Infrastructure Update Control Panel{% endblock %}
+{% block pagetitle %}{% trans "Infrastructure Update Control Panel" %}{% endblock %}
 
 {% block breadcrumbs %}
     <nav aria-label="breadcrumb">
         <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">Dashboard</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Control Panel</li>
+            <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">{% trans "Dashboard" %}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{% trans "Control Panel" %}</li>
         </ul>
     </nav>
 {% endblock %}

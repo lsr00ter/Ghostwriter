@@ -1,15 +1,16 @@
 {% extends "base_generic.html" %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 
-{% block pagetitle %}Server Check-out{% endblock %}
+{% block pagetitle %}{% trans "Server Check-out" %}{% endblock %}
 
 {% block breadcrumbs %}
     <nav aria-label="breadcrumb">
         <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">{% trans "Dashboard" %}</a></li>
             <li class="breadcrumb-item"><a href="{% url 'shepherd:domains' %}">Servers</a></li>
             <li class="breadcrumb-item"><a href="{% url 'shepherd:server_detail' server.id %}">{{ server.ip_address }}</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+            <li class="breadcrumb-item active" aria-current="page">{% trans "Checkout" %}</li>
         </ul>
     </nav>
 {% endblock %}

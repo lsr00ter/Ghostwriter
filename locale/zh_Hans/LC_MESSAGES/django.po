@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ghostwriter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-30 02:10+0000\n"
+"POT-Creation-Date: 2026-04-30 02:47+0000\n"
 "PO-Revision-Date: 2026-04-30 00:00+0000\n"
 "Last-Translator: GitHub Copilot\n"
 "Language-Team: Chinese\n"
@@ -28,6 +28,60 @@ msgstr ""
 msgid ""
 "This friendly name has already been used for a file attached to this report."
 msgstr ""
+
+#: ghostwriter/api/templates/token_form.html:5
+#: ghostwriter/oplog/templates/oplog/oplog_form.html:5
+msgid "Oplog Creation"
+msgstr "创建操作日志"
+
+#: ghostwriter/api/templates/token_form.html:10
+#: ghostwriter/home/templates/home/management.html:11
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:10
+#: ghostwriter/oplog/templates/oplog/oplog_form.html:10
+#: ghostwriter/oplog/templates/oplog/oplog_import.html:9
+#: ghostwriter/oplog/templates/oplog/oplog_list.html:11
+#: ghostwriter/reporting/templates/reporting/archives.html:10
+#: ghostwriter/reporting/templates/reporting/evidence_form.html:9
+#: ghostwriter/reporting/templates/reporting/finding_detail.html:11
+#: ghostwriter/reporting/templates/reporting/finding_list.html:10
+#: ghostwriter/reporting/templates/reporting/observation_detail.html:11
+#: ghostwriter/reporting/templates/reporting/observation_list.html:10
+#: ghostwriter/reporting/templates/reporting/report_detail.html:10
+#: ghostwriter/reporting/templates/reporting/report_finding_link_assign.html:10
+#: ghostwriter/reporting/templates/reporting/report_form.html:12
+#: ghostwriter/reporting/templates/reporting/report_list.html:10
+#: ghostwriter/reporting/templates/reporting/report_observation_link_assign.html:10
+#: ghostwriter/reporting/templates/reporting/report_template_form.html:12
+#: ghostwriter/reporting/templates/reporting/report_templates_list.html:10
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:13
+#: ghostwriter/rolodex/templates/rolodex/client_form.html:12
+#: ghostwriter/rolodex/templates/rolodex/client_list.html:13
+#: ghostwriter/rolodex/templates/rolodex/deconfliction_form.html:12
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:11
+#: ghostwriter/rolodex/templates/rolodex/project_form.html:12
+#: ghostwriter/rolodex/templates/rolodex/project_list.html:13
+#: ghostwriter/shepherd/templates/shepherd/checkout.html:10
+#: ghostwriter/shepherd/templates/shepherd/checkouts_for_user.html:9
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:11
+#: ghostwriter/shepherd/templates/shepherd/domain_form.html:10
+#: ghostwriter/shepherd/templates/shepherd/domain_list.html:11
+#: ghostwriter/shepherd/templates/shepherd/server_checkout.html:10
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:11
+#: ghostwriter/shepherd/templates/shepherd/server_form.html:10
+#: ghostwriter/shepherd/templates/shepherd/server_list.html:13
+#: ghostwriter/shepherd/templates/shepherd/server_search.html:9
+#: ghostwriter/shepherd/templates/shepherd/update.html:11
+#: ghostwriter/templates/403.html:11 ghostwriter/templates/404.html:11
+#: ghostwriter/templates/mfa/index.html:13
+#: ghostwriter/templates/mfa/totp/deactivate_form.html:10
+#: ghostwriter/users/templates/users/profile.html:10
+#: ghostwriter/users/templates/users/profile_form.html:10
+msgid "Dashboard"
+msgstr "仪表板"
+
+#: ghostwriter/api/templates/token_form.html:12
+msgid "Create Token"
+msgstr "创建令牌"
 
 #: ghostwriter/commandcenter/forms.py:43
 msgid ""
@@ -71,32 +125,32 @@ msgstr ""
 
 #: ghostwriter/commandcenter/templates/admin/commandcenter/extrafieldspec/tabular.html:74
 msgid "Delete?"
-msgstr ""
+msgstr "删除？"
 
 #: ghostwriter/commandcenter/templates/admin/commandcenter/extrafieldspec/tabular.html:88
 msgid "Change"
-msgstr ""
+msgstr "修改"
 
 #: ghostwriter/commandcenter/templates/admin/commandcenter/extrafieldspec/tabular.html:88
 #: ghostwriter/templates/mfa/index.html:108
 msgid "View"
-msgstr ""
+msgstr "查看"
 
 #: ghostwriter/commandcenter/templates/admin/commandcenter/extrafieldspec/tabular.html:90
 #: ghostwriter/singleton/templates/admin/change_form.html:15
 msgid "View on site"
-msgstr ""
+msgstr "在网站查看"
 
-#: ghostwriter/commandcenter/templates/collab_editing/update.html:15
+#: ghostwriter/commandcenter/templates/collab_editing/update.html:16
 msgid "Loading..."
 msgstr "加载中..."
 
-#: ghostwriter/commandcenter/templates/collab_editing/update.html:16
+#: ghostwriter/commandcenter/templates/collab_editing/update.html:17
 msgid "Javascript is required."
 msgstr "需要启用 Javascript。"
 
 #: ghostwriter/home/forms.py:30 ghostwriter/home/models.py:37
-#: ghostwriter/users/templates/users/profile.html:75
+#: ghostwriter/users/templates/users/profile.html:76
 msgid "Web Interface Language"
 msgstr "Web 界面语言"
 
@@ -107,6 +161,42 @@ msgstr "设置 Web 界面的默认语言。"
 #: ghostwriter/home/forms.py:100
 msgid "Submit"
 msgstr "提交"
+
+#: ghostwriter/home/templates/home/management.html:6
+msgid "Manage API Access"
+msgstr "管理 API 访问"
+
+#: ghostwriter/home/templates/home/management.html:12
+#: ghostwriter/templates/base_generic.html:337
+msgid "Review Configuration"
+msgstr "审阅配置"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:5
+#, python-format
+msgid "%(name)s Entries"
+msgstr "%(name)s 条目"
+
+#: ghostwriter/oplog/templates/oplog/oplog_form.html:19
+msgid "New Log Form"
+msgstr "新建日志"
+
+#: ghostwriter/oplog/templates/oplog/oplog_import.html:4
+msgid "Domain Entry"
+msgstr "域名表单"
+
+#: ghostwriter/oplog/templates/oplog/oplog_import.html:11
+msgid "Log Import"
+msgstr "导入日志"
+
+#: ghostwriter/oplog/templates/oplog/oplog_list.html:6
+#: ghostwriter/oplog/templates/oplog/oplog_list.html:12
+#: ghostwriter/templates/base_generic.html:257
+msgid "Operation Logs"
+msgstr "操作日志"
+
+#: ghostwriter/oplog/templates/oplog/oplogentry_form.html:5
+msgid "Operation Log Entry"
+msgstr "操作日志条目"
 
 #: ghostwriter/reporting/forms.py:289
 msgid "You must provide an evidence file"
@@ -133,6 +223,91 @@ msgid ""
 "Please enter a valid hex color, three pairs of characters using A-F and 0-9 "
 "(e.g., 7A7A7A)."
 msgstr ""
+
+#: ghostwriter/reporting/templates/reporting/archives.html:5
+#: ghostwriter/templates/base_generic.html:289
+msgid "Archived Reports"
+msgstr "已归档报告"
+
+#: ghostwriter/reporting/templates/reporting/archives.html:12
+msgid "Archives"
+msgstr "归档"
+
+#: ghostwriter/reporting/templates/reporting/evidence_form.html:4
+#: ghostwriter/reporting/templates/reporting/evidence_form.html:13
+msgid "Evidence Form"
+msgstr "证据表单"
+
+#: ghostwriter/reporting/templates/reporting/finding_detail.html:6
+#: ghostwriter/reporting/templates/reporting/observation_detail.html:6
+#, python-format
+msgid "%(display_title)s Details"
+msgstr "%(display_title)s 详情"
+
+#: ghostwriter/reporting/templates/reporting/finding_list.html:5
+msgid "Findings Library"
+msgstr "发现项库"
+
+#: ghostwriter/reporting/templates/reporting/finding_list.html:11
+#: ghostwriter/templates/base_generic.html:190
+msgid "Findings"
+msgstr "发现项"
+
+#: ghostwriter/reporting/templates/reporting/observation_list.html:5
+msgid "Observations Library"
+msgstr "观察项库"
+
+#: ghostwriter/reporting/templates/reporting/observation_list.html:11
+#: ghostwriter/templates/base_generic.html:213
+msgid "Observations"
+msgstr "观察项"
+
+#: ghostwriter/reporting/templates/reporting/report_finding_link_assign.html:5
+msgid "Assign Finding"
+msgstr "分配发现项"
+
+#: ghostwriter/reporting/templates/reporting/report_finding_link_assign.html:37
+#: ghostwriter/reporting/templates/reporting/report_observation_link_assign.html:37
+msgid "Assign"
+msgstr "分配"
+
+#: ghostwriter/reporting/templates/reporting/report_form.html:5
+#: ghostwriter/reporting/templates/reporting/report_template_form.html:5
+msgid "Report Creation"
+msgstr "创建报告"
+
+#: ghostwriter/reporting/templates/reporting/report_form.html:18
+msgid "Project Report"
+msgstr "项目报告"
+
+#: ghostwriter/reporting/templates/reporting/report_form.html:21
+msgid "New Report Form"
+msgstr "新建报告"
+
+#: ghostwriter/reporting/templates/reporting/report_list.html:5
+msgid "Report List"
+msgstr "报告列表"
+
+#: ghostwriter/reporting/templates/reporting/report_list.html:11
+#: ghostwriter/templates/base_generic.html:273
+msgid "Reports"
+msgstr "报告列表"
+
+#: ghostwriter/reporting/templates/reporting/report_observation_link_assign.html:5
+msgid "Assign Observation"
+msgstr "分配观察项"
+
+#: ghostwriter/reporting/templates/reporting/report_template_form.html:14
+msgid "Report Template Form"
+msgstr "报告模板表单"
+
+#: ghostwriter/reporting/templates/reporting/report_templates_list.html:5
+msgid "Report Template List"
+msgstr "报告模板列表"
+
+#: ghostwriter/reporting/templates/reporting/report_templates_list.html:11
+msgid "Report Templates"
+msgstr "报告模板"
 
 #: ghostwriter/rolodex/forms_client.py:63
 #: ghostwriter/rolodex/forms_project.py:437
@@ -274,6 +449,72 @@ msgstr ""
 msgid "The report timestamp cannot be before the alert timestamp."
 msgstr ""
 
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:8
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:6
+#, python-format
+msgid "%(name)s Details"
+msgstr "%(name)s 详情"
+
+#: ghostwriter/rolodex/templates/rolodex/client_form.html:5
+msgid "Client Form"
+msgstr "客户表单"
+
+#: ghostwriter/rolodex/templates/rolodex/client_form.html:18
+msgid "Update"
+msgstr "更新"
+
+#: ghostwriter/rolodex/templates/rolodex/client_form.html:20
+msgid "New Client Form"
+msgstr "新建客户"
+
+#: ghostwriter/rolodex/templates/rolodex/client_list.html:8
+msgid "Client List"
+msgstr "客户列表"
+
+#: ghostwriter/rolodex/templates/rolodex/client_list.html:14
+#: ghostwriter/templates/base_generic.html:170
+msgid "Clients"
+msgstr "客户"
+
+#: ghostwriter/rolodex/templates/rolodex/deconfliction_form.html:5
+msgid "Deconfliction Form"
+msgstr "冲突解除表单"
+
+#: ghostwriter/rolodex/templates/rolodex/deconfliction_form.html:25
+msgid "Edit Deconfliction"
+msgstr "编辑冲突解除"
+
+#: ghostwriter/rolodex/templates/rolodex/deconfliction_form.html:27
+msgid "New Deconfliction Form"
+msgstr "新建冲突解除"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:6
+#, python-format
+msgid "%(client)s %(project_type)s Details"
+msgstr "%(client)s %(project_type)s 详情"
+
+#: ghostwriter/rolodex/templates/rolodex/project_form.html:5
+msgid "Project Form"
+msgstr "项目表单"
+
+#: ghostwriter/rolodex/templates/rolodex/project_form.html:22
+#: ghostwriter/templates/mfa/webauthn/authenticator_list.html:45
+msgid "Edit"
+msgstr "编辑"
+
+#: ghostwriter/rolodex/templates/rolodex/project_form.html:30
+msgid "New Project Form"
+msgstr "新建项目"
+
+#: ghostwriter/rolodex/templates/rolodex/project_list.html:8
+msgid "Project List"
+msgstr "项目列表"
+
+#: ghostwriter/rolodex/templates/rolodex/project_list.html:14
+#: ghostwriter/templates/base_generic.html:246
+msgid "Projects"
+msgstr "项目"
+
 #: ghostwriter/rolodex/views.py:1489 ghostwriter/rolodex/views.py:2098
 #: ghostwriter/shepherd/views.py:1425 ghostwriter/shepherd/views.py:1492
 msgid "Invalid form data"
@@ -323,6 +564,86 @@ msgstr ""
 msgid "Only one server can be selected per entry"
 msgstr ""
 
+#: ghostwriter/shepherd/templates/shepherd/burn.html:5
+msgid "Burn Domain"
+msgstr "烧毁域名"
+
+#: ghostwriter/shepherd/templates/shepherd/checkout.html:5
+msgid "Domain Check-out"
+msgstr "签出域名"
+
+#: ghostwriter/shepherd/templates/shepherd/checkout.html:14
+#: ghostwriter/shepherd/templates/shepherd/server_checkout.html:13
+msgid "Checkout"
+msgstr "签出"
+
+#: ghostwriter/shepherd/templates/shepherd/checkouts_for_user.html:4
+msgid "Your Checked-out Assets"
+msgstr "您签出的资产"
+
+#: ghostwriter/shepherd/templates/shepherd/checkouts_for_user.html:10
+msgid "User Infra"
+msgstr "用户资产"
+
+#: ghostwriter/shepherd/templates/shepherd/connect_form.html:5
+msgid "Domain + Server Connection"
+msgstr "域名与服务器连接"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_form.html:5
+#: ghostwriter/shepherd/templates/shepherd/domain_form.html:12
+msgid "Domain Form"
+msgstr "域名表单"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_list.html:6
+msgid "Domain Catalog"
+msgstr "域名目录"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_list.html:12
+#: ghostwriter/templates/base_generic.html:315
+msgid "Domains"
+msgstr "域名"
+
+#: ghostwriter/shepherd/templates/shepherd/server_checkout.html:5
+msgid "Server Check-out"
+msgstr "签出服务器"
+
+#: ghostwriter/shepherd/templates/shepherd/server_form.html:5
+msgid "Server Entry"
+msgstr "服务器条目"
+
+#: ghostwriter/shepherd/templates/shepherd/server_form.html:12
+msgid "Server Form"
+msgstr "服务器表单"
+
+#: ghostwriter/shepherd/templates/shepherd/server_list.html:8
+msgid "Static Server Catalog"
+msgstr "静态服务器目录"
+
+#: ghostwriter/shepherd/templates/shepherd/server_list.html:14
+#: ghostwriter/templates/base_generic.html:299
+msgid "Servers"
+msgstr "服务器"
+
+#: ghostwriter/shepherd/templates/shepherd/server_search.html:4
+msgid "All Server Search"
+msgstr "全部服务器搜索"
+
+#: ghostwriter/shepherd/templates/shepherd/server_search.html:10
+msgid "Server Search"
+msgstr "服务器搜索"
+
+#: ghostwriter/shepherd/templates/shepherd/update.html:6
+msgid "Infrastructure Update Control Panel"
+msgstr "基础设施更新控制面板"
+
+#: ghostwriter/shepherd/templates/shepherd/update.html:12
+msgid "Control Panel"
+msgstr "控制面板"
+
+#: ghostwriter/shepherd/templates/shepherd/vps_form.html:5
+msgid "Virtual Private Server"
+msgstr "虚拟专用服务器"
+
 #: ghostwriter/singleton/admin.py:52
 #, python-format
 msgid "%(obj)s was changed successfully."
@@ -335,12 +656,12 @@ msgstr ""
 #: ghostwriter/singleton/templates/admin/change_form.html:7
 #: ghostwriter/singleton/templates/admin/object_history.html:6
 msgid "Home"
-msgstr ""
+msgstr "首页"
 
 #: ghostwriter/singleton/templates/admin/change_form.html:14
 #: ghostwriter/singleton/templates/admin/object_history.html:9
 msgid "History"
-msgstr ""
+msgstr "历史"
 
 #: ghostwriter/singleton/templatetags/settings_tags.py:21
 #, python-format
@@ -355,9 +676,17 @@ msgid ""
 "Could not get the model name '%(model)s' from the application named '%(app)s'"
 msgstr ""
 
+#: ghostwriter/templates/403.html:12
+msgid "Forbidden"
+msgstr "禁止访问"
+
+#: ghostwriter/templates/404.html:12
+msgid "Not Found"
+msgstr "未找到"
+
 #: ghostwriter/templates/account/account_inactive.html:8
 msgid "Account Inactive"
-msgstr ""
+msgstr "账户未启用"
 
 #: ghostwriter/templates/account/account_inactive.html:10
 msgid "This account is inactive."
@@ -394,7 +723,7 @@ msgstr ""
 
 #: ghostwriter/templates/account/email.html:29
 msgid "Primary"
-msgstr ""
+msgstr "主要"
 
 #: ghostwriter/templates/account/email.html:36
 msgid "Make Primary"
@@ -406,7 +735,7 @@ msgstr ""
 
 #: ghostwriter/templates/account/email.html:38
 msgid "Remove"
-msgstr ""
+msgstr "移除"
 
 #: ghostwriter/templates/account/email.html:42
 msgid "Warning:"
@@ -445,7 +774,7 @@ msgstr ""
 #: ghostwriter/templates/account/reauthenticate.html:31
 #: ghostwriter/templates/mfa/reauthenticate.html:31
 msgid "Confirm"
-msgstr ""
+msgstr "确认"
 
 #: ghostwriter/templates/account/email_confirm.html:24
 #, python-format
@@ -501,7 +830,7 @@ msgstr ""
 #: ghostwriter/templates/account/password_change.html:36
 #: ghostwriter/templates/account/password_reset_from_key.html:8
 #: ghostwriter/templates/account/password_reset_from_key_done.html:7
-#: ghostwriter/users/templates/users/profile.html:153
+#: ghostwriter/users/templates/users/profile.html:154
 msgid "Change Password"
 msgstr "修改密码"
 
@@ -591,8 +920,9 @@ msgid ""
 msgstr ""
 
 #: ghostwriter/templates/account/snippets/already_logged_in.html:5
+#: ghostwriter/templates/note_form.html:5
 msgid "Note"
-msgstr ""
+msgstr "备注"
 
 #: ghostwriter/templates/account/snippets/already_logged_in.html:5
 #, python-format
@@ -667,10 +997,6 @@ msgstr ""
 msgid "Pre-engagement"
 msgstr "前期准备"
 
-#: ghostwriter/templates/base_generic.html:170
-msgid "Clients"
-msgstr "客户"
-
 #: ghostwriter/templates/base_generic.html:178
 msgid "Search Clients..."
 msgstr "搜索客户..."
@@ -683,10 +1009,6 @@ msgstr "客户库"
 msgid "Add New Client"
 msgstr "新建客户"
 
-#: ghostwriter/templates/base_generic.html:190
-msgid "Findings"
-msgstr "发现项"
-
 #: ghostwriter/templates/base_generic.html:196
 msgid "Search Findings..."
 msgstr "搜索发现项..."
@@ -698,10 +1020,6 @@ msgstr "发现项库"
 #: ghostwriter/templates/base_generic.html:205
 msgid "Add New Finding"
 msgstr "新建发现项"
-
-#: ghostwriter/templates/base_generic.html:213
-msgid "Observations"
-msgstr "观察项"
 
 #: ghostwriter/templates/base_generic.html:219
 msgid "Search Observations..."
@@ -723,10 +1041,6 @@ msgstr "执行阶段"
 msgid "My Active Assets"
 msgstr "我的活跃资产"
 
-#: ghostwriter/templates/base_generic.html:246
-msgid "Projects"
-msgstr "项目"
-
 #: ghostwriter/templates/base_generic.html:248
 msgid "Projects Library"
 msgstr "项目库"
@@ -734,10 +1048,6 @@ msgstr "项目库"
 #: ghostwriter/templates/base_generic.html:250
 msgid "Add New Project"
 msgstr "新建项目"
-
-#: ghostwriter/templates/base_generic.html:257
-msgid "Operation Logs"
-msgstr "操作日志"
 
 #: ghostwriter/templates/base_generic.html:259
 msgid "Oplog Library"
@@ -754,10 +1064,6 @@ msgstr "导入操作日志条目"
 #: ghostwriter/templates/base_generic.html:268
 msgid "Reporting"
 msgstr "报告"
-
-#: ghostwriter/templates/base_generic.html:273
-msgid "Reports"
-msgstr "报告列表"
 
 #: ghostwriter/templates/base_generic.html:275
 msgid "Report Library"
@@ -779,17 +1085,9 @@ msgstr "报告模板库"
 msgid "Add New Report Template"
 msgstr "新建报告模板"
 
-#: ghostwriter/templates/base_generic.html:289
-msgid "Archived Reports"
-msgstr "已归档报告"
-
 #: ghostwriter/templates/base_generic.html:294
 msgid "Maintain"
 msgstr "维护"
-
-#: ghostwriter/templates/base_generic.html:299
-msgid "Servers"
-msgstr "服务器"
 
 #: ghostwriter/templates/base_generic.html:305
 msgid "Search Servers..."
@@ -802,10 +1100,6 @@ msgstr "服务器库"
 #: ghostwriter/templates/base_generic.html:310
 msgid "Add New Server"
 msgstr "新建服务器"
-
-#: ghostwriter/templates/base_generic.html:315
-msgid "Domains"
-msgstr "域名"
 
 #: ghostwriter/templates/base_generic.html:321
 msgid "Search Domains..."
@@ -826,10 +1120,6 @@ msgstr "更新控制"
 #: ghostwriter/templates/base_generic.html:335
 msgid "Administration"
 msgstr "系统管理"
-
-#: ghostwriter/templates/base_generic.html:337
-msgid "Review Configuration"
-msgstr "审阅配置"
 
 #: ghostwriter/templates/base_generic.html:340
 #: ghostwriter/templates/base_generic.html:342
@@ -919,14 +1209,24 @@ msgid "Logged-in as %(username)s"
 msgstr "当前登录用户：%(username)s"
 
 #: ghostwriter/templates/base_generic.html:452
-#: ghostwriter/users/templates/users/profile.html:19
-#: ghostwriter/users/templates/users/profile.html:22
+#: ghostwriter/users/templates/users/profile.html:20
+#: ghostwriter/users/templates/users/profile.html:23
 msgid "Avatar"
 msgstr "头像"
 
 #: ghostwriter/templates/base_generic.html:470
 msgid "Learn more"
 msgstr "了解更多"
+
+#: ghostwriter/templates/confirm_archive.html:4
+#, python-format
+msgid "Archive %(object)s"
+msgstr "归档 %(object)s"
+
+#: ghostwriter/templates/confirm_delete.html:4
+#: ghostwriter/templates/mfa/webauthn/authenticator_list.html:49
+msgid "Delete"
+msgstr "删除"
 
 #: ghostwriter/templates/index.html:6
 msgid "Ghostwriter Dashboard"
@@ -1118,6 +1418,7 @@ msgstr "点击日历中的事件以查看详情。"
 
 #: ghostwriter/templates/mfa/authenticate.html:7
 #: ghostwriter/templates/mfa/index.html:7
+#: ghostwriter/templates/mfa/index.html:15
 #: ghostwriter/templates/mfa/index.html:21
 msgid "Multi-Factor Authentication"
 msgstr ""
@@ -1163,7 +1464,7 @@ msgstr ""
 #: ghostwriter/templates/mfa/index.html:111
 #: ghostwriter/templates/mfa/recovery_codes/index.html:52
 msgid "Download"
-msgstr ""
+msgstr "下载"
 
 #: ghostwriter/templates/mfa/index.html:28
 msgid "Authenticator App"
@@ -1179,11 +1480,11 @@ msgstr ""
 
 #: ghostwriter/templates/mfa/index.html:38
 msgid "Deactivate"
-msgstr ""
+msgstr "停用"
 
 #: ghostwriter/templates/mfa/index.html:42
 msgid "Activate"
-msgstr ""
+msgstr "激活"
 
 #: ghostwriter/templates/mfa/index.html:56
 #: ghostwriter/templates/mfa/webauthn/authenticator_list.html:18
@@ -1208,12 +1509,12 @@ msgstr ""
 
 #: ghostwriter/templates/mfa/index.html:72
 msgid "Manage"
-msgstr ""
+msgstr "管理"
 
 #: ghostwriter/templates/mfa/index.html:76
 #: ghostwriter/templates/mfa/webauthn/add_form.html:45
 msgid "Add"
-msgstr ""
+msgstr "添加"
 
 #: ghostwriter/templates/mfa/index.html:91
 msgid "Recovery Codes"
@@ -1239,7 +1540,7 @@ msgstr ""
 
 #: ghostwriter/templates/mfa/index.html:115
 msgid "Generate"
-msgstr ""
+msgstr "生成"
 
 #: ghostwriter/templates/mfa/reauthenticate.html:9
 msgid "Enter an authenticator code:"
@@ -1265,6 +1566,11 @@ msgstr ""
 
 #: ghostwriter/templates/mfa/totp/activate_form.html:40
 msgid "Input a token generated by the app:"
+msgstr ""
+
+#: ghostwriter/templates/mfa/totp/deactivate_form.html:5
+#: ghostwriter/templates/mfa/totp/deactivate_form.html:13
+msgid "Remove MFA"
 msgstr ""
 
 #: ghostwriter/templates/mfa/totp/deactivate_form.html:20
@@ -1307,14 +1613,6 @@ msgstr ""
 msgid "Used %(last)s"
 msgstr ""
 
-#: ghostwriter/templates/mfa/webauthn/authenticator_list.html:45
-msgid "Edit"
-msgstr ""
-
-#: ghostwriter/templates/mfa/webauthn/authenticator_list.html:49
-msgid "Delete"
-msgstr ""
-
 #: ghostwriter/templates/mfa/webauthn/authenticator_list.html:54
 msgid "No keys added."
 msgstr ""
@@ -1329,7 +1627,7 @@ msgstr "名称"
 
 #: ghostwriter/templates/mfa/webauthn/edit_form.html:39
 msgid "Save"
-msgstr ""
+msgstr "保存"
 
 #: ghostwriter/templates/mfa/webauthn/edit_form.html:42
 msgid "Cancel"
@@ -1361,7 +1659,7 @@ msgstr ""
 
 #: ghostwriter/templates/socialaccount/login.html:26
 msgid "Continue"
-msgstr ""
+msgstr "继续"
 
 #: ghostwriter/templates/socialaccount/signup.html:8
 msgid "Signup"
@@ -1410,90 +1708,85 @@ msgstr ""
 msgid "Name of User"
 msgstr "用户名称"
 
-#: ghostwriter/users/templates/users/profile.html:4
+#: ghostwriter/users/templates/users/profile.html:5
 #: ghostwriter/users/templates/users/profile_form.html:5
 msgid "User Profile"
 msgstr "用户资料"
 
-#: ghostwriter/users/templates/users/profile.html:9
-#: ghostwriter/users/templates/users/profile_form.html:10
-msgid "Dashboard"
-msgstr "仪表板"
-
-#: ghostwriter/users/templates/users/profile.html:10
+#: ghostwriter/users/templates/users/profile.html:11
 #: ghostwriter/users/templates/users/profile_form.html:11
 msgid "Your Profile"
 msgstr "你的资料"
 
-#: ghostwriter/users/templates/users/profile.html:30
+#: ghostwriter/users/templates/users/profile.html:31
 msgid "Full Name"
 msgstr "全名"
 
-#: ghostwriter/users/templates/users/profile.html:33
+#: ghostwriter/users/templates/users/profile.html:34
 msgid "Missing Full Name"
 msgstr "未填写全名"
 
-#: ghostwriter/users/templates/users/profile.html:39
+#: ghostwriter/users/templates/users/profile.html:40
 msgid "Username"
 msgstr "用户名"
 
-#: ghostwriter/users/templates/users/profile.html:48
+#: ghostwriter/users/templates/users/profile.html:49
 msgid "Email"
 msgstr "电子邮件"
 
-#: ghostwriter/users/templates/users/profile.html:57
+#: ghostwriter/users/templates/users/profile.html:58
 msgid "Phone"
 msgstr "电话"
 
-#: ghostwriter/users/templates/users/profile.html:60
+#: ghostwriter/users/templates/users/profile.html:61
 msgid "Unavailable"
 msgstr "暂无"
 
-#: ghostwriter/users/templates/users/profile.html:66
+#: ghostwriter/users/templates/users/profile.html:67
 msgid "Timezone"
 msgstr "时区"
 
-#: ghostwriter/users/templates/users/profile.html:85
+#: ghostwriter/users/templates/users/profile.html:86
 msgid "Role"
 msgstr "角色"
 
-#: ghostwriter/users/templates/users/profile.html:96
+#: ghostwriter/users/templates/users/profile.html:97
 msgid "Access"
 msgstr "访问权限"
 
-#: ghostwriter/users/templates/users/profile.html:100
+#: ghostwriter/users/templates/users/profile.html:101
 msgid "Superuser"
 msgstr "超级用户"
 
-#: ghostwriter/users/templates/users/profile.html:100
+#: ghostwriter/users/templates/users/profile.html:101
 msgid "Staff"
 msgstr "员工"
 
-#: ghostwriter/users/templates/users/profile.html:100
+#: ghostwriter/users/templates/users/profile.html:101
 msgid "Normal User"
 msgstr "普通用户"
 
-#: ghostwriter/users/templates/users/profile.html:108
+#: ghostwriter/users/templates/users/profile.html:109
 msgid "Groups"
 msgstr "用户组"
 
-#: ghostwriter/users/templates/users/profile.html:149
+#: ghostwriter/users/templates/users/profile.html:150
 msgid "Update Account Details"
 msgstr "更新账户信息"
 
-#: ghostwriter/users/templates/users/profile.html:154
+#: ghostwriter/users/templates/users/profile.html:155
 msgid "Update Personal Information"
 msgstr "更新个人信息"
 
-#: ghostwriter/users/templates/users/profile.html:155
+#: ghostwriter/users/templates/users/profile.html:156
 msgid "Manage Email(s)"
 msgstr "管理电子邮件地址"
 
-#: ghostwriter/users/templates/users/profile.html:156
+#: ghostwriter/users/templates/users/profile.html:157
 msgid "Update Avatar & Preferences"
 msgstr "更新头像和偏好"
 
-#: ghostwriter/users/templates/users/profile.html:157
+#: ghostwriter/users/templates/users/profile.html:158
 msgid "Manage MFA Settings"
 msgstr "管理 MFA 设置"
 

@@ -1,13 +1,14 @@
 {% extends "base_generic.html" %}
+{% load i18n %}
 
 {% load bleach_tags extra_fields custom_tags %}
 
-{% block pagetitle %}{{ finding.display_title }} Details{% endblock %}
+{% block pagetitle %}{% blocktrans with display_title=finding.display_title %}{{ display_title }} Details{% endblocktrans %}{% endblock %}
 
 {% block breadcrumbs %}
   <nav aria-label="breadcrumb">
     <ul class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">Dashboard</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">{% trans "Dashboard" %}</a></li>
       <li class="breadcrumb-item"><a href="{% url 'reporting:findings' %}">Findings</a></li>
       <li class="breadcrumb-item active" aria-current="page">{{ finding.display_title }}</li>
     </ul>

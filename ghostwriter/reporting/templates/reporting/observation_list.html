@@ -1,13 +1,14 @@
 {% extends "base_generic.html" %}
+{% load i18n %}
 {% load crispy_forms_tags bleach_tags custom_tags %}
 
-{% block pagetitle %}Observations Library{% endblock %}
+{% block pagetitle %}{% trans "Observations Library" %}{% endblock %}
 
 {% block breadcrumbs %}
   <nav aria-label="breadcrumb">
     <ul class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">Dashboard</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Observations</li>
+      <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">{% trans "Dashboard" %}</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{% trans "Observations" %}</li>
     </ul>
   </nav>
 {% endblock %}

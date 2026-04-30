@@ -1,14 +1,15 @@
 {% extends "base_generic.html" %}
+{% load i18n %}
 
 {% load crispy_forms_tags humanize bleach_tags static %}
 
-{% block pagetitle %}Domain Catalog{% endblock %}
+{% block pagetitle %}{% trans "Domain Catalog" %}{% endblock %}
 
 {% block breadcrumbs %}
   <nav aria-label="breadcrumb">
     <ul class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">Dashboard</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Domains</li>
+      <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">{% trans "Dashboard" %}</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{% trans "Domains" %}</li>
     </ul>
   </nav>
 {% endblock %}

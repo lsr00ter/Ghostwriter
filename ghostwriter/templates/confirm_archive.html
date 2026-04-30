@@ -1,6 +1,7 @@
 {% extends "base_generic.html" %}
+{% load i18n %}
 
-{% block pagetitle %}Archive {{ object }}{% endblock %}
+{% block pagetitle %}{% blocktrans with object=object %}Archive {{ object }}{% endblocktrans %}{% endblock %}
 
 {% block content %}
     <div class="alert alert-danger mt-5" role="alert">

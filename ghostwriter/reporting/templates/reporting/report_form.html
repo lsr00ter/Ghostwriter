@@ -1,21 +1,22 @@
 {% extends "base_generic.html" %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 
-{% block pagetitle %}Report Creation{% endblock %}
+{% block pagetitle %}{% trans "Report Creation" %}{% endblock %}
 
 {% block breadcrumbs %}
     <nav aria-label="breadcrumb">
         <ul class="breadcrumb">
         {% comment %} Create breadcrumbs based on the context of the request {% endcomment %}
-            <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">{% trans "Dashboard" %}</a></li>
             {% comment %} Check if `project` is in context to determine if this is for a specific project {% endcomment %}
             {% if project %}
                 <li class="breadcrumb-item"><a href="{% url 'rolodex:client_detail' project.client.id %}">{{ project.client.name }}</a></li>
                 <li class="breadcrumb-item"><a href="{% url 'rolodex:project_detail' project.id %}">{{ project }}</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Project Report</li>
+                <li class="breadcrumb-item active" aria-current="page">{% trans "Project Report" %}</li>
             {% else %}
                 <li class="breadcrumb-item"><a href="{% url 'reporting:reports' %}">Reports</a></li>
-                <li class="breadcrumb-item active" aria-current="page">New Report Form</li>
+                <li class="breadcrumb-item active" aria-current="page">{% trans "New Report Form" %}</li>
             {% endif %}
         </ul>
     </nav>

@@ -1,12 +1,13 @@
 {% extends "base_generic.html" %}
+{% load i18n %}
 
-{% block pagetitle %}Your Checked-out Assets{% endblock %}
+{% block pagetitle %}{% trans "Your Checked-out Assets" %}{% endblock %}
 
 {% block breadcrumbs %}
     <nav aria-label="breadcrumb">
         <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">Dashboard</a></li>
-            <li class="breadcrumb-item active" aria-current="page">User Infra</li>
+            <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">{% trans "Dashboard" %}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{% trans "User Infra" %}</li>
         </ul>
     </nav>
 {% endblock %}

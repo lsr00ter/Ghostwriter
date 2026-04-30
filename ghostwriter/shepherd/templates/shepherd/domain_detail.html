@@ -1,13 +1,14 @@
 {% extends "base_generic.html" %}
+{% load i18n %}
 
 {% load bleach_tags humanize custom_tags extra_fields settings_tags %}
 
-{% block pagetitle %}{{ domain.name }} Details{% endblock %}
+{% block pagetitle %}{% blocktrans with name=domain.name %}{{ name }} Details{% endblocktrans %}{% endblock %}
 
 {% block breadcrumbs %}
   <nav aria-label="breadcrumb">
     <ul class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">Dashboard</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">{% trans "Dashboard" %}</a></li>
       <li class="breadcrumb-item"><a href="{% url 'shepherd:domains' %}">Domains</a></li>
       <li class="breadcrumb-item active" aria-current="page">{{ domain.name }}</li>
     </ul>

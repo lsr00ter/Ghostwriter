@@ -1,7 +1,8 @@
 {% extends "base_generic.html" %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 
-{% block pagetitle %}Note{% endblock %}
+{% block pagetitle %}{% trans "Note" %}{% endblock %}
 
 {% block content %}
     <p>This is a note for <strong>{{ note_object }}</strong>. All notes include a timestamp and the username of the creator.</p>

@@ -1,7 +1,8 @@
 {% extends "base_generic.html" %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 
-{% block pagetitle %}Virtual Private Server{% endblock %}
+{% block pagetitle %}{% trans "Virtual Private Server" %}{% endblock %}
 
 {% block content %}
     <p>Enter the details for this VPS and how it will be used for the project.</p>

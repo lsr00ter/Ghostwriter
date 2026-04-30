@@ -5,12 +5,12 @@
 {% load i18n %}
 {% get_current_language as LANGUAGE_CODE %}
 
-{% block pagetitle %}{{ client.name }} Details{% endblock %}
+{% block pagetitle %}{% blocktrans with name=client.name %}{{ name }} Details{% endblocktrans %}{% endblock %}
 
 {% block breadcrumbs %}
   <nav aria-label="breadcrumb">
     <ul class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">Dashboard</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">{% trans "Dashboard" %}</a></li>
       <li class="breadcrumb-item"><a href="{% url 'rolodex:clients' %}">Clients</a></li>
       <li class="breadcrumb-item active" aria-current="page">{{ client.name }}</li>
     </ul>

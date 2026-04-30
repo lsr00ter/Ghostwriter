@@ -1,12 +1,13 @@
 {% extends "base_generic.html" %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 
-{% block pagetitle %}Assign Finding{% endblock %}
+{% block pagetitle %}{% trans "Assign Finding" %}{% endblock %}
 
 {% block breadcrumbs %}
   <nav aria-label="breadcrumb">
     <ul class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">Dashboard</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">{% trans "Dashboard" %}</a></li>
       <li class="breadcrumb-item">
         <a
           data-toggle="tooltip"
@@ -33,9 +34,7 @@
       <li class="breadcrumb-item">
         {{ object }}
       </li>
-      <li class="breadcrumb-item active" aria-current="page">
-        Assign
-      </li>
+      <li class="breadcrumb-item active" aria-current="page">{% trans "Assign" %}</li>
     </ul>
   </nav>
 {% endblock %}

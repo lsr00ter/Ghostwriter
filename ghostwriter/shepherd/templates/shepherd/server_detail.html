@@ -1,4 +1,5 @@
 {% extends "base_generic.html" %}
+{% load i18n %}
 
 {% load bleach_tags custom_tags extra_fields %}
 
@@ -7,7 +8,7 @@
 {% block breadcrumbs %}
   <nav aria-label="breadcrumb">
     <ul class="breadcrumb">
-      <li class="breadcrumb-item truncate"><a href="{% url 'home:dashboard' %}">Dashboard</a></li>
+      <li class="breadcrumb-item truncate"><a href="{% url 'home:dashboard' %}">{% trans "Dashboard" %}</a></li>
       <li class="breadcrumb-item truncate"><a href="{% url 'shepherd:servers' %}">Servers</a></li>
       <li class="breadcrumb-item active truncate" aria-current="page">{{ primary_address }}</li>
     </ul>

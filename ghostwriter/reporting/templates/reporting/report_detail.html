@@ -1,4 +1,5 @@
 {% extends "base_generic.html" %}
+{% load i18n %}
 {% load crispy_forms_tags report_tags bleach_tags custom_tags extra_fields determine_primary settings_tags static %}
 
 {% block pagetitle %}{{ report.title }}{% endblock %}
@@ -6,7 +7,7 @@
 {% block breadcrumbs %}
   <nav aria-label="breadcrumb">
     <ul class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">Dashboard</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">{% trans "Dashboard" %}</a></li>
       <li class="breadcrumb-item"><a data-toggle="tooltip" title="{{ report.project.client }}"
                                      href="{% url 'rolodex:client_detail' report.project.client.id %}">{{ report.project.client }}</a>
       </li>

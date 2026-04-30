@@ -1,16 +1,17 @@
 {% extends "base_generic.html" %}
+{% load i18n %}
 
 {% load crispy_forms_tags custom_tags %}
 
 {% load bleach_tags custom_tags %}
 
-{% block pagetitle %}Project List{% endblock %}
+{% block pagetitle %}{% trans "Project List" %}{% endblock %}
 
 {% block breadcrumbs %}
   <nav aria-label="breadcrumb">
     <ul class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">Dashboard</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Projects</li>
+      <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">{% trans "Dashboard" %}</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{% trans "Projects" %}</li>
     </ul>
   </nav>
 {% endblock %}

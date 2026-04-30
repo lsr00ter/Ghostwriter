@@ -1,7 +1,8 @@
 {% extends "base_generic.html" %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 
-{% block pagetitle %}Burn Domain{% endblock %}
+{% block pagetitle %}{% trans "Burn Domain" %}{% endblock %}
 
 {% block content %}
     <p>Explain why {{ domain_name }} is being marked as burned.</p>
