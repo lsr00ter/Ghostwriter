@@ -85,9 +85,9 @@
         <!-- User Profile & Avatar -->
         <a href="{% url 'users:user_detail' request.user.username %}">
           <img class="navbar-avatar"
-               data-toggle="tooltip" data-placement="top" title="Logged-in as {{ request.user.username }}"
+               data-toggle="tooltip" data-placement="top" title="{% blocktrans with username=request.user.username %}Logged-in as {{ username }}{% endblocktrans %}"
                src="{%  url 'users:avatar_download' slug=request.user.username %}"
-               alt="Avatar">
+               alt="{% trans 'Avatar' %}">
         </a>
       </div>
     {% endif %}

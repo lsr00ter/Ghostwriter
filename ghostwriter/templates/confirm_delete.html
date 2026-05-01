@@ -5,17 +5,17 @@
 
 {% block content %}
     <div class="alert alert-danger mt-5" role="alert">
-        <h5 class="alert-heading">Tread Carefully!</h4>
-        You are seeing this message because what you are about to do might have serious consequences.
+        <h5 class="alert-heading">{% trans "Tread Carefully!" %}</h4>
+        {% trans "You are seeing this message because what you are about to do might have serious consequences." %}
     </div>
 
-    <p>Are you sure you want to delete this {{ object_type }}? This action cannot be undone.</p>
+    <p>{% blocktrans with object_type=object_type %}Are you sure you want to delete this {{ object_type }}? This action cannot be undone.{% endblocktrans %}</p>
 
     <p><em>{{ object_to_be_deleted }}</em></p>
 
     <form action="" method="POST">
         {% csrf_token %}
-        <input type="submit" class="btn btn-danger col-md-2" value="Delete">
-        <button onclick="window.location.href = '{{ cancel_link }}';" class="btn btn-outline-secondary col-md-2" type="button">Cancel</button>
+        <input type="submit" class="btn btn-danger col-md-2" value="{% trans 'Delete' %}">
+        <button onclick="window.location.href = '{{ cancel_link }}';" class="btn btn-outline-secondary col-md-2" type="button">{% trans "Cancel" %}</button>
     </form>
 {% endblock %}

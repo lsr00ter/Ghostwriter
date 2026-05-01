@@ -5,15 +5,15 @@
 
 {% block content %}
     <div class="alert alert-danger mt-5" role="alert">
-        <h5 class="alert-heading">Tread Carefully!</h4>
-        You are seeing this message because what you are about to do might have serious consequences.
+        <h5 class="alert-heading">{% trans "Tread Carefully!" %}</h4>
+        {% trans "You are seeing this message because what you are about to do might have serious consequences." %}
     </div>
 
-    <p>Are you sure you want to archive report {{ object }}? This will generate the report, save it, then <em>delete all evidence</em>.</p>
+    <p>{% blocktrans with object=object %}Are you sure you want to archive report {{ object }}? This will generate the report, save it, then <em>delete all evidence</em>.{% endblocktrans %}</p>
 
     <form action="" method="POST">
         {% csrf_token %}
-        <input type="submit" class="btn btn-danger col-md-2" value="Archive">
-        <a class="btn btn-outline-secondary col-md-2" href="{{cancel_link}}">Cancel</a>
+        <input type="submit" class="btn btn-danger col-md-2" value="{% trans 'Archive' %}">
+        <a class="btn btn-outline-secondary col-md-2" href="{{cancel_link}}">{% trans "Cancel" %}</a>
     </form>
 {% endblock %}

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ghostwriter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-30 17:52+0000\n"
+"POT-Creation-Date: 2026-05-01 08:54+0000\n"
 "PO-Revision-Date: 2026-04-30 00:00+0000\n"
 "Last-Translator: GitHub Copilot\n"
 "Language-Team: Chinese\n"
@@ -212,22 +212,18 @@ msgid "Finding Title Contains"
 msgstr "发现项标题包含"
 
 #: ghostwriter/reporting/filters.py:58
-#| msgid "Finding Type"
 msgid "Partial Finding Title"
 msgstr "部分发现项标题"
 
 #: ghostwriter/reporting/filters.py:73
-#| msgid "Finding Assigned"
 msgid "Finding Tags Contain"
 msgstr "发现项标签包含"
 
 #: ghostwriter/reporting/filters.py:76
-#| msgid "Finding Type"
 msgid "Finding Tag"
 msgstr "发现项标签"
 
 #: ghostwriter/reporting/filters.py:85
-#| msgid "Search Findings..."
 msgid "Search findings on reports"
 msgstr "搜索报告中的发现项"
 
@@ -236,7 +232,6 @@ msgid "Return only findings on reports that started as blank findings"
 msgstr "仅显示在报告中以空白模板创建的发现项"
 
 #: ghostwriter/reporting/filters.py:119
-#| msgid "Findings"
 msgid "Finding Filters"
 msgstr "发现项筛选条件"
 
@@ -263,32 +258,26 @@ msgstr "筛选"
 #: ghostwriter/reporting/filters.py:592 ghostwriter/rolodex/filters.py:98
 #: ghostwriter/rolodex/filters.py:310 ghostwriter/shepherd/filters.py:160
 #: ghostwriter/shepherd/filters.py:292
-#| msgid "Reset Sort"
 msgid "Reset"
 msgstr "重置"
 
 #: ghostwriter/reporting/filters.py:202 ghostwriter/reporting/filters.py:205
-#| msgid "Observations"
 msgid "Observation Title Contains"
 msgstr "观察项标题包含"
 
 #: ghostwriter/reporting/filters.py:212
-#| msgid "Observation Assigned"
 msgid "Observation Tags Contain"
 msgstr "观察项标签包含"
 
 #: ghostwriter/reporting/filters.py:215
-#| msgid "Observations"
 msgid "Observation Tag"
 msgstr "观察项标签"
 
 #: ghostwriter/reporting/filters.py:240
-#| msgid "Observations"
 msgid "Observation Filters"
 msgstr "观察项筛选条件"
 
 #: ghostwriter/reporting/filters.py:293 ghostwriter/reporting/filters.py:488
-#| msgid "Report Template Detail"
 msgid "Report Title Contains"
 msgstr "报告标题包含"
 
@@ -297,27 +286,22 @@ msgid "Partial Report Title"
 msgstr "部分报告标题"
 
 #: ghostwriter/reporting/filters.py:300
-#| msgid "Report Configuration"
 msgid "Report Tags Contain"
 msgstr "报告标签包含"
 
 #: ghostwriter/reporting/filters.py:303
-#| msgid "Report"
 msgid "Report Tag"
 msgstr "报告标签"
 
 #: ghostwriter/reporting/filters.py:310
-#| msgid "Generate Reports"
 msgid "Incomplete Reports"
 msgstr "未完成报告"
 
 #: ghostwriter/reporting/filters.py:311 ghostwriter/rolodex/filters.py:204
-#| msgid "Complete"
 msgid "Completed"
 msgstr "已完成"
 
 #: ghostwriter/reporting/filters.py:315
-#| msgid "Archived"
 msgid "Filter Archived"
 msgstr "筛选已归档"
 
@@ -327,7 +311,6 @@ msgid "Report Status"
 msgstr "报告状态"
 
 #: ghostwriter/reporting/filters.py:343
-#| msgid "Report Templates"
 msgid "Report Filters"
 msgstr "报告筛选条件"
 
@@ -342,32 +325,26 @@ msgid "Partial Client Name"
 msgstr "部分客户名称"
 
 #: ghostwriter/reporting/filters.py:436
-#| msgid "Archived Reports"
 msgid "Archive Filters"
 msgstr "归档筛选条件"
 
 #: ghostwriter/reporting/filters.py:490
-#| msgid "Report Template List"
 msgid "Partial Template Title"
 msgstr "部分模板标题"
 
 #: ghostwriter/reporting/filters.py:503
-#| msgid "Template Update"
 msgid "Template Tags Contain"
 msgstr "模板标签包含"
 
 #: ghostwriter/reporting/filters.py:506
-#| msgid "Templates"
 msgid "Template Tag"
 msgstr "模板标签"
 
 #: ghostwriter/reporting/filters.py:519
-#| msgid "Templates"
 msgid "All Templates"
 msgstr "全部模板"
 
 #: ghostwriter/reporting/filters.py:520
-#| msgid "Doc Type"
 msgid "Document Type"
 msgstr "文档类型"
 
@@ -381,17 +358,14 @@ msgid "Protected"
 msgstr "受保护"
 
 #: ghostwriter/reporting/filters.py:530 ghostwriter/rolodex/filters.py:208
-#| msgid "Projects"
 msgid "All Projects"
 msgstr "全部项目"
 
 #: ghostwriter/reporting/filters.py:531 ghostwriter/rolodex/filters.py:208
-#| msgid "Project Shortcuts"
 msgid "Project Status"
 msgstr "项目状态"
 
 #: ghostwriter/reporting/filters.py:553
-#| msgid "Report Template Form"
 msgid "Report Template Filters"
 msgstr "报告模板筛选条件"
 
@@ -494,6 +468,8 @@ msgstr "编辑"
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:202
 #: ghostwriter/reporting/templates/snippets/report_observations_table.html:107
 #: ghostwriter/templates/confirm_delete.html:4
+#: ghostwriter/templates/confirm_delete.html:18
+#: ghostwriter/templates/confirm_delete_modal.html:13
 #: ghostwriter/templates/mfa/webauthn/authenticator_list.html:49
 msgid "Delete"
 msgstr "删除"
@@ -533,19 +509,22 @@ msgstr "文件预览"
 #: ghostwriter/reporting/templates/reporting/evidence_detail.html:95
 msgid ""
 "This is a preview of what your evidence file will look like in a report. It "
-"may not look exactly like this (depending on your template's styles), but it"
-" will give you an idea of what to expect."
-msgstr "以下为该证据文件在报告中的预览效果。实际外观可能因模板样式而有所差异，此处仅供参考。"
+"may not look exactly like this (depending on your template's styles), but it "
+"will give you an idea of what to expect."
+msgstr ""
+"以下为该证据文件在报告中的预览效果。实际外观可能因模板样式而有所差异，此处仅"
+"供参考。"
 
 #: ghostwriter/reporting/templates/reporting/evidence_detail.html:96
 msgid ""
 "The width is 6.5\" (165.1mm), the default full width of a Word document. If "
-"you have borders enabled for reports, images will include a border with your"
-" configured color and width. Previews also show you what captions will look "
+"you have borders enabled for reports, images will include a border with your "
+"configured color and width. Previews also show you what captions will look "
 "like with your caption and configured labelling for figures."
 msgstr ""
-"宽度为 6.5 英寸（165.1 毫米），即 Word "
-"文档的默认通栏宽度。若已为报告启用边框，图片将以所配置的颜色和宽度显示边框。预览同时展示题注按当前文字与图序标签配置渲染后的样式。"
+"宽度为 6.5 英寸（165.1 毫米），即 Word 文档的默认通栏宽度。若已为报告启用边"
+"框，图片将以所配置的颜色和宽度显示边框。预览同时展示题注按当前文字与图序标签"
+"配置渲染后的样式。"
 
 #: ghostwriter/reporting/templates/reporting/evidence_detail.html:100
 msgid "Click on the preview to view full size"
@@ -701,7 +680,9 @@ msgstr "发现项库"
 msgid ""
 "Click the <span class=\"add-icon\"></span> icon to add a finding to the "
 "<em>active report</em> displayed at the top of the page."
-msgstr "点击 <span class=\"add-icon\"></span> 图标，将发现项添加至页面顶部显示的<em>当前报告</em>。"
+msgstr ""
+"点击 <span class=\"add-icon\"></span> 图标，将发现项添加至页面顶部显示的<em>"
+"当前报告</em>。"
 
 #: ghostwriter/reporting/templates/reporting/finding_list.html:28
 msgid ""
@@ -810,8 +791,8 @@ msgstr "创建观察项"
 
 #: ghostwriter/reporting/templates/reporting/observation_list.html:31
 msgid ""
-"There are no observations yet, or your search returned no results. Create an"
-" observation above or adjust your filters."
+"There are no observations yet, or your search returned no results. Create an "
+"observation above or adjust your filters."
 msgstr "暂无观察项，或搜索未返回结果。请在上方新建观察项或调整筛选条件。"
 
 #: ghostwriter/reporting/templates/reporting/observation_list.html:54
@@ -857,6 +838,7 @@ msgid "Jump to Client"
 msgstr "跳转到客户"
 
 #: ghostwriter/reporting/templates/reporting/report_detail.html:41
+#: ghostwriter/templates/confirm_archive.html:16
 msgid "Archive"
 msgstr "归档"
 
@@ -1004,12 +986,14 @@ msgstr "搜索发现项..."
 
 #: ghostwriter/reporting/templates/reporting/report_detail.html:243
 msgid ""
-"Add a finding by adding a blank template below, by searching the library and then\n"
-"          clicking the <span class=\"p-1 add-icon\"></span> button in the results, or\n"
+"Add a finding by adding a blank template below, by searching the library and "
+"then\n"
+"          clicking the <span class=\"p-1 add-icon\"></span> button in the "
+"results, or\n"
 "          by clicking an autocomplete result above."
 msgstr ""
-"可通过以下方式添加发现项：在下方新增空白模板、在发现项库中搜索后点击结果中的 <span class=\"p-1 add-icon\"></span> "
-"按钮，或点击上方自动补全结果。"
+"可通过以下方式添加发现项：在下方新增空白模板、在发现项库中搜索后点击结果中的 "
+"<span class=\"p-1 add-icon\"></span> 按钮，或点击上方自动补全结果。"
 
 #: ghostwriter/reporting/templates/reporting/report_detail.html:247
 msgid ""
@@ -1036,12 +1020,14 @@ msgstr "搜索观察项..."
 
 #: ghostwriter/reporting/templates/reporting/report_detail.html:287
 msgid ""
-"Add an observation by adding a blank template below, by searching the library and then\n"
-"          clicking the <span class=\"p-1 add-icon\"></span> button in the results, or\n"
+"Add an observation by adding a blank template below, by searching the "
+"library and then\n"
+"          clicking the <span class=\"p-1 add-icon\"></span> button in the "
+"results, or\n"
 "          by clicking an autocomplete result above."
 msgstr ""
-"可通过以下方式添加观察项：在下方新增空白模板、在观察项库中搜索后点击结果中的 <span class=\"p-1 add-icon\"></span> "
-"按钮，或点击上方自动补全结果。"
+"可通过以下方式添加观察项：在下方新增空白模板、在观察项库中搜索后点击结果中的 "
+"<span class=\"p-1 add-icon\"></span> 按钮，或点击上方自动补全结果。"
 
 #: ghostwriter/reporting/templates/reporting/report_detail.html:295
 msgid "Add a blank observation template to the bottom of the report"
@@ -1235,9 +1221,11 @@ msgstr "开始编辑"
 #: ghostwriter/reporting/templates/reporting/report_list.html:42
 msgid ""
 "Click the below buttons to make the associated report your active report. "
-"Your active report is displayed at the top of your browser window and is the"
-" report that will receive a finding when you add one to the report."
-msgstr "点击下方按钮可将对应报告设为当前报告。当前报告显示于浏览器窗口顶部，新增发现项将记入该报告。"
+"Your active report is displayed at the top of your browser window and is the "
+"report that will receive a finding when you add one to the report."
+msgstr ""
+"点击下方按钮可将对应报告设为当前报告。当前报告显示于浏览器窗口顶部，新增发现"
+"项将记入该报告。"
 
 #: ghostwriter/reporting/templates/reporting/report_list.html:54
 msgid "Archived"
@@ -1490,8 +1478,7 @@ msgstr "描述"
 #: ghostwriter/reporting/templates/snippets/finding_detail_modal.html:20
 #: ghostwriter/reporting/templates/snippets/observation_detail_modal.html:20
 #, fuzzy
-#| msgid ""
-#| "No host or network detections have been written for this finding."
+#| msgid "No host or network detections have been written for this finding."
 msgid "No description has been provided for this finding."
 msgstr "尚未为该发现项编写主机或网络端检测建议。"
 
@@ -1720,17 +1707,14 @@ msgid "Partial Name, Short Name, or Codename"
 msgstr "部分名称、简称或代号"
 
 #: ghostwriter/rolodex/filters.py:47
-#| msgid "Client List"
 msgid "Client Tags Contain"
 msgstr "客户标签包含"
 
 #: ghostwriter/rolodex/filters.py:50
-#| msgid "Client"
 msgid "Client Tag"
 msgstr "客户标签"
 
 #: ghostwriter/rolodex/filters.py:75
-#| msgid "Client Form"
 msgid "Client Filters"
 msgstr "客户筛选条件"
 
@@ -1743,27 +1727,22 @@ msgid "Partial Project Codename"
 msgstr "部分项目代号"
 
 #: ghostwriter/rolodex/filters.py:172
-#| msgid "Project List"
 msgid "Project Tags Contain"
 msgstr "项目标签包含"
 
 #: ghostwriter/rolodex/filters.py:175
-#| msgid "Project"
 msgid "Project Tag"
 msgstr "项目标签"
 
 #: ghostwriter/rolodex/filters.py:183
-#| msgid "Target Due Date:"
 msgid "Start Date"
 msgstr "开始日期"
 
 #: ghostwriter/rolodex/filters.py:191
-#| msgid "Upload Date"
 msgid "End Date"
 msgstr "结束日期"
 
 #: ghostwriter/rolodex/filters.py:197
-#| msgid "Delivery Date"
 msgid "Relative Start Date"
 msgstr "相对开始日期"
 
@@ -1772,22 +1751,18 @@ msgid "-- Relative Start Date --"
 msgstr "-- 相对开始日期 --"
 
 #: ghostwriter/rolodex/filters.py:203
-#| msgid "Activate"
 msgid "Active"
 msgstr "进行中"
 
 #: ghostwriter/rolodex/filters.py:213
-#| msgid "Project Only"
 msgid "Project Type"
 msgstr "项目类型"
 
 #: ghostwriter/rolodex/filters.py:215
-#| msgid "Project Only"
 msgid "-- Project Type --"
 msgstr "-- 项目类型 --"
 
 #: ghostwriter/rolodex/filters.py:239
-#| msgid "Project Form"
 msgid "Project Filters"
 msgstr "项目筛选条件"
 
@@ -1809,8 +1784,8 @@ msgstr ""
 #: ghostwriter/rolodex/forms_client.py:95
 #: ghostwriter/rolodex/forms_project.py:469
 msgid ""
-"You must designate one contact as the primary point of contact. You may have"
-" marked the primary for deletion. If so, please mark a different contact as "
+"You must designate one contact as the primary point of contact. You may have "
+"marked the primary for deletion. If so, please mark a different contact as "
 "primary."
 msgstr ""
 
@@ -1998,7 +1973,6 @@ msgid "Invalid form data"
 msgstr ""
 
 #: ghostwriter/shepherd/filters.py:50
-#| msgid "Domain + Server Connection"
 msgid "Domain Name or Category Contains"
 msgstr "域名或分类包含"
 
@@ -2007,12 +1981,10 @@ msgid "Partial Domain Name or Category"
 msgstr "部分域名或分类"
 
 #: ghostwriter/shepherd/filters.py:60
-#| msgid "Domain + Server Connection"
 msgid "Domain Tags Contain"
 msgstr "域名标签包含"
 
 #: ghostwriter/shepherd/filters.py:63
-#| msgid "Domain Catalog"
 msgid "Domain Tag"
 msgstr "域名标签"
 
@@ -2021,17 +1993,14 @@ msgid "Filter Expired"
 msgstr "筛选已过期"
 
 #: ghostwriter/shepherd/filters.py:105
-#| msgid "Domain Form"
 msgid "Domain Filters"
 msgstr "域名筛选条件"
 
 #: ghostwriter/shepherd/filters.py:123
-#| msgid "Domains"
 msgid "Domain Status"
 msgstr "域名状态"
 
 #: ghostwriter/shepherd/filters.py:141
-#| msgid "Report Status"
 msgid "Health Status"
 msgstr "健康状态"
 
@@ -2048,17 +2017,14 @@ msgid "Server Tags Contain"
 msgstr "服务器标签包含"
 
 #: ghostwriter/shepherd/filters.py:224
-#| msgid "Servers"
 msgid "Server Tag"
 msgstr "服务器标签"
 
 #: ghostwriter/shepherd/filters.py:255
-#| msgid "Server Form"
 msgid "Server Filters"
 msgstr "服务器筛选条件"
 
 #: ghostwriter/shepherd/filters.py:273
-#| msgid "Delivery Status:"
 msgid "Server Status"
 msgstr "服务器状态"
 
@@ -2071,8 +2037,7 @@ msgid "Someone beat you to it – This domain has already been checked out!"
 msgstr ""
 
 #: ghostwriter/shepherd/forms.py:278
-msgid ""
-"Domain names must be unique and this one already exists in the library."
+msgid "Domain names must be unique and this one already exists in the library."
 msgstr ""
 
 #: ghostwriter/shepherd/forms.py:290
@@ -2216,8 +2181,7 @@ msgstr ""
 #: ghostwriter/singleton/templatetags/settings_tags.py:27
 #, python-format
 msgid ""
-"Could not get the model name '%(model)s' from the application named "
-"'%(app)s'"
+"Could not get the model name '%(model)s' from the application named '%(app)s'"
 msgstr ""
 
 #: ghostwriter/templates/403.html:12
@@ -2287,8 +2251,8 @@ msgstr ""
 
 #: ghostwriter/templates/account/email.html:42
 msgid ""
-"You currently do not have any email address set up. You should really add an"
-" e-mail address so you can receive notifications, reset your password, etc."
+"You currently do not have any email address set up. You should really add an "
+"e-mail address so you can receive notifications, reset your password, etc."
 msgstr ""
 
 #: ghostwriter/templates/account/email.html:47
@@ -2324,7 +2288,8 @@ msgstr "确认"
 #, python-format
 msgid ""
 "\n"
-"            This e-mail confirmation link expired or is invalid. Please <a href=\"%(email_url)s\">issue a new e-mail confirmation request</a>.\n"
+"            This e-mail confirmation link expired or is invalid. Please <a "
+"href=\"%(email_url)s\">issue a new e-mail confirmation request</a>.\n"
 "            "
 msgstr ""
 
@@ -2338,7 +2303,8 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"        Please sign in with one of your existing third-party accounts. Or, <a href=\"%(signup_url)s\">sign up</a> for a\n"
+"        Please sign in with one of your existing third-party accounts. Or, "
+"<a href=\"%(signup_url)s\">sign up</a> for a\n"
 "        %(site_name)s account and sign in below:\n"
 "      "
 msgstr ""
@@ -2350,7 +2316,8 @@ msgstr ""
 #: ghostwriter/templates/account/login.html:36
 msgid ""
 "\n"
-"        If you do not have an account yet, then please contact your administrator.\n"
+"        If you do not have an account yet, then please contact your "
+"administrator.\n"
 "      "
 msgstr ""
 
@@ -2382,8 +2349,8 @@ msgstr ""
 
 #: ghostwriter/templates/account/password_reset.html:13
 msgid ""
-"Forgotten your password? Enter your e-mail address below, and we'll send you"
-" an e-mail allowing you to reset it."
+"Forgotten your password? Enter your e-mail address below, and we'll send you "
+"an e-mail allowing you to reset it."
 msgstr ""
 
 #: ghostwriter/templates/account/password_reset.html:18
@@ -2409,8 +2376,8 @@ msgstr ""
 #, python-format
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
-"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password "
-"reset</a>."
+"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
+"a>."
 msgstr ""
 
 #: ghostwriter/templates/account/password_reset_from_key.html:18
@@ -2457,8 +2424,7 @@ msgstr ""
 
 #: ghostwriter/templates/account/signup_closed.html:12
 msgid ""
-"Registration may be closed or your account's email domain may not be "
-"allowed."
+"Registration may be closed or your account's email domain may not be allowed."
 msgstr ""
 
 #: ghostwriter/templates/account/snippets/already_logged_in.html:5
@@ -2502,8 +2468,8 @@ msgstr ""
 #: ghostwriter/templates/account/verified_email_required.html:20
 #, python-format
 msgid ""
-"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your "
-"e-mail address</a>."
+"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-"
+"mail address</a>."
 msgstr ""
 
 #: ghostwriter/templates/base_generic.html:104
@@ -2738,11 +2704,13 @@ msgid "v%(version)s, released %(release_date)s"
 msgstr "v%(version)s，发布于 %(release_date)s"
 
 #: ghostwriter/templates/base_generic.html:450
+#: ghostwriter/templates/base_generic_empty.html:88
 #, python-format
 msgid "Logged-in as %(username)s"
 msgstr "当前登录用户：%(username)s"
 
 #: ghostwriter/templates/base_generic.html:452
+#: ghostwriter/templates/base_generic_empty.html:90
 #: ghostwriter/users/templates/users/profile.html:20
 #: ghostwriter/users/templates/users/profile.html:23
 msgid "Avatar"
@@ -2756,6 +2724,91 @@ msgstr "了解更多"
 #, python-format
 msgid "Archive %(object)s"
 msgstr "归档 %(object)s"
+
+#: ghostwriter/templates/confirm_archive.html:8
+#: ghostwriter/templates/confirm_delete.html:8
+msgid "Tread Carefully!"
+msgstr "请谨慎操作！"
+
+#: ghostwriter/templates/confirm_archive.html:9
+#: ghostwriter/templates/confirm_delete.html:9
+msgid ""
+"You are seeing this message because what you are about to do might have "
+"serious consequences."
+msgstr "出现此提示是因为接下来的操作可能会造成严重后果。"
+
+#: ghostwriter/templates/confirm_archive.html:12
+#, python-format
+msgid ""
+"Are you sure you want to archive report %(object)s? This will generate the "
+"report, save it, then <em>delete all evidence</em>."
+msgstr ""
+"确定要归档报告 %(object)s 吗？系统会先生成并保存报告，随后<em>删除全部证据</em>。"
+
+#: ghostwriter/templates/confirm_archive.html:17
+#: ghostwriter/templates/confirm_delete.html:19
+#: ghostwriter/templates/confirm_delete_modal.html:12
+#: ghostwriter/templates/confirm_revoke_modal.html:12
+#: ghostwriter/templates/confirm_sanitize_modal.html:19
+#: ghostwriter/templates/mfa/webauthn/edit_form.html:42
+msgid "Cancel"
+msgstr "取消"
+
+#: ghostwriter/templates/confirm_delete.html:12
+#, python-format
+msgid ""
+"Are you sure you want to delete this %(object_type)s? This action cannot be "
+"undone."
+msgstr "确定要删除该 %(object_type)s 吗？此操作无法撤销。"
+
+#: ghostwriter/templates/confirm_delete_modal.html:8
+msgid ""
+"Are you sure you want to delete this <span id=\"object-type\"></span>? This "
+"action is permanent!"
+msgstr ""
+"确定要删除该 <span id=\"object-type\"></span> 吗？此操作不可恢复！"
+
+#: ghostwriter/templates/confirm_revoke_modal.html:8
+msgid "Are you sure you want to revoke this token? This action is permanent!"
+msgstr "确定要吊销该令牌吗？此操作不可恢复！"
+
+#: ghostwriter/templates/confirm_revoke_modal.html:13
+msgid "Revoke"
+msgstr "吊销"
+
+#: ghostwriter/templates/confirm_sanitize_modal.html:8
+msgid "Are you sure you want to sanitize this log and all log entries?"
+msgstr "确定要清理该日志及其全部条目吗？"
+
+#: ghostwriter/templates/confirm_sanitize_modal.html:9
+msgid "This action cannot be reversed!"
+msgstr "此操作无法撤销！"
+
+#: ghostwriter/templates/confirm_sanitize_modal.html:10
+msgid "Select the fields to sanitize below:"
+msgstr "请在下方选择要清理的字段："
+
+#: ghostwriter/templates/confirm_sanitize_modal.html:15
+msgid ""
+"If sanitizing the <em>Command</em> field, Ghostwriter will delete everything "
+"after the first space (the tool/command name) to remove potentially "
+"sensitive information in arguments and parameters (e.g., hashes, keys)."
+msgstr ""
+"清理 <em>Command</em> 字段时，Ghostwriter 会删除首个空格之后的所有内容（保留"
+"工具/命令名称），以移除参数中可能包含的敏感信息（例如哈希、密钥）。"
+
+#: ghostwriter/templates/confirm_sanitize_modal.html:16
+msgid ""
+"<span class=\"bold\">Note:</span> Selecting <em>Recordings</em> will <span "
+"class=\"bold\">permanently delete</span> the recording files from disk. This "
+"cannot be undone."
+msgstr ""
+"<span class=\"bold\">注意：</span>选择 <em>Recordings</em> 会从磁盘<span "
+"class=\"bold\">永久删除</span>录制文件，此操作无法撤销。"
+
+#: ghostwriter/templates/confirm_sanitize_modal.html:20
+msgid "Sanitize"
+msgstr "清理"
 
 #: ghostwriter/templates/index.html:6
 msgid "Ghostwriter Dashboard"
@@ -2820,24 +2873,27 @@ msgstr "生成格式统一的报告"
 msgid ""
 "Use the sidebar navigation to access all features. This dashboard will show "
 "your assignments and project calendar events to keep you organized."
-msgstr "使用侧边栏导航访问所有功能。本仪表板会显示分配给你的任务与项目日历事件，便于统筹安排。"
+msgstr ""
+"使用侧边栏导航访问所有功能。本仪表板会显示分配给你的任务与项目日历事件，便于"
+"统筹安排。"
 
 #: ghostwriter/templates/index.html:49
 msgid ""
 "If you don't see any clients or projects, you may need to create them or "
 "request access. A manager or admin can assign you to an existing project to "
-"get you started. Once you have a project and a report, you can easily access"
-" them at any time from the left-hand sidebar available on every page."
+"get you started. Once you have a project and a report, you can easily access "
+"them at any time from the left-hand sidebar available on every page."
 msgstr ""
-"若未显示任何客户或项目，可能需要创建或申请访问权限。管理员可将你加入已有项目以便开始工作。获得项目和报告后，可随时通过每个页面左侧的侧边栏快速访问。"
+"若未显示任何客户或项目，可能需要创建或申请访问权限。管理员可将你加入已有项目"
+"以便开始工作。获得项目和报告后，可随时通过每个页面左侧的侧边栏快速访问。"
 
 #: ghostwriter/templates/index.html:51
 msgid ""
 "Learn more from the <a href=\"https://ghostwriter.wiki/\" class=\"dashboard-"
 "link\">Ghostwriter Wiki</a>. Join our <a href=\"https://ghst.ly/BHSlack\" "
 "class=\"dashboard-link\">SpecterOps Slack Community</a> and the "
-"<em>#ghostwriter</em> channel to discuss Ghostwriter, ask questions, and get"
-" help."
+"<em>#ghostwriter</em> channel to discuss Ghostwriter, ask questions, and get "
+"help."
 msgstr ""
 "更多信息请访问 <a href=\"https://ghostwriter.wiki/\" class=\"dashboard-"
 "link\">Ghostwriter Wiki</a>。可加入 <a href=\"https://ghst.ly/BHSlack\" "
@@ -2858,15 +2914,17 @@ msgstr "你已被分配到部分活跃项目，可在此查看："
 
 #: ghostwriter/templates/index.html:73
 msgid ""
-"Open the sidebar on the left to view/manage your reports under <em>My Active"
-" Reports</em>."
+"Open the sidebar on the left to view/manage your reports under <em>My Active "
+"Reports</em>."
 msgstr "打开左侧侧边栏，可在 <em>我的活跃报告</em> 中查看与管理报告。"
 
 #: ghostwriter/templates/index.html:74
 msgid ""
 "Select a report to mark it as active. If you're managing multiple reports, "
 "you can switch your active reports from there, too."
-msgstr "选择一份报告将其标记为活跃报告。若同时管理多份报告，也可在此切换当前活跃报告。"
+msgstr ""
+"选择一份报告将其标记为活跃报告。若同时管理多份报告，也可在此切换当前活跃报"
+"告。"
 
 #: ghostwriter/templates/index.html:76
 #, python-format
@@ -2928,7 +2986,9 @@ msgstr "检测到异常！"
 msgid ""
 "Visit the <a class=\"clickable italic\" "
 "href=\"%(healthcheck_url)s\">Detailed Status Page</a>"
-msgstr "查看 <a class=\"clickable italic\" href=\"%(healthcheck_url)s\">详细状态页面</a>"
+msgstr ""
+"查看 <a class=\"clickable italic\" href=\"%(healthcheck_url)s\">详细状态页面"
+"</a>"
 
 #: ghostwriter/templates/index.html:201
 msgid "Assignment:"
@@ -3036,11 +3096,13 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"                                        There is %(unused_count)s out of %(total_count)s recovery codes available.\n"
+"                                        There is %(unused_count)s out of "
+"%(total_count)s recovery codes available.\n"
 "                                    "
 msgid_plural ""
 "\n"
-"                                        There are %(unused_count)s out of %(total_count)s recovery codes available.\n"
+"                                        There are %(unused_count)s out of "
+"%(total_count)s recovery codes available.\n"
 "                                    "
 msgstr[0] ""
 
@@ -3127,10 +3189,6 @@ msgstr ""
 msgid "Save"
 msgstr "保存"
 
-#: ghostwriter/templates/mfa/webauthn/edit_form.html:42
-msgid "Cancel"
-msgstr "取消"
-
 #: ghostwriter/templates/mfa/webauthn/reauthenticate.html:12
 msgid "Use a security key"
 msgstr ""
@@ -3152,8 +3210,7 @@ msgstr ""
 
 #: ghostwriter/templates/socialaccount/login.html:20
 #, python-format
-msgid ""
-"You are about to sign in using a third-party account from %(provider)s."
+msgid "You are about to sign in using a third-party account from %(provider)s."
 msgstr ""
 
 #: ghostwriter/templates/socialaccount/login.html:26
@@ -3306,10 +3363,12 @@ msgid "Successfully updated your profile!"
 msgstr "个人资料已更新。"
 
 #~ msgid ""
-#~ "Your avatar will be displayed as a circle and automatically cropped to fit. "
-#~ "For best results, upload a square image (equal height and width) or ensure "
-#~ "your face is centered in the image."
-#~ msgstr "头像会显示为圆形，并自动裁剪到合适尺寸。为了获得更好的效果，请上传宽高相同的方形图片，或确保头像主体位于图片中央。"
+#~ "Your avatar will be displayed as a circle and automatically cropped to "
+#~ "fit. For best results, upload a square image (equal height and width) or "
+#~ "ensure your face is centered in the image."
+#~ msgstr ""
+#~ "头像会显示为圆形，并自动裁剪到合适尺寸。为了获得更好的效果，请上传宽高相同"
+#~ "的方形图片，或确保头像主体位于图片中央。"
 
 #~ msgid "Previews for images will appear below."
 #~ msgstr "图片预览会显示在下方。"

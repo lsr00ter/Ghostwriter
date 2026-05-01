@@ -1,22 +1,23 @@
 <!-- Sanitize button will redirect to the href of the element with ``id = caller-id`` property in this modal -->
+{% load i18n %}
 <div class="modal fade" id="confirm-sanitize-modal" tabindex="-1" caller-id="" role="dialog"
      aria-labelledby="confirm-sanitize-modal-label" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-body confirm-sanitize">
-        Are you sure you want to sanitize this log and all log entries?
-        <p class="bold mt-3">This action cannot be reversed!</p>
-        <p class="mt-3">Select the fields to sanitize below:</p>
+        {% trans "Are you sure you want to sanitize this log and all log entries?" %}
+        <p class="bold mt-3">{% trans "This action cannot be reversed!" %}</p>
+        <p class="mt-3">{% trans "Select the fields to sanitize below:" %}</p>
 
         <form id="sanitize-checklist-form">
         </form>
 
-        <p class="mt-3">If sanitizing the <em>Command</em> field, Ghostwriter will delete everything after the first space (the tool/command name) to remove potentially sensitive information in arguments and parameters (e.g., hashes, keys).</p>
-        <p class="mt-3"><span class="bold">Note:</span> Selecting <em>Recordings</em> will <span class="bold">permanently delete</span> the recording files from disk. This cannot be undone.</p>
+        <p class="mt-3">{% blocktrans %}If sanitizing the <em>Command</em> field, Ghostwriter will delete everything after the first space (the tool/command name) to remove potentially sensitive information in arguments and parameters (e.g., hashes, keys).{% endblocktrans %}</p>
+        <p class="mt-3">{% blocktrans %}<span class="bold">Note:</span> Selecting <em>Recordings</em> will <span class="bold">permanently delete</span> the recording files from disk. This cannot be undone.{% endblocktrans %}</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        <button type="submit" class="btn btn-danger" data-dismiss="modal" id="confirm-sanitize-button-modal">Sanitize
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "Cancel" %}</button>
+        <button type="submit" class="btn btn-danger" data-dismiss="modal" id="confirm-sanitize-button-modal">{% trans "Sanitize" %}
         </button>
       </div>
     </div>
