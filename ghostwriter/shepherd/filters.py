@@ -7,6 +7,8 @@ from datetime import date
 from django import forms
 from django.db.models import Q
 from django.forms.widgets import TextInput
+from django.utils.text import format_lazy
+from django.utils.translation import gettext_lazy as _
 
 # 3rd Party Libraries
 import django_filters
@@ -17,7 +19,7 @@ from crispy_forms.bootstrap import (
     PrependedText,
 )
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Div, HTML, ButtonHolder, Column, Layout, Row, Submit
+from crispy_forms.layout import HTML, ButtonHolder, Column, Div, Layout, Row, Submit
 
 # Ghostwriter Libraries
 from ghostwriter.modules.custom_layout_object import SwitchToggle
@@ -45,15 +47,20 @@ class DomainFilter(django_filters.FilterSet):
 
     domain = django_filters.CharFilter(
         method="search_name_and_category",
-        label="Domain Name or Category Contains",
-        widget=TextInput(attrs={"placeholder": "Partial Domain Name or Category", "autocomplete": "off"}),
+        label=_("Domain Name or Category Contains"),
+        widget=TextInput(
+            attrs={
+                "placeholder": _("Partial Domain Name or Category"),
+                "autocomplete": "off",
+            }
+        ),
     )
     tags = django_filters.CharFilter(
         method="search_tags",
-        label="Domain Tags Contain",
+        label=_("Domain Tags Contain"),
         widget=TextInput(
             attrs={
-                "placeholder": "Domain Tag",
+                "placeholder": _("Domain Tag"),
                 "autocomplete": "off",
             }
         ),
@@ -70,7 +77,7 @@ class DomainFilter(django_filters.FilterSet):
     )
 
     exclude_expired = django_filters.BooleanFilter(
-        label="Filter Expired",
+        label=_("Filter Expired"),
         method="filter_expired",
         widget=forms.CheckboxInput,
     )
@@ -95,11 +102,13 @@ class DomainFilter(django_filters.FilterSet):
         self.helper.layout = Layout(
             Accordion(
                 AccordionGroup(
-                    "Domain Filters",
+                    _("Domain Filters"),
                     Div(
                         Row(
                             Column(
-                                PrependedText("domain", '<i class="fas fa-filter"></i>'),
+                                PrependedText(
+                                    "domain", '<i class="fas fa-filter"></i>'
+                                ),
                                 css_class="col-md-6",
                             ),
                             Column(
@@ -109,26 +118,28 @@ class DomainFilter(django_filters.FilterSet):
                             css_class="form-row",
                         ),
                         HTML(
-                            """
-                            <label for="div_id_domain_status" class="mt-3">Domain Status</label>
-                            """
+                            format_lazy(
+                                '<label for="div_id_domain_status" class="mt-3">{label}</label>',
+                                label=_("Domain Status"),
+                            )
                         ),
                         Row(
-                             Column(
-                                 InlineCheckboxes("domain_status"),
-                             ),
+                            Column(
+                                InlineCheckboxes("domain_status"),
+                            ),
                             css_class="form-row",
                         ),
                         Row(
-                          Column(
-                              SwitchToggle("exclude_expired"),
-                          ),
+                            Column(
+                                SwitchToggle("exclude_expired"),
+                            ),
                             css_class="form-row",
                         ),
                         HTML(
-                          """
-                          <label for="div_id_health_status" class-"mt-3">Health Status</label>
-                          """
+                            format_lazy(
+                                '<label for="div_id_health_status" class="mt-3">{label}</label>',
+                                label=_("Health Status"),
+                            )
                         ),
                         Row(
                             Column(
@@ -137,11 +148,17 @@ class DomainFilter(django_filters.FilterSet):
                             css_class="form-row",
                         ),
                         ButtonHolder(
-                            Submit("submit_btn", "Filter", css_class="btn btn-primary col-1"),
+                            Submit(
+                                "submit_btn",
+                                _("Filter"),
+                                css_class="btn btn-primary col-1",
+                            ),
                             HTML(
-                                """
-                                <a class="btn btn-outline-secondary col-1" role="button" href="{%  url 'shepherd:domains' %}">Reset</a>
-                                """
+                                format_lazy(
+                                    '<a class="btn btn-outline-secondary col-1" role="button"'
+                                    " href=\"{{% url 'shepherd:domains' %}}\">{label}</a>",
+                                    label=_("Reset"),
+                                )
                             ),
                             css_class="mt-3",
                         ),
@@ -169,7 +186,9 @@ class DomainFilter(django_filters.FilterSet):
         """
         Search for a value that appears in either the :model:`shepherd.Domain` `name` and `categorization` fields.
         """
-        return queryset.filter(Q(name__icontains=value) | Q(categorization__icontains=value))
+        return queryset.filter(
+            Q(name__icontains=value) | Q(categorization__icontains=value)
+        )
 
 
 class ServerFilter(django_filters.FilterSet):
@@ -189,15 +208,20 @@ class ServerFilter(django_filters.FilterSet):
 
     server = django_filters.CharFilter(
         method="search_name_and_address",
-        label="IP Address or Hostname Contains",
-        widget=TextInput(attrs={"placeholder": "Partial IP Address or Hostname", "autocomplete": "off"}),
+        label=_("IP Address or Hostname Contains"),
+        widget=TextInput(
+            attrs={
+                "placeholder": _("Partial IP Address or Hostname"),
+                "autocomplete": "off",
+            }
+        ),
     )
     tags = django_filters.CharFilter(
         method="search_tags",
-        label="Server Tags Contain",
+        label=_("Server Tags Contain"),
         widget=TextInput(
             attrs={
-                "placeholder": "Server Tag",
+                "placeholder": _("Server Tag"),
                 "autocomplete": "off",
             }
         ),
@@ -228,11 +252,13 @@ class ServerFilter(django_filters.FilterSet):
         self.helper.layout = Layout(
             Accordion(
                 AccordionGroup(
-                    "Server Filters",
+                    _("Server Filters"),
                     Div(
                         Row(
                             Column(
-                                PrependedText("server", '<i class="fas fa-filter"></i>'),
+                                PrependedText(
+                                    "server", '<i class="fas fa-filter"></i>'
+                                ),
                                 css_class="form-group col-md-6 mb-0",
                             ),
                             Column(
@@ -242,9 +268,10 @@ class ServerFilter(django_filters.FilterSet):
                             css_class="form-row",
                         ),
                         HTML(
-                            """
-                            <label for="div_id_server_status" class="mt-3">Server Status</label>
-                            """
+                            format_lazy(
+                                '<label for="div_id_server_status" class="mt-3">{label}</label>',
+                                label=_("Server Status"),
+                            )
                         ),
                         Row(
                             Column(
@@ -253,11 +280,17 @@ class ServerFilter(django_filters.FilterSet):
                             css_class="form-row",
                         ),
                         ButtonHolder(
-                            Submit("submit_btn", "Filter", css_class="btn btn-primary col-1"),
+                            Submit(
+                                "submit_btn",
+                                _("Filter"),
+                                css_class="btn btn-primary col-1",
+                            ),
                             HTML(
-                                """
-                                <a class="btn btn-outline-secondary col-1" role="button" href="{%  url 'shepherd:servers' %}">Reset</a>
-                                """
+                                format_lazy(
+                                    '<a class="btn btn-outline-secondary col-1" role="button"'
+                                    " href=\"{{% url 'shepherd:servers' %}}\">{label}</a>",
+                                    label=_("Reset"),
+                                )
                             ),
                             css_class="mt-3",
                         ),
@@ -279,5 +312,7 @@ class ServerFilter(django_filters.FilterSet):
         or the :model:`shepherd.AuxServerAddress` `ip_address` field.
         """
         return queryset.filter(
-            Q(ip_address__icontains=value) | Q(name__icontains=value) | Q(auxserveraddress__ip_address__icontains=value)
+            Q(ip_address__icontains=value)
+            | Q(name__icontains=value)
+            | Q(auxserveraddress__ip_address__icontains=value)
         )
