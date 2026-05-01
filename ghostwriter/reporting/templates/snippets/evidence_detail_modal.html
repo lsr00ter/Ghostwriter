@@ -1,4 +1,4 @@
-{% load bleach_tags report_tags %}
+{% load i18n bleach_tags report_tags %}
 
 <div class="modal fade" id="evidence_detail_{{ evidence.id }}" tabindex="-1" role="dialog"
      aria-labelledby="evidence_detail_{{ evidence.id }}_label" aria-hidden="true">
@@ -8,7 +8,7 @@
         <h5 class="modal-title" id="evidence_detail_{{ evidence.id }}_label">
           {{ evidence.friendly_name }}
         </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close" data-dismiss="modal" aria-label="{% trans 'Close' %}">
           <i class="fas fa-times" aria-hidden="true"></i>
         </button>
       </div>
@@ -25,10 +25,10 @@
                 data-evidence-url="{% url 'reporting:evidence_download' evidence.id %}"
                 data-evidence-type="image"
                 data-modal-id="evidence_detail_{{ evidence.id }}"
-                title="Click to view full size"
+                title="{% trans 'Click to view full size' %}"
               >
               <p class="text-muted mt-2 small">
-                <i class="fas fa-search-plus"></i> Click image to view full size
+                <i class="fas fa-search-plus"></i> {% trans "Click image to view full size" %}
               </p>
             </div>
           {% else %}
@@ -40,14 +40,14 @@
                 data-evidence-url="{% url 'reporting:evidence_download' evidence.id %}"
                 data-evidence-type="text"
                 data-modal-id="evidence_detail_{{ evidence.id }}"
-                title="Click to view full content"
+                title="{% trans 'Click to view full content' %}"
                 tabindex="0" role="button"
                 onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}"
               >
                 <div>
                   <i class="fas fa-file-code fa-3x text-muted mb-2"></i>
                   <p class="text-muted mb-0 small">
-                    <i class="fas fa-search-plus"></i> Click to view full file content
+                    <i class="fas fa-search-plus"></i> {% trans "Click to view full file content" %}
                   </p>
                 </div>
               </div>
@@ -56,20 +56,20 @@
 
           <table class="table table-borderless table-sm">
             <tr>
-              <td class="text-left font-weight-bold" style="width: 30%;">Filename:</td>
+              <td class="text-left font-weight-bold" style="width: 30%;">{% trans "Filename:" %}</td>
               <td class="text-left">{{ evidence.filename }}</td>
             </tr>
             <tr>
-              <td class="text-left font-weight-bold">Upload Date:</td>
+              <td class="text-left font-weight-bold">{% trans "Upload Date:" %}</td>
               <td class="text-left">{{ evidence.upload_date|date:"DATE_FORMAT" }}</td>
             </tr>
             <tr>
-              <td class="text-left font-weight-bold">Uploaded By:</td>
+              <td class="text-left font-weight-bold">{% trans "Uploaded By:" %}</td>
               <td class="text-left">{{ evidence.uploaded_by }}</td>
             </tr>
             {% if evidence.description %}
               <tr>
-                <td class="text-left font-weight-bold align-top">Description:</td>
+                <td class="text-left font-weight-bold align-top">{% trans "Description:" %}</td>
                 <td class="text-left">{{ evidence.description|bleach }}</td>
               </tr>
             {% endif %}
@@ -77,10 +77,10 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "Close" %}</button>
         <a href="javascript:void(0)"
            onclick="downloadEvidence({{ evidence.id }}, '{{ evidence.filename|escapejs }}')"
-           class="btn btn-primary icon download-icon">Download</a>
+           class="btn btn-primary icon download-icon">{% trans "Download" %}</a>
       </div>
     </div>
   </div>

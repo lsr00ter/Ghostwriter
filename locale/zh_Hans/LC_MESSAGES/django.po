@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ghostwriter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-01 08:54+0000\n"
+"POT-Creation-Date: 2026-05-01 11:31+0000\n"
 "PO-Revision-Date: 2026-04-30 00:00+0000\n"
 "Last-Translator: GitHub Copilot\n"
 "Language-Team: Chinese\n"
@@ -551,6 +551,14 @@ msgstr "证据表单"
 #: ghostwriter/reporting/templates/reporting/evidence_form_modal.html:33
 msgid "You must provide a friendly name, caption, and evidence file"
 msgstr ""
+
+#: ghostwriter/reporting/templates/reporting/evidence_modal_success.html:4
+msgid "Evidence Uploaded"
+msgstr "证据已上传"
+
+#: ghostwriter/reporting/templates/reporting/evidence_modal_success.html:18
+msgid "Close Dialog"
+msgstr "关闭对话框"
 
 #: ghostwriter/reporting/templates/reporting/finding_detail.html:6
 #: ghostwriter/reporting/templates/reporting/observation_detail.html:6
@@ -1270,6 +1278,8 @@ msgid "Report Templates"
 msgstr "报告模板"
 
 #: ghostwriter/reporting/templates/reporting/report_template_detail.html:26
+#: ghostwriter/reporting/templates/snippets/evidence_detail_modal.html:83
+#: ghostwriter/reporting/templates/snippets/evidence_lightbox_modal.html:24
 #: ghostwriter/templates/mfa/backup_tokens.html:52
 #: ghostwriter/templates/mfa/index.html:111
 #: ghostwriter/templates/mfa/recovery_codes/index.html:52
@@ -1301,6 +1311,8 @@ msgid "Uploaded By"
 msgstr "上传者"
 
 #: ghostwriter/reporting/templates/reporting/report_template_detail.html:63
+#: ghostwriter/reporting/templates/snippets/template_detail_modal.html:82
+#: ghostwriter/reporting/templates/snippets/template_lint_results.html:62
 #: ghostwriter/templates/mfa/webauthn/authenticator_list.html:31
 msgid "Unknown"
 msgstr "未知"
@@ -1454,57 +1466,134 @@ msgstr "新建报告"
 msgid "%(field)s on %(report_name)s"
 msgstr ""
 
-#: ghostwriter/reporting/templates/snippets/finding_detail_modal.html:7
-#: ghostwriter/reporting/templates/snippets/observation_detail_modal.html:7
-#, python-format
-msgid "Additional Details for %(title)s"
-msgstr ""
+#: ghostwriter/reporting/templates/snippets/cvss_ui.html:27
+msgid "Switch to v4"
+msgstr "切换到 v4"
 
+#: ghostwriter/reporting/templates/snippets/cvss_ui.html:34
+#: ghostwriter/reporting/templates/snippets/cvss_ui.html:59
+msgid "Base"
+msgstr "基础"
+
+#: ghostwriter/reporting/templates/snippets/cvss_ui.html:36
+#: ghostwriter/reporting/templates/snippets/cvss_ui.html:41
+#: ghostwriter/reporting/templates/snippets/cvss_ui.html:46
+#: ghostwriter/reporting/templates/snippets/cvss_ui.html:61
+msgid "Select values to see score"
+msgstr "选择各项值后显示得分"
+
+#: ghostwriter/reporting/templates/snippets/cvss_ui.html:39
+msgid "Temporal"
+msgstr "时间"
+
+#: ghostwriter/reporting/templates/snippets/cvss_ui.html:44
+msgid "Env"
+msgstr "环境"
+
+#: ghostwriter/reporting/templates/snippets/cvss_ui.html:52
+msgid "Switch to v3"
+msgstr "切换到 v3"
+
+#: ghostwriter/reporting/templates/snippets/evidence_detail_modal.html:11
+#: ghostwriter/reporting/templates/snippets/evidence_detail_modal.html:80
+#: ghostwriter/reporting/templates/snippets/evidence_lightbox_modal.html:13
+#: ghostwriter/reporting/templates/snippets/evidence_detail_modal.html:11
+#: ghostwriter/reporting/templates/snippets/evidence_detail_modal.html:80
+#: ghostwriter/reporting/templates/snippets/evidence_lightbox_modal.html:13
 #: ghostwriter/reporting/templates/snippets/finding_detail_modal.html:8
 #: ghostwriter/reporting/templates/snippets/finding_detail_modal.html:31
 #: ghostwriter/reporting/templates/snippets/observation_detail_modal.html:8
 #: ghostwriter/reporting/templates/snippets/observation_detail_modal.html:24
 #: ghostwriter/reporting/templates/snippets/template_detail_modal.html:8
+#: ghostwriter/reporting/templates/snippets/template_detail_modal.html:88
 msgid "Close"
-msgstr ""
+msgstr "关闭"
+
+#: ghostwriter/reporting/templates/snippets/evidence_detail_modal.html:28
+#: ghostwriter/reporting/templates/snippets/evidence_display.html:17
+msgid "Click to view full size"
+msgstr "点击查看完整尺寸"
+
+#: ghostwriter/reporting/templates/snippets/evidence_detail_modal.html:31
+msgid "Click image to view full size"
+msgstr "点击图片查看完整尺寸"
+
+#: ghostwriter/reporting/templates/snippets/evidence_detail_modal.html:43
+#: ghostwriter/reporting/templates/snippets/evidence_display.html:33
+msgid "Click to view full content"
+msgstr "点击查看完整内容"
+
+#: ghostwriter/reporting/templates/snippets/evidence_detail_modal.html:50
+msgid "Click to view full file content"
+msgstr "点击查看完整文件内容"
+
+#: ghostwriter/reporting/templates/snippets/evidence_detail_modal.html:59
+msgid "Filename:"
+msgstr "文件名："
+
+#: ghostwriter/reporting/templates/snippets/evidence_detail_modal.html:63
+msgid "Upload Date:"
+msgstr "上传时间："
+
+#: ghostwriter/reporting/templates/snippets/evidence_detail_modal.html:67
+msgid "Uploaded By:"
+msgstr "上传者："
+
+#: ghostwriter/reporting/templates/snippets/evidence_detail_modal.html:72
+msgid "Description:"
+msgstr "描述："
+
+#: ghostwriter/reporting/templates/snippets/evidence_display.html:39
+msgid "No file content to display."
+msgstr "暂无可显示的文件内容。"
+
+#: ghostwriter/reporting/templates/snippets/evidence_display.html:44
+msgid "File Preview Unavailable"
+msgstr "无法预览文件"
+
+#: ghostwriter/reporting/templates/snippets/evidence_display.html:46
+msgid "FILE NOT FOUND"
+msgstr "未找到文件"
+
+#: ghostwriter/reporting/templates/snippets/evidence_display.html:48
+msgid "Evidence file type cannot be displayed."
+msgstr "无法显示该类型的证据文件。"
+
+#: ghostwriter/reporting/templates/snippets/evidence_lightbox_modal.html:18
+msgid "Evidence preview"
+msgstr "证据预览"
+
+#: ghostwriter/reporting/templates/snippets/finding_detail_modal.html:7
+#: ghostwriter/reporting/templates/snippets/observation_detail_modal.html:7
+#, python-format
+msgid "Additional Details for %(title)s"
+msgstr "%(title)s 的更多详情"
 
 #: ghostwriter/reporting/templates/snippets/finding_detail_modal.html:16
 #: ghostwriter/reporting/templates/snippets/observation_detail_modal.html:16
-#, fuzzy
-#| msgid "Description"
 msgid "Description Preview"
-msgstr "描述"
+msgstr "描述预览"
 
 #: ghostwriter/reporting/templates/snippets/finding_detail_modal.html:20
 #: ghostwriter/reporting/templates/snippets/observation_detail_modal.html:20
-#, fuzzy
-#| msgid "No host or network detections have been written for this finding."
 msgid "No description has been provided for this finding."
-msgstr "尚未为该发现项编写主机或网络端检测建议。"
+msgstr "尚未为该发现项编写说明。"
 
 #: ghostwriter/reporting/templates/snippets/finding_detail_modal.html:23
-#, fuzzy
-#| msgid "Finding Guidance"
 msgid "Usage Guidance"
-msgstr "发现项指引"
+msgstr "使用指引"
 
 #: ghostwriter/reporting/templates/snippets/finding_detail_modal.html:27
-#, fuzzy
-#| msgid "No notes for this finding."
 msgid "No guidance has been provided for this finding."
-msgstr "该发现项暂无备注。"
+msgstr "尚未为该发现项编写指引说明。"
 
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:8
-#, fuzzy
-#| msgid "Findings"
 msgid "Finding"
 msgstr "发现项"
 
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:9
-#, fuzzy
-#| msgid "CVSS Vector"
 msgid "CVSS Score"
-msgstr "CVSS 向量"
+msgstr "CVSS 分数"
 
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:16
 msgid ""
@@ -1512,101 +1601,86 @@ msgid ""
 "snippets, and screenshots - to have them included with the finding in the "
 "generated reports."
 msgstr ""
+"为发现项附加证据（如文本文件、日志文件、脚本片段或截图），生成报告时会随发"
+"现项一并包含。"
 
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:25
 msgid ""
 "The assigned user is the person responsible for writing this finding. The "
 "assigned individual will have a link to the finding on their dashboard."
-msgstr ""
+msgstr "分配的用户负责撰写该发现项，其仪表板上会显示指向该发现项的链接。"
 
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:34
 msgid "Mark a finding as ready or in need of editing."
-msgstr ""
+msgstr "将发现项标记为已就绪或仍需编辑。"
 
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:56
 msgid "Click-n-drag to reposition within the severity category"
-msgstr ""
+msgstr "点击并拖动可在同一严重级别内调整顺序"
 
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:62
 msgid "Finding started as a blank template, not from the finding library"
-msgstr ""
+msgstr "该发现项以空白模板创建，并非来自发现项库"
 
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:100
-#, fuzzy
-#| msgid "Evidence Detail"
 msgid "Evidence Files"
-msgstr "证据详情"
+msgstr "证据文件"
 
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:131
+#: ghostwriter/reporting/templates/snippets/report_findings_table.html:143
 msgid "Attach a file as evidence"
-msgstr ""
+msgstr "添加文件作为证据"
 
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:155
 #: ghostwriter/reporting/templates/snippets/report_observations_table.html:60
 msgid "You"
-msgstr ""
+msgstr "你"
 
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:161
 #: ghostwriter/reporting/templates/snippets/report_observations_table.html:66
 msgid "TBD"
-msgstr ""
+msgstr "待定"
 
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:169
 #: ghostwriter/reporting/templates/snippets/report_observations_table.html:75
-#, fuzzy
-#| msgid "Start Editing"
 msgid "Needs Editing"
-msgstr "开始编辑"
+msgstr "待编辑"
 
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:180
-#, fuzzy
-#| msgid "Evidence"
 msgid "Attach Evidence"
-msgstr "证据"
+msgstr "附加证据"
 
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:184
 #: ghostwriter/reporting/templates/snippets/report_observations_table.html:89
-#, fuzzy
-#| msgid "Assign"
 msgid "Re-Assign"
-msgstr "分配"
+msgstr "重新分配"
 
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:188
 #: ghostwriter/reporting/templates/snippets/report_observations_table.html:93
-#, fuzzy
-#| msgid "Start Editing"
 msgid "Flag for Editing"
-msgstr "开始编辑"
+msgstr "标记为待编辑"
 
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:192
 #: ghostwriter/reporting/templates/snippets/report_observations_table.html:97
-#, fuzzy
-#| msgid "Mark report as complete"
 msgid "Mark as Complete"
-msgstr "将报告标记为已完成"
+msgstr "标记为已完成"
 
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:195
 #: ghostwriter/reporting/templates/snippets/report_observations_table.html:100
-#, fuzzy
-#| msgid "Client Library"
 msgid "Clone to Library"
-msgstr "客户库"
+msgstr "克隆到库"
 
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:211
 msgid "No findings with this severity"
-msgstr ""
+msgstr "暂无该严重级别的发现项"
 
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:218
-#, fuzzy
-#| msgid "No evidence has been added to this report yet."
 msgid "No findings have been added to this report yet."
-msgstr "该报告暂未添加任何证据。"
+msgstr "该报告暂未添加任何发现项。"
 
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:335
-#, fuzzy
-#| msgid "Finding Type"
 msgid "Finding Update"
-msgstr "发现项类型"
+msgstr "发现项更新"
 
 #: ghostwriter/reporting/templates/snippets/report_nav_tabs.html:32
 #: ghostwriter/templates/mfa/index.html:115
@@ -1654,13 +1728,11 @@ msgstr "观察项"
 #: ghostwriter/reporting/templates/snippets/template_detail_modal.html:7
 #, python-format
 msgid "Additional Details for %(name)s"
-msgstr ""
+msgstr "%(name)s 的更多详情"
 
 #: ghostwriter/reporting/templates/snippets/template_detail_modal.html:16
-#, fuzzy
-#| msgid "Description"
 msgid "Template Description"
-msgstr "描述"
+msgstr "模板说明"
 
 #: ghostwriter/reporting/templates/snippets/template_detail_modal.html:21
 #, python-format
@@ -1668,39 +1740,56 @@ msgid ""
 "No one has added a description of this template. <a class=\"clickable\" "
 "href=\"%(fix_url)s\">Fix that here.</a>"
 msgstr ""
+"还没有人为该模板撰写说明。<a class=\"clickable\" href=\"%(fix_url)s\">点此补充。</a>"
 
 #: ghostwriter/reporting/templates/snippets/template_detail_modal.html:24
+#: ghostwriter/reporting/templates/snippets/template_lint_results.html:3
 msgid "Linting Results"
-msgstr ""
+msgstr "Lint 结果"
 
 #: ghostwriter/reporting/templates/snippets/template_detail_modal.html:38
+#: ghostwriter/reporting/templates/snippets/template_lint_results.html:18
 msgid ""
 "Template passed all linter checks, but try using it for a report to test it "
 "with findings and custom fields."
 msgstr ""
+"模板已通过所有 lint 检查，但仍建议用于实际报告，结合发现项与自定义字段做"
+"完整测试。"
 
 #: ghostwriter/reporting/templates/snippets/template_detail_modal.html:40
+#: ghostwriter/reporting/templates/snippets/template_lint_results.html:20
 msgid "To correct these issues, make changes and re-upload this template."
-msgstr ""
+msgstr "请修改后重新上传该模板以修正这些问题。"
 
 #: ghostwriter/reporting/templates/snippets/template_detail_modal.html:41
+#: ghostwriter/reporting/templates/snippets/template_lint_results.html:21
 msgid "See the documentation for more information on how to fix these issues:"
-msgstr ""
+msgstr "如需了解更多修复方式，请参阅文档："
 
 #: ghostwriter/reporting/templates/snippets/template_detail_modal.html:54
+#: ghostwriter/reporting/templates/snippets/template_lint_results.html:34
 msgid "Warning"
-msgstr ""
+msgstr "警告"
 
 #: ghostwriter/reporting/templates/snippets/template_detail_modal.html:69
+#: ghostwriter/reporting/templates/snippets/template_lint_results.html:49
 msgid "Error"
-msgstr ""
+msgstr "错误"
 
 #: ghostwriter/reporting/templates/snippets/template_detail_modal.html:77
+#: ghostwriter/reporting/templates/snippets/template_lint_results.html:57
 msgid ""
 "<strong>Note:</strong> Syntax errors tied to undefined variables might be "
 "linked to a Table of Contents picking up a variable (e.g., "
 "<em>finding.title</em>) outside of a loop."
 msgstr ""
+"<strong>提示：</strong>未定义变量引发的语法错误，可能是因为目录在循环外引"
+"用了变量（例如 <em>finding.title</em>）。"
+
+#: ghostwriter/reporting/templates/snippets/template_detail_modal.html:83
+#: ghostwriter/reporting/templates/snippets/template_lint_results.html:63
+msgid "Run the linter on this template to get new results"
+msgstr "对该模板运行 lint，可获取最新结果"
 
 #: ghostwriter/rolodex/filters.py:40
 msgid "Partial Name, Short Name, or Codename"
@@ -2743,7 +2832,8 @@ msgid ""
 "Are you sure you want to archive report %(object)s? This will generate the "
 "report, save it, then <em>delete all evidence</em>."
 msgstr ""
-"确定要归档报告 %(object)s 吗？系统会先生成并保存报告，随后<em>删除全部证据</em>。"
+"确定要归档报告 %(object)s 吗？系统会先生成并保存报告，随后<em>删除全部证据</"
+"em>。"
 
 #: ghostwriter/templates/confirm_archive.html:17
 #: ghostwriter/templates/confirm_delete.html:19
@@ -2765,8 +2855,7 @@ msgstr "确定要删除该 %(object_type)s 吗？此操作无法撤销。"
 msgid ""
 "Are you sure you want to delete this <span id=\"object-type\"></span>? This "
 "action is permanent!"
-msgstr ""
-"确定要删除该 <span id=\"object-type\"></span> 吗？此操作不可恢复！"
+msgstr "确定要删除该 <span id=\"object-type\"></span> 吗？此操作不可恢复！"
 
 #: ghostwriter/templates/confirm_revoke_modal.html:8
 msgid "Are you sure you want to revoke this token? This action is permanent!"

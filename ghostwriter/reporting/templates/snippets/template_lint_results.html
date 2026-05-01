@@ -1,6 +1,6 @@
-{% load report_tags %}
+{% load i18n report_tags %}
 
-<h3 class="icon bug-icon">Linting Results</h3>
+<h3 class="icon bug-icon">{% trans "Linting Results" %}</h3>
 <hr>
 {% if reporttemplate.lint_result %}
     {% with reporttemplate.lint_result as lint_result %}
@@ -15,10 +15,10 @@
         role="alert">
             <h4 style="margin-top: 0;" class="alert-heading">{{ lint_result.result|capfirst }}</h4>
             {% if lint_result.result == "success" %}
-              <p>Template passed all linter checks, but try using it for a report to test it with findings and custom fields.</p>
+              <p>{% trans "Template passed all linter checks, but try using it for a report to test it with findings and custom fields." %}</p>
             {% else %}
-              <p>To correct these issues, make changes and re-upload this template.
-                See the documentation for more information on how to fix these issues:<br/>
+              <p>{% trans "To correct these issues, make changes and re-upload this template." %}
+                {% trans "See the documentation for more information on how to fix these issues:" %}<br/>
                 <a class="italic" href="https://www.ghostwriter.wiki/features/reporting/report-templates" target="_blank">
                   https://www.ghostwriter.wiki/features/reporting/report-templates
                 </a>
@@ -31,7 +31,7 @@
                 {% for warning in lint_result.warnings %}
                     <tr>
                         <td >
-                            <span class="badge badge-warning">Warning</span>
+                            <span class="badge badge-warning">{% trans "Warning" %}</span>
                         </td>
                         <td class="text-left">
                             {{ warning }}
@@ -46,7 +46,7 @@
                 {% for error in lint_result.errors %}
                     <tr>
                         <td>
-                            <span class="badge badge-danger">Error</span>
+                            <span class="badge badge-danger">{% trans "Error" %}</span>
                         </td>
                         <td class="text-left">
                             {{ error }}
@@ -54,12 +54,12 @@
                     </tr>
                 {% endfor %}
             </table>
-            <p><strong>Note:</strong> Syntax errors tied to undefined variables might be linked to a Table of Contents picking up a variable (e.g., <em>finding.title</em>) outside of a loop.</p>
+            <p>{% blocktrans %}<strong>Note:</strong> Syntax errors tied to undefined variables might be linked to a Table of Contents picking up a variable (e.g., <em>finding.title</em>) outside of a loop.{% endblocktrans %}</p>
         {% endif %}
     {% endwith %}
 {% else %}
     <div class="alert alert-secondary" role="alert">
-        <h4 style="margin-top: 0;" class="alert-heading">Unknown</h4>
-        Run the linter on this template to get new results
+        <h4 style="margin-top: 0;" class="alert-heading">{% trans "Unknown" %}</h4>
+        {% trans "Run the linter on this template to get new results" %}
     </div>
 {% endif %}

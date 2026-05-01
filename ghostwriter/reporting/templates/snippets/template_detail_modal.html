@@ -79,13 +79,13 @@
             {% endwith %}
         {% else %}
             <div class="alert alert-secondary" role="alert">
-                <h4 style="margin-top: 0;" class="alert-heading">Unknown</h4>
-                Run the linter on this template to get new results
+                <h4 style="margin-top: 0;" class="alert-heading">{% trans "Unknown" %}</h4>
+                {% trans "Run the linter on this template to get new results" %}
             </div>
         {% endif %}
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary col-3" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary col-3" data-dismiss="modal">{% trans "Close" %}</button>
       </div>
     </div>
   </div>

@@ -1,4 +1,5 @@
 <!-- CVSS -->
+{% load i18n %}
 <!--
 Copyright (c) 2015, FIRST.ORG, INC.
 All rights reserved.
@@ -23,40 +24,40 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 <div id="cvss-v3-calculator" class="form-row cvss-calculator">
     <h2>CVSS v3.1</h2>
-    <button class="mt-2 mb-2 btn btn-outline-secondary cvss-switch">Switch to v4</button>
+    <button class="mt-2 mb-2 btn btn-outline-secondary cvss-switch">{% trans "Switch to v4" %}</button>
 
     <div class="cvss-buttons">
         {% include "snippets/cvss_ui_v3.html" %}
     </div>
 
     <div class="scoreRating baseRating">
-        <h4>Base</h4>
+        <h4>{% trans "Base" %}</h4>
         <span class="baseMetricScore"></span>
-        <span class="baseSeverity">Select values to see score</span>
+        <span class="baseSeverity">{% trans "Select values to see score" %}</span>
     </div>
     <div class="scoreRating temporalRating">
-        <h4>Temporal</h4>
+        <h4>{% trans "Temporal" %}</h4>
         <span class="temporalMetricScore"></span>
-        <span class="temporalSeverity">Select values to see score</span>
+        <span class="temporalSeverity">{% trans "Select values to see score" %}</span>
     </div>
     <div class="scoreRating envRating">
-        <h4>Env</h4>
+        <h4>{% trans "Env" %}</h4>
         <span class="envMetricScore"></span>
-        <span class="envSeverity">Select values to see score</span>
+        <span class="envSeverity">{% trans "Select values to see score" %}</span>
     </div>
 </div>
 
 <div id="cvss-v4-calculator" class="form-row cvss-calculator" style="display: none">
     <h2>CVSS v4</h2>
-    <button class="mt-2 mb-2 btn btn-outline-secondary cvss-switch">Switch to v3</button>
+    <button class="mt-2 mb-2 btn btn-outline-secondary cvss-switch">{% trans "Switch to v3" %}</button>
 
     <div class="cvss-buttons">
         {% include "snippets/cvss_ui_v4.html" %}
     </div>
 
     <div class="scoreRating baseRating">
-      <h4>Base</h4>
+      <h4>{% trans "Base" %}</h4>
         <span class="baseMetricScore"></span>
-        <span class="baseSeverity">Select values to see score</span>
+        <span class="baseSeverity">{% trans "Select values to see score" %}</span>
     </div>
 </div>

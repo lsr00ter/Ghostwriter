@@ -1,4 +1,4 @@
-{% load bleach_tags report_tags custom_tags static %}
+{% load i18n bleach_tags report_tags custom_tags static %}
 
 {% with evidence|get_file_type as file_type %}
   {% if file_type == "image" %}
@@ -14,7 +14,7 @@
         data-evidence-name="{{ evidence.friendly_name }}"
         data-evidence-url="{% url 'reporting:evidence_download' evidence.id %}"
         data-evidence-type="image"
-        title="Click to view full size"
+        title="{% trans 'Click to view full size' %}"
       {% endif %}
       />
   {% elif evidence|get_file_type == "text" %}
@@ -30,22 +30,22 @@
             data-evidence-name="{{ evidence.friendly_name }}"
             data-evidence-url="{% url 'reporting:evidence_download' evidence.id %}"
             data-evidence-type="text"
-            title="Click to view full content"
+            title="{% trans 'Click to view full content' %}"
             tabindex="0" role="button"
             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}"
           {% endif %}
         ><code>{{ file_content }}</code></pre>
       {% else %}
-        <p>No file content to display.</p>
+        <p>{% trans "No file content to display." %}</p>
       {% endif %}
     {% endwith %}
   {% else %}
     <div class="alert alert-warning offset-md-3 col-md-6" role="alert">
-      <h4 class="alert-heading">File Preview Unavailable</h4>
+      <h4 class="alert-heading">{% trans "File Preview Unavailable" %}</h4>
       {% if file_type == "missing" %}
-        <p>FILE NOT FOUND</p>
+        <p>{% trans "FILE NOT FOUND" %}</p>
       {% else %}
-        <p>Evidence file type cannot be displayed.</p>
+        <p>{% trans "Evidence file type cannot be displayed." %}</p>
       {% endif %}
     </div>
   {% endif %}

@@ -1,6 +1,7 @@
 {% extends "base_generic_empty.html" %}
+{% load i18n %}
 
-{% block pagetitle %}Evidence Uploaded{% endblock %}
+{% block pagetitle %}{% trans "Evidence Uploaded" %}{% endblock %}
 
 {% block content %}
     <style>
@@ -14,7 +15,7 @@
         }
     </style>
     <div class="center">
-        <button class="button is-primary" id="dialog-close">Close Dialog</button>
+        <button class="button is-primary" id="dialog-close">{% trans "Close Dialog" %}</button>
     </div>
 {% endblock %}
 
