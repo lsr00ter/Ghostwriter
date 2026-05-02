@@ -23,12 +23,12 @@ msgstr "中文"
 
 #: ghostwriter/api/forms.py:146
 msgid "Must specify only one of either 'finding' or 'report'"
-msgstr ""
+msgstr "只能指定 'finding' 或 'report' 中的一项"
 
 #: ghostwriter/api/forms.py:159 ghostwriter/reporting/forms.py:300
 msgid ""
 "This friendly name has already been used for a file attached to this report."
-msgstr ""
+msgstr "该报告中已存在使用相同显示名称的附件。"
 
 #: ghostwriter/api/templates/token_form.html:5
 #: ghostwriter/oplog/templates/oplog/oplog_form.html:5
@@ -96,41 +96,41 @@ msgstr "创建令牌"
 msgid ""
 "Your selected Word template failed linting and cannot be used as a default "
 "template"
-msgstr ""
+msgstr "所选 Word 模板未通过 lint 检查，不能作为默认模板"
 
 #: ghostwriter/commandcenter/forms.py:54
 msgid ""
 "Your selected PowerPoint template failed linting and cannot be used as a "
 "default template"
-msgstr ""
+msgstr "所选 PowerPoint 模板未通过 lint 检查，不能作为默认模板"
 
 #: ghostwriter/commandcenter/models.py:54
 msgid "Missing scheme on URL"
-msgstr ""
+msgstr "URL 缺少协议（scheme）"
 
 #: ghostwriter/commandcenter/models.py:56
 msgid "Missing hostname on URL"
-msgstr ""
+msgstr "URL 缺少主机名"
 
 #: ghostwriter/commandcenter/models.py:58
 msgid "Paths on endpoint URL are not supported"
-msgstr ""
+msgstr "端点 URL 不支持路径"
 
 #: ghostwriter/commandcenter/models.py:381
 msgid "Outline tag wildcard rules must include a prefix before '*' or ':'"
-msgstr ""
+msgstr "提纲标签通配规则必须在 '*' 或 ':' 之前包含前缀"
 
 #: ghostwriter/commandcenter/models.py:383
 msgid "Outline tag wildcard rules may only include '*' at the end"
-msgstr ""
+msgstr "提纲标签通配规则中的 '*' 只能出现在末尾"
 
 #: ghostwriter/commandcenter/models.py:387
 msgid "Outline tag wildcard rules must include a prefix before '*'"
-msgstr ""
+msgstr "提纲标签通配规则必须在 '*' 之前包含前缀"
 
 #: ghostwriter/commandcenter/models.py:390
 msgid "Outline tag ':' prefixes must end with a single trailing ':'"
-msgstr ""
+msgstr "提纲标签的 ':' 前缀只能以一个尾随 ':' 结束"
 
 #: ghostwriter/commandcenter/templates/admin/commandcenter/extrafieldspec/tabular.html:74
 msgid "Delete?"
@@ -229,7 +229,7 @@ msgstr "Twitter"
 #: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:20
 #: ghostwriter/users/templates/users/profile.html:49
 msgid "Email"
-msgstr ""
+msgstr "电子邮箱"
 
 #: ghostwriter/home/templates/home/management.html:84
 msgid "Domain Health Checks"
@@ -669,29 +669,29 @@ msgstr "报告模板筛选条件"
 
 #: ghostwriter/reporting/forms.py:289
 msgid "You must provide an evidence file"
-msgstr ""
+msgstr "请上传证据文件"
 
 #: ghostwriter/reporting/forms.py:343 ghostwriter/reporting/forms.py:386
 msgid "You must provide some content for the note"
-msgstr ""
+msgstr "请填写备注内容"
 
 #: ghostwriter/reporting/forms.py:555
 msgid "You must provide a template file"
-msgstr ""
+msgstr "请上传模板文件"
 
 #: ghostwriter/reporting/forms.py:750
 msgid "Do not include the # symbol in the color field."
-msgstr ""
+msgstr "颜色字段中不要包含 # 符号。"
 
 #: ghostwriter/reporting/forms.py:755
 msgid "Your hex color code should be six characters in length."
-msgstr ""
+msgstr "十六进制颜色代码应为 6 位字符。"
 
 #: ghostwriter/reporting/forms.py:760
 msgid ""
 "Please enter a valid hex color, three pairs of characters using A-F and 0-9 "
 "(e.g., 7A7A7A)."
-msgstr ""
+msgstr "请输入合法的十六进制颜色，由三组 A-F 与 0-9 字符组成（例如 7A7A7A）。"
 
 #: ghostwriter/reporting/templates/reporting/archives.html:5
 #: ghostwriter/templates/base_generic.html:289
@@ -849,7 +849,7 @@ msgstr "证据表单"
 
 #: ghostwriter/reporting/templates/reporting/evidence_form_modal.html:33
 msgid "You must provide a friendly name, caption, and evidence file"
-msgstr ""
+msgstr "请填写显示名称、图注，并上传证据文件"
 
 #: ghostwriter/reporting/templates/reporting/evidence_modal_success.html:4
 msgid "Evidence Uploaded"
@@ -1072,10 +1072,8 @@ msgstr "编辑该发现项的库记录"
 
 #: ghostwriter/reporting/templates/reporting/finding_update.html:5
 #: ghostwriter/reporting/templates/reporting/finding_update.html:13
-#, fuzzy
-#| msgid "Findings"
 msgid "Finding Form"
-msgstr "发现项"
+msgstr "发现项表单"
 
 #: ghostwriter/reporting/templates/reporting/observation_detail.html:12
 #: ghostwriter/reporting/templates/reporting/observation_list.html:11
@@ -1124,10 +1122,8 @@ msgstr "编辑观察项"
 
 #: ghostwriter/reporting/templates/reporting/observation_update.html:5
 #: ghostwriter/reporting/templates/reporting/observation_update.html:13
-#, fuzzy
-#| msgid "Observations"
 msgid "Observation Form"
-msgstr "观察项"
+msgstr "观察项表单"
 
 #: ghostwriter/reporting/templates/reporting/report_detail.html:32
 #: ghostwriter/reporting/templates/reporting/report_list.html:68
@@ -1403,20 +1399,16 @@ msgid "Assign"
 msgstr "分配"
 
 #: ghostwriter/reporting/templates/reporting/report_finding_link_update.html:5
-#, fuzzy
-#| msgid "Export Findings to CSV"
 msgid "Report Finding Form"
-msgstr "导出发现项为 CSV"
+msgstr "报告发现项表单"
 
 #: ghostwriter/reporting/templates/reporting/report_finding_link_update.html:14
-#, fuzzy
-#| msgid "Return to Findings"
 msgid "Edit Report Finding"
-msgstr "返回发现项"
+msgstr "编辑报告中的发现项"
 
 #: ghostwriter/reporting/templates/reporting/report_finding_link_update.html:33
 msgid "No guidance was provided for this finding in the library."
-msgstr ""
+msgstr "库中未为该发现项提供处置建议。"
 
 #: ghostwriter/reporting/templates/reporting/report_form.html:5
 #: ghostwriter/reporting/templates/reporting/report_template_form.html:5
@@ -1435,7 +1427,7 @@ msgstr "新建报告"
 msgid ""
 "Provide a meaningful name for this report, select the project to which it "
 "should be associated, and optionally select report templates to use:"
-msgstr ""
+msgstr "请为该报告填写一个有意义的名称，选择关联的项目，并可选地指定要使用的报告模板："
 
 #: ghostwriter/reporting/templates/reporting/report_list.html:5
 msgid "Report List"
@@ -1508,16 +1500,12 @@ msgid "Assign Observation"
 msgstr "分配观察项"
 
 #: ghostwriter/reporting/templates/reporting/report_observation_link_update.html:5
-#, fuzzy
-#| msgid "Export Observations to CSV"
 msgid "Report Observation Form"
-msgstr "导出观察项为 CSV"
+msgstr "报告观察项表单"
 
 #: ghostwriter/reporting/templates/reporting/report_observation_link_update.html:14
-#, fuzzy
-#| msgid "Edit the observation"
 msgid "Edit Report Observation"
-msgstr "编辑观察项"
+msgstr "编辑报告中的观察项"
 
 #: ghostwriter/reporting/templates/reporting/report_template_detail.html:6
 msgid "Report Template Detail"
@@ -1643,18 +1631,18 @@ msgstr "报告模板表单"
 
 #: ghostwriter/reporting/templates/reporting/report_template_form.html:21
 msgid "Provide information for this report template:"
-msgstr ""
+msgstr "请填写该报告模板的信息："
 
 #: ghostwriter/reporting/templates/reporting/report_template_form.html:40
 msgid ""
 "This template is the global default Word template. Be careful when editing."
-msgstr ""
+msgstr "该模板是全局默认 Word 模板，编辑时请谨慎。"
 
 #: ghostwriter/reporting/templates/reporting/report_template_form.html:44
 msgid ""
 "This template is the global default PowerPoint template. Be careful when "
 "editing."
-msgstr ""
+msgstr "该模板是全局默认 PowerPoint 模板，编辑时请谨慎。"
 
 #: ghostwriter/reporting/templates/reporting/report_templates_list.html:5
 msgid "Report Template List"
@@ -1709,15 +1697,13 @@ msgid "This template is protected and cannot be edited or deleted"
 msgstr "该模板受保护，禁止编辑和删除"
 
 #: ghostwriter/reporting/templates/reporting/report_update_extra_field.html:5
-#, fuzzy
-#| msgid "New Report Form"
 msgid "Report Form"
-msgstr "新建报告"
+msgstr "报告表单"
 
 #: ghostwriter/reporting/templates/reporting/report_update_extra_field.html:37
 #, python-format
 msgid "%(field)s on %(report_name)s"
-msgstr ""
+msgstr "%(report_name)s 中的 %(field)s"
 
 #: ghostwriter/reporting/templates/snippets/cvss_ui.html:27
 msgid "Switch to v4"
@@ -1956,8 +1942,6 @@ msgid "Generate"
 msgstr "生成"
 
 #: ghostwriter/reporting/templates/snippets/report_observations_table.html:9
-#, fuzzy
-#| msgid "Observations"
 msgid "Observation"
 msgstr "观察项"
 
@@ -1967,31 +1951,28 @@ msgid ""
 "The assigned individual will have a link to the observation on their "
 "dashboard."
 msgstr ""
+"分配的用户负责撰写该观察项。被分配人会在其仪表板上看到指向该观察项的链接。"
 
 #: ghostwriter/reporting/templates/snippets/report_observations_table.html:24
 msgid "Mark an observation as ready or in need of editing."
-msgstr ""
+msgstr "标记该观察项为已就绪或需要继续编辑。"
 
 #: ghostwriter/reporting/templates/snippets/report_observations_table.html:38
 msgid "Click-n-drag to reposition"
-msgstr ""
+msgstr "点击并拖动以调整位置"
 
 #: ghostwriter/reporting/templates/snippets/report_observations_table.html:44
 msgid ""
 "Observation started as a blank template, not from the observation library"
-msgstr ""
+msgstr "该观察项使用空白模板创建，并非来自观察项库"
 
 #: ghostwriter/reporting/templates/snippets/report_observations_table.html:116
-#, fuzzy
-#| msgid "No evidence has been added to this report yet."
 msgid "No observations have been added to this report yet."
-msgstr "该报告暂未添加任何证据。"
+msgstr "该报告暂未添加任何观察项。"
 
 #: ghostwriter/reporting/templates/snippets/report_observations_table.html:197
-#, fuzzy
-#| msgid "Observations"
 msgid "Observation Update"
-msgstr "观察项"
+msgstr "观察项更新"
 
 #: ghostwriter/reporting/templates/snippets/template_detail_modal.html:7
 #: ghostwriter/shepherd/templates/snippets/client_contact_detail_modal.html:7
@@ -2130,17 +2111,17 @@ msgstr "项目筛选条件"
 #: ghostwriter/rolodex/forms_client.py:63
 #: ghostwriter/rolodex/forms_project.py:437
 msgid "This person is already assigned as a contact."
-msgstr ""
+msgstr "该联系人已被指派。"
 
 #: ghostwriter/rolodex/forms_client.py:74
 #: ghostwriter/rolodex/forms_project.py:448
 msgid "You can only set one primary contact."
-msgstr ""
+msgstr "只能设置一个主要联系人。"
 
 #: ghostwriter/rolodex/forms_client.py:90
 #: ghostwriter/rolodex/forms_project.py:464
 msgid "You must designate one contact as the primary point of contact."
-msgstr ""
+msgstr "必须指定一位联系人作为主要联系点。"
 
 #: ghostwriter/rolodex/forms_client.py:95
 #: ghostwriter/rolodex/forms_project.py:469
@@ -2149,123 +2130,125 @@ msgid ""
 "marked the primary for deletion. If so, please mark a different contact as "
 "primary."
 msgstr ""
+"必须指定一位联系人作为主要联系点。如果你已将原主要联系人标记为删除，请将另一"
+"位联系人设为主要联系点。"
 
 #: ghostwriter/rolodex/forms_client.py:316
 #: ghostwriter/rolodex/forms_project.py:1193
 msgid "This person is already invited."
-msgstr ""
+msgstr "该用户已被邀请。"
 
 #: ghostwriter/rolodex/forms_client.py:483
 #: ghostwriter/rolodex/forms_project.py:1496 ghostwriter/shepherd/forms.py:413
 #: ghostwriter/shepherd/forms_server.py:416
 msgid "You must provide some content for the note."
-msgstr ""
+msgstr "请填写备注内容。"
 
 #: ghostwriter/rolodex/forms_project.py:84
 msgid "Your project objectives must be unique."
-msgstr ""
+msgstr "项目目标不能重复。"
 
 #: ghostwriter/rolodex/forms_project.py:94
 msgid "You set a deadline without an objective."
-msgstr ""
+msgstr "设置了截止日期但未填写目标。"
 
 #: ghostwriter/rolodex/forms_project.py:102
 msgid "Your objective still needs a deadline."
-msgstr ""
+msgstr "该目标尚未设置截止日期。"
 
 #: ghostwriter/rolodex/forms_project.py:111
 msgid "Your description is missing an objective"
-msgstr ""
+msgstr "描述缺少对应的目标"
 
 #: ghostwriter/rolodex/forms_project.py:121
 #: ghostwriter/rolodex/forms_project.py:239
 msgid "Your selected date is before the project start date."
-msgstr ""
+msgstr "所选日期早于项目开始日期。"
 
 #: ghostwriter/rolodex/forms_project.py:129
 #: ghostwriter/rolodex/forms_project.py:247
 #: ghostwriter/rolodex/forms_project.py:404
 msgid "Your selected date is after the project end date."
-msgstr ""
+msgstr "所选日期晚于项目结束日期。"
 
 #: ghostwriter/rolodex/forms_project.py:164
 msgid "Your end date is earlier than your start date."
-msgstr ""
+msgstr "结束日期早于开始日期。"
 
 #: ghostwriter/rolodex/forms_project.py:183
 msgid ""
 "This operator is assigned more than once for an overlapping time period."
-msgstr ""
+msgstr "该执行人在同一时间段内被重复指派。"
 
 #: ghostwriter/rolodex/forms_project.py:195
 msgid "Your assigned operator is missing a start date."
-msgstr ""
+msgstr "已指派的执行人缺少开始日期。"
 
 #: ghostwriter/rolodex/forms_project.py:203
 msgid "Your assigned operator is missing an end date."
-msgstr ""
+msgstr "已指派的执行人缺少结束日期。"
 
 #: ghostwriter/rolodex/forms_project.py:211
 msgid "Your assigned operator is missing a project role."
-msgstr ""
+msgstr "已指派的执行人缺少项目角色。"
 
 #: ghostwriter/rolodex/forms_project.py:220
 msgid "Your assignment is missing an operator."
-msgstr ""
+msgstr "该指派缺少执行人。"
 
 #: ghostwriter/rolodex/forms_project.py:229
 msgid "This description is part of an incomplete assignment form."
-msgstr ""
+msgstr "该描述属于尚未填写完整的指派表单。"
 
 #: ghostwriter/rolodex/forms_project.py:282
 msgid "Your names must be unique."
-msgstr ""
+msgstr "名称不能重复。"
 
 #: ghostwriter/rolodex/forms_project.py:292
 msgid "You scope list is missing."
-msgstr ""
+msgstr "缺少范围列表。"
 
 #: ghostwriter/rolodex/forms_project.py:300
 msgid "Your scope list is missing a name."
-msgstr ""
+msgstr "范围列表缺少名称。"
 
 #: ghostwriter/rolodex/forms_project.py:337
 #: ghostwriter/rolodex/forms_project.py:349
 msgid "Your targets should be unique."
-msgstr ""
+msgstr "目标不能重复。"
 
 #: ghostwriter/rolodex/forms_project.py:357
 msgid "You must provide a hostname or IP address with your description."
-msgstr ""
+msgstr "请在描述中提供主机名或 IP 地址。"
 
 #: ghostwriter/rolodex/forms_project.py:385
 msgid "Your white card still needs an issued date and time."
-msgstr ""
+msgstr "该白卡尚未填写发布日期和时间。"
 
 #: ghostwriter/rolodex/forms_project.py:393
 msgid "Your white card still needs a title."
-msgstr ""
+msgstr "该白卡尚未填写标题。"
 
 #: ghostwriter/rolodex/forms_project.py:1426 ghostwriter/shepherd/forms.py:134
 #: ghostwriter/shepherd/forms_server.py:521
 msgid "The provided end date comes before the start date."
-msgstr ""
+msgstr "结束日期早于开始日期。"
 
 #: ghostwriter/rolodex/forms_project.py:1436
 msgid "Slack channels should start with # or @."
-msgstr ""
+msgstr "Slack 频道名称需以 # 或 @ 开头。"
 
 #: ghostwriter/rolodex/forms_project.py:1455
 msgid "Complete all BloodHound configuration fields or leave them all blank"
-msgstr ""
+msgstr "请完整填写所有 BloodHound 配置字段，或全部留空"
 
 #: ghostwriter/rolodex/forms_project.py:1596
 msgid "The response timestamp cannot be before the report timestamp."
-msgstr ""
+msgstr "响应时间戳不能早于报告时间戳。"
 
 #: ghostwriter/rolodex/forms_project.py:1606
 msgid "The report timestamp cannot be before the alert timestamp."
-msgstr ""
+msgstr "报告时间戳不能早于告警时间戳。"
 
 #: ghostwriter/rolodex/templates/rolodex/client_detail.html:8
 #: ghostwriter/shepherd/templates/shepherd/domain_detail.html:6
@@ -2649,7 +2632,7 @@ msgstr ""
 #: ghostwriter/rolodex/views.py:1489 ghostwriter/rolodex/views.py:2098
 #: ghostwriter/shepherd/views.py:1425 ghostwriter/shepherd/views.py:1492
 msgid "Invalid form data"
-msgstr ""
+msgstr "表单数据无效"
 
 #: ghostwriter/shepherd/filters.py:50
 msgid "Domain Name or Category Contains"
@@ -2709,47 +2692,47 @@ msgstr "服务器状态"
 
 #: ghostwriter/shepherd/forms.py:144
 msgid "This domain has expired!"
-msgstr ""
+msgstr "该域名已过期！"
 
 #: ghostwriter/shepherd/forms.py:147
 msgid "Someone beat you to it – This domain has already been checked out!"
-msgstr ""
+msgstr "动作慢了一步——该域名已被他人签出！"
 
 #: ghostwriter/shepherd/forms.py:278
 msgid "Domain names must be unique and this one already exists in the library."
-msgstr ""
+msgstr "域名不能重复，库中已存在该域名。"
 
 #: ghostwriter/shepherd/forms.py:290
 msgid "The provided expiration date comes before the purchase date."
-msgstr ""
+msgstr "过期日期早于购买日期。"
 
 #: ghostwriter/shepherd/forms.py:374
 msgid "Select only one server."
-msgstr ""
+msgstr "请只选择一台服务器。"
 
 #: ghostwriter/shepherd/forms.py:376
 msgid "You must select one server."
-msgstr ""
+msgstr "请至少选择一台服务器。"
 
 #: ghostwriter/shepherd/forms_server.py:70
 msgid "This address entry is incomplete."
-msgstr ""
+msgstr "该地址条目尚未填写完整。"
 
 #: ghostwriter/shepherd/forms_server.py:83
 msgid "This address is already assigned to this server."
-msgstr ""
+msgstr "该地址已分配给该服务器。"
 
 #: ghostwriter/shepherd/forms_server.py:96
 msgid "You can not mark two addresses as the primary address."
-msgstr ""
+msgstr "不能将两个地址同时标记为主地址。"
 
 #: ghostwriter/shepherd/forms_server.py:531
 msgid "Someone beat you to it – This server has already been checked out!"
-msgstr ""
+msgstr "动作慢了一步——该服务器已被他人签出！"
 
 #: ghostwriter/shepherd/models.py:705
 msgid "Only one server can be selected per entry"
-msgstr ""
+msgstr "每条记录只能选择一台服务器"
 
 #: ghostwriter/shepherd/templates/shepherd/burn.html:5
 msgid "Burn Domain"
@@ -2914,11 +2897,11 @@ msgstr "暂无其他地址"
 #: ghostwriter/singleton/admin.py:52
 #, python-format
 msgid "%(obj)s was changed successfully."
-msgstr ""
+msgstr "%(obj)s 已成功修改。"
 
 #: ghostwriter/singleton/admin.py:54
 msgid "You may edit it again below."
-msgstr ""
+msgstr "可以在下方继续编辑。"
 
 #: ghostwriter/singleton/templates/admin/change_form.html:7
 #: ghostwriter/singleton/templates/admin/object_history.html:6
@@ -2936,12 +2919,13 @@ msgid ""
 "Templatetag requires the model dotted path: 'app_label.ModelName'. Received "
 "'%s'."
 msgstr ""
+"模板标签需要使用点分路径 'app_label.ModelName'，但收到的是 '%s'。"
 
 #: ghostwriter/singleton/templatetags/settings_tags.py:27
 #, python-format
 msgid ""
 "Could not get the model name '%(model)s' from the application named '%(app)s'"
-msgstr ""
+msgstr "无法从应用 '%(app)s' 中获取模型名称 '%(model)s'"
 
 #: ghostwriter/templates/400.html:6 ghostwriter/templates/400.html:9
 msgid "Bad Request (400)"
@@ -2980,10 +2964,8 @@ msgid "Page Not Found (404)"
 msgstr "页面未找到 (404)"
 
 #: ghostwriter/templates/404.html:12
-#, fuzzy
-#| msgid "Page Not Found (404)"
 msgid "Not Found"
-msgstr "页面未找到 (404)"
+msgstr "未找到"
 
 #: ghostwriter/templates/404.html:22
 msgid "I couldn't find the page you were looking for. Benny is very sorry."
@@ -4099,7 +4081,7 @@ msgstr "个人信息"
 
 #: ghostwriter/users/admin.py:51
 msgid "User Permissions"
-msgstr ""
+msgstr "用户权限"
 
 #: ghostwriter/users/admin.py:62
 msgid "Permission Augmentation"
@@ -4107,7 +4089,7 @@ msgstr "权限增强"
 
 #: ghostwriter/users/admin.py:74
 msgid "Important Dates"
-msgstr ""
+msgstr "重要日期"
 
 #: ghostwriter/users/apps.py:10 ghostwriter/users/forms.py:108
 msgid "Users"
@@ -4115,11 +4097,11 @@ msgstr "用户"
 
 #: ghostwriter/users/forms.py:78
 msgid "This username has already been taken."
-msgstr ""
+msgstr "该用户名已被占用。"
 
 #: ghostwriter/users/forms.py:278
 msgid "Current Authenticator Code"
-msgstr ""
+msgstr "当前认证器验证码"
 
 #: ghostwriter/users/models.py:29
 msgid "Name of User"
