@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ghostwriter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-01 17:19+0000\n"
+"POT-Creation-Date: 2026-05-02 09:40+0000\n"
 "PO-Revision-Date: 2026-04-30 00:00+0000\n"
 "Last-Translator: GitHub Copilot\n"
 "Language-Team: Chinese\n"
@@ -82,6 +82,7 @@ msgstr "创建操作日志"
 #: ghostwriter/templates/403.html:11 ghostwriter/templates/404.html:11
 #: ghostwriter/templates/mfa/index.html:13
 #: ghostwriter/templates/mfa/totp/deactivate_form.html:10
+#: ghostwriter/templates/mfa/webauthn/authenticator_list.html:9
 #: ghostwriter/users/templates/users/profile.html:10
 #: ghostwriter/users/templates/users/profile_form.html:10
 msgid "Dashboard"
@@ -179,6 +180,297 @@ msgstr "管理 API 访问"
 #: ghostwriter/templates/base_generic.html:337
 msgid "Review Configuration"
 msgstr "审阅配置"
+
+#: ghostwriter/home/templates/home/management.html:29
+msgid "API & Notification Configurations"
+msgstr "API 与通知配置"
+
+#: ghostwriter/home/templates/home/management.html:30
+msgid ""
+"These settings are managed in the Django administration panel under the "
+"<em>Command Center</em> application."
+msgstr ""
+"这些设置在 Django 管理后台的 <em>Command Center</em> 应用中维护。"
+
+#: ghostwriter/home/templates/home/management.html:31
+msgid ""
+"To change the <em>Timezone</em>, edit the application's settings file and "
+"restart the server."
+msgstr "如需修改<em>时区</em>，请编辑应用的设置文件并重启服务。"
+
+#: ghostwriter/home/templates/home/management.html:36
+msgid "General Settings"
+msgstr "常规设置"
+
+#: ghostwriter/home/templates/home/management.html:40
+msgid "Server Timezone"
+msgstr "服务器时区"
+
+#: ghostwriter/home/templates/home/management.html:44
+msgid "Default Timezone for Forms"
+msgstr "表单默认时区"
+
+#: ghostwriter/home/templates/home/management.html:48
+msgid "Hostname"
+msgstr "主机名"
+
+#: ghostwriter/home/templates/home/management.html:60
+msgid "Company Settings"
+msgstr "公司设置"
+
+#: ghostwriter/home/templates/home/management.html:64
+msgid "Company Name"
+msgstr "公司名称"
+
+#: ghostwriter/home/templates/home/management.html:68
+msgid "Twitter"
+msgstr "Twitter"
+
+#: ghostwriter/home/templates/home/management.html:84
+msgid "Domain Health Checks"
+msgstr "域名健康检查"
+
+#: ghostwriter/home/templates/home/management.html:88
+msgid "VirusTotal API Key"
+msgstr "VirusTotal API 密钥"
+
+#: ghostwriter/home/templates/home/management.html:92
+#: ghostwriter/home/templates/home/management.html:139
+#: ghostwriter/home/templates/home/management.html:174
+#: ghostwriter/home/templates/home/management.html:340
+msgid "Disabled"
+msgstr "已禁用"
+
+#: ghostwriter/home/templates/home/management.html:96
+msgid "Sleep Time"
+msgstr "等待时间"
+
+#: ghostwriter/home/templates/home/management.html:97
+#, python-format
+msgid "%(seconds)s seconds"
+msgstr "%(seconds)s 秒"
+
+#: ghostwriter/home/templates/home/management.html:108
+msgid "Domain Registrar API"
+msgstr "域名注册商 API"
+
+#: ghostwriter/home/templates/home/management.html:113
+#: ghostwriter/home/templates/home/management.html:138
+msgid "Namecheap API Enabled"
+msgstr "Namecheap API 已启用"
+
+#: ghostwriter/home/templates/home/management.html:117
+msgid "Namecheap Whitelisted IP"
+msgstr "Namecheap 白名单 IP"
+
+#: ghostwriter/home/templates/home/management.html:121
+msgid "Namecheap API Key"
+msgstr "Namecheap API 密钥"
+
+#: ghostwriter/home/templates/home/management.html:125
+msgid "Namecheap Username"
+msgstr "Namecheap 用户名"
+
+#: ghostwriter/home/templates/home/management.html:129
+msgid "Namecheap API Username"
+msgstr "Namecheap API 用户名"
+
+#: ghostwriter/home/templates/home/management.html:133
+msgid "Namecheap Page Size"
+msgstr "Namecheap 分页大小"
+
+#: ghostwriter/home/templates/home/management.html:151
+msgid "Cloud Services"
+msgstr "云服务"
+
+#: ghostwriter/home/templates/home/management.html:156
+#: ghostwriter/home/templates/home/management.html:173
+msgid "Cloud Monitoring Enabled"
+msgstr "云监控已启用"
+
+#: ghostwriter/home/templates/home/management.html:160
+msgid "AWS Access Key"
+msgstr "AWS 访问密钥"
+
+#: ghostwriter/home/templates/home/management.html:164
+msgid "AWS Access Key Secret"
+msgstr "AWS 访问密钥 Secret"
+
+#: ghostwriter/home/templates/home/management.html:168
+msgid "Digital Ocean API Key"
+msgstr "Digital Ocean API 密钥"
+
+#: ghostwriter/home/templates/home/management.html:185
+#: ghostwriter/rolodex/templates/snippets/project_nav_tabs.html:50
+#: ghostwriter/templates/base_generic.html:268
+msgid "Reporting"
+msgstr "报告"
+
+#: ghostwriter/home/templates/home/management.html:189
+#: ghostwriter/reporting/templates/reporting/report_detail.html:177
+msgid "Image Borders"
+msgstr "图片边框"
+
+#: ghostwriter/home/templates/home/management.html:194
+#: ghostwriter/reporting/templates/reporting/report_detail.html:188
+msgid "Image Border Weight"
+msgstr "图片边框粗细"
+
+#: ghostwriter/home/templates/home/management.html:195
+#, python-format
+msgid "%(emus)s EMUs (%(points)s pt)"
+msgstr "%(emus)s EMU（%(points)s 磅）"
+
+#: ghostwriter/home/templates/home/management.html:199
+#: ghostwriter/reporting/templates/reporting/report_detail.html:193
+msgid "Image Border Color"
+msgstr "图片边框颜色"
+
+#: ghostwriter/home/templates/home/management.html:206
+#: ghostwriter/reporting/templates/reporting/report_detail.html:133
+msgid "Figure Label & Prefix"
+msgstr "图序标签与前缀"
+
+#: ghostwriter/home/templates/home/management.html:210
+#: ghostwriter/reporting/templates/reporting/report_detail.html:137
+msgid "Figure Caption Location"
+msgstr "图题位置"
+
+#: ghostwriter/home/templates/home/management.html:214
+#: ghostwriter/reporting/templates/reporting/report_detail.html:141
+msgid "Default Evidence Image Alignment"
+msgstr "默认证据图片对齐方式"
+
+#: ghostwriter/home/templates/home/management.html:218
+#: ghostwriter/reporting/templates/reporting/report_detail.html:145
+msgid "Default Evidence Image Width"
+msgstr "默认证据图片宽度"
+
+#: ghostwriter/home/templates/home/management.html:225
+msgid "inches"
+msgstr "英寸"
+
+#: ghostwriter/home/templates/home/management.html:229
+#: ghostwriter/reporting/templates/reporting/report_detail.html:155
+msgid "Table Label & Prefix"
+msgstr "表序标签与前缀"
+
+#: ghostwriter/home/templates/home/management.html:233
+#: ghostwriter/reporting/templates/reporting/report_detail.html:159
+msgid "Table Caption Location"
+msgstr "表题位置"
+
+#: ghostwriter/home/templates/home/management.html:237
+#: ghostwriter/reporting/templates/reporting/report_detail.html:163
+msgid "Title Case Captions"
+msgstr "题注首字母大写"
+
+#: ghostwriter/home/templates/home/management.html:241
+#: ghostwriter/reporting/templates/reporting/report_detail.html:173
+msgid "Title Case Exceptions"
+msgstr "首字母大写例外词"
+
+#: ghostwriter/home/templates/home/management.html:245
+#: ghostwriter/reporting/templates/reporting/report_detail.html:199
+msgid "Report Download Filename"
+msgstr "报告下载文件名"
+
+#: ghostwriter/home/templates/home/management.html:249
+#: ghostwriter/reporting/templates/reporting/report_detail.html:203
+msgid "Delivery Date"
+msgstr "交付日期"
+
+#: ghostwriter/home/templates/home/management.html:250
+#: ghostwriter/reporting/templates/reporting/report_detail.html:204
+#, python-format
+msgid "%(days)s business days"
+msgstr "%(days)s 个工作日"
+
+#: ghostwriter/home/templates/home/management.html:253
+msgid "Default DOCX Template"
+msgstr "默认 DOCX 模板"
+
+#: ghostwriter/home/templates/home/management.html:259
+#: ghostwriter/home/templates/home/management.html:269
+msgid "No Default Configured"
+msgstr "尚未配置默认值"
+
+#: ghostwriter/home/templates/home/management.html:263
+msgid "Default PPTX Template"
+msgstr "默认 PPTX 模板"
+
+#: ghostwriter/home/templates/home/management.html:281
+msgid "Bloodhound Integration"
+msgstr "Bloodhound 集成"
+
+#: ghostwriter/home/templates/home/management.html:285
+msgid "BloodHound Integration Enabled"
+msgstr "BloodHound 集成已启用"
+
+#: ghostwriter/home/templates/home/management.html:291
+msgid "BloodHound URL"
+msgstr "BloodHound URL"
+
+#: ghostwriter/home/templates/home/management.html:295
+msgid "Not Configured"
+msgstr "尚未配置"
+
+#: ghostwriter/home/templates/home/management.html:309
+msgid "Notifications"
+msgstr "通知"
+
+#: ghostwriter/home/templates/home/management.html:314
+#: ghostwriter/home/templates/home/management.html:339
+msgid "Slack Enabled"
+msgstr "Slack 已启用"
+
+#: ghostwriter/home/templates/home/management.html:318
+msgid "Slack WebHook"
+msgstr "Slack WebHook"
+
+#: ghostwriter/home/templates/home/management.html:322
+msgid "Slack Bot Name"
+msgstr "Slack 机器人名称"
+
+#: ghostwriter/home/templates/home/management.html:326
+msgid "Slack Bot Avatar"
+msgstr "Slack 机器人头像"
+
+#: ghostwriter/home/templates/home/management.html:330
+msgid "Global Slack Channel"
+msgstr "全局 Slack 频道"
+
+#: ghostwriter/home/templates/home/management.html:334
+msgid "Slack Target"
+msgstr "Slack 目标"
+
+#: ghostwriter/home/templates/home/management.html:345
+msgid "Test Configurations"
+msgstr "测试配置"
+
+#: ghostwriter/home/templates/home/management.html:352
+msgid "Test AWS Keys"
+msgstr "测试 AWS 密钥"
+
+#: ghostwriter/home/templates/home/management.html:355
+msgid "Test Digital Ocean"
+msgstr "测试 Digital Ocean"
+
+#: ghostwriter/home/templates/home/management.html:361
+msgid "Test Namecheap API"
+msgstr "测试 Namecheap API"
+
+#: ghostwriter/home/templates/home/management.html:364
+msgid "Test VirusTotal API"
+msgstr "测试 VirusTotal API"
+
+#: ghostwriter/home/templates/home/management.html:370
+msgid "Test Slack Webhook"
+msgstr "测试 Slack Webhook"
+
+#: ghostwriter/home/templates/home/management.html:400
+msgid "Task Update"
+msgstr "任务更新"
 
 #: ghostwriter/oplog/templates/oplog/oplog_detail.html:5
 #, python-format
@@ -908,22 +1200,6 @@ msgstr "将报告标记为已交付"
 msgid "Report Configuration"
 msgstr "报告配置"
 
-#: ghostwriter/reporting/templates/reporting/report_detail.html:133
-msgid "Figure Label & Prefix"
-msgstr "图序标签与前缀"
-
-#: ghostwriter/reporting/templates/reporting/report_detail.html:137
-msgid "Figure Caption Location"
-msgstr "图题位置"
-
-#: ghostwriter/reporting/templates/reporting/report_detail.html:141
-msgid "Default Evidence Image Alignment"
-msgstr "默认证据图片对齐方式"
-
-#: ghostwriter/reporting/templates/reporting/report_detail.html:145
-msgid "Default Evidence Image Width"
-msgstr "默认证据图片宽度"
-
 #: ghostwriter/reporting/templates/reporting/report_detail.html:148
 #: ghostwriter/reporting/templates/reporting/report_detail.html:150
 #: ghostwriter/reporting/templates/reporting/report_template_detail.html:99
@@ -931,51 +1207,10 @@ msgstr "默认证据图片宽度"
 msgid "%(width)s inches"
 msgstr "%(width)s 英寸"
 
-#: ghostwriter/reporting/templates/reporting/report_detail.html:155
-msgid "Table Label & Prefix"
-msgstr "表序标签与前缀"
-
-#: ghostwriter/reporting/templates/reporting/report_detail.html:159
-msgid "Table Caption Location"
-msgstr "表题位置"
-
-#: ghostwriter/reporting/templates/reporting/report_detail.html:163
-msgid "Title Case Captions"
-msgstr "题注首字母大写"
-
-#: ghostwriter/reporting/templates/reporting/report_detail.html:173
-msgid "Title Case Exceptions"
-msgstr "首字母大写例外词"
-
-#: ghostwriter/reporting/templates/reporting/report_detail.html:177
-msgid "Image Borders"
-msgstr "图片边框"
-
-#: ghostwriter/reporting/templates/reporting/report_detail.html:188
-msgid "Image Border Weight"
-msgstr "图片边框粗细"
-
 #: ghostwriter/reporting/templates/reporting/report_detail.html:189
 #, python-format
 msgid "%(weight)s EMUs (%(pt)s pt)"
 msgstr "%(weight)s EMU（%(pt)s 磅）"
-
-#: ghostwriter/reporting/templates/reporting/report_detail.html:193
-msgid "Image Border Color"
-msgstr "图片边框颜色"
-
-#: ghostwriter/reporting/templates/reporting/report_detail.html:199
-msgid "Report Download Filename"
-msgstr "报告下载文件名"
-
-#: ghostwriter/reporting/templates/reporting/report_detail.html:203
-msgid "Delivery Date"
-msgstr "交付日期"
-
-#: ghostwriter/reporting/templates/reporting/report_detail.html:204
-#, python-format
-msgid "%(days)s business days"
-msgstr "%(days)s 个工作日"
 
 #: ghostwriter/reporting/templates/reporting/report_detail.html:208
 msgid "Operation Log Tags"
@@ -2038,6 +2273,7 @@ msgid "Client Form"
 msgstr "客户表单"
 
 #: ghostwriter/rolodex/templates/rolodex/client_form.html:18
+#: ghostwriter/templates/users/user_form.html:13
 msgid "Update"
 msgstr "更新"
 
@@ -2139,8 +2375,8 @@ msgid ""
 "contact might be part of more projects, consider adding them to the client "
 "for future use."
 msgstr ""
-"这里展示该项目的联系人。你可以在此创建项目专属联系人，或从客户处导入联系人"
-"。如果某位联系人会出现在多个项目中，建议将其加入客户档案以便复用。"
+"这里展示该项目的联系人。你可以在此创建项目专属联系人，或从客户处导入联系人。"
+"如果某位联系人会出现在多个项目中，建议将其加入客户档案以便复用。"
 
 #: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:17
 #: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:26
@@ -2151,11 +2387,6 @@ msgstr "主要"
 #: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:19
 msgid "Title/Role"
 msgstr "职位/角色"
-
-#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:20
-#: ghostwriter/users/templates/users/profile.html:49
-msgid "Email"
-msgstr "电子邮件"
 
 #: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:21
 #: ghostwriter/users/templates/users/profile.html:58
@@ -2285,11 +2516,6 @@ msgstr "基础设施"
 #: ghostwriter/rolodex/templates/snippets/project_nav_tabs.html:45
 msgid "Deconflictions"
 msgstr "冲突解除"
-
-#: ghostwriter/rolodex/templates/snippets/project_nav_tabs.html:50
-#: ghostwriter/templates/base_generic.html:268
-msgid "Reporting"
-msgstr "报告"
 
 #: ghostwriter/rolodex/templates/snippets/project_nav_tabs.html:63
 msgid "Collab Notes"
@@ -2712,13 +2938,70 @@ msgid ""
 "Could not get the model name '%(model)s' from the application named '%(app)s'"
 msgstr ""
 
+#: ghostwriter/templates/400.html:6 ghostwriter/templates/400.html:9
+msgid "Bad Request (400)"
+msgstr "错误请求 (400)"
+
+#: ghostwriter/templates/400.html:13
+msgid "Something went wrong with your request. Feel free to try it again."
+msgstr "请求出现问题，可以稍后再试一次。"
+
+#: ghostwriter/templates/400.html:15
+msgid "You weren't trying to break me, were you?"
+msgstr "你不是想搞事情吧？"
+
+#: ghostwriter/templates/400.html:17 ghostwriter/templates/500.html:23
+msgid "Return to Home"
+msgstr "返回首页"
+
+#: ghostwriter/templates/403.html:6 ghostwriter/templates/403.html:18
+msgid "Forbidden (403)"
+msgstr "禁止访问 (403)"
+
 #: ghostwriter/templates/403.html:12
 msgid "Forbidden"
 msgstr "禁止访问"
 
-#: ghostwriter/templates/404.html:12
-msgid "Not Found"
-msgstr "未找到"
+#: ghostwriter/templates/403.html:22
+msgid "Uh oh, you aren't supposed to be here."
+msgstr "哎呀，这里不该有你。"
+
+#: ghostwriter/templates/403.html:24
+msgid "You weren't trying to access something restricted, were you?"
+msgstr "你不是想访问受限内容吧？"
+
+#: ghostwriter/templates/404.html:6 ghostwriter/templates/404.html:18
+msgid "Page Not Found (404)"
+msgstr "页面未找到 (404)"
+
+#: ghostwriter/templates/404.html:22
+msgid "I couldn't find the page you were looking for. Benny is very sorry."
+msgstr "找不到你想要的页面，Benny 很抱歉。"
+
+#: ghostwriter/templates/500.html:6 ghostwriter/templates/500.html:9
+msgid "Server Error (500)"
+msgstr "服务器错误 (500)"
+
+#: ghostwriter/templates/500.html:13
+msgid "This is so embarassing! Something went wrong on our end."
+msgstr "真不好意思！我们这边出了点问题。"
+
+#: ghostwriter/templates/500.html:16
+msgid ""
+"<strong>Please Help Us:</strong> You should never see this page. If you do, "
+"please consider reporting\n"
+"      the steps you took leading up to this error to the Ghostwriter "
+"development team on\n"
+"      <a href=\"https://github.com/ghostwriter/ghostwriter/issues\">GitHub</"
+"a>. Your administrator can\n"
+"      also collect the exception details from the server logs. Those logs "
+"will provide the necessary\n"
+"      information to help us identify and fix the issue."
+msgstr ""
+"<strong>请帮忙反馈：</strong>正常情况下你不应该看到此页面。如果遇到，请将"
+"导致错误的操作步骤反馈给 Ghostwriter 开发团队，地址：<a href=\"https://"
+"github.com/ghostwriter/ghostwriter/issues\">GitHub</a>。管理员还可以从服务"
+"器日志中提取异常详情，这些日志能帮助我们定位并修复问题。"
 
 #: ghostwriter/templates/account/account_inactive.html:8
 msgid "Account Inactive"
@@ -3557,6 +3840,14 @@ msgstr ""
 msgid "Generate Backup Tokens"
 msgstr ""
 
+#: ghostwriter/templates/mfa/index.html:14
+#: ghostwriter/templates/mfa/totp/deactivate_form.html:11
+#: ghostwriter/templates/mfa/webauthn/authenticator_list.html:10
+#: ghostwriter/users/templates/users/profile.html:11
+#: ghostwriter/users/templates/users/profile_form.html:11
+msgid "Your Profile"
+msgstr "你的资料"
+
 #: ghostwriter/templates/mfa/index.html:28
 msgid "Authenticator App"
 msgstr ""
@@ -3574,9 +3865,11 @@ msgid "Deactivate"
 msgstr "停用"
 
 #: ghostwriter/templates/mfa/index.html:56
+#: ghostwriter/templates/mfa/webauthn/authenticator_list.html:4
+#: ghostwriter/templates/mfa/webauthn/authenticator_list.html:12
 #: ghostwriter/templates/mfa/webauthn/authenticator_list.html:18
 msgid "Security Keys"
-msgstr ""
+msgstr "安全密钥"
 
 #: ghostwriter/templates/mfa/index.html:59
 #, python-format
@@ -3655,6 +3948,12 @@ msgstr ""
 #: ghostwriter/templates/mfa/totp/deactivate_form.html:13
 msgid "Remove MFA"
 msgstr ""
+
+#: ghostwriter/templates/mfa/totp/deactivate_form.html:12
+#: ghostwriter/templates/mfa/webauthn/authenticator_list.html:11
+#: ghostwriter/users/templates/users/profile.html:158
+msgid "Manage MFA Settings"
+msgstr "管理 MFA 设置"
 
 #: ghostwriter/templates/mfa/totp/deactivate_form.html:20
 msgid "Disable Multi-Factor Authentication"
@@ -3743,6 +4042,19 @@ msgid ""
 "%(site_name)s. As a final step, please complete the following form:"
 msgstr ""
 
+#: ghostwriter/templates/users/user_detail.html:4
+#, python-format
+msgid "User: %(username)s"
+msgstr "用户：%(username)s"
+
+#: ghostwriter/templates/users/user_detail.html:24
+msgid "My Info"
+msgstr "我的信息"
+
+#: ghostwriter/templates/users/user_detail.html:25
+msgid "E-Mail"
+msgstr "电子邮件"
+
 #: ghostwriter/users/admin.py:48
 msgid "User Information"
 msgstr "用户信息"
@@ -3783,11 +4095,6 @@ msgstr "用户名称"
 #: ghostwriter/users/templates/users/profile_form.html:5
 msgid "User Profile"
 msgstr "用户资料"
-
-#: ghostwriter/users/templates/users/profile.html:11
-#: ghostwriter/users/templates/users/profile_form.html:11
-msgid "Your Profile"
-msgstr "你的资料"
 
 #: ghostwriter/users/templates/users/profile.html:31
 msgid "Full Name"
@@ -3848,10 +4155,6 @@ msgstr "管理电子邮件地址"
 #: ghostwriter/users/templates/users/profile.html:157
 msgid "Update Avatar & Preferences"
 msgstr "更新头像和偏好"
-
-#: ghostwriter/users/templates/users/profile.html:158
-msgid "Manage MFA Settings"
-msgstr "管理 MFA 设置"
 
 #: ghostwriter/users/templates/users/profile_form.html:12
 msgid "Profile Form"
