@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ghostwriter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-01 11:31+0000\n"
+"POT-Creation-Date: 2026-05-01 17:19+0000\n"
 "PO-Revision-Date: 2026-04-30 00:00+0000\n"
 "Last-Translator: GitHub Copilot\n"
 "Language-Team: Chinese\n"
@@ -298,6 +298,7 @@ msgid "Incomplete Reports"
 msgstr "未完成报告"
 
 #: ghostwriter/reporting/filters.py:311 ghostwriter/rolodex/filters.py:204
+#: ghostwriter/rolodex/templates/snippets/project_objective_subtasks.html:55
 msgid "Completed"
 msgstr "已完成"
 
@@ -499,6 +500,7 @@ msgstr "报告题注"
 #: ghostwriter/reporting/templates/reporting/finding_detail.html:99
 #: ghostwriter/reporting/templates/reporting/observation_detail.html:42
 #: ghostwriter/reporting/templates/reporting/report_template_detail.html:116
+#: ghostwriter/rolodex/templates/snippets/project_history_detail_modal.html:14
 msgid "Description"
 msgstr "描述"
 
@@ -655,10 +657,17 @@ msgstr "发现项指引"
 #: ghostwriter/reporting/templates/reporting/observation_detail.html:54
 #: ghostwriter/reporting/templates/reporting/report_detail.html:369
 #: ghostwriter/reporting/templates/snippets/report_nav_tabs.html:26
+#: ghostwriter/rolodex/templates/snippets/client_nav_tabs.html:32
+#: ghostwriter/rolodex/templates/snippets/project_nav_tabs.html:69
+#: ghostwriter/shepherd/templates/snippets/domain_nav_tabs.html:34
+#: ghostwriter/shepherd/templates/snippets/server_nav_tabs.html:17
 msgid "Extra Fields"
 msgstr "扩展字段"
 
 #: ghostwriter/reporting/templates/reporting/finding_detail.html:226
+#: ghostwriter/rolodex/templates/snippets/client_nav_tabs.html:38
+#: ghostwriter/shepherd/templates/snippets/domain_nav_tabs.html:40
+#: ghostwriter/shepherd/templates/snippets/server_nav_tabs.html:23
 msgid "Notes"
 msgstr "备注"
 
@@ -1066,6 +1075,7 @@ msgstr "上传证据"
 
 #: ghostwriter/reporting/templates/reporting/report_detail.html:321
 #: ghostwriter/reporting/templates/reporting/report_templates_list.html:39
+#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:18
 #: ghostwriter/templates/mfa/webauthn/edit_form.html:34
 msgid "Name"
 msgstr "名称"
@@ -1148,6 +1158,7 @@ msgstr "分配发现项"
 
 #: ghostwriter/reporting/templates/reporting/report_finding_link_assign.html:37
 #: ghostwriter/reporting/templates/reporting/report_observation_link_assign.html:37
+#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:87
 msgid "Assign"
 msgstr "分配"
 
@@ -1213,6 +1224,7 @@ msgstr "更新时间"
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:32
 #: ghostwriter/reporting/templates/snippets/report_nav_tabs.html:5
 #: ghostwriter/reporting/templates/snippets/report_observations_table.html:22
+#: ghostwriter/rolodex/templates/snippets/project_objectives.html:23
 msgid "Status"
 msgstr "状态"
 
@@ -1369,6 +1381,7 @@ msgid "References BloodHound Data"
 msgstr "引用 BloodHound 数据"
 
 #: ghostwriter/reporting/templates/reporting/report_template_detail.html:123
+#: ghostwriter/rolodex/templates/snippets/project_objective_subtasks.html:13
 msgid "No description provided."
 msgstr "未提供描述。"
 
@@ -1497,15 +1510,30 @@ msgstr "切换到 v3"
 #: ghostwriter/reporting/templates/snippets/evidence_detail_modal.html:11
 #: ghostwriter/reporting/templates/snippets/evidence_detail_modal.html:80
 #: ghostwriter/reporting/templates/snippets/evidence_lightbox_modal.html:13
-#: ghostwriter/reporting/templates/snippets/evidence_detail_modal.html:11
-#: ghostwriter/reporting/templates/snippets/evidence_detail_modal.html:80
-#: ghostwriter/reporting/templates/snippets/evidence_lightbox_modal.html:13
 #: ghostwriter/reporting/templates/snippets/finding_detail_modal.html:8
 #: ghostwriter/reporting/templates/snippets/finding_detail_modal.html:31
 #: ghostwriter/reporting/templates/snippets/observation_detail_modal.html:8
 #: ghostwriter/reporting/templates/snippets/observation_detail_modal.html:24
 #: ghostwriter/reporting/templates/snippets/template_detail_modal.html:8
 #: ghostwriter/reporting/templates/snippets/template_detail_modal.html:88
+#: ghostwriter/rolodex/templates/snippets/domain_checkout_detail_modal.html:8
+#: ghostwriter/rolodex/templates/snippets/domain_checkout_detail_modal.html:21
+#: ghostwriter/rolodex/templates/snippets/project_detail_modal.html:8
+#: ghostwriter/rolodex/templates/snippets/project_detail_modal.html:43
+#: ghostwriter/rolodex/templates/snippets/project_history_detail_modal.html:8
+#: ghostwriter/rolodex/templates/snippets/project_history_detail_modal.html:41
+#: ghostwriter/rolodex/templates/snippets/server_checkout_detail_modal.html:8
+#: ghostwriter/rolodex/templates/snippets/server_checkout_detail_modal.html:21
+#: ghostwriter/rolodex/templates/snippets/vps_detail_modal.html:8
+#: ghostwriter/rolodex/templates/snippets/vps_detail_modal.html:21
+#: ghostwriter/shepherd/templates/snippets/client_contact_detail_modal.html:8
+#: ghostwriter/shepherd/templates/snippets/client_contact_detail_modal.html:30
+#: ghostwriter/shepherd/templates/snippets/domain_detail_modal.html:8
+#: ghostwriter/shepherd/templates/snippets/domain_detail_modal.html:40
+#: ghostwriter/shepherd/templates/snippets/domain_history_detail_modal.html:8
+#: ghostwriter/shepherd/templates/snippets/domain_history_detail_modal.html:22
+#: ghostwriter/shepherd/templates/snippets/server_detail_modal.html:8
+#: ghostwriter/shepherd/templates/snippets/server_detail_modal.html:33
 msgid "Close"
 msgstr "关闭"
 
@@ -1601,8 +1629,8 @@ msgid ""
 "snippets, and screenshots - to have them included with the finding in the "
 "generated reports."
 msgstr ""
-"为发现项附加证据（如文本文件、日志文件、脚本片段或截图），生成报告时会随发"
-"现项一并包含。"
+"为发现项附加证据（如文本文件、日志文件、脚本片段或截图），生成报告时会随发现"
+"项一并包含。"
 
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:25
 msgid ""
@@ -1726,6 +1754,8 @@ msgid "Observation Update"
 msgstr "观察项"
 
 #: ghostwriter/reporting/templates/snippets/template_detail_modal.html:7
+#: ghostwriter/shepherd/templates/snippets/client_contact_detail_modal.html:7
+#: ghostwriter/shepherd/templates/snippets/domain_detail_modal.html:7
 #, python-format
 msgid "Additional Details for %(name)s"
 msgstr "%(name)s 的更多详情"
@@ -1740,7 +1770,8 @@ msgid ""
 "No one has added a description of this template. <a class=\"clickable\" "
 "href=\"%(fix_url)s\">Fix that here.</a>"
 msgstr ""
-"还没有人为该模板撰写说明。<a class=\"clickable\" href=\"%(fix_url)s\">点此补充。</a>"
+"还没有人为该模板撰写说明。<a class=\"clickable\" href=\"%(fix_url)s\">点此补"
+"充。</a>"
 
 #: ghostwriter/reporting/templates/snippets/template_detail_modal.html:24
 #: ghostwriter/reporting/templates/snippets/template_lint_results.html:3
@@ -1753,8 +1784,8 @@ msgid ""
 "Template passed all linter checks, but try using it for a report to test it "
 "with findings and custom fields."
 msgstr ""
-"模板已通过所有 lint 检查，但仍建议用于实际报告，结合发现项与自定义字段做"
-"完整测试。"
+"模板已通过所有 lint 检查，但仍建议用于实际报告，结合发现项与自定义字段做完整"
+"测试。"
 
 #: ghostwriter/reporting/templates/snippets/template_detail_modal.html:40
 #: ghostwriter/reporting/templates/snippets/template_lint_results.html:20
@@ -1783,8 +1814,8 @@ msgid ""
 "linked to a Table of Contents picking up a variable (e.g., "
 "<em>finding.title</em>) outside of a loop."
 msgstr ""
-"<strong>提示：</strong>未定义变量引发的语法错误，可能是因为目录在循环外引"
-"用了变量（例如 <em>finding.title</em>）。"
+"<strong>提示：</strong>未定义变量引发的语法错误，可能是因为目录在循环外引用了"
+"变量（例如 <em>finding.title</em>）。"
 
 #: ghostwriter/reporting/templates/snippets/template_detail_modal.html:83
 #: ghostwriter/reporting/templates/snippets/template_lint_results.html:63
@@ -1840,6 +1871,7 @@ msgid "-- Relative Start Date --"
 msgstr "-- 相对开始日期 --"
 
 #: ghostwriter/rolodex/filters.py:203
+#: ghostwriter/rolodex/templates/snippets/project_objective_subtasks.html:54
 msgid "Active"
 msgstr "进行中"
 
@@ -2056,6 +2088,333 @@ msgstr "项目列表"
 msgid "Projects"
 msgstr "项目"
 
+#: ghostwriter/rolodex/templates/snippets/client_nav_tabs.html:4
+msgid "General Info"
+msgstr "基本信息"
+
+#: ghostwriter/rolodex/templates/snippets/client_nav_tabs.html:10
+msgid "Invitations"
+msgstr "邀请"
+
+#: ghostwriter/rolodex/templates/snippets/client_nav_tabs.html:16
+msgid "Points of Contact"
+msgstr "联系人"
+
+#: ghostwriter/rolodex/templates/snippets/client_nav_tabs.html:21
+#: ghostwriter/shepherd/templates/snippets/domain_nav_tabs.html:27
+#: ghostwriter/shepherd/templates/snippets/server_nav_tabs.html:10
+msgid "Project History"
+msgstr "项目历史"
+
+#: ghostwriter/rolodex/templates/snippets/client_nav_tabs.html:26
+msgid "Infrastructure History"
+msgstr "基础设施历史"
+
+#: ghostwriter/rolodex/templates/snippets/domain_checkout_detail_modal.html:7
+#: ghostwriter/rolodex/templates/snippets/server_checkout_detail_modal.html:7
+msgid "Additional Checkout Details"
+msgstr "更多签出详情"
+
+#: ghostwriter/rolodex/templates/snippets/domain_checkout_detail_modal.html:17
+#, python-format
+msgid ""
+"No one has added a description on this checkout. <a class=\"clickable\" "
+"href=\"%(fix_url)s\">Fix that here.</a>"
+msgstr ""
+"还没有人为该签出撰写说明。<a class=\"clickable\" href=\"%(fix_url)s\">点此补"
+"充。</a>"
+
+#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:5
+msgid "Project Points of Contacts"
+msgstr "项目联系人"
+
+#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:9
+msgid "Add & Edit Contacts"
+msgstr "添加并编辑联系人"
+
+#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:11
+msgid ""
+"These are points of contact for this project. You can create project-"
+"specific contacts here or add contacts from the client. If a point of "
+"contact might be part of more projects, consider adding them to the client "
+"for future use."
+msgstr ""
+"这里展示该项目的联系人。你可以在此创建项目专属联系人，或从客户处导入联系人"
+"。如果某位联系人会出现在多个项目中，建议将其加入客户档案以便复用。"
+
+#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:17
+#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:26
+#: ghostwriter/templates/account/email.html:29
+msgid "Primary"
+msgstr "主要"
+
+#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:19
+msgid "Title/Role"
+msgstr "职位/角色"
+
+#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:20
+#: ghostwriter/users/templates/users/profile.html:49
+msgid "Email"
+msgstr "电子邮件"
+
+#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:21
+#: ghostwriter/users/templates/users/profile.html:58
+msgid "Phone"
+msgstr "电话"
+
+#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:22
+#: ghostwriter/templates/account/snippets/already_logged_in.html:5
+#: ghostwriter/templates/note_form.html:5
+msgid "Note"
+msgstr "备注"
+
+#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:26
+msgid "Not Primary"
+msgstr "非主要"
+
+#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:41
+msgid "Expand to view additional information"
+msgstr "展开查看更多信息"
+
+#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:51
+msgid "There are no notes for this contact."
+msgstr "该联系人暂无备注。"
+
+#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:59
+msgid "There are no points of contacts assigned to this client yet."
+msgstr "该客户尚未指定任何联系人。"
+
+#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:65
+#, python-format
+msgid "Add points of contact from %(client)s:"
+msgstr "从 %(client)s 添加联系人："
+
+#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:73
+msgid "Assign project contact"
+msgstr "指派项目联系人"
+
+#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:75
+msgid "-- Choose a Client Contact --"
+msgstr "-- 选择一位客户联系人 --"
+
+#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:80
+msgid "-- No Other Contacts Available --"
+msgstr "-- 暂无其他联系人 --"
+
+#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:131
+msgid "Contacts Update"
+msgstr "联系人更新"
+
+#: ghostwriter/rolodex/templates/snippets/project_detail_modal.html:7
+msgid "Additional Project Details"
+msgstr "更多项目详情"
+
+#: ghostwriter/rolodex/templates/snippets/project_detail_modal.html:16
+msgid "Project Description"
+msgstr "项目说明"
+
+#: ghostwriter/rolodex/templates/snippets/project_detail_modal.html:21
+#: ghostwriter/rolodex/templates/snippets/project_history_detail_modal.html:19
+#, python-format
+msgid ""
+"No one has added a description of this project. <a class=\"clickable\" "
+"href=\"%(fix_url)s\">Fix that here.</a>"
+msgstr ""
+"还没有人为该项目撰写说明。<a class=\"clickable\" href=\"%(fix_url)s\">点此补"
+"充。</a>"
+
+#: ghostwriter/rolodex/templates/snippets/project_detail_modal.html:24
+msgid "Team Assignments"
+msgstr "团队分配"
+
+#: ghostwriter/rolodex/templates/snippets/project_detail_modal.html:31
+#: ghostwriter/rolodex/templates/snippets/project_history_detail_modal.html:30
+#, python-format
+msgid "Missing Full Name (%(username)s)"
+msgstr "未填写全名 (%(username)s)"
+
+#: ghostwriter/rolodex/templates/snippets/project_detail_modal.html:39
+msgid "No Assignments"
+msgstr "暂无分配"
+
+#: ghostwriter/rolodex/templates/snippets/project_history_detail_modal.html:7
+#, python-format
+msgid "Additional Details for %(project)s"
+msgstr "%(project)s 的更多详情"
+
+#: ghostwriter/rolodex/templates/snippets/project_history_detail_modal.html:22
+msgid "Assignments:"
+msgstr "分配："
+
+#: ghostwriter/rolodex/templates/snippets/project_history_detail_modal.html:36
+msgid "No assignments found."
+msgstr "未找到任何分配。"
+
+#: ghostwriter/rolodex/templates/snippets/project_nav_tabs.html:5
+msgid "Planning"
+msgstr "规划"
+
+#: ghostwriter/rolodex/templates/snippets/project_nav_tabs.html:10
+msgid "People"
+msgstr "成员"
+
+#: ghostwriter/rolodex/templates/snippets/project_nav_tabs.html:15
+msgid "White Cards"
+msgstr "白卡"
+
+#: ghostwriter/rolodex/templates/snippets/project_nav_tabs.html:20
+msgid "Scope"
+msgstr "范围"
+
+#: ghostwriter/rolodex/templates/snippets/project_nav_tabs.html:25
+msgid "Objectives"
+msgstr "目标"
+
+#: ghostwriter/rolodex/templates/snippets/project_nav_tabs.html:30
+msgid "Targets"
+msgstr "目标对象"
+
+#: ghostwriter/rolodex/templates/snippets/project_nav_tabs.html:35
+msgid "Logs"
+msgstr "日志"
+
+#: ghostwriter/rolodex/templates/snippets/project_nav_tabs.html:40
+msgid "Infrastructure"
+msgstr "基础设施"
+
+#: ghostwriter/rolodex/templates/snippets/project_nav_tabs.html:45
+msgid "Deconflictions"
+msgstr "冲突解除"
+
+#: ghostwriter/rolodex/templates/snippets/project_nav_tabs.html:50
+#: ghostwriter/templates/base_generic.html:268
+msgid "Reporting"
+msgstr "报告"
+
+#: ghostwriter/rolodex/templates/snippets/project_nav_tabs.html:63
+msgid "Collab Notes"
+msgstr "协作笔记"
+
+#: ghostwriter/rolodex/templates/snippets/project_nav_tabs.html:76
+msgid "Legacy Comments"
+msgstr "历史评论"
+
+#: ghostwriter/rolodex/templates/snippets/project_objective_row.html:9
+msgid "Toggle the completed status for this objective"
+msgstr "切换该目标的完成状态"
+
+#: ghostwriter/rolodex/templates/snippets/project_objective_row.html:24
+msgid "Click-n-drag to reposition or categorize"
+msgstr "点击并拖动可调整顺序或分类"
+
+#: ghostwriter/rolodex/templates/snippets/project_objective_row.html:29
+msgid "Expand to view task list"
+msgstr "展开查看任务列表"
+
+#: ghostwriter/rolodex/templates/snippets/project_objective_row.html:41
+msgid "Click to cycle the status"
+msgstr "点击循环切换状态"
+
+#: ghostwriter/rolodex/templates/snippets/project_objective_row.html:59
+msgid "Completion progress based on subtask completion"
+msgstr "根据子任务完成情况计算的完成进度"
+
+#: ghostwriter/rolodex/templates/snippets/project_objective_subtasks.html:9
+msgid "Objective Description"
+msgstr "目标说明"
+
+#: ghostwriter/rolodex/templates/snippets/project_objective_subtasks.html:20
+msgid "Objective Result"
+msgstr "目标结果"
+
+#: ghostwriter/rolodex/templates/snippets/project_objective_subtasks.html:24
+msgid "No result provided."
+msgstr "未提供结果。"
+
+#: ghostwriter/rolodex/templates/snippets/project_objective_subtasks.html:35
+msgid "Add a New Task & Enter"
+msgstr "输入新任务并按 Enter"
+
+#: ghostwriter/rolodex/templates/snippets/project_objective_subtasks.html:43
+msgid "Submit Task"
+msgstr "提交任务"
+
+#: ghostwriter/rolodex/templates/snippets/project_objective_subtasks.html:49
+msgid "Click a task or deadline to edit. Click away from the task to save."
+msgstr "点击任务或截止时间可编辑，点击任务以外的区域可保存。"
+
+#: ghostwriter/rolodex/templates/snippets/project_objective_subtasks.html:53
+msgid "All"
+msgstr "全部"
+
+#: ghostwriter/rolodex/templates/snippets/project_objective_subtasks.html:92
+msgid "DONE!"
+msgstr "已完成！"
+
+#: ghostwriter/rolodex/templates/snippets/project_objectives.html:6
+msgid "Project Objectives"
+msgstr "项目目标"
+
+#: ghostwriter/rolodex/templates/snippets/project_objectives.html:9
+msgid "Add & Edit Objectives"
+msgstr "添加并编辑目标"
+
+#: ghostwriter/rolodex/templates/snippets/project_objectives.html:11
+msgid ""
+"Create specific objectives to pursue, track their status, and view deadlines "
+"in the calendar."
+msgstr "为项目创建具体目标，跟踪其状态，并在日历中查看相应截止日期。"
+
+#: ghostwriter/rolodex/templates/snippets/project_objectives.html:13
+msgid "Click the status badges to cycle and set status."
+msgstr "点击状态徽章可循环切换并设置状态。"
+
+#: ghostwriter/rolodex/templates/snippets/project_objectives.html:22
+msgid "High-Level Objective"
+msgstr "高级目标"
+
+#: ghostwriter/rolodex/templates/snippets/project_objectives.html:24
+msgid "Progress"
+msgstr "进度"
+
+#: ghostwriter/rolodex/templates/snippets/project_objectives.html:25
+msgid "Deadline"
+msgstr "截止日期"
+
+#: ghostwriter/rolodex/templates/snippets/project_objectives.html:54
+#, python-format
+msgid ""
+"Create a %(priority)s objective or drag-and-drop an objective here to update "
+"its priority."
+msgstr ""
+"创建一个 %(priority)s 优先级的目标，或将已有目标拖放到此处以更新其优先级。"
+
+#: ghostwriter/rolodex/templates/snippets/project_objectives.html:61
+msgid "No objectives have been set for this project yet."
+msgstr "该项目尚未设置任何目标。"
+
+#: ghostwriter/rolodex/templates/snippets/server_checkout_detail_modal.html:17
+#, python-format
+msgid ""
+"No one has added a description for this checkout. <a class=\"clickable\" "
+"href=\"%(fix_url)s\">Fix that here.</a>"
+msgstr ""
+"还没有人为该签出撰写说明。<a class=\"clickable\" href=\"%(fix_url)s\">点此补"
+"充。</a>"
+
+#: ghostwriter/rolodex/templates/snippets/vps_detail_modal.html:7
+msgid "Additional Server Details"
+msgstr "更多服务器详情"
+
+#: ghostwriter/rolodex/templates/snippets/vps_detail_modal.html:17
+#, python-format
+msgid ""
+"No one has added a description on this cloud host. <a class=\"clickable\" "
+"href=\"%(fix_url)s\">Fix that here.</a>"
+msgstr ""
+"还没有人为该云主机撰写说明。<a class=\"clickable\" href=\"%(fix_url)s\">点此"
+"补充。</a>"
+
 #: ghostwriter/rolodex/views.py:1489 ghostwriter/rolodex/views.py:2098
 #: ghostwriter/shepherd/views.py:1425 ghostwriter/shepherd/views.py:1492
 msgid "Invalid form data"
@@ -2241,6 +2600,86 @@ msgstr "控制面板"
 msgid "Virtual Private Server"
 msgstr "虚拟专用服务器"
 
+#: ghostwriter/shepherd/templates/snippets/client_contact_detail_modal.html:14
+msgid "Phone:"
+msgstr "电话："
+
+#: ghostwriter/shepherd/templates/snippets/client_contact_detail_modal.html:18
+msgid "No phone number available."
+msgstr "未填写电话号码。"
+
+#: ghostwriter/shepherd/templates/snippets/client_contact_detail_modal.html:25
+msgid "No additional information available."
+msgstr "暂无更多信息。"
+
+#: ghostwriter/shepherd/templates/snippets/domain_detail_modal.html:16
+msgid "Health Status:"
+msgstr "健康状态："
+
+#: ghostwriter/shepherd/templates/snippets/domain_detail_modal.html:24
+msgid "Auto-Renew Active:"
+msgstr "自动续费已开启："
+
+#: ghostwriter/shepherd/templates/snippets/domain_detail_modal.html:26
+msgid "Domain Categorization:"
+msgstr "域名分类："
+
+#: ghostwriter/shepherd/templates/snippets/domain_detail_modal.html:34
+msgid "No Results"
+msgstr "暂无结果"
+
+#: ghostwriter/shepherd/templates/snippets/domain_history_detail_modal.html:7
+msgid "Additional Details for Domain History"
+msgstr "更多域名历史详情"
+
+#: ghostwriter/shepherd/templates/snippets/domain_history_detail_modal.html:17
+msgid "No notes for this checkout."
+msgstr "该签出暂无备注。"
+
+#: ghostwriter/shepherd/templates/snippets/domain_nav_tabs.html:5
+#: ghostwriter/shepherd/templates/snippets/server_nav_tabs.html:5
+msgid "General"
+msgstr "概览"
+
+#: ghostwriter/shepherd/templates/snippets/domain_nav_tabs.html:8
+msgid "EXPIRED"
+msgstr "已过期"
+
+#: ghostwriter/shepherd/templates/snippets/domain_nav_tabs.html:10
+#, python-format
+msgid "%(days)s Days Old"
+msgstr "已注册 %(days)s 天"
+
+#: ghostwriter/shepherd/templates/snippets/domain_nav_tabs.html:17
+msgid "DNS Records"
+msgstr "DNS 记录"
+
+#: ghostwriter/shepherd/templates/snippets/domain_nav_tabs.html:21
+msgid "Health"
+msgstr "健康度"
+
+#: ghostwriter/shepherd/templates/snippets/server_detail_modal.html:7
+#, python-format
+msgid "Additional Details for %(ip)s (%(name)s)"
+msgstr "%(ip)s (%(name)s) 的更多详情"
+
+#: ghostwriter/shepherd/templates/snippets/server_detail_modal.html:7
+#, python-format
+msgid "Additional Details for %(ip)s"
+msgstr "%(ip)s 的更多详情"
+
+#: ghostwriter/shepherd/templates/snippets/server_detail_modal.html:16
+msgid "Primary Address"
+msgstr "主地址"
+
+#: ghostwriter/shepherd/templates/snippets/server_detail_modal.html:20
+msgid "Aux Addresses"
+msgstr "其他地址"
+
+#: ghostwriter/shepherd/templates/snippets/server_detail_modal.html:28
+msgid "No Other Addresses"
+msgstr "暂无其他地址"
+
 #: ghostwriter/singleton/admin.py:52
 #, python-format
 msgid "%(obj)s was changed successfully."
@@ -2317,10 +2756,6 @@ msgstr ""
 #: ghostwriter/templates/account/email.html:26
 msgid " [Unverified] "
 msgstr ""
-
-#: ghostwriter/templates/account/email.html:29
-msgid "Primary"
-msgstr "主要"
 
 #: ghostwriter/templates/account/email.html:36
 msgid "Make Primary"
@@ -2517,11 +2952,6 @@ msgid ""
 msgstr ""
 
 #: ghostwriter/templates/account/snippets/already_logged_in.html:5
-#: ghostwriter/templates/note_form.html:5
-msgid "Note"
-msgstr "备注"
-
-#: ghostwriter/templates/account/snippets/already_logged_in.html:5
 #, python-format
 msgid "you are already logged in as %(user_display)s."
 msgstr ""
@@ -2649,10 +3079,6 @@ msgstr "新建操作日志"
 #: ghostwriter/templates/base_generic.html:261
 msgid "Import Oplog Entries"
 msgstr "导入操作日志条目"
-
-#: ghostwriter/templates/base_generic.html:268
-msgid "Reporting"
-msgstr "报告"
 
 #: ghostwriter/templates/base_generic.html:275
 msgid "Report Library"
@@ -3374,14 +3800,6 @@ msgstr "未填写全名"
 #: ghostwriter/users/templates/users/profile.html:40
 msgid "Username"
 msgstr "用户名"
-
-#: ghostwriter/users/templates/users/profile.html:49
-msgid "Email"
-msgstr "电子邮件"
-
-#: ghostwriter/users/templates/users/profile.html:58
-msgid "Phone"
-msgstr "电话"
 
 #: ghostwriter/users/templates/users/profile.html:61
 msgid "Unavailable"

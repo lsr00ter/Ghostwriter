@@ -1,16 +1,16 @@
-{% load bleach_tags %}
+{% load i18n bleach_tags %}
 
 {% load determine_primary %}
 
 <!-- Objectives Section -->
-<h4>Project Objectives</h4>
+<h4>{% trans "Project Objectives" %}</h4>
 <hr />
 
-<p><a class="icon edit-icon btn btn-primary col-3" href="{% url 'rolodex:project_component_update' project.id %}#objectives">Add & Edit Objectives</a></p>
+<p><a class="icon edit-icon btn btn-primary col-3" href="{% url 'rolodex:project_component_update' project.id %}#objectives">{% trans "Add & Edit Objectives" %}</a></p>
 
-<p>Create specific objectives to pursue, track their status, and view deadlines in the calendar.</p>
+<p>{% trans "Create specific objectives to pursue, track their status, and view deadlines in the calendar." %}</p>
 
-<p>Click the status badges to cycle and set status.</p>
+<p>{% trans "Click the status badges to cycle and set status." %}</p>
 
 {% if project.projectobjective_set.all %}
     <table id="objectives-table" class="table" objectives-update-url="{% url 'rolodex:ajax_update_objective_order' %}" objectives-update-csrftoken="{{ csrf_token }}" project-id="{{ project.id }}">
@@ -19,10 +19,10 @@
                 <th class="align-middle icon check-icon"></th>
                 <th class="align-middle icon ol-list-icon"></th>
                 <th class="align-middle icon expand-icon"></th>
-                <th class="align-middle">High-Level Objective</th>
-                <th class="align-middle">Status</th>
-                <th class="align-middle">Progress</th>
-                <th class="align-middle">Deadline</th>
+                <th class="align-middle">{% trans "High-Level Objective" %}</th>
+                <th class="align-middle">{% trans "Status" %}</th>
+                <th class="align-middle">{% trans "Progress" %}</th>
+                <th class="align-middle">{% trans "Deadline" %}</th>
             </tr>
         </thead>
 
@@ -51,12 +51,12 @@
                     {% endfor %}
                 {% else %}
                     <tr id="{{ group|lower }}_placeholder" data-id="{{ group|lower }}_placeholder" class="priority-row-placeholder">
-                        <td colspan="7" scope="colgroup">Create a {{ group }} objective or drag-and-drop an objective here to update its priority.</td>
+                        <td colspan="7" scope="colgroup">{% blocktrans with priority=group %}Create a {{ priority }} objective or drag-and-drop an objective here to update its priority.{% endblocktrans %}</td>
                     </tr>
                 {% endif %}
             {% endfor %}
         </tbody>
     </table>
 {% else %}
-   <div class="alert alert-warning offset-md-2 col-md-8 mt-1" role="alert">No objectives have been set for this project yet.</div>
+   <div class="alert alert-warning offset-md-2 col-md-8 mt-1" role="alert">{% trans "No objectives have been set for this project yet." %}</div>
 {% endif %}

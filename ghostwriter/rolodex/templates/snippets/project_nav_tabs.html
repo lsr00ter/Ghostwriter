@@ -1,53 +1,53 @@
-{% load custom_tags %}
+{% load i18n custom_tags %}
 
 <li class="nav-item">
     <a id="id_planning" class="nav-link active tab-icon planning-icon" data-toggle="tab" href="#planning">
-        Planning
+        {% trans "Planning" %}
     </a>
 </li>
 <li class="nav-item">
     <a id="id_people" class="nav-link poc-icon" data-toggle="tab" href="#people">
-        People
+        {% trans "People" %}
     </a>
 </li>
 <li class="nav-item">
     <a id="id_whitecards" class="nav-link tab-icon whitecard-icon" data-toggle="tab" href="#whitecards">
-        White Cards <span class="badge badge-pill badge-light">{{ project.whitecard_set.all.count }}</span>
+        {% trans "White Cards" %} <span class="badge badge-pill badge-light">{{ project.whitecard_set.all.count }}</span>
     </a>
 </li>
 <li class="nav-item">
     <a id="id_scopes" class="nav-link tab-icon bullseye-icon" data-toggle="tab" href="#scopes">
-        Scope
+        {% trans "Scope" %}
     </a>
 </li>
 <li class="nav-item">
     <a id="id_objectives" class="nav-link tab-icon tasks-icon" data-toggle="tab" href="#objectives">
-        Objectives <span class="badge badge-pill badge-light">{{ project.projectobjective_set.all|count_incomplete_objectives }}</span>
+        {% trans "Objectives" %} <span class="badge badge-pill badge-light">{{ project.projectobjective_set.all|count_incomplete_objectives }}</span>
     </a>
 </li>
 <li class="nav-item">
     <a id="id_targets" class="nav-link tab-icon objective-icon" data-toggle="tab" href="#targets">
-        Targets
+        {% trans "Targets" %}
     </a>
 </li>
 <li class="nav-item">
     <a id="id_activity" class="nav-link tab-icon history-icon" data-toggle="tab" href="#activity">
-        Logs
+        {% trans "Logs" %}
     </a>
 </li>
 <li class="nav-item">
     <a id="id_infrastructure" class="nav-link tab-icon server-icon" data-toggle="tab" href="#infrastructure">
-        Infrastructure
+        {% trans "Infrastructure" %}
     </a>
 </li>
 <li class="nav-item">
     <a id="id_deconflictions" class="nav-link tab-icon comment-icon" data-toggle="tab" href="#deconflictions">
-        Deconflictions <span class="badge badge-pill badge-light">{{ project.deconfliction_set.all.count }}</span>
+        {% trans "Deconflictions" %} <span class="badge badge-pill badge-light">{{ project.deconfliction_set.all.count }}</span>
     </a>
 </li>
 <li class="nav-item">
     <a id="id_documents" class="nav-link tab-icon folder-icon" data-toggle="tab" href="#documents">
-        Reporting
+        {% trans "Reporting" %}
     </a>
 </li>
 {% if bh_api %}
@@ -60,20 +60,20 @@
 {% endif %}
 <li class="nav-item">
     <a id="id_collab_notes" class="nav-link tab-icon sticky-note-icon" data-toggle="tab" href="#collab_notes">
-        Collab Notes
+        {% trans "Collab Notes" %}
     </a>
 </li>
 {% if project_extra_fields_spec %}
     <li class="nav-item">
         <a id="id_extra_fields" class="nav-link tab-icon custom-field-icon" data-toggle="tab" href="#extra_fields">
-            Extra Fields
+            {% trans "Extra Fields" %}
         </a>
     </li>
 {% endif %}
 {% if project.projectnote_set.all %}
     <li class="nav-item">
         <a id="id_legacy_comments" class="nav-link tab-icon comment-icon" data-toggle="tab" href="#legacy_comments">
-            Legacy Comments <span class="badge badge-pill badge-light">{{ project.projectnote_set.all.count }}</span>
+            {% trans "Legacy Comments" %} <span class="badge badge-pill badge-light">{{ project.projectnote_set.all.count }}</span>
         </a>
     </li>
 {% endif %}

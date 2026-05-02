@@ -1,11 +1,11 @@
-{% load bleach_tags %}
+{% load i18n bleach_tags %}
 
 <div id="domain_detail_{{ domain.id }}" class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-super-sized modal-dialog-scrollable modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Additional Details for {{ domain.name }}</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <h5 class="modal-title">{% blocktrans with name=domain.name %}Additional Details for {{ name }}{% endblocktrans %}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="{% trans 'Close' %}">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -13,7 +13,7 @@
 
         {%  for tag in domain.tags.all %}<span class="badge badge-secondary mb-3">{{ tag.name }}</span>{% endfor %}
 
-        <p>Health Status:
+        <p>{% trans "Health Status:" %}
         {% if domain.health_status.health_status == "Healthy" %}
           <span class="healthy">{{ domain.health_status }}</span>
         {% else %}
@@ -21,9 +21,9 @@
         {% endif %}
         <br></p>
 
-        <p>Auto-Renew Active: {{ domain.auto_renew }}<br></p>
+        <p>{% trans "Auto-Renew Active:" %} {{ domain.auto_renew }}<br></p>
 
-        <p>Domain Categorization:
+        <p>{% trans "Domain Categorization:" %}
           {% if domain.categorization.items %}
             <span class="align-middle">
               {% for source, cat in domain.categorization.items %}
@@ -31,13 +31,13 @@
               {% endfor %}
             </span>
           {% else %}
-            <span class="align-middle">No Results</span>
+            <span class="align-middle">{% trans "No Results" %}</span>
           {% endif %}
         </p>
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary col-3" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary col-3" data-dismiss="modal">{% trans "Close" %}</button>
       </div>
     </div>
   </div>

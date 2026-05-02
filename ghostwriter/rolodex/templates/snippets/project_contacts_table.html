@@ -1,29 +1,28 @@
-{% load bleach_tags %}
+{% load i18n bleach_tags %}
 
 {% comment %} Contacts Section {% endcomment %}
-<h4>Project Points of Contacts</h4>
+<h4>{% trans "Project Points of Contacts" %}</h4>
 <hr/>
 
 <a class="icon edit-icon btn btn-primary mb-3 col-3"
-   href="{% url 'rolodex:project_component_update' project.id %}#contacts">Add & Edit Contacts</a>
+   href="{% url 'rolodex:project_component_update' project.id %}#contacts">{% trans "Add & Edit Contacts" %}</a>
 
-<p class="text-justify offset-2 col-8">These are points of contact for this project. You can create project-specific contacts here or add contacts from the
-  client. If a point of contact might be part of more projects, consider adding them to the client for future use.
+<p class="text-justify offset-2 col-8">{% trans "These are points of contact for this project. You can create project-specific contacts here or add contacts from the client. If a point of contact might be part of more projects, consider adding them to the client for future use." %}
 </p>
 
 {% if project.projectcontact_set.all %}
   <table id="contactTable" class="tablesorter table">
     <thead>
-    <th class="align-middle pr-4 text-left">Primary</th>
-    <th class="align-middle pr-4 text-left">Name</th>
-    <th class="align-middle pr-4 text-left">Title/Role</th>
-    <th class="sorter-false align-middle pr-4 text-left">Email</th>
-    <th class="sorter-false align-middle text-left">Phone</th>
-    <th class="sorter-false align-middle">Note</th>
+    <th class="align-middle pr-4 text-left">{% trans "Primary" %}</th>
+    <th class="align-middle pr-4 text-left">{% trans "Name" %}</th>
+    <th class="align-middle pr-4 text-left">{% trans "Title/Role" %}</th>
+    <th class="sorter-false align-middle pr-4 text-left">{% trans "Email" %}</th>
+    <th class="sorter-false align-middle text-left">{% trans "Phone" %}</th>
+    <th class="sorter-false align-middle">{% trans "Note" %}</th>
     </thead>
     {% for contact in project.projectcontact_set.all %}
       <tr>
-        <td class="align-middle text-left">{% if contact.primary %}<i class="fas fa-check healthy"><span class="sr-only">Primary</span></i>{% else %}<span class="sr-only">Not Primary</span>{% endif %}</td>
+        <td class="align-middle text-left">{% if contact.primary %}<i class="fas fa-check healthy"><span class="sr-only">{% trans "Primary" %}</span></i>{% else %}<span class="sr-only">{% trans "Not Primary" %}</span>{% endif %}</td>
         <td class="align-middle text-left">{{ contact.name }}</td>
         <td class="align-middle text-left">{% if contact.job_title %}{{ contact.job_title }}{% else %}--{% endif %}</td>
         <td class="align-middle text-left">{% if contact.email %}{{ contact.email }}{% else %}--{% endif %}</td>
@@ -38,7 +37,7 @@
           <button
             class="expandme btn btn-transparent"
             onclick="showHideRow($(this), 'hidden-contact-data-{{ contact.id }}');"
-            title="Expand to view additional information"
+            title="{% trans 'Expand to view additional information' %}"
           ></button>
         </td>
       </tr>
@@ -48,7 +47,7 @@
             {% if contact.note %}
               {{ contact.note|bleach }}
             {% else %}
-              <p>There are no notes for this contact.</p>
+              <p>{% trans "There are no notes for this contact." %}</p>
             {% endif %}
           </div>
         </td>
@@ -56,14 +55,13 @@
     {% endfor %}
   </table>
 {% else %}
-  <div class="alert alert-warning offset-md-2 col-md-8 mt-1" role="alert">There are no points of contacts assigned to
-    this client yet.
+  <div class="alert alert-warning offset-md-2 col-md-8 mt-1" role="alert">{% trans "There are no points of contacts assigned to this client yet." %}
   </div>
 {% endif %}
 
 <hr/>
 
-<p>Add points of contact from {{ project.client }}:</p>
+<p>{% blocktrans with client=project.client %}Add points of contact from {{ client }}:{% endblocktrans %}</p>
 
 <div>
   <form id="assign-project-contact-form" action="{% url 'rolodex:ajax_assign_project_contact' project.id %}"
@@ -71,21 +69,21 @@
     <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
     <div class="form-row">
       <div class="col col-6 offset-3">
-        <select id="id_client_contact" class="form-select custom-select" aria-label="Assign project contact">
+        <select id="id_client_contact" class="form-select custom-select" aria-label="{% trans 'Assign project contact' %}">
           {% if client_contacts %}
-            <option value="-1" selected>-- Choose a Client Contact --</option>
+            <option value="-1" selected>{% trans "-- Choose a Client Contact --" %}</option>
             {% for contact in client_contacts %}
               <option value="{{ contact.id }}"> {{ contact.name }} </option>
             {% endfor %}
           {% else %}
-            <option value="-1" selected>-- No Other Contacts Available --</option>
+            <option value="-1" selected>{% trans "-- No Other Contacts Available --" %}</option>
           {% endif %}
         </select>
       </div>
     </div>
     <div class="form-row mt-3">
       <div class="col col-4 offset-4">
-        <button id="assign-btn" type="submit" class="btn btn-primary col-4" disabled="disabled">Assign</button>
+        <button id="assign-btn" type="submit" class="btn btn-primary col-4" disabled="disabled">{% trans "Assign" %}</button>
       </div>
     </div>
   </form>
@@ -128,7 +126,7 @@
         },
         success: function (data) {
           if (data['message']) {
-            displayToastTop({type: data['result'], string: data['message'], title: 'Contacts Update'});
+            displayToastTop({type: data['result'], string: data['message'], title: '{% trans "Contacts Update" %}'});
           }
           update_project_contacts();
         },

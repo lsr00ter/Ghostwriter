@@ -1,11 +1,11 @@
-{% load bleach_tags %}
+{% load i18n bleach_tags %}
 
 <div id="vps_detail_{{ vps.id }}" class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-super-sized modal-dialog-scrollable modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Additional Server Details</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <h5 class="modal-title">{% trans "Additional Server Details" %}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="{% trans 'Close' %}">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -13,11 +13,12 @@
         {% if vps.description %}
           {{ vps.description|bleach|safe }}
         {% else %}
-          <p>No one has added a description on this cloud host. <a class="clickable" href="{% url 'shepherd:vps_update' vps.id %}">Fix that here.</a></p>
+          {% url 'shepherd:vps_update' vps.id as fix_url %}
+          <p>{% blocktrans %}No one has added a description on this cloud host. <a class="clickable" href="{{ fix_url }}">Fix that here.</a>{% endblocktrans %}</p>
         {% endif %}
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary col-3" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary col-3" data-dismiss="modal">{% trans "Close" %}</button>
       </div>
     </div>
   </div>

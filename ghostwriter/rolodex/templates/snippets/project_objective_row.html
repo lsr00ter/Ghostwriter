@@ -1,4 +1,4 @@
-{% load bleach_tags %}
+{% load i18n bleach_tags %}
 
 {% load determine_primary %}
 
@@ -6,7 +6,7 @@
     <td
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Toggle objective's completed status"
+      title="{% trans 'Toggle the completed status for this objective' %}"
       class="align-middle"
     >
         <span>
@@ -21,12 +21,12 @@
         class="holdme align-middle"
         data-toggle="tooltip"
         data-placement="bottom"
-        title="Click-n-drag to reposition or categorize"
+        title="{% trans 'Click-n-drag to reposition or categorize' %}"
     ></td>
     <td
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Expand to view task list"
+      title="{% trans 'Expand to view task list' %}"
       class="align-middle"
     >
         <button
@@ -38,7 +38,7 @@
     <td
       data-toggle="tooltip"
       data-placement="bottom"
-      title="Click to cycle the status"
+      title="{% trans 'Click to cycle the status' %}"
       class="align-middle"
     >
         <div
@@ -56,7 +56,7 @@
     <td
       data-toggle="tooltip"
       data-placement="bottom"
-      title="The objective's completion progress based on subtask completion"
+      title="{% trans 'Completion progress based on subtask completion' %}"
       class="align-middle"
     >
         {% with percentage=objective.calculate_status %}
