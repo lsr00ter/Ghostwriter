@@ -24,12 +24,11 @@
     {% include "snippets/table-column-show-hide-ui.html" with column_show_hide_id="column-show-hide-ui" only %}
   {% endif %}
 
-  <a class="btn btn-info col-2 icon add-icon mt-2" role="button" href="{%  url 'shepherd:domain_create' %}">Create Entry</a>
-  <a id="resetSortBtn" class="btn btn-secondary col-2 icon sync-icon mt-2" role="button">Reset Sort</a>
+  <a class="btn btn-info col-2 icon add-icon mt-2" role="button" href="{%  url 'shepherd:domain_create' %}">{% trans "Create Entry" %}</a>
+  <a id="resetSortBtn" class="btn btn-secondary col-2 icon sync-icon mt-2" role="button">{% trans "Reset Sort" %}</a>
 
   {% if filter.qs|length == 0 %}
-    <div class="alert alert-warning offset-md-2 col-md-8 mt-3" role="alert">There are no domains to see here yet, or
-      your search returned no results. Create a domain above or adjust your filters.
+    <div class="alert alert-warning offset-md-2 col-md-8 mt-3" role="alert">{% trans "There are no domains to see here yet, or your search returned no results. Create a domain above or adjust your filters." %}
     </div>
   {% else %}
     <!-- Domain Table Section -->
@@ -42,16 +41,16 @@
       >
         <thead>
         <tr>
-          <th id="domain" class="align-middle pr-4 text-left" data-no-hide>Domain</th>
-          <th class="align-middle pr-4 text-left" data-internal-name="status">Status</th>
-          <th class="align-middle pr-4 text-left" data-internal-name="creation" data-hide-default>Purchase Date</th>
-          <th class="align-middle pr-4 text-left" data-internal-name="expiration" data-hide-default>Expiration Date</th>
-          <th class="align-middle pr-4 text-left" data-internal-name="age">Age (Days)</th>
-          <th class="align-middle pr-4 sorter-sugar text-left" data-internal-name="expiry">Expiry</th>
-          <th class="align-middle pr-4 text-left" data-internal-name="registrar" data-hide-default>Registrar</th>
-          <th class="align-middle pr-4 text-left" data-internal-name="note" data-hide-default>Details</th>
-          <th class="align-middle text-left sorter-false" data-hide-default data-internal-name="tags">Tags</th>
-          <th class="align-middle sorter-false" data-no-hide>Options</th>
+          <th id="domain" class="align-middle pr-4 text-left" data-no-hide>{% trans "Domain" %}</th>
+          <th class="align-middle pr-4 text-left" data-internal-name="status">{% trans "Status" %}</th>
+          <th class="align-middle pr-4 text-left" data-internal-name="creation" data-hide-default>{% trans "Purchase Date" %}</th>
+          <th class="align-middle pr-4 text-left" data-internal-name="expiration" data-hide-default>{% trans "Expiration Date" %}</th>
+          <th class="align-middle pr-4 text-left" data-internal-name="age">{% trans "Age (Days)" %}</th>
+          <th class="align-middle pr-4 sorter-sugar text-left" data-internal-name="expiry">{% trans "Expiry" %}</th>
+          <th class="align-middle pr-4 text-left" data-internal-name="registrar" data-hide-default>{% trans "Registrar" %}</th>
+          <th class="align-middle pr-4 text-left" data-internal-name="note" data-hide-default>{% trans "Details" %}</th>
+          <th class="align-middle text-left sorter-false" data-hide-default data-internal-name="tags">{% trans "Tags" %}</th>
+          <th class="align-middle sorter-false" data-no-hide>{% trans "Options" %}</th>
         </tr>
         </thead>
         <tbody>
@@ -62,7 +61,7 @@
             {% if domain.domain_status.domain_status == "Available" %}
               <td class="align-middle healthy text-left">{{ domain.domain_status }}</td>
             {% elif domain.domain_status.domain_status == "Unavailable" %}
-              <td class="align-middle burned text-left">Checked Out</td>
+              <td class="align-middle burned text-left">{% trans "Checked Out" %}</td>
             {% else %}
               <td class="align-middle burned text-left">{{ domain.domain_status }}</td>
             {% endif %}
@@ -105,7 +104,7 @@
               <div class="d-flex justify-content-center">
                 <span
                   class="icon preview-icon clickable-link"
-                  title="View additional information"
+                  title="{% trans 'View additional information' %}"
                   onclick="openModal('#domain_detail_{{ domain.id }}')"
                 ></span>
                 {% if domain.domain_status.domain_status == "Available" or domain.domain_status.domain_status == "Burned" %}

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ghostwriter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-02 18:11+0000\n"
+"POT-Creation-Date: 2026-05-03 11:14+0000\n"
 "PO-Revision-Date: 2026-04-30 00:00+0000\n"
 "Last-Translator: GitHub Copilot\n"
 "Language-Team: Chinese\n"
@@ -88,9 +88,22 @@ msgstr "创建操作日志"
 msgid "Dashboard"
 msgstr "仪表板"
 
+#: ghostwriter/api/templates/token_form.html:11
+#: ghostwriter/templates/mfa/index.html:14
+#: ghostwriter/templates/mfa/totp/deactivate_form.html:11
+#: ghostwriter/templates/mfa/webauthn/authenticator_list.html:10
+#: ghostwriter/users/templates/users/profile.html:11
+#: ghostwriter/users/templates/users/profile_form.html:11
+msgid "Your Profile"
+msgstr "你的资料"
+
 #: ghostwriter/api/templates/token_form.html:12
 msgid "Create Token"
 msgstr "创建令牌"
+
+#: ghostwriter/api/templates/token_form.html:19
+msgid "Provide a meaningful name for your token and select an expiry date:"
+msgstr "请为令牌填写一个有意义的名称并选择过期日期："
 
 #: ghostwriter/commandcenter/forms.py:43
 msgid ""
@@ -211,6 +224,7 @@ msgid "Default Timezone for Forms"
 msgstr "表单默认时区"
 
 #: ghostwriter/home/templates/home/management.html:48
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:62
 msgid "Hostname"
 msgstr "主机名"
 
@@ -424,6 +438,7 @@ msgid "Not Configured"
 msgstr "尚未配置"
 
 #: ghostwriter/home/templates/home/management.html:309
+#: ghostwriter/oplog/templates/oplog/oplog_list.html:44
 msgid "Notifications"
 msgstr "通知"
 
@@ -479,6 +494,7 @@ msgstr "测试 Slack Webhook"
 #: ghostwriter/home/templates/home/management.html:400
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:1860
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:1897
+#: ghostwriter/shepherd/templates/shepherd/update.html:201
 msgid "Task Update"
 msgstr "任务更新"
 
@@ -487,9 +503,308 @@ msgstr "任务更新"
 msgid "%(name)s Entries"
 msgstr "%(name)s 条目"
 
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:31
+msgid "Edit Log"
+msgstr "编辑日志"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:32
+msgid "Import Entries"
+msgstr "导入条目"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:33
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:186
+msgid "Export Entries"
+msgstr "导出条目"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:34
+#: ghostwriter/reporting/templates/reporting/report_detail.html:39
+msgid "Jump to Project"
+msgstr "跳转到项目"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:40
+msgid "Sanitize Entries"
+msgstr "清理条目"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:50
+msgid "Notifications: Off"
+msgstr "通知：关闭"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:52
+msgid "Notifications: On"
+msgstr "通知：开启"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:67
+msgid ""
+"Oplog ID for use with the API and tools like `mythic_sync` and `cobalt_sync`"
+msgstr "供 API 及 `mythic_sync`、`cobalt_sync` 等工具使用的 Oplog ID"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:69
+#, python-format
+msgid "Oplog ID #%(id)s"
+msgstr "Oplog ID #%(id)s"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:76
+#: ghostwriter/shepherd/templates/shepherd/domain_list.html:27
+msgid "Create Entry"
+msgstr "新建条目"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:77
+msgid "Show/Hide Columns"
+msgstr "显示/隐藏列"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:79
+msgid "Help"
+msgstr "帮助"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:86
+msgid "Filter Entries"
+msgstr "筛选条目"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:92
+msgid "Disconnected"
+msgstr "已断开连接"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:126
+msgid "No entries to display"
+msgstr "暂无可显示的条目"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:129
+msgid "Loading entries..."
+msgstr "正在加载条目..."
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:143
+msgid "Select an entry to view details"
+msgstr "请选择一条条目以查看详情"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:144
+msgid "Double-click to edit · CTRL+N to create"
+msgstr "双击编辑 · CTRL+N 新建"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:160
+msgid "Edit Entry"
+msgstr "编辑条目"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:171
+#: ghostwriter/reporting/templates/reporting/report_detail.html:315
+msgid "Upload Evidence"
+msgstr "上传证据"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:192
+msgid ""
+"Select what to include with the export. If no attachments are selected, a "
+"plain CSV will be returned."
+msgstr "请选择导出内容。如果未选择任何附件，将仅导出普通 CSV 文件。"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:196
+msgid "Include terminal recordings"
+msgstr "包含终端录制"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:200
+msgid "Include linked evidence files"
+msgstr "包含关联的证据文件"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:205
+#: ghostwriter/templates/confirm_archive.html:17
+#: ghostwriter/templates/confirm_delete.html:19
+#: ghostwriter/templates/confirm_delete_modal.html:12
+#: ghostwriter/templates/confirm_revoke_modal.html:12
+#: ghostwriter/templates/confirm_sanitize_modal.html:19
+#: ghostwriter/templates/mfa/webauthn/edit_form.html:42
+msgid "Cancel"
+msgstr "取消"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:206
+#: ghostwriter/reporting/templates/reporting/report_template_detail.html:26
+#: ghostwriter/reporting/templates/snippets/evidence_detail_modal.html:83
+#: ghostwriter/reporting/templates/snippets/evidence_lightbox_modal.html:24
+#: ghostwriter/templates/mfa/backup_tokens.html:52
+#: ghostwriter/templates/mfa/index.html:111
+#: ghostwriter/templates/mfa/recovery_codes/index.html:52
+msgid "Download"
+msgstr "下载"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:219
+msgid "Activity Log — Quick Reference"
+msgstr "活动日志 — 快速参考"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:230
+msgid "Live Updates"
+msgstr "实时更新"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:233
+msgid ""
+"Entries are kept in sync via <strong>WebSockets</strong>. The <span "
+"class=\"badge badge-success\">Connected</span> / <span class=\"badge badge-"
+"danger\">Disconnected</span> indicator in the toolbar shows the current "
+"connection state."
+msgstr ""
+"条目通过 <strong>WebSocket</strong> 保持同步。工具栏中的 <span class=\"badge "
+"badge-success\">已连接</span> / <span class=\"badge badge-danger\">已断开</"
+"span> 指示器显示当前连接状态。"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:234
+msgid ""
+"Changes made by other operators appear automatically — no refresh needed."
+msgstr "其他操作者的修改会自动显示，无需手动刷新。"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:242
+msgid "Navigation & Selection"
+msgstr "导航与选择"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:246
+msgid "<strong>Click</strong> a row to open the details pane."
+msgstr "<strong>单击</strong>某一行可打开详情面板。"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:247
+msgid "<strong>Double-click</strong> a row to edit the entry."
+msgstr "<strong>双击</strong>某一行可编辑该条目。"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:248
+msgid ""
+"<strong>↑↓ arrow keys</strong> move between entries once one is selected."
+msgstr "选中条目后，可使用 <strong>↑↓ 方向键</strong> 在条目之间切换。"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:249
+msgid ""
+"<kbd>Enter</kbd> opens the edit form; tap <kbd>Enter</kbd> again to submit "
+"it, saving and closing the form."
+msgstr ""
+"<kbd>Enter</kbd> 打开编辑表单；再次按 <kbd>Enter</kbd> 提交表单并保存关闭。"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:250
+msgid ""
+"<kbd>Esc</kbd> closes the details pane and deselects the entry, giving the "
+"table full width."
+msgstr "<kbd>Esc</kbd> 关闭详情面板并取消选中条目，让表格占满整个宽度。"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:251
+msgid "<kbd>Ctrl+N</kbd> creates a new entry."
+msgstr "<kbd>Ctrl+N</kbd> 新建条目。"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:260
+msgid "Sorting"
+msgstr "排序"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:264
+msgid "The default order is <strong>start date, newest first</strong>."
+msgstr "默认顺序为 <strong>按开始日期由新到旧</strong>。"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:265
+msgid "<strong>Click</strong> a column header to sort by that column."
+msgstr "<strong>单击</strong>列标题即可按该列排序。"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:266
+msgid ""
+"<strong>Shift+click</strong> additional headers to add a secondary sort "
+"column."
+msgstr "按住 <strong>Shift+单击</strong> 其他列标题可添加次要排序列。"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:267
+msgid ""
+"Your sort preference is saved and restored on the next visit. Use "
+"<strong>Reset Sort</strong> to return to the default order."
+msgstr ""
+"排序偏好会被保存，下次访问时自动恢复。可以使用<strong>重置排序</strong>恢"
+"复默认顺序。"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:276
+msgid "Show / Hide Columns"
+msgstr "显示 / 隐藏列"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:279
+msgid ""
+"Click <strong>Show/Hide Columns</strong> to toggle individual columns on or "
+"off. Your preferences are saved in your browser. Long-form fields (Command, "
+"Output, Description, Comments) are truncated in the table — select an entry "
+"to read the full content in the details pane."
+msgstr ""
+"点击 <strong>显示/隐藏列</strong> 可单独切换每列的显示状态，偏好会保存在浏"
+"览器中。长字段（命令、输出、描述、备注）在表格中会截断，选中条目可在详情"
+"面板中查看完整内容。"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:287
+msgid "Filtering"
+msgstr "筛选"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:290
+msgid ""
+"Type in the <strong>Filter Entries</strong> box to search across all fields, "
+"including fields not currently shown as columns. Filtering also includes the "
+"raw input and output text of any terminal recordings attached to entries. "
+"Results update as you type. Click <i class=\"fas fa-times\"></i> or clear "
+"the box to remove the filter."
+msgstr ""
+"在 <strong>筛选条目</strong> 输入框中输入即可搜索所有字段，包括当前未显示"
+"为列的字段。筛选范围还包含条目所附终端录制的原始输入和输出文本。结果会随"
+"输入实时更新。点击 <i class=\"fas fa-times\"></i> 或清空输入框可取消筛选。"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:298
+msgid "Details Pane & Deep Links"
+msgstr "详情面板与深链接"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:301
+msgid ""
+"The details pane shows the full entry, evidence attachments, and a terminal "
+"recording player. Use the <i class=\"fas fa-link\"></i> <strong>deep link</"
+"strong> button in the details pane to copy a URL that opens this log and "
+"scrolls directly to that entry — useful for sharing specific entries with "
+"coworkers."
+msgstr ""
+"详情面板会显示条目的完整内容、关联的证据以及终端录制播放器。点击详情面板"
+"中的 <i class=\"fas fa-link\"></i> <strong>深链接</strong> 按钮可复制一个 "
+"URL，打开后会直接定位到该条目 — 便于将具体条目分享给同事。"
+
+#: ghostwriter/oplog/templates/oplog/oplog_detail.html:309
+#: ghostwriter/reporting/templates/snippets/evidence_detail_modal.html:11
+#: ghostwriter/reporting/templates/snippets/evidence_detail_modal.html:80
+#: ghostwriter/reporting/templates/snippets/evidence_lightbox_modal.html:13
+#: ghostwriter/reporting/templates/snippets/finding_detail_modal.html:8
+#: ghostwriter/reporting/templates/snippets/finding_detail_modal.html:31
+#: ghostwriter/reporting/templates/snippets/observation_detail_modal.html:8
+#: ghostwriter/reporting/templates/snippets/observation_detail_modal.html:24
+#: ghostwriter/reporting/templates/snippets/template_detail_modal.html:8
+#: ghostwriter/reporting/templates/snippets/template_detail_modal.html:88
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:2141
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:2194
+#: ghostwriter/rolodex/templates/snippets/domain_checkout_detail_modal.html:8
+#: ghostwriter/rolodex/templates/snippets/domain_checkout_detail_modal.html:21
+#: ghostwriter/rolodex/templates/snippets/project_detail_modal.html:8
+#: ghostwriter/rolodex/templates/snippets/project_detail_modal.html:43
+#: ghostwriter/rolodex/templates/snippets/project_history_detail_modal.html:8
+#: ghostwriter/rolodex/templates/snippets/project_history_detail_modal.html:41
+#: ghostwriter/rolodex/templates/snippets/server_checkout_detail_modal.html:8
+#: ghostwriter/rolodex/templates/snippets/server_checkout_detail_modal.html:21
+#: ghostwriter/rolodex/templates/snippets/vps_detail_modal.html:8
+#: ghostwriter/rolodex/templates/snippets/vps_detail_modal.html:21
+#: ghostwriter/shepherd/templates/snippets/client_contact_detail_modal.html:8
+#: ghostwriter/shepherd/templates/snippets/client_contact_detail_modal.html:30
+#: ghostwriter/shepherd/templates/snippets/domain_detail_modal.html:8
+#: ghostwriter/shepherd/templates/snippets/domain_detail_modal.html:40
+#: ghostwriter/shepherd/templates/snippets/domain_history_detail_modal.html:8
+#: ghostwriter/shepherd/templates/snippets/domain_history_detail_modal.html:22
+#: ghostwriter/shepherd/templates/snippets/server_detail_modal.html:8
+#: ghostwriter/shepherd/templates/snippets/server_detail_modal.html:33
+msgid "Close"
+msgstr "关闭"
+
+#: ghostwriter/oplog/templates/oplog/oplog_form.html:17
+#: ghostwriter/oplog/templates/oplog/oplog_import.html:10
+#: ghostwriter/oplog/templates/oplog/oplog_list.html:6
+#: ghostwriter/oplog/templates/oplog/oplog_list.html:12
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:473
+#: ghostwriter/templates/base_generic.html:257
+msgid "Operation Logs"
+msgstr "操作日志"
+
 #: ghostwriter/oplog/templates/oplog/oplog_form.html:19
 msgid "New Log Form"
 msgstr "新建日志"
+
+#: ghostwriter/oplog/templates/oplog/oplog_form.html:26
+msgid ""
+"Provide a meaningful name for your log and select the project to which it "
+"should associated:"
+msgstr "请为日志填写一个有意义的名称，并选择关联的项目："
 
 #: ghostwriter/oplog/templates/oplog/oplog_import.html:4
 msgid "Domain Entry"
@@ -499,12 +814,158 @@ msgstr "域名表单"
 msgid "Log Import"
 msgstr "导入日志"
 
-#: ghostwriter/oplog/templates/oplog/oplog_list.html:6
-#: ghostwriter/oplog/templates/oplog/oplog_list.html:12
-#: ghostwriter/rolodex/templates/rolodex/project_detail.html:473
-#: ghostwriter/templates/base_generic.html:257
-msgid "Operation Logs"
-msgstr "操作日志"
+#: ghostwriter/oplog/templates/oplog/oplog_import.html:18
+msgid "Upload Operation Log Entries CSV"
+msgstr "上传操作日志条目 CSV"
+
+#: ghostwriter/oplog/templates/oplog/oplog_import.html:19
+msgid ""
+"Select a target log and upload a csv file containing log entries to be "
+"imported:"
+msgstr "请选择目标日志并上传一个包含待导入日志条目的 CSV 文件："
+
+#: ghostwriter/oplog/templates/oplog/oplog_import.html:20
+#, python-format
+msgid "You came from <em>%(name)s (ID #%(id)s)</em>"
+msgstr "你从 <em>%(name)s (ID #%(id)s)</em> 跳转过来"
+
+#: ghostwriter/oplog/templates/oplog/oplog_import.html:27
+msgid "-- Select a Target Log --"
+msgstr "-- 选择目标日志 --"
+
+#: ghostwriter/oplog/templates/oplog/oplog_import.html:32
+msgid "-- No Logs Available --"
+msgstr "-- 暂无可用日志 --"
+
+#: ghostwriter/oplog/templates/oplog/oplog_import.html:39
+msgid "Choose csv file..."
+msgstr "选择 CSV 文件..."
+
+#: ghostwriter/oplog/templates/oplog/oplog_import.html:44
+#: ghostwriter/reporting/templates/reporting/report_templates_list.html:31
+msgid "Upload"
+msgstr "上传"
+
+#: ghostwriter/oplog/templates/oplog/oplog_import.html:49
+msgid "Instructions"
+msgstr "使用说明"
+
+#: ghostwriter/oplog/templates/oplog/oplog_import.html:53
+msgid "CSV Headers"
+msgstr "CSV 表头"
+
+#: ghostwriter/oplog/templates/oplog/oplog_import.html:54
+msgid "Your csv file must have these headers:"
+msgstr "CSV 文件必须包含以下表头："
+
+#: ghostwriter/oplog/templates/oplog/oplog_import.html:59
+msgid ""
+"The <em>entry_identifer</em> field can be empty or a unique value for the "
+"log entry. If an existing log entry shares the same <em>entry_identifer</em> "
+"it will be updated with the imported values."
+msgstr ""
+"<em>entry_identifer</em> 字段可以为空，或为该日志条目设置唯一值。如果已有"
+"条目使用相同的 <em>entry_identifer</em>，将被导入的值覆盖更新。"
+
+#: ghostwriter/oplog/templates/oplog/oplog_import.html:60
+msgid ""
+"An <em>extra_fields</em> column can optionally be provided. It should "
+"contain a JSON object with field internal names for keys."
+msgstr ""
+"可选填 <em>extra_fields</em> 列。该列内容应为 JSON 对象，键名为字段的内部"
+"名称。"
+
+#: ghostwriter/oplog/templates/oplog/oplog_import.html:66
+msgid "Notes on Timestamps"
+msgstr "关于时间戳的说明"
+
+#: ghostwriter/oplog/templates/oplog/oplog_import.html:67
+msgid ""
+"Your <em>start_date</em> and <em>end_date</em> values must be in the "
+"<em>YYYY-MM-DD HH:MM:SS</em> format. The timestamps should match what you "
+"get when exporting a log."
+msgstr ""
+"<em>start_date</em> 和 <em>end_date</em> 值必须采用 <em>YYYY-MM-DD HH:MM:SS</"
+"em> 格式，与导出日志时的时间戳格式一致。"
+
+#: ghostwriter/oplog/templates/oplog/oplog_import.html:68
+#, python-format
+msgid ""
+"Include a timezone offset at the end (e.g., <em>+00:00</em> for UTC). If you "
+"do not include an offset, the timestamps will use the server's timezone "
+"(%(tz)s)."
+msgstr ""
+"请在末尾附带时区偏移（例如 UTC 使用 <em>+00:00</em>）。若未提供偏移，将使用"
+"服务器时区 (%(tz)s)。"
+
+#: ghostwriter/oplog/templates/oplog/oplog_list.html:23
+msgid "Hey You!"
+msgstr "请注意！"
+
+#: ghostwriter/oplog/templates/oplog/oplog_list.html:31
+msgid "Create Log"
+msgstr "新建日志"
+
+#: ghostwriter/oplog/templates/oplog/oplog_list.html:32
+msgid "Import Log"
+msgstr "导入日志"
+
+#: ghostwriter/oplog/templates/oplog/oplog_list.html:39
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:485
+msgid "ID"
+msgstr "ID"
+
+#: ghostwriter/oplog/templates/oplog/oplog_list.html:40
+#: ghostwriter/reporting/templates/reporting/report_detail.html:321
+#: ghostwriter/reporting/templates/reporting/report_templates_list.html:39
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:130
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:184
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:226
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:331
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:486
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:803
+#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:18
+#: ghostwriter/shepherd/templates/shepherd/server_list.html:38
+#: ghostwriter/templates/mfa/webauthn/edit_form.html:34
+msgid "Name"
+msgstr "名称"
+
+#: ghostwriter/oplog/templates/oplog/oplog_list.html:41
+#: ghostwriter/reporting/templates/reporting/archives.html:32
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:299
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:341
+#: ghostwriter/rolodex/templates/rolodex/project_list.html:39
+#: ghostwriter/shepherd/templates/shepherd/checkouts_for_user.html:26
+#: ghostwriter/shepherd/templates/shepherd/checkouts_for_user.html:78
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:280
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:137
+msgid "Project"
+msgstr "项目"
+
+#: ghostwriter/oplog/templates/oplog/oplog_list.html:46
+msgid ""
+"Notification status determines if Ghostwriter will send notifications for "
+"the log when the \"Review Active Logs\" task is run."
+msgstr ""
+"通知状态决定 Ghostwriter 在运行“审查活动日志”任务时是否为该日志发送通知。"
+
+#: ghostwriter/oplog/templates/oplog/oplog_list.html:50
+msgid "Export"
+msgstr "导出"
+
+#: ghostwriter/oplog/templates/oplog/oplog_list.html:60
+msgid "Silenced"
+msgstr "已静音"
+
+#: ghostwriter/oplog/templates/oplog/oplog_list.html:62
+#: ghostwriter/rolodex/filters.py:203
+#: ghostwriter/rolodex/templates/snippets/project_objective_subtasks.html:54
+msgid "Active"
+msgstr "进行中"
+
+#: ghostwriter/oplog/templates/oplog/oplog_list.html:70
+msgid "There are no logs to see here yet. Start or import a log up above."
+msgstr "暂无日志。请在上方新建或导入一份日志。"
 
 #: ghostwriter/oplog/templates/oplog/oplogentry_form.html:5
 msgid "Operation Log Entry"
@@ -734,13 +1195,6 @@ msgstr "以下报告已关闭并归档，可在下方下载。"
 msgid "Client"
 msgstr "客户"
 
-#: ghostwriter/reporting/templates/reporting/archives.html:32
-#: ghostwriter/rolodex/templates/rolodex/client_detail.html:299
-#: ghostwriter/rolodex/templates/rolodex/client_detail.html:341
-#: ghostwriter/rolodex/templates/rolodex/project_list.html:39
-msgid "Project"
-msgstr "项目"
-
 #: ghostwriter/reporting/templates/reporting/archives.html:33
 msgid "Zip Archive"
 msgstr "ZIP 归档"
@@ -768,6 +1222,12 @@ msgstr "证据"
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:31
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:1201
 #: ghostwriter/rolodex/templates/rolodex/project_form.html:22
+#: ghostwriter/shepherd/templates/shepherd/checkouts_for_user.html:54
+#: ghostwriter/shepherd/templates/shepherd/checkouts_for_user.html:103
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:30
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:41
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:369
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:228
 #: ghostwriter/templates/mfa/webauthn/authenticator_list.html:45
 msgid "Edit"
 msgstr "编辑"
@@ -786,6 +1246,10 @@ msgstr "编辑"
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:32
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:1090
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:1206
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:44
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:374
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:35
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:233
 #: ghostwriter/templates/confirm_delete.html:4
 #: ghostwriter/templates/confirm_delete.html:18
 #: ghostwriter/templates/confirm_delete_modal.html:13
@@ -981,6 +1445,8 @@ msgstr "发现项指引"
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:1160
 #: ghostwriter/rolodex/templates/snippets/client_nav_tabs.html:32
 #: ghostwriter/rolodex/templates/snippets/project_nav_tabs.html:69
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:335
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:194
 #: ghostwriter/shepherd/templates/snippets/domain_nav_tabs.html:34
 #: ghostwriter/shepherd/templates/snippets/server_nav_tabs.html:17
 msgid "Extra Fields"
@@ -995,12 +1461,16 @@ msgstr "备注"
 
 #: ghostwriter/reporting/templates/reporting/finding_detail.html:230
 #: ghostwriter/rolodex/templates/rolodex/client_detail.html:407
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:348
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:207
 msgid "Add a Note"
 msgstr "添加备注"
 
 #: ghostwriter/reporting/templates/reporting/finding_detail.html:244
 #: ghostwriter/rolodex/templates/rolodex/client_detail.html:420
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:1193
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:361
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:220
 msgid "Deleted"
 msgstr "已删除"
 
@@ -1009,6 +1479,7 @@ msgid "No notes for this finding."
 msgstr "该发现项暂无备注。"
 
 #: ghostwriter/reporting/templates/reporting/finding_detail.html:299
+#: ghostwriter/reporting/templates/reporting/finding_list.html:254
 #: ghostwriter/reporting/templates/reporting/report_detail.html:731
 #: ghostwriter/reporting/templates/reporting/report_detail.html:871
 msgid "Finding Assigned"
@@ -1035,14 +1506,6 @@ msgstr "以下结果同时包含库中的发现项和已附加到报告的发现
 #: ghostwriter/reporting/templates/reporting/finding_list.html:33
 msgid "Create Finding"
 msgstr "创建发现项"
-
-#: ghostwriter/reporting/templates/reporting/finding_list.html:35
-#: ghostwriter/reporting/templates/reporting/report_list.html:23
-#: ghostwriter/reporting/templates/reporting/report_templates_list.html:32
-#: ghostwriter/rolodex/templates/rolodex/client_list.html:26
-#: ghostwriter/rolodex/templates/rolodex/project_list.html:26
-msgid "Reset Sort"
-msgstr "重置排序"
 
 #: ghostwriter/reporting/templates/reporting/finding_list.html:38
 msgid ""
@@ -1076,6 +1539,8 @@ msgstr "CVSS 向量"
 
 #: ghostwriter/reporting/templates/reporting/finding_list.html:58
 #: ghostwriter/reporting/templates/reporting/observation_list.html:40
+#: ghostwriter/shepherd/templates/shepherd/domain_list.html:52
+#: ghostwriter/shepherd/templates/shepherd/server_list.html:41
 msgid "Tags"
 msgstr "标签"
 
@@ -1097,6 +1562,12 @@ msgstr "标签"
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:714
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:808
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:928
+#: ghostwriter/shepherd/templates/shepherd/checkouts_for_user.html:29
+#: ghostwriter/shepherd/templates/shepherd/checkouts_for_user.html:82
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:284
+#: ghostwriter/shepherd/templates/shepherd/domain_list.html:53
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:142
+#: ghostwriter/shepherd/templates/shepherd/server_list.html:42
 msgid "Options"
 msgstr "操作"
 
@@ -1108,6 +1579,9 @@ msgstr "操作"
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:852
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:887
 #: ghostwriter/rolodex/templates/rolodex/project_list.html:58
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:316
+#: ghostwriter/shepherd/templates/shepherd/domain_list.html:107
+#: ghostwriter/shepherd/templates/shepherd/server_list.html:69
 msgid "View additional information"
 msgstr "查看更多信息"
 
@@ -1137,6 +1611,7 @@ msgid "Return to Observations"
 msgstr "返回观察项"
 
 #: ghostwriter/reporting/templates/reporting/observation_detail.html:127
+#: ghostwriter/reporting/templates/reporting/observation_list.html:127
 #: ghostwriter/reporting/templates/reporting/report_detail.html:786
 #: ghostwriter/reporting/templates/reporting/report_detail.html:844
 msgid "Observation Assigned"
@@ -1189,10 +1664,6 @@ msgstr "激活"
 #: ghostwriter/reporting/templates/reporting/report_detail.html:38
 msgid "Clone"
 msgstr "克隆"
-
-#: ghostwriter/reporting/templates/reporting/report_detail.html:39
-msgid "Jump to Project"
-msgstr "跳转到项目"
 
 #: ghostwriter/reporting/templates/reporting/report_detail.html:40
 msgid "Jump to Client"
@@ -1358,23 +1829,6 @@ msgstr "在此上传证据，可供所有发现项和报告章节引用。"
 msgid "Upload evidence, attaching to a report"
 msgstr "上传证据并关联至报告"
 
-#: ghostwriter/reporting/templates/reporting/report_detail.html:315
-msgid "Upload Evidence"
-msgstr "上传证据"
-
-#: ghostwriter/reporting/templates/reporting/report_detail.html:321
-#: ghostwriter/reporting/templates/reporting/report_templates_list.html:39
-#: ghostwriter/rolodex/templates/rolodex/client_detail.html:130
-#: ghostwriter/rolodex/templates/rolodex/client_detail.html:184
-#: ghostwriter/rolodex/templates/rolodex/project_detail.html:226
-#: ghostwriter/rolodex/templates/rolodex/project_detail.html:331
-#: ghostwriter/rolodex/templates/rolodex/project_detail.html:486
-#: ghostwriter/rolodex/templates/rolodex/project_detail.html:803
-#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:18
-#: ghostwriter/templates/mfa/webauthn/edit_form.html:34
-msgid "Name"
-msgstr "名称"
-
 #: ghostwriter/reporting/templates/reporting/report_detail.html:322
 msgid "Filename"
 msgstr "文件名"
@@ -1446,6 +1900,7 @@ msgid "Error downloading evidence file:"
 msgstr "下载证据文件失败："
 
 #: ghostwriter/reporting/templates/reporting/report_detail.html:905
+#: ghostwriter/reporting/templates/reporting/report_templates_list.html:169
 msgid "Download started..."
 msgstr "下载已开始..."
 
@@ -1522,6 +1977,10 @@ msgstr "更新时间"
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:568
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:629
 #: ghostwriter/rolodex/templates/snippets/project_objectives.html:23
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:93
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:212
+#: ghostwriter/shepherd/templates/shepherd/domain_list.html:45
+#: ghostwriter/shepherd/templates/shepherd/server_list.html:39
 msgid "Status"
 msgstr "状态"
 
@@ -1585,15 +2044,6 @@ msgstr "报告模板详情"
 msgid "Report Templates"
 msgstr "报告模板"
 
-#: ghostwriter/reporting/templates/reporting/report_template_detail.html:26
-#: ghostwriter/reporting/templates/snippets/evidence_detail_modal.html:83
-#: ghostwriter/reporting/templates/snippets/evidence_lightbox_modal.html:24
-#: ghostwriter/templates/mfa/backup_tokens.html:52
-#: ghostwriter/templates/mfa/index.html:111
-#: ghostwriter/templates/mfa/recovery_codes/index.html:52
-msgid "Download"
-msgstr "下载"
-
 #: ghostwriter/reporting/templates/reporting/report_template_detail.html:27
 msgid "Lint"
 msgstr "Lint 检查"
@@ -1628,6 +2078,7 @@ msgstr "未知"
 
 #: ghostwriter/reporting/templates/reporting/report_template_detail.html:72
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:569
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:215
 msgid "Last Update"
 msgstr "最近更新"
 
@@ -1736,10 +2187,6 @@ msgid ""
 "templates."
 msgstr "<strong>注意：</strong>仅管理员和经理可编辑受保护的报告模板。"
 
-#: ghostwriter/reporting/templates/reporting/report_templates_list.html:31
-msgid "Upload"
-msgstr "上传"
-
 #: ghostwriter/reporting/templates/reporting/report_templates_list.html:38
 msgid "Doc Type"
 msgstr "文档类型"
@@ -1765,6 +2212,14 @@ msgstr "下载模板"
 #: ghostwriter/reporting/templates/reporting/report_templates_list.html:102
 msgid "This template is protected and cannot be edited or deleted"
 msgstr "该模板受保护，禁止编辑和删除"
+
+#: ghostwriter/reporting/templates/reporting/report_templates_list.html:150
+msgid "Template file not found. The file may have been deleted or moved."
+msgstr "未找到模板文件。该文件可能已被删除或移动。"
+
+#: ghostwriter/reporting/templates/reporting/report_templates_list.html:153
+msgid "Error downloading template:"
+msgstr "下载模板失败："
 
 #: ghostwriter/reporting/templates/reporting/report_update_extra_field.html:5
 msgid "Report Form"
@@ -1802,38 +2257,6 @@ msgstr "环境"
 #: ghostwriter/reporting/templates/snippets/cvss_ui.html:52
 msgid "Switch to v3"
 msgstr "切换到 v3"
-
-#: ghostwriter/reporting/templates/snippets/evidence_detail_modal.html:11
-#: ghostwriter/reporting/templates/snippets/evidence_detail_modal.html:80
-#: ghostwriter/reporting/templates/snippets/evidence_lightbox_modal.html:13
-#: ghostwriter/reporting/templates/snippets/finding_detail_modal.html:8
-#: ghostwriter/reporting/templates/snippets/finding_detail_modal.html:31
-#: ghostwriter/reporting/templates/snippets/observation_detail_modal.html:8
-#: ghostwriter/reporting/templates/snippets/observation_detail_modal.html:24
-#: ghostwriter/reporting/templates/snippets/template_detail_modal.html:8
-#: ghostwriter/reporting/templates/snippets/template_detail_modal.html:88
-#: ghostwriter/rolodex/templates/rolodex/project_detail.html:2141
-#: ghostwriter/rolodex/templates/rolodex/project_detail.html:2194
-#: ghostwriter/rolodex/templates/snippets/domain_checkout_detail_modal.html:8
-#: ghostwriter/rolodex/templates/snippets/domain_checkout_detail_modal.html:21
-#: ghostwriter/rolodex/templates/snippets/project_detail_modal.html:8
-#: ghostwriter/rolodex/templates/snippets/project_detail_modal.html:43
-#: ghostwriter/rolodex/templates/snippets/project_history_detail_modal.html:8
-#: ghostwriter/rolodex/templates/snippets/project_history_detail_modal.html:41
-#: ghostwriter/rolodex/templates/snippets/server_checkout_detail_modal.html:8
-#: ghostwriter/rolodex/templates/snippets/server_checkout_detail_modal.html:21
-#: ghostwriter/rolodex/templates/snippets/vps_detail_modal.html:8
-#: ghostwriter/rolodex/templates/snippets/vps_detail_modal.html:21
-#: ghostwriter/shepherd/templates/snippets/client_contact_detail_modal.html:8
-#: ghostwriter/shepherd/templates/snippets/client_contact_detail_modal.html:30
-#: ghostwriter/shepherd/templates/snippets/domain_detail_modal.html:8
-#: ghostwriter/shepherd/templates/snippets/domain_detail_modal.html:40
-#: ghostwriter/shepherd/templates/snippets/domain_history_detail_modal.html:8
-#: ghostwriter/shepherd/templates/snippets/domain_history_detail_modal.html:22
-#: ghostwriter/shepherd/templates/snippets/server_detail_modal.html:8
-#: ghostwriter/shepherd/templates/snippets/server_detail_modal.html:33
-msgid "Close"
-msgstr "关闭"
 
 #: ghostwriter/reporting/templates/snippets/evidence_detail_modal.html:28
 #: ghostwriter/reporting/templates/snippets/evidence_display.html:17
@@ -2176,11 +2599,6 @@ msgstr "相对开始日期"
 msgid "-- Relative Start Date --"
 msgstr "-- 相对开始日期 --"
 
-#: ghostwriter/rolodex/filters.py:203
-#: ghostwriter/rolodex/templates/snippets/project_objective_subtasks.html:54
-msgid "Active"
-msgstr "进行中"
-
 #: ghostwriter/rolodex/filters.py:213
 #: ghostwriter/rolodex/templates/rolodex/client_detail.html:241
 #: ghostwriter/rolodex/templates/rolodex/project_list.html:40
@@ -2432,6 +2850,7 @@ msgstr "备注"
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:842
 #: ghostwriter/rolodex/templates/snippets/project_detail_modal.html:31
 #: ghostwriter/rolodex/templates/snippets/project_history_detail_modal.html:30
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:164
 #, python-format
 msgid "Missing Full Name (%(username)s)"
 msgstr "未填写全名 (%(username)s)"
@@ -2465,6 +2884,7 @@ msgstr "添加并编辑联系人"
 #: ghostwriter/rolodex/templates/rolodex/client_detail.html:192
 #: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:17
 #: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:26
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:102
 #: ghostwriter/templates/account/email.html:29
 msgid "Primary"
 msgstr "主要"
@@ -2506,6 +2926,8 @@ msgstr ""
 
 #: ghostwriter/rolodex/templates/rolodex/client_detail.html:242
 #: ghostwriter/rolodex/templates/rolodex/project_list.html:41
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:282
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:140
 msgid "Execution Window"
 msgstr "执行窗口"
 
@@ -2513,6 +2935,8 @@ msgstr "执行窗口"
 #: ghostwriter/rolodex/templates/rolodex/client_detail.html:313
 #: ghostwriter/rolodex/templates/rolodex/client_detail.html:355
 #: ghostwriter/rolodex/templates/rolodex/client_detail.html:373
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:294
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:152
 msgid "REDACTED"
 msgstr "已隐去"
 
@@ -2544,11 +2968,15 @@ msgstr ""
 
 #: ghostwriter/rolodex/templates/rolodex/client_detail.html:300
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:924
+#: ghostwriter/shepherd/templates/shepherd/checkouts_for_user.html:24
+#: ghostwriter/shepherd/templates/shepherd/domain_list.html:44
 msgid "Domain"
 msgstr "域名"
 
 #: ghostwriter/rolodex/templates/rolodex/client_detail.html:301
 #: ghostwriter/rolodex/templates/rolodex/client_detail.html:343
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:281
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:138
 msgid "Activity Type"
 msgstr "活动类型"
 
@@ -2556,6 +2984,8 @@ msgstr "活动类型"
 #: ghostwriter/rolodex/templates/rolodex/client_detail.html:345
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:713
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:807
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:283
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:141
 msgid "Checked Out By"
 msgstr "签出人"
 
@@ -2732,6 +3162,7 @@ msgstr "执行人"
 
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:163
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:805
+#: ghostwriter/shepherd/templates/shepherd/checkouts_for_user.html:80
 #: ghostwriter/users/templates/users/profile.html:86
 msgid "Role"
 msgstr "角色"
@@ -2895,10 +3326,6 @@ msgstr "或"
 msgid "Import Oplog"
 msgstr "导入操作日志"
 
-#: ghostwriter/rolodex/templates/rolodex/project_detail.html:485
-msgid "ID"
-msgstr "ID"
-
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:487
 msgid "Last Activity"
 msgstr "最近活动"
@@ -2927,15 +3354,13 @@ msgstr "生成项目文档"
 msgid ""
 "Generate JSON with project data or select a template to generate a project "
 "document (e.g., SOW, ROE)."
-msgstr ""
-"生成包含项目数据的 JSON，或选择模板生成项目文档（例如 SOW、ROE）。"
+msgstr "生成包含项目数据的 JSON，或选择模板生成项目文档（例如 SOW、ROE）。"
 
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:532
 msgid ""
 "No report data is available to these templates, so only the Word templates "
 "that are marked as project templates will be available."
-msgstr ""
-"这些模板无法访问报告数据，因此仅会显示标记为项目模板的 Word 模板。"
+msgstr "这些模板无法访问报告数据，因此仅会显示标记为项目模板的 Word 模板。"
 
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:553
 msgid "Project Reports & Findings"
@@ -3001,8 +3426,17 @@ msgid ""
 "they are created for the project.<br/>Associate your domains and subdomains "
 "with servers by creating connections."
 msgstr ""
-"已签出的域名和服务器会显示在这里。在为项目创建云服务器时也可在此添加。<br/>"
-"通过创建连接将域名和子域名与服务器关联起来。"
+"已签出的域名和服务器会显示在这里。在为项目创建云服务器时也可在此添加。<br/>通"
+"过创建连接将域名和子域名与服务器关联起来。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:688
+#: ghostwriter/shepherd/templates/shepherd/checkout.html:11
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:12
+#: ghostwriter/shepherd/templates/shepherd/domain_form.html:11
+#: ghostwriter/shepherd/templates/shepherd/domain_list.html:12
+#: ghostwriter/templates/base_generic.html:315
+msgid "Domains"
+msgstr "域名"
 
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:700
 msgid "Search domains by name or category..."
@@ -3014,6 +3448,8 @@ msgstr "域名名称"
 
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:711
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:804
+#: ghostwriter/shepherd/templates/shepherd/checkouts_for_user.html:27
+#: ghostwriter/shepherd/templates/shepherd/checkouts_for_user.html:79
 msgid "Purpose"
 msgstr "用途"
 
@@ -3028,6 +3464,8 @@ msgstr "复制 %(name)s"
 
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:736
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:845
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:308
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:167
 msgid "Unknown/Deleted user"
 msgstr "未知/已删除用户"
 
@@ -3047,6 +3485,15 @@ msgstr "删除该域名签出"
 msgid "There are no domains tied to this project yet."
 msgstr "该项目尚未关联任何域名。"
 
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:768
+#: ghostwriter/shepherd/templates/shepherd/server_checkout.html:11
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:12
+#: ghostwriter/shepherd/templates/shepherd/server_form.html:11
+#: ghostwriter/shepherd/templates/shepherd/server_list.html:14
+#: ghostwriter/templates/base_generic.html:299
+msgid "Servers"
+msgstr "服务器"
+
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:780
 msgid "Search servers by hostname or IP..."
 msgstr "按主机名或 IP 搜索服务器..."
@@ -3065,14 +3512,15 @@ msgid ""
 "to determine which IP address is used globally to refer to the server.<br/"
 ">Only <em>static servers</em> will be links."
 msgstr ""
-"主 IP 地址在数据库中设置，仅用于让用户判断在全局范围内使用哪个 IP 来引用该"
-"服务器。<br/>仅 <em>静态服务器</em> 会显示为链接。"
+"主 IP 地址在数据库中设置，仅用于让用户判断在全局范围内使用哪个 IP 来引用该服"
+"务器。<br/>仅 <em>静态服务器</em> 会显示为链接。"
 
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:802
 msgid "Other Addresses"
 msgstr "其他地址"
 
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:806
+#: ghostwriter/shepherd/templates/shepherd/server_list.html:40
 msgid "Provider"
 msgstr "供应商"
 
@@ -3237,6 +3685,7 @@ msgid "Using Shared Global Configuration: <em>%(url)s</em>"
 msgstr "使用共享的全局配置：<em>%(url)s</em>"
 
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:1113
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:106
 #: ghostwriter/users/templates/users/profile.html:61
 msgid "Unavailable"
 msgstr "暂无"
@@ -3247,8 +3696,8 @@ msgid ""
 "results. Refreshing data here updates the shared cache used by other "
 "projects that rely on the same fallback."
 msgstr ""
-"该项目使用共享的全局 BloodHound 配置和缓存结果。在此刷新数据将更新所有依赖"
-"该备用配置的项目共用的缓存。"
+"该项目使用共享的全局 BloodHound 配置和缓存结果。在此刷新数据将更新所有依赖该"
+"备用配置的项目共用的缓存。"
 
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:1126
 msgid "Fetch or refresh the data from BloodHound"
@@ -3367,8 +3816,7 @@ msgstr "相关日志条目"
 msgid ""
 "Log entries from the hour prior to the alert timestamp, sorted from most "
 "recent to oldest."
-msgstr ""
-"告警时间戳前一小时内的日志条目，按从新到旧排序。"
+msgstr "告警时间戳前一小时内的日志条目，按从新到旧排序。"
 
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:2168
 msgid "Destination"
@@ -3436,10 +3884,11 @@ msgid ""
 "your search returned no results. Create a project above or adjust your "
 "filters."
 msgstr ""
-"暂无项目，可能是没有访问权限，或搜索未返回结果。请在上方新建项目或调整筛选"
-"条件。"
+"暂无项目，可能是没有访问权限，或搜索未返回结果。请在上方新建项目或调整筛选条"
+"件。"
 
 #: ghostwriter/rolodex/templates/rolodex/project_list.html:42
+#: ghostwriter/shepherd/templates/shepherd/domain_list.html:51
 msgid "Details"
 msgstr "详情"
 
@@ -3822,6 +4271,25 @@ msgstr "签出域名"
 msgid "Checkout"
 msgstr "签出"
 
+#: ghostwriter/shepherd/templates/shepherd/checkout.html:20
+#, python-format
+msgid "Complete this form and then click Save to checkout %(name)s:"
+msgstr "请完成此表单，然后点击保存以签出 %(name)s："
+
+#: ghostwriter/shepherd/templates/shepherd/checkout.html:44
+msgid "Domain is flagged as Burned!"
+msgstr "该域名已被标记为已烧毁！"
+
+#: ghostwriter/shepherd/templates/shepherd/checkout.html:52
+msgid "Domain expires within the next 30 days and will not auto-renew."
+msgstr "该域名将在 30 天内过期，且不会自动续费。"
+
+#: ghostwriter/shepherd/templates/shepherd/checkout.html:62
+msgid ""
+"Domain expires within the next 30 days so you should validate (auto)renewal "
+"status before use."
+msgstr "该域名将在 30 天内过期，使用前请确认（自动）续费状态。"
+
 #: ghostwriter/shepherd/templates/shepherd/checkouts_for_user.html:4
 msgid "Your Checked-out Assets"
 msgstr "您签出的资产"
@@ -3830,22 +4298,357 @@ msgstr "您签出的资产"
 msgid "User Infra"
 msgstr "用户资产"
 
+#: ghostwriter/shepherd/templates/shepherd/checkouts_for_user.html:17
+msgid "Your Active Domains"
+msgstr "你正在签出的域名"
+
+#: ghostwriter/shepherd/templates/shepherd/checkouts_for_user.html:19
+#, python-format
+msgid "The following domains are currently checked-out for %(username)s:"
+msgstr "以下域名当前由 %(username)s 签出："
+
+#: ghostwriter/shepherd/templates/shepherd/checkouts_for_user.html:25
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:213
+#: ghostwriter/shepherd/templates/snippets/domain_nav_tabs.html:21
+msgid "Health"
+msgstr "健康度"
+
+#: ghostwriter/shepherd/templates/shepherd/checkouts_for_user.html:28
+#: ghostwriter/shepherd/templates/shepherd/checkouts_for_user.html:81
+msgid "Check-in"
+msgstr "归还日期"
+
+#: ghostwriter/shepherd/templates/shepherd/checkouts_for_user.html:55
+#: ghostwriter/shepherd/templates/shepherd/checkouts_for_user.html:104
+msgid "Release"
+msgstr "释放"
+
+#: ghostwriter/shepherd/templates/shepherd/checkouts_for_user.html:66
+msgid "There are no domains currently checked-out for your account."
+msgstr "你的账户当前没有签出任何域名。"
+
+#: ghostwriter/shepherd/templates/shepherd/checkouts_for_user.html:70
+msgid "Your Active Servers"
+msgstr "你正在签出的服务器"
+
+#: ghostwriter/shepherd/templates/shepherd/checkouts_for_user.html:72
+#, python-format
+msgid "The following servers are currently checked-out for %(username)s:"
+msgstr "以下服务器当前由 %(username)s 签出："
+
+#: ghostwriter/shepherd/templates/shepherd/checkouts_for_user.html:77
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:101
+#: ghostwriter/shepherd/templates/shepherd/server_list.html:37
+msgid "IP Address"
+msgstr "IP 地址"
+
+#: ghostwriter/shepherd/templates/shepherd/checkouts_for_user.html:115
+msgid "There are no servers currently checked-out for your account."
+msgstr "你的账户当前没有签出任何服务器。"
+
+#: ghostwriter/shepherd/templates/shepherd/checkouts_for_user.html:180
+msgid "Asset Update"
+msgstr "资产更新"
+
 #: ghostwriter/shepherd/templates/shepherd/connect_form.html:5
 msgid "Domain + Server Connection"
 msgstr "域名与服务器连接"
+
+#: ghostwriter/shepherd/templates/shepherd/connect_form.html:8
+msgid ""
+"This will create an association between the domain and a server for your "
+"project."
+msgstr "此操作将为该项目创建域名与服务器的关联。"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:32
+msgid "Checkout Domain"
+msgstr "签出域名"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:34
+msgid "Domain Unavailable"
+msgstr "域名不可用"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:37
+msgid "Mark Burned"
+msgstr "标记为已烧毁"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:71
+msgid "Domain Details"
+msgstr "域名详情"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:76
+msgid ""
+"This domain is <strong>Expired</strong>, so it cannot be checked out, and "
+"the data is now read-only. Managers and admins can edit this domain to "
+"update the expiration date."
+msgstr ""
+"该域名已 <strong>过期</strong>，无法签出，数据为只读状态。经理和管理员可以"
+"编辑该域名以更新到期日期。"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:88
+msgid "There is no additional information provided for this domain."
+msgstr "该域名暂无更多信息。"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:94
+#: ghostwriter/shepherd/templates/shepherd/domain_list.html:50
+msgid "Registrar"
+msgstr "注册商"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:95
+#: ghostwriter/shepherd/templates/shepherd/domain_list.html:46
+msgid "Purchase Date"
+msgstr "购买日期"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:96
+#: ghostwriter/shepherd/templates/shepherd/domain_list.html:47
+msgid "Expiration Date"
+msgstr "到期日期"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:97
+msgid "Auto Renew Status"
+msgstr "自动续费状态"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:98
+msgid "Domain Age (Days)"
+msgstr "域名年龄（天）"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:133
+msgid "Refresh DNS Records"
+msgstr "刷新 DNS 记录"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:139
+msgid ""
+"Domain is configured to reset DNS records after use (if possible with the "
+"registrar)."
+msgstr "该域名已配置为使用后重置 DNS 记录（如果注册商支持）。"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:143
+msgid ""
+"Domain is NOT configured to reset DNS records after use, so operators should "
+"manually clean-up records."
+msgstr "该域名未配置为使用后重置 DNS 记录，操作者需要手动清理记录。"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:150
+msgid "Record"
+msgstr "记录"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:151
+msgid "Value"
+msgstr "值"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:168
+msgid "Record Dictionary"
+msgstr "记录字典"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:174
+msgid ""
+"No DNS records have been found for this domain. Refresh DNS records to "
+"populate this area."
+msgstr "未找到该域名的 DNS 记录。请刷新 DNS 记录以填充此区域。"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:180
+msgid "Domain Health"
+msgstr "域名健康度"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:188
+msgid "Refresh Categorization"
+msgstr "刷新分类"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:191
+msgid ""
+"VirusTotal integration is disabled or the domain is expired; categorization "
+"cannot be refreshed."
+msgstr "VirusTotal 集成未启用或域名已过期，无法刷新分类。"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:195
+msgid ""
+"The health of a domain changes if a third-party labels the domain with an "
+"undesirable category or the domain has positive detections in VirusTotal."
+msgstr ""
+"如果第三方将域名标记为不良分类，或在 VirusTotal 中存在阳性检测结果，域名的"
+"健康度会发生变化。"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:206
+#, python-format
+msgid ""
+"This domain has been flagged as <em>Burned</em> with no explanation. <a "
+"class=\"clickable\" href=\"%(burn_url)s\">Click here</a> to provide one."
+msgstr ""
+"该域名已被标记为 <em>已烧毁</em>，但未提供原因。<a class=\"clickable\" "
+"href=\"%(burn_url)s\">点击此处</a>补充说明。"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:214
+msgid "Whois Privacy"
+msgstr "Whois 隐私"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:240
+msgid "No Record"
+msgstr "无记录"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:247
+msgid "The following third-parties have categorized this domain:"
+msgstr "以下第三方对该域名做出了分类："
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:250
+msgid "Categorizer"
+msgstr "分类来源"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:251
+msgid "Category"
+msgstr "分类"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:263
+msgid "Refresh categories to poll VirusTotal"
+msgstr "刷新分类以查询 VirusTotal"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:271
+msgid "Domain History"
+msgstr "域名历史"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:274
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:131
+msgid ""
+"If you do not have access to the related client or project, the history "
+"entry will be partially redacted."
+msgstr "如果你没有相应客户或项目的访问权限，历史记录将被部分隐去。"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:328
+msgid "This domain has no history."
+msgstr "该域名暂无历史记录。"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:344
+msgid "Domain Notes"
+msgstr "域名备注"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:379
+msgid "There are no notes for this domain."
+msgstr "该域名暂无备注。"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_detail.html:433
+msgid "Domain Update"
+msgstr "域名更新"
 
 #: ghostwriter/shepherd/templates/shepherd/domain_form.html:5
 #: ghostwriter/shepherd/templates/shepherd/domain_form.html:12
 msgid "Domain Form"
 msgstr "域名表单"
 
+#: ghostwriter/shepherd/templates/shepherd/domain_form.html:19
+msgid ""
+"Fill-out this form as completely as possible with information related to "
+"this domain:"
+msgstr "请尽量完整地填写与该域名相关的信息："
+
 #: ghostwriter/shepherd/templates/shepherd/domain_list.html:6
 msgid "Domain Catalog"
 msgstr "域名目录"
 
+#: ghostwriter/shepherd/templates/shepherd/domain_list.html:31
+msgid ""
+"There are no domains to see here yet, or your search returned no results. "
+"Create a domain above or adjust your filters."
+msgstr "暂无域名，或搜索未返回结果。请在上方新建域名或调整筛选条件。"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_list.html:48
+msgid "Age (Days)"
+msgstr "年龄（天）"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_list.html:49
+msgid "Expiry"
+msgstr "到期"
+
+#: ghostwriter/shepherd/templates/shepherd/domain_list.html:64
+msgid "Checked Out"
+msgstr "已签出"
+
 #: ghostwriter/shepherd/templates/shepherd/server_checkout.html:5
 msgid "Server Check-out"
 msgstr "签出服务器"
+
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:28
+msgid "Edit Details"
+msgstr "编辑详情"
+
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:29
+msgid "Add Aux IP Address"
+msgstr "添加备用 IP 地址"
+
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:31
+msgid "Checkout Server"
+msgstr "签出服务器"
+
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:33
+msgid "Server Unavailable"
+msgstr "服务器不可用"
+
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:57
+msgid "Server Details"
+msgstr "服务器详情"
+
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:64
+#: ghostwriter/shepherd/templates/shepherd/server_list.html:51
+msgid "No Hostname"
+msgstr "无主机名"
+
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:68
+msgid "Hosting Provider"
+msgstr "托管服务商"
+
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:72
+msgid "Current Status"
+msgstr "当前状态"
+
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:78
+msgid "Additional Info"
+msgstr "更多信息"
+
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:80
+msgid "Show More"
+msgstr "显示更多"
+
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:90
+msgid "There are no additional information provided for this server."
+msgstr "该服务器暂无更多信息。"
+
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:107
+msgid "Assigned to Server"
+msgstr "已分配到该服务器"
+
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:115
+msgid "Yes"
+msgstr "是"
+
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:117
+msgid "No"
+msgstr "否"
+
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:128
+msgid "Server History"
+msgstr "服务器历史"
+
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:139
+msgid "Server Role"
+msgstr "服务器角色"
+
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:174
+msgid "Edit this history entry"
+msgstr "编辑该历史记录"
+
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:177
+msgid "Delete this history entry"
+msgstr "删除该历史记录"
+
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:186
+msgid "This server has no history."
+msgstr "该服务器暂无历史记录。"
+
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:203
+msgid "Server Notes"
+msgstr "服务器备注"
+
+#: ghostwriter/shepherd/templates/shepherd/server_detail.html:238
+msgid "There are no notes for this server."
+msgstr "该服务器暂无备注。"
 
 #: ghostwriter/shepherd/templates/shepherd/server_form.html:5
 msgid "Server Entry"
@@ -3855,9 +4658,36 @@ msgstr "服务器条目"
 msgid "Server Form"
 msgstr "服务器表单"
 
+#: ghostwriter/shepherd/templates/shepherd/server_form.html:18
+msgid ""
+"Fill-out this form as completely as possible with information related to "
+"this server."
+msgstr "请尽量完整地填写与该服务器相关的信息。"
+
+#: ghostwriter/shepherd/templates/shepherd/server_form.html:19
+msgid ""
+"Servers created/edited through this form should be servers that are "
+"<em>reused</em> and tracked (i.e. servers you own). Virtual private servers "
+"spun up for a single project are tracked from within the project with the "
+"<em>Add a Transient Server</em> button."
+msgstr ""
+"通过此表单创建/编辑的服务器应当是 <em>可复用</em> 且被持续跟踪的服务器（例"
+"如你自己拥有的服务器）。仅为某个项目临时启用的虚拟专用服务器请在该项目内通"
+"过 <em>添加临时服务器</em> 按钮维护。"
+
 #: ghostwriter/shepherd/templates/shepherd/server_list.html:8
 msgid "Static Server Catalog"
 msgstr "静态服务器目录"
+
+#: ghostwriter/shepherd/templates/shepherd/server_list.html:25
+msgid "Create Server"
+msgstr "新建服务器"
+
+#: ghostwriter/shepherd/templates/shepherd/server_list.html:29
+msgid ""
+"There are no servers to see here yet, or your search returned no results. "
+"Create a server above or adjust your filters."
+msgstr "暂无服务器，或搜索未返回结果。请在上方新建服务器或调整筛选条件。"
 
 #: ghostwriter/shepherd/templates/shepherd/server_search.html:4
 msgid "All Server Search"
@@ -3868,12 +4698,97 @@ msgid "Server Search"
 msgstr "服务器搜索"
 
 #: ghostwriter/shepherd/templates/shepherd/update.html:6
+#: ghostwriter/shepherd/templates/shepherd/update.html:24
 msgid "Infrastructure Update Control Panel"
 msgstr "基础设施更新控制面板"
 
 #: ghostwriter/shepherd/templates/shepherd/update.html:12
 msgid "Control Panel"
 msgstr "控制面板"
+
+#: ghostwriter/shepherd/templates/shepherd/update.html:31
+msgid "A DNS record update for all domains was last requested on:"
+msgstr "上次请求所有域名 DNS 记录更新的时间："
+
+#: ghostwriter/shepherd/templates/shepherd/update.html:39
+#: ghostwriter/shepherd/templates/shepherd/update.html:50
+#: ghostwriter/shepherd/templates/shepherd/update.html:75
+#: ghostwriter/shepherd/templates/shepherd/update.html:86
+#: ghostwriter/shepherd/templates/shepherd/update.html:112
+#: ghostwriter/shepherd/templates/shepherd/update.html:123
+#: ghostwriter/shepherd/templates/shepherd/update.html:152
+#: ghostwriter/shepherd/templates/shepherd/update.html:163
+msgid "Request Status:"
+msgstr "请求状态："
+
+#: ghostwriter/shepherd/templates/shepherd/update.html:42
+#: ghostwriter/shepherd/templates/shepherd/update.html:78
+#: ghostwriter/shepherd/templates/shepherd/update.html:115
+#: ghostwriter/shepherd/templates/shepherd/update.html:155
+msgid "Error:"
+msgstr "错误："
+
+#: ghostwriter/shepherd/templates/shepherd/update.html:50
+#: ghostwriter/shepherd/templates/shepherd/update.html:86
+#: ghostwriter/shepherd/templates/shepherd/update.html:123
+#: ghostwriter/shepherd/templates/shepherd/update.html:163
+#, python-format
+msgid "Completed on %(completed)s in %(mins)s minutes"
+msgstr "于 %(completed)s 完成，用时 %(mins)s 分钟"
+
+#: ghostwriter/shepherd/templates/shepherd/update.html:58
+#: ghostwriter/shepherd/templates/shepherd/update.html:133
+msgid "Start Update"
+msgstr "开始更新"
+
+#: ghostwriter/shepherd/templates/shepherd/update.html:65
+msgid "Pull Domains from Namecheap"
+msgstr "从 Namecheap 拉取域名"
+
+#: ghostwriter/shepherd/templates/shepherd/update.html:68
+msgid "The domain library sync with Namecheap was last requested on:"
+msgstr "上次请求与 Namecheap 同步域名库的时间："
+
+#: ghostwriter/shepherd/templates/shepherd/update.html:94
+msgid "Pull from Namecheap"
+msgstr "从 Namecheap 拉取"
+
+#: ghostwriter/shepherd/templates/shepherd/update.html:102
+msgid "Domain Categories"
+msgstr "域名分类"
+
+#: ghostwriter/shepherd/templates/shepherd/update.html:105
+msgid ""
+"An update for the domain health status and categories was last requested on:"
+msgstr "上次请求更新域名健康状态及分类的时间："
+
+#: ghostwriter/shepherd/templates/shepherd/update.html:128
+#, python-format
+msgid ""
+"Note that updates will require <em>at least</em> <strong>%(mins)s</strong> "
+"minutes (%(count)s non-expired domains * %(sleep)s second sleep configured "
+"in settings)."
+msgstr ""
+"请注意：本次更新<em>至少</em>需要 <strong>%(mins)s</strong> 分钟（%(count)s "
+"个未过期域名 × 设置中配置的 %(sleep)s 秒间隔）。"
+
+#: ghostwriter/shepherd/templates/shepherd/update.html:141
+msgid "Cloud Infrastructure"
+msgstr "云基础设施"
+
+#: ghostwriter/shepherd/templates/shepherd/update.html:144
+msgid "A cloud infrastructure check-up was last requested on:"
+msgstr "上次请求云基础设施检查的时间："
+
+#: ghostwriter/shepherd/templates/shepherd/update.html:167
+msgid ""
+"A cloud review can take a few minutes if Amazon Web Services is included, so "
+"expect this to take some time."
+msgstr "如果包含 Amazon Web Services，云检查可能需要数分钟，请耐心等待。"
+
+#: ghostwriter/shepherd/templates/shepherd/update.html:172
+msgid "Start Cloud Review"
+msgstr "开始云检查"
 
 #: ghostwriter/shepherd/templates/shepherd/vps_form.html:5
 msgid "Virtual Private Server"
@@ -3903,10 +4818,6 @@ msgstr "自动续费已开启："
 msgid "Domain Categorization:"
 msgstr "域名分类："
 
-#: ghostwriter/shepherd/templates/snippets/domain_detail_modal.html:34
-msgid "No Results"
-msgstr "暂无结果"
-
 #: ghostwriter/shepherd/templates/snippets/domain_history_detail_modal.html:7
 msgid "Additional Details for Domain History"
 msgstr "更多域名历史详情"
@@ -3928,14 +4839,6 @@ msgstr "已过期"
 #, python-format
 msgid "%(days)s Days Old"
 msgstr "已注册 %(days)s 天"
-
-#: ghostwriter/shepherd/templates/snippets/domain_nav_tabs.html:17
-msgid "DNS Records"
-msgstr "DNS 记录"
-
-#: ghostwriter/shepherd/templates/snippets/domain_nav_tabs.html:21
-msgid "Health"
-msgstr "健康度"
 
 #: ghostwriter/shepherd/templates/snippets/server_detail_modal.html:7
 #, python-format
@@ -4617,15 +5520,6 @@ msgstr ""
 "确定要归档报告 %(object)s 吗？系统会先生成并保存报告，随后<em>删除全部证据</"
 "em>。"
 
-#: ghostwriter/templates/confirm_archive.html:17
-#: ghostwriter/templates/confirm_delete.html:19
-#: ghostwriter/templates/confirm_delete_modal.html:12
-#: ghostwriter/templates/confirm_revoke_modal.html:12
-#: ghostwriter/templates/confirm_sanitize_modal.html:19
-#: ghostwriter/templates/mfa/webauthn/edit_form.html:42
-msgid "Cancel"
-msgstr "取消"
-
 #: ghostwriter/templates/confirm_delete.html:12
 #, python-format
 msgid ""
@@ -4912,14 +5806,6 @@ msgstr "暂无令牌。请点击下方按钮生成。"
 #: ghostwriter/templates/mfa/recovery_codes/index.html:49
 msgid "Generate Backup Tokens"
 msgstr "生成备用令牌"
-
-#: ghostwriter/templates/mfa/index.html:14
-#: ghostwriter/templates/mfa/totp/deactivate_form.html:11
-#: ghostwriter/templates/mfa/webauthn/authenticator_list.html:10
-#: ghostwriter/users/templates/users/profile.html:11
-#: ghostwriter/users/templates/users/profile_form.html:11
-msgid "Your Profile"
-msgstr "你的资料"
 
 #: ghostwriter/templates/mfa/index.html:28
 msgid "Authenticator App"

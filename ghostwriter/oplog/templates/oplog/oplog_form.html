@@ -13,7 +13,7 @@
                 <li class="breadcrumb-item"><a data-toggle="tooltip" title="{{ project.client }}" href="{% url 'rolodex:client_detail' project.client.id %}">{{ project.client }}</a></li>
                 <li class="breadcrumb-item"><a data-toggle="tooltip" title="{{ project }}" href="{% url 'rolodex:project_detail' project.id %}">{{ project.start_date|date:"DATE_FORMAT" }} {{ project.project_type }}</a></li>
             {% else %}
-                <li class="breadcrumb-item"><a href="{% url 'oplog:index' %}">Operation Logs</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'oplog:index' %}">{% trans "Operation Logs" %}</a></li>
             {% endif %}
             <li class="breadcrumb-item active" aria-current="page">{% trans "New Log Form" %}</li>
         </ul>
@@ -22,7 +22,7 @@
 
 {% block content %}
     <!-- Instructions Section -->
-    <p>Provide a meaningful name for your log and select the project to which it should associated:</p>
+    <p>{% trans "Provide a meaningful name for your log and select the project to which it should associated:" %}</p>
 
     <!-- Form Error Section -->
     {% if form.errors %}

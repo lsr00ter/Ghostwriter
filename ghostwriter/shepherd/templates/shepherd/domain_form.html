@@ -8,7 +8,7 @@
     <nav aria-label="breadcrumb">
         <ul class="breadcrumb">
             <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">{% trans "Dashboard" %}</a></li>
-            <li class="breadcrumb-item"><a href="{% url 'shepherd:domains' %}">Domains</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'shepherd:domains' %}">{% trans "Domains" %}</a></li>
             <li class="breadcrumb-item active" aria-current="page">{% trans "Domain Form" %}</li>
         </ul>
     </nav>
@@ -16,7 +16,7 @@
 
 {% block content %}
     <!-- Instruction -->
-    <p>Fill-out this form as completely as possible with information related to this domain:</p>
+    <p>{% trans "Fill-out this form as completely as possible with information related to this domain:" %}</p>
 
     <!-- Form Error Section -->
     {% if form.errors %}

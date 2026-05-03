@@ -22,12 +22,11 @@
     {% crispy filter.form filter.helper %}
   </div>
 
-  <a class="btn btn-info col-2 icon add-icon mt-2" role="button" href="{%  url 'shepherd:server_create' %}">Create Server</a>
-  <a id="resetSortBtn" class="btn btn-secondary col-2 icon sync-icon mt-2" role="button">Reset Sort</a>
+  <a class="btn btn-info col-2 icon add-icon mt-2" role="button" href="{%  url 'shepherd:server_create' %}">{% trans "Create Server" %}</a>
+  <a id="resetSortBtn" class="btn btn-secondary col-2 icon sync-icon mt-2" role="button">{% trans "Reset Sort" %}</a>
 
   {% if filter.qs|length == 0 %}
-    <div class="alert alert-warning offset-md-2 col-md-8 mt-3" role="alert">There are no servers to see here yet, or
-      your search returned no results. Create a server above or adjust your filters.
+    <div class="alert alert-warning offset-md-2 col-md-8 mt-3" role="alert">{% trans "There are no servers to see here yet, or your search returned no results. Create a server above or adjust your filters." %}
     </div>
   {% else %}
     <!-- Server Table Section -->
@@ -35,12 +34,12 @@
       <table id="serverTable" class="tablesorter table table-sm table-hover">
         <thead>
         <tr>
-          <th id="server" class="align-middle pr-4 text-left">IP Address</th>
-          <th class="align-middle pr-4 text-left">Name</th>
-          <th class="align-middle pr-4 text-left">Status</th>
-          <th class="align-middle pr-4 text-left">Provider</th>
-          <th class="align-middle pr-4 text-left sorter-false">Tags</th>
-          <th class="align-middle sorter-false">Options</th>
+          <th id="server" class="align-middle pr-4 text-left">{% trans "IP Address" %}</th>
+          <th class="align-middle pr-4 text-left">{% trans "Name" %}</th>
+          <th class="align-middle pr-4 text-left">{% trans "Status" %}</th>
+          <th class="align-middle pr-4 text-left">{% trans "Provider" %}</th>
+          <th class="align-middle pr-4 text-left sorter-false">{% trans "Tags" %}</th>
+          <th class="align-middle sorter-false">{% trans "Options" %}</th>
         </tr>
         </thead>
         <tbody>
@@ -49,7 +48,7 @@
             <td class="align-middle text-left"><a href="{{ server.get_absolute_url }}"
                                         class="clickable">{{ server.ip_address }}</a></td>
 
-            <td class="align-middle text-left">{% if server.name %}{{ server.name|bleach }}{% else %}No Hostname{% endif %}</td>
+            <td class="align-middle text-left">{% if server.name %}{{ server.name|bleach }}{% else %}{% trans "No Hostname" %}{% endif %}</td>
 
             {% if server.server_status.server_status == "Available" %}
               <td class="align-middle healthy text-left">{{ server.server_status }}</td>
@@ -67,7 +66,7 @@
               <div class="d-flex justify-content-center">
                 <span
                   class="icon preview-icon clickable-link"
-                  title="View additional information"
+                  title="{% trans 'View additional information' %}"
                   onclick="openModal('#server_detail_{{ server.id }}')"
                 ></span>
                 {% if server.server_status.server_status == "Available" %}

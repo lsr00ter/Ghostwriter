@@ -8,7 +8,7 @@
   <nav aria-label="breadcrumb">
     <ul class="breadcrumb">
       <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">{% trans "Dashboard" %}</a></li>
-      <li class="breadcrumb-item"><a href="{% url 'shepherd:domains' %}">Domains</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'shepherd:domains' %}">{% trans "Domains" %}</a></li>
       <li class="breadcrumb-item"><a href="{% url 'shepherd:domain_detail' domain.id %}">{{ domain_name }}</a>
       </li>
       <li class="breadcrumb-item active" aria-current="page">{% trans "Checkout" %}</li>
@@ -17,7 +17,7 @@
 {% endblock %}
 
 {% block content %}
-  <p>Complete this form and then click Save to checkout {{ domain_name }}:</p>
+  <p>{% blocktrans with name=domain_name %}Complete this form and then click Save to checkout {{ name }}:{% endblocktrans %}</p>
 
   <!-- Form Error Section -->
   {% if form.errors %}
@@ -41,7 +41,7 @@
   <!-- Domain Overwatch Checks -->
   {% if domain.health_status.health_status == "Burned" %}
     <script>
-      displayToastTop({type: 'warning', string: 'Domain is flagged as Burned!', delay: 0});
+      displayToastTop({type: 'warning', string: '{% trans "Domain is flagged as Burned!" %}', delay: 0});
     </script>
   {% endif %}
 
@@ -49,7 +49,7 @@
     <script>
       displayToastTop({
         type: 'warning',
-        string: 'Domain expires within the next 30 days and will not auto-renew.',
+        string: '{% trans "Domain expires within the next 30 days and will not auto-renew." %}',
         delay: 0
       });
     </script>
@@ -59,7 +59,7 @@
     <script>
       displayToastTop({
         type: 'warning',
-        string: 'Domain expires within the next 30 days so you should validate (auto)renewal status before use.',
+        string: '{% trans "Domain expires within the next 30 days so you should validate (auto)renewal status before use." %}',
         delay: 0
       });
     </script>

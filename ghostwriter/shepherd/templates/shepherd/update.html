@@ -21,14 +21,14 @@
         }
     </style>
 
-    <h2>Infrastructure Update Control Panel</h2>
+    <h2>{% trans "Infrastructure Update Control Panel" %}</h2>
 
     <!-- DNS Section -->
     <div class="container pb-2">
-        <h4 class="icon server-icon">DNS Records</h4>
+        <h4 class="icon server-icon">{% trans "DNS Records" %}</h4>
         <hr>
 
-        <p>A DNS record update for all domains was last requested on:</p>
+        <p>{% trans "A DNS record update for all domains was last requested on:" %}</p>
 
         <p>
             <strong>{{ dns_last_update_requested }}</strong>
@@ -36,10 +36,10 @@
 
         {% if dns_last_update_completed %}
             {% if dns_last_update_completed == 'Failed' %}
-                <p>Request Status: <span class="badge badge-pill badge-danger">{{ dns_last_update_completed }}</span></p>
+                <p>{% trans "Request Status:" %} <span class="badge badge-pill badge-danger">{{ dns_last_update_completed }}</span></p>
                 {% if dns_last_result %}
                     <div class="mb-3 error-div">
-                        <strong>Error: </strong>
+                        <strong>{% trans "Error:" %} </strong>
                         <em class="error">
                             {{ dns_last_result }}
                         </em>
@@ -47,7 +47,7 @@
                 {% endif %}
             {% else %}
                 {% if dns_last_update_completed %}
-                    <p>Request Status: <span class="badge badge-pill badge-success"><span class="badge badge-pill badge-success">Completed on {{ dns_last_update_completed }} in {{ dns_last_update_time }} minutes</span></p>
+                    <p>{% trans "Request Status:" %} <span class="badge badge-pill badge-success"><span class="badge badge-pill badge-success">{% blocktrans with completed=dns_last_update_completed mins=dns_last_update_time %}Completed on {{ completed }} in {{ mins }} minutes{% endblocktrans %}</span></p>
                 {% endif %}
             {% endif %}
         {% endif %}
@@ -55,27 +55,27 @@
         <form class="js-queue-task" queue-task-url="{% url 'shepherd:ajax_update_dns' %}" method="POST">
             {% csrf_token %}
             <input type="hidden" id="user_id" name="user_id" value='{{ user.get_username }}'>
-            <button type="submit" class="btn btn-primary col-md-4">Start Update</button>
+            <button type="submit" class="btn btn-primary col-md-4">{% trans "Start Update" %}</button>
         </form>
     </div>
 
     <!-- Domain Library Update Section -->
     {% if enable_namecheap %}
         <div class="container pb-2">
-            <h4 class="icon cloud-sync-icon">Pull Domains from Namecheap</h4>
+            <h4 class="icon cloud-sync-icon">{% trans "Pull Domains from Namecheap" %}</h4>
             <hr>
 
-            <p>The domain library sync with Namecheap was last requested on:</p>
+            <p>{% trans "The domain library sync with Namecheap was last requested on:" %}</p>
             <p>
                 <strong>{{ namecheap_last_update_requested }}</strong>
             </p>
 
             {% if namecheap_last_update_completed %}
                 {% if namecheap_last_update_completed == 'Failed' %}
-                    <p>Request Status: <span class="badge badge-pill badge-danger">{{ namecheap_last_update_completed }}</span></p>
+                    <p>{% trans "Request Status:" %} <span class="badge badge-pill badge-danger">{{ namecheap_last_update_completed }}</span></p>
                     {% if namecheap_last_result %}
                         <div class="mb-3 error-div">
-                            <strong>Error: </strong>
+                            <strong>{% trans "Error:" %} </strong>
                             <em class="error">
                                 {{ namecheap_last_result.errors }}
                             </em>
@@ -83,7 +83,7 @@
                     {% endif %}
                 {% else %}
                     {% if namecheap_last_update_completed %}
-                        <p>Request Status: <span class="badge badge-pill badge-success">Completed on {{ namecheap_last_update_completed }} in {{ namecheap_last_update_time }} minutes</span></p>
+                        <p>{% trans "Request Status:" %} <span class="badge badge-pill badge-success">{% blocktrans with completed=namecheap_last_update_completed mins=namecheap_last_update_time %}Completed on {{ completed }} in {{ mins }} minutes{% endblocktrans %}</span></p>
                     {% endif %}
                 {% endif %}
             {% endif %}
@@ -91,7 +91,7 @@
             <form class="js-queue-task" queue-task-url="{% url 'shepherd:ajax_update_namecheap' %}" method="POST">
                 {% csrf_token %}
                 <input type="hidden" id="user_id" name="user_id" value='{{ user.get_username }}'>
-                <button type="submit" class="btn btn-primary col-md-4">Pull from Namecheap</button>
+                <button type="submit" class="btn btn-primary col-md-4">{% trans "Pull from Namecheap" %}</button>
             </form>
         </div>
     {% endif %}
@@ -99,20 +99,20 @@
     <!-- Domain Categories Section -->
     {% if enable_vt %}
         <div class="container pb-2">
-            <h4 class="icon heartbeat-icon">Domain Categories</h4>
+            <h4 class="icon heartbeat-icon">{% trans "Domain Categories" %}</h4>
             <hr>
 
-            <p>An update for the domain health status and categories was last requested on:</p>
+            <p>{% trans "An update for the domain health status and categories was last requested on:" %}</p>
             <p>
                 <strong>{{ cat_last_update_requested }}</strong>
             </p>
 
             {% if cat_last_update_completed %}
                 {% if cat_last_update_completed == 'Failed' %}
-                    <p>Request Status: <span class="badge badge-pill badge-danger">{{ cat_last_update_completed }}</span></p>
+                    <p>{% trans "Request Status:" %} <span class="badge badge-pill badge-danger">{{ cat_last_update_completed }}</span></p>
                     {% if cat_last_result %}
                         <div class="mb-3 error-div">
-                            <strong>Error: </strong>
+                            <strong>{% trans "Error:" %} </strong>
                             <em class="error">
                                 {{ cat_last_result }}
                             </em>
@@ -120,17 +120,17 @@
                     {% endif %}
                 {% else %}
                     {% if cat_last_update_completed %}
-                        <p>Request Status: <span class="badge badge-pill badge-success">Completed on {{ cat_last_update_completed }} in {{ cat_last_update_time }} minutes</span></p>
+                        <p>{% trans "Request Status:" %} <span class="badge badge-pill badge-success">{% blocktrans with completed=cat_last_update_completed mins=cat_last_update_time %}Completed on {{ completed }} in {{ mins }} minutes{% endblocktrans %}</span></p>
                     {% endif %}
                 {% endif %}
             {% endif %}
 
-            <p>Note that updates will require <em>at least</em> <strong>{{ update_time }}</strong> minutes ({{ total_domains }} non-expired domains * {{ sleep_time }} second sleep configured in settings).</p>
+            <p>{% blocktrans with mins=update_time count=total_domains sleep=sleep_time %}Note that updates will require <em>at least</em> <strong>{{ mins }}</strong> minutes ({{ count }} non-expired domains * {{ sleep }} second sleep configured in settings).{% endblocktrans %}</p>
 
             <form class="js-queue-task" queue-task-url="{% url 'shepherd:ajax_update_cat' %}" method="POST">
                 {% csrf_token %}
                 <input type="hidden" id="user_id" name="user_id" value='{{ user.get_username }}'>
-                <button type="submit" class="btn btn-primary col-md-4">Start Update</button>
+                <button type="submit" class="btn btn-primary col-md-4">{% trans "Start Update" %}</button>
             </form>
         </div>
     {% endif %}
@@ -138,10 +138,10 @@
     <!-- Cloud Section -->
     {% if enable_cloud_monitor %}
         <div class="container pb-2">
-            <h4 class="icon cloud-icon">Cloud Infrastructure</h4>
+            <h4 class="icon cloud-icon">{% trans "Cloud Infrastructure" %}</h4>
             <hr>
 
-            <p>A cloud infrastructure check-up was last requested on:</p>
+            <p>{% trans "A cloud infrastructure check-up was last requested on:" %}</p>
 
             <p>
                 <strong>{{ cloud_last_update_requested }}</strong>
@@ -149,10 +149,10 @@
 
             {% if cloud_last_update_completed %}
                 {% if cloud_last_update_completed == 'Failed' %}
-                    <p>Request Status: <span class="badge badge-pill badge-danger">{{ dns_last_update_completed }}</span></p>
+                    <p>{% trans "Request Status:" %} <span class="badge badge-pill badge-danger">{{ dns_last_update_completed }}</span></p>
                     {% if cloud_last_result %}
                         <div class="mb-3 error-div">
-                            <strong>Error: </strong>
+                            <strong>{% trans "Error:" %} </strong>
                             <em class="error">
                                 {{ cloud_last_result }}
                             </em>
@@ -160,16 +160,16 @@
                     {% endif %}
                 {% else %}
                     {% if cloud_last_update_completed %}
-                        <p>Request Status: <span class="badge badge-pill badge-success"><span class="badge badge-pill badge-success">Completed on {{ cloud_last_update_completed }} in {{ cloud_last_update_time }} minutes</span></p>
+                        <p>{% trans "Request Status:" %} <span class="badge badge-pill badge-success"><span class="badge badge-pill badge-success">{% blocktrans with completed=cloud_last_update_completed mins=cloud_last_update_time %}Completed on {{ completed }} in {{ mins }} minutes{% endblocktrans %}</span></p>
                     {% endif %}
                 {% endif %}
             {% endif %}
-            <p>A cloud review can take a few minutes if Amazon Web Services is included, so expect this to take some time.</p>
+            <p>{% trans "A cloud review can take a few minutes if Amazon Web Services is included, so expect this to take some time." %}</p>
 
             <form class="js-queue-task" queue-task-url="{% url 'shepherd:ajax_cloud_monitor' %}" method="POST">
                 {% csrf_token %}
                 <input type="hidden" id="user_id" name="user_id" value='{{ user.get_username }}'>
-                <button type="submit" class="btn btn-primary col-md-4">Start Cloud Review</button>
+                <button type="submit" class="btn btn-primary col-md-4">{% trans "Start Cloud Review" %}</button>
             </form>
         </div>
     {% endif %}
@@ -198,7 +198,7 @@
                             // Do something
                         }
                         if (data['message']) {
-                            displayToastTop({type:data['result'], string:data['message'], title:'Task Update'});
+                            displayToastTop({type:data['result'], string:data['message'], title:'{% trans "Task Update" %}'});
                         }
                     }
                 });

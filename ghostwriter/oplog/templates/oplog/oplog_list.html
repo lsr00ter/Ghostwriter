@@ -19,7 +19,7 @@
     {% for message in messages %}
         {% if "api-key" in message.tags %}
             <div class="alert alert-success" role="alert">
-                <h4 style="margin-top: 0;" class="alert-heading">Hey You!</h4>
+                <h4 style="margin-top: 0;" class="alert-heading">{% trans "Hey You!" %}</h4>
                 {{ message|linebreaks }}
             </div>
         {% endif %}
@@ -27,26 +27,26 @@
 
     <!-- Oplog Table Section -->
     <div class="buttonHolder">
-      <a class="btn btn-primary icon add-icon col-2" href="{% url 'oplog:oplog_create_no_project' %}">Create Log</a>
-      <a class="btn btn-info icon upload-icon col-2" href="{% url 'oplog:oplog_import' %}">Import Log</a>
-      <a id="resetSortBtn" class="btn btn-secondary col-2 icon sync-icon" role="button">Reset Sort</a>
+      <a class="btn btn-primary icon add-icon col-2" href="{% url 'oplog:oplog_create_no_project' %}">{% trans "Create Log" %}</a>
+      <a class="btn btn-info icon upload-icon col-2" href="{% url 'oplog:oplog_import' %}">{% trans "Import Log" %}</a>
+      <a id="resetSortBtn" class="btn btn-secondary col-2 icon sync-icon" role="button">{% trans "Reset Sort" %}</a>
     </div>
     {% if oplog_list %}
         <table id="oplogTable" class="tablesorter table table-hover table-striped table-sm">
             <thead>
                 <tr>
-                    <th class="align-middle">ID</th>
-                    <th class="align-middle text-left">Name</th>
-                    <th class="align-middle text-left">Project</th>
+                    <th class="align-middle">{% trans "ID" %}</th>
+                    <th class="align-middle text-left">{% trans "Name" %}</th>
+                    <th class="align-middle text-left">{% trans "Project" %}</th>
                     <th class="align-middle text-left sorter-false">
                         <div class="dropdown dropleft">
-                            <span id="notification-info-btn" class="dropdown-info mr-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Notifications</span>
+                            <span id="notification-info-btn" class="dropdown-info mr-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{% trans "Notifications" %}</span>
                                 <div id="notification-info" class="dropdown-menu dropdown-info-content" aria-labelledby="notification-info-btn">
-                                <p>Notification status determines if Ghostwriter will send notifications for the log when the "Review Active Logs" task is run.</p>
+                                <p>{% blocktrans %}Notification status determines if Ghostwriter will send notifications for the log when the "Review Active Logs" task is run.{% endblocktrans %}</p>
                             </div>
                         </div>
                     </th>
-                    <th class="sorter-false align-middle text-left">Export</th>
+                    <th class="sorter-false align-middle text-left">{% trans "Export" %}</th>
                 </tr>
             </thead>
             {% for log in oplog_list %}
@@ -56,9 +56,9 @@
                     <td class="align-middle text-left">{{ log.project.client.short_name }} {{ log.project.project_type }} ({{ log.project.start_date }})</td>
                     <td class="align-middle pr-3 text-left">
                         {% if log.mute_notifications %}
-                            <span class="icon silenced-notification-icon">Silenced</span>
+                            <span class="icon silenced-notification-icon">{% trans "Silenced" %}</span>
                         {% else %}
-                            <span class="icon notification-bell-icon">Active</span>
+                            <span class="icon notification-bell-icon">{% trans "Active" %}</span>
                         {% endif %}
                     </td>
                     <td class="align-middle js-export-oplog" oplog-id="{{ log.pk }}" oplog-name="{{ log.name }}" export_url="{% url 'oplog:oplog_export' log.id %}"><a href="javascript:void(0);" class="icon export-icon"></a></td>
@@ -66,7 +66,7 @@
             {% endfor %}
         </table>
     {% else %}
-        <p class="mt-3">There are no logs to see here yet. Start or import a log up above.</p>
+        <p class="mt-3">{% trans "There are no logs to see here yet. Start or import a log up above." %}</p>
     {% endif %}
 {% endblock %}
 

@@ -8,15 +8,15 @@
     <nav aria-label="breadcrumb">
         <ul class="breadcrumb">
             <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">{% trans "Dashboard" %}</a></li>
-            <li class="breadcrumb-item"><a href="{% url 'shepherd:servers' %}">Servers</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'shepherd:servers' %}">{% trans "Servers" %}</a></li>
             <li class="breadcrumb-item active" aria-current="page">{% trans "Server Form" %}</li>
         </ul>
     </nav>
 {% endblock %}
 
 {% block content %}
-    <p>Fill-out this form as completely as possible with information related to this server.</p>
-    <p>Servers created/edited through this form should be servers that are <em>reused</em> and tracked (i.e. servers you own). Virtual private servers spun up for a single project are tracked from within the project with the <em>Add a Transient Server</em> button.</p>
+    <p>{% trans "Fill-out this form as completely as possible with information related to this server." %}</p>
+    <p>{% blocktrans %}Servers created/edited through this form should be servers that are <em>reused</em> and tracked (i.e. servers you own). Virtual private servers spun up for a single project are tracked from within the project with the <em>Add a Transient Server</em> button.{% endblocktrans %}</p>
 
     <!-- Form Error Section -->
     {% if form.errors %}

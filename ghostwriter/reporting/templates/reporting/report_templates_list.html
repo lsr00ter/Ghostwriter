@@ -147,10 +147,10 @@
             if (response.status === 404) {
               displayToastTop({
                 type: 'error',
-                string: 'Template file not found. The file may have been deleted or moved.'
+                string: '{% trans "Template file not found. The file may have been deleted or moved." %}'
               });
             } else {
-              displayToastTop({type: 'error', string: 'Error downloading template: ' + response.statusText});
+              displayToastTop({type: 'error', string: '{% trans "Error downloading template:" %} ' + response.statusText});
             }
             throw new Error('Network response was not ok');
           }
@@ -166,7 +166,7 @@
           a.click();
           window.URL.revokeObjectURL(url);
           document.body.removeChild(a);
-          displayToastTop({type: 'success', string: 'Download started...'});
+          displayToastTop({type: 'success', string: '{% trans "Download started..." %}'});
         })
         .catch(error => {
           console.error('Error:', error);
