@@ -22,19 +22,19 @@
         {% crispy filter.form filter.helper %}
     </div>
 
-    <a class="btn btn-info col-2 icon add-icon mt-2" role="button" href="{%  url 'rolodex:client_create' %}">Create Client</a>
-  <a id="resetSortBtn" class="btn btn-secondary col-2 icon sync-icon mt-2" role="button">Reset Sort</a>
+    <a class="btn btn-info col-2 icon add-icon mt-2" role="button" href="{%  url 'rolodex:client_create' %}">{% trans "Create Client" %}</a>
+  <a id="resetSortBtn" class="btn btn-secondary col-2 icon sync-icon mt-2" role="button">{% trans "Reset Sort" %}</a>
 
     {% if filter.qs|length == 0 %}
-        <div class="alert alert-warning offset-md-2 col-md-8 mt-3" role="alert">There are no clients to see here yet, or your search returned no results. Create a client above or adjust your filters.</div>
+        <div class="alert alert-warning offset-md-2 col-md-8 mt-3" role="alert">{% trans "There are no clients to see here yet, or your search returned no results. Create a client above or adjust your filters." %}</div>
     {% else %}
         <table id="clientTable" class="tablesorter table table-sm table-hover">
             <thead>
                 <tr>
-                    <th class="align-middle text-left">Client</th>
-                    <th class="align-middle text-left">Short Name</th>
-                    <th class="align-middle text-left">Codename</th>
-                    <th class="align-middle">Projects to Date</th>
+                    <th class="align-middle text-left">{% trans "Client" %}</th>
+                    <th class="align-middle text-left">{% trans "Short Name" %}</th>
+                    <th class="align-middle text-left">{% trans "Codename" %}</th>
+                    <th class="align-middle">{% trans "Projects to Date" %}</th>
                 </tr>
             </thead>
             {% for client in filter.qs %}

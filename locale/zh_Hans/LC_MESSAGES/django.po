@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ghostwriter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-02 10:29+0000\n"
+"POT-Creation-Date: 2026-05-02 18:11+0000\n"
 "PO-Revision-Date: 2026-04-30 00:00+0000\n"
 "Last-Translator: GitHub Copilot\n"
 "Language-Team: Chinese\n"
@@ -152,6 +152,7 @@ msgid "View on site"
 msgstr "在网站查看"
 
 #: ghostwriter/commandcenter/templates/collab_editing/update.html:16
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1152
 msgid "Loading..."
 msgstr "加载中..."
 
@@ -226,6 +227,7 @@ msgid "Twitter"
 msgstr "Twitter"
 
 #: ghostwriter/home/templates/home/management.html:72
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:186
 #: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:20
 #: ghostwriter/users/templates/users/profile.html:49
 msgid "Email"
@@ -306,6 +308,7 @@ msgid "Digital Ocean API Key"
 msgstr "Digital Ocean API 密钥"
 
 #: ghostwriter/home/templates/home/management.html:185
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1744
 #: ghostwriter/rolodex/templates/snippets/project_nav_tabs.html:50
 #: ghostwriter/templates/base_generic.html:268
 msgid "Reporting"
@@ -474,6 +477,8 @@ msgid "Test Slack Webhook"
 msgstr "测试 Slack Webhook"
 
 #: ghostwriter/home/templates/home/management.html:400
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1860
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1897
 msgid "Task Update"
 msgstr "任务更新"
 
@@ -496,6 +501,7 @@ msgstr "导入日志"
 
 #: ghostwriter/oplog/templates/oplog/oplog_list.html:6
 #: ghostwriter/oplog/templates/oplog/oplog_list.html:12
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:473
 #: ghostwriter/templates/base_generic.html:257
 msgid "Operation Logs"
 msgstr "操作日志"
@@ -660,6 +666,7 @@ msgid "All Projects"
 msgstr "全部项目"
 
 #: ghostwriter/reporting/filters.py:531 ghostwriter/rolodex/filters.py:208
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:70
 msgid "Project Status"
 msgstr "项目状态"
 
@@ -722,10 +729,15 @@ msgstr "以下报告已关闭并归档，可在下方下载。"
 #: ghostwriter/reporting/templates/reporting/archives.html:31
 #: ghostwriter/reporting/templates/reporting/report_template_detail.html:76
 #: ghostwriter/reporting/templates/reporting/report_templates_list.html:41
+#: ghostwriter/rolodex/templates/rolodex/client_list.html:34
+#: ghostwriter/rolodex/templates/rolodex/project_list.html:38
 msgid "Client"
 msgstr "客户"
 
 #: ghostwriter/reporting/templates/reporting/archives.html:32
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:299
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:341
+#: ghostwriter/rolodex/templates/rolodex/project_list.html:39
 msgid "Project"
 msgstr "项目"
 
@@ -751,6 +763,10 @@ msgstr "证据"
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:119
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:182
 #: ghostwriter/reporting/templates/snippets/report_observations_table.html:87
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:31
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:428
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:31
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1201
 #: ghostwriter/rolodex/templates/rolodex/project_form.html:22
 #: ghostwriter/templates/mfa/webauthn/authenticator_list.html:45
 msgid "Edit"
@@ -765,6 +781,11 @@ msgstr "编辑"
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:121
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:202
 #: ghostwriter/reporting/templates/snippets/report_observations_table.html:107
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:32
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:433
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:32
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1090
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1206
 #: ghostwriter/templates/confirm_delete.html:4
 #: ghostwriter/templates/confirm_delete.html:18
 #: ghostwriter/templates/confirm_delete_modal.html:13
@@ -797,6 +818,8 @@ msgstr "报告题注"
 #: ghostwriter/reporting/templates/reporting/finding_detail.html:99
 #: ghostwriter/reporting/templates/reporting/observation_detail.html:42
 #: ghostwriter/reporting/templates/reporting/report_template_detail.html:116
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:333
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:2172
 #: ghostwriter/rolodex/templates/snippets/project_history_detail_modal.html:14
 msgid "Description"
 msgstr "描述"
@@ -954,6 +977,8 @@ msgstr "发现项指引"
 #: ghostwriter/reporting/templates/reporting/observation_detail.html:54
 #: ghostwriter/reporting/templates/reporting/report_detail.html:369
 #: ghostwriter/reporting/templates/snippets/report_nav_tabs.html:26
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:395
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1160
 #: ghostwriter/rolodex/templates/snippets/client_nav_tabs.html:32
 #: ghostwriter/rolodex/templates/snippets/project_nav_tabs.html:69
 #: ghostwriter/shepherd/templates/snippets/domain_nav_tabs.html:34
@@ -969,10 +994,13 @@ msgid "Notes"
 msgstr "备注"
 
 #: ghostwriter/reporting/templates/reporting/finding_detail.html:230
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:407
 msgid "Add a Note"
 msgstr "添加备注"
 
 #: ghostwriter/reporting/templates/reporting/finding_detail.html:244
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:420
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1193
 msgid "Deleted"
 msgstr "已删除"
 
@@ -1011,6 +1039,8 @@ msgstr "创建发现项"
 #: ghostwriter/reporting/templates/reporting/finding_list.html:35
 #: ghostwriter/reporting/templates/reporting/report_list.html:23
 #: ghostwriter/reporting/templates/reporting/report_templates_list.html:32
+#: ghostwriter/rolodex/templates/rolodex/client_list.html:26
+#: ghostwriter/rolodex/templates/rolodex/project_list.html:26
 msgid "Reset Sort"
 msgstr "重置排序"
 
@@ -1021,6 +1051,7 @@ msgid ""
 msgstr "暂无发现项，或搜索未返回结果。请在上方新建发现项或调整筛选条件。"
 
 #: ghostwriter/reporting/templates/reporting/finding_list.html:51
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:626
 msgid "Severity"
 msgstr "严重等级"
 
@@ -1031,6 +1062,7 @@ msgstr "类型"
 #: ghostwriter/reporting/templates/reporting/finding_list.html:53
 #: ghostwriter/reporting/templates/reporting/observation_list.html:39
 #: ghostwriter/reporting/templates/reporting/report_list.html:33
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:567
 msgid "Title"
 msgstr "标题"
 
@@ -1053,12 +1085,29 @@ msgstr "标签"
 #: ghostwriter/reporting/templates/reporting/report_templates_list.html:43
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:38
 #: ghostwriter/reporting/templates/snippets/report_observations_table.html:28
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:132
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:187
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:243
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:167
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:228
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:334
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:423
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:537
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:571
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:714
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:808
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:928
 msgid "Options"
 msgstr "操作"
 
 #: ghostwriter/reporting/templates/reporting/finding_list.html:133
 #: ghostwriter/reporting/templates/reporting/report_detail.html:343
 #: ghostwriter/reporting/templates/reporting/report_templates_list.html:92
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:201
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:744
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:852
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:887
+#: ghostwriter/rolodex/templates/rolodex/project_list.html:58
 msgid "View additional information"
 msgstr "查看更多信息"
 
@@ -1108,6 +1157,7 @@ msgid ""
 msgstr "暂无观察项，或搜索未返回结果。请在上方新建观察项或调整筛选条件。"
 
 #: ghostwriter/reporting/templates/reporting/observation_list.html:54
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:264
 msgid "Click to view additional information"
 msgstr "点击查看更多信息"
 
@@ -1127,6 +1177,7 @@ msgstr "观察项表单"
 
 #: ghostwriter/reporting/templates/reporting/report_detail.html:32
 #: ghostwriter/reporting/templates/reporting/report_list.html:68
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:594
 msgid "Set this report as your active report"
 msgstr "将此报告设为当前报告"
 
@@ -1161,6 +1212,7 @@ msgid "Report Status:"
 msgstr "报告状态："
 
 #: ghostwriter/reporting/templates/reporting/report_detail.html:81
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:80
 msgid "Complete"
 msgstr "已完成"
 
@@ -1182,6 +1234,7 @@ msgstr "交付状态："
 
 #: ghostwriter/reporting/templates/reporting/report_detail.html:106
 #: ghostwriter/reporting/templates/reporting/report_list.html:58
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:579
 msgid "Delivered"
 msgstr "已交付"
 
@@ -1311,6 +1364,12 @@ msgstr "上传证据"
 
 #: ghostwriter/reporting/templates/reporting/report_detail.html:321
 #: ghostwriter/reporting/templates/reporting/report_templates_list.html:39
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:130
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:184
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:226
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:331
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:486
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:803
 #: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:18
 #: ghostwriter/templates/mfa/webauthn/edit_form.html:34
 msgid "Name"
@@ -1337,6 +1396,7 @@ msgid "No evidence has been added to this report yet."
 msgstr "该报告暂未添加任何证据。"
 
 #: ghostwriter/reporting/templates/reporting/report_detail.html:396
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:332
 msgid "Preview"
 msgstr "预览"
 
@@ -1358,6 +1418,7 @@ msgstr "正在生成报告..."
 
 #: ghostwriter/reporting/templates/reporting/report_detail.html:545
 #: ghostwriter/reporting/templates/reporting/report_detail.html:583
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1688
 msgid "Report Update"
 msgstr "报告更新"
 
@@ -1427,7 +1488,9 @@ msgstr "新建报告"
 msgid ""
 "Provide a meaningful name for this report, select the project to which it "
 "should be associated, and optionally select report templates to use:"
-msgstr "请为该报告填写一个有意义的名称，选择关联的项目，并可选地指定要使用的报告模板："
+msgstr ""
+"请为该报告填写一个有意义的名称，选择关联的项目，并可选地指定要使用的报告模"
+"板："
 
 #: ghostwriter/reporting/templates/reporting/report_list.html:5
 msgid "Report List"
@@ -1456,6 +1519,8 @@ msgstr "更新时间"
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:32
 #: ghostwriter/reporting/templates/snippets/report_nav_tabs.html:5
 #: ghostwriter/reporting/templates/snippets/report_observations_table.html:22
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:568
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:629
 #: ghostwriter/rolodex/templates/snippets/project_objectives.html:23
 msgid "Status"
 msgstr "状态"
@@ -1463,6 +1528,7 @@ msgstr "状态"
 #: ghostwriter/reporting/templates/reporting/report_list.html:36
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:23
 #: ghostwriter/reporting/templates/snippets/report_observations_table.html:13
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:628
 msgid "Owner"
 msgstr "负责人"
 
@@ -1488,6 +1554,8 @@ msgid "Awaiting Delivery"
 msgstr "待交付"
 
 #: ghostwriter/reporting/templates/reporting/report_list.html:63
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:88
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:584
 msgid "In Progress"
 msgstr "进行中"
 
@@ -1553,11 +1621,13 @@ msgstr "上传者"
 #: ghostwriter/reporting/templates/reporting/report_template_detail.html:63
 #: ghostwriter/reporting/templates/snippets/template_detail_modal.html:82
 #: ghostwriter/reporting/templates/snippets/template_lint_results.html:62
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:587
 #: ghostwriter/templates/mfa/webauthn/authenticator_list.html:31
 msgid "Unknown"
 msgstr "未知"
 
 #: ghostwriter/reporting/templates/reporting/report_template_detail.html:72
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:569
 msgid "Last Update"
 msgstr "最近更新"
 
@@ -1742,6 +1812,8 @@ msgstr "切换到 v3"
 #: ghostwriter/reporting/templates/snippets/observation_detail_modal.html:24
 #: ghostwriter/reporting/templates/snippets/template_detail_modal.html:8
 #: ghostwriter/reporting/templates/snippets/template_detail_modal.html:88
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:2141
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:2194
 #: ghostwriter/rolodex/templates/snippets/domain_checkout_detail_modal.html:8
 #: ghostwriter/rolodex/templates/snippets/domain_checkout_detail_modal.html:21
 #: ghostwriter/rolodex/templates/snippets/project_detail_modal.html:8
@@ -1842,6 +1914,7 @@ msgid "No guidance has been provided for this finding."
 msgstr "尚未为该发现项编写指引说明。"
 
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:8
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:627
 msgid "Finding"
 msgstr "发现项"
 
@@ -1887,16 +1960,24 @@ msgstr "添加文件作为证据"
 
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:155
 #: ghostwriter/reporting/templates/snippets/report_observations_table.html:60
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:649
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:651
 msgid "You"
 msgstr "你"
 
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:161
 #: ghostwriter/reporting/templates/snippets/report_observations_table.html:66
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:657
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1015
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1029
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1062
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1069
 msgid "TBD"
 msgstr "待定"
 
 #: ghostwriter/reporting/templates/snippets/report_findings_table.html:169
 #: ghostwriter/reporting/templates/snippets/report_observations_table.html:75
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:663
 msgid "Needs Editing"
 msgstr "待编辑"
 
@@ -1937,6 +2018,7 @@ msgid "Finding Update"
 msgstr "发现项更新"
 
 #: ghostwriter/reporting/templates/snippets/report_nav_tabs.html:32
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:546
 #: ghostwriter/templates/mfa/index.html:115
 msgid "Generate"
 msgstr "生成"
@@ -2076,10 +2158,13 @@ msgid "Project Tag"
 msgstr "项目标签"
 
 #: ghostwriter/rolodex/filters.py:183
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:2167
 msgid "Start Date"
 msgstr "开始日期"
 
 #: ghostwriter/rolodex/filters.py:191
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:302
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:344
 msgid "End Date"
 msgstr "结束日期"
 
@@ -2097,6 +2182,8 @@ msgid "Active"
 msgstr "进行中"
 
 #: ghostwriter/rolodex/filters.py:213
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:241
+#: ghostwriter/rolodex/templates/rolodex/project_list.html:40
 msgid "Project Type"
 msgstr "项目类型"
 
@@ -2256,11 +2343,257 @@ msgstr "报告时间戳不能早于告警时间戳。"
 msgid "%(name)s Details"
 msgstr "%(name)s 详情"
 
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:14
+#: ghostwriter/rolodex/templates/rolodex/client_form.html:16
+#: ghostwriter/rolodex/templates/rolodex/client_list.html:14
+#: ghostwriter/templates/base_generic.html:170
+msgid "Clients"
+msgstr "客户"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:65
+msgid "Client Details"
+msgstr "客户详情"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:70
+#: ghostwriter/rolodex/templates/rolodex/client_list.html:35
+msgid "Short Name"
+msgstr "简称"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:72
+msgid "No Short Name"
+msgstr "无简称"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:76
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:240
+#: ghostwriter/rolodex/templates/rolodex/client_list.html:36
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:95
+msgid "Codename"
+msgstr "代号"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:78
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:97
+msgid "No Codename"
+msgstr "无代号"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:82
+msgid "Client's Current Time"
+msgstr "客户当前时间"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:86
+msgid "Additional Information"
+msgstr "更多信息"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:88
+msgid "Expand Information"
+msgstr "展开信息"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:98
+#, python-format
+msgid ""
+"No additional information provided for this client. <a class=\"clickable\" "
+"href=\"%(fix_url)s\">Fix that here.</a>"
+msgstr ""
+"该客户暂无更多信息。<a class=\"clickable\" href=\"%(fix_url)s\">点此补充。</"
+"a>"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:104
+msgid "Business Address"
+msgstr "办公地址"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:111
+msgid "No address provided for this client."
+msgstr "该客户暂无地址。"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:121
+#: ghostwriter/rolodex/templates/snippets/client_nav_tabs.html:10
+msgid "Invitations"
+msgstr "邀请"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:124
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:220
+msgid "Add & Edit Invitations"
+msgstr "添加并编辑邀请"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:125
+msgid ""
+"Users listed here have view access to this client and all of their projects, "
+"infrastructure, etc."
+msgstr "此处列出的用户对该客户及其所有项目、基础设施等具有查看权限。"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:131
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:227
+msgid "Comment"
+msgstr "备注"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:142
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:176
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:238
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:733
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:842
+#: ghostwriter/rolodex/templates/snippets/project_detail_modal.html:31
+#: ghostwriter/rolodex/templates/snippets/project_history_detail_modal.html:30
+#, python-format
+msgid "Missing Full Name (%(username)s)"
+msgstr "未填写全名 (%(username)s)"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:153
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:250
+msgid "Edit this invitation"
+msgstr "编辑该邀请"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:157
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:253
+msgid "Delete this invitation"
+msgstr "删除该邀请"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:167
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:219
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:265
+msgid "There is nothing to see here yet."
+msgstr "暂无内容。"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:175
+msgid "Client Contacts"
+msgstr "客户联系人"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:178
+#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:9
+msgid "Add & Edit Contacts"
+msgstr "添加并编辑联系人"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:183
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:192
+#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:17
+#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:26
+#: ghostwriter/templates/account/email.html:29
+msgid "Primary"
+msgstr "主要"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:185
+#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:19
+msgid "Title/Role"
+msgstr "职位/角色"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:192
+#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:26
+msgid "Not Primary"
+msgstr "非主要"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:205
+msgid "Edit this contact"
+msgstr "编辑该联系人"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:208
+msgid "Delete this contact"
+msgstr "删除该联系人"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:226
+msgid "Client Projects"
+msgstr "客户项目"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:229
+msgid "Add a Project"
+msgstr "添加项目"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:232
+msgid ""
+"Some projects shown here may have incomplete information if you do not have "
+"access. You gain access to a project by being assigned to it or invited to "
+"have full access to the related client's history."
+msgstr ""
+"如果你没有相应权限，这里展示的部分项目可能信息不完整。你需要被指派到该项目，"
+"或受邀获得该客户历史记录的完整访问权限。"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:242
+#: ghostwriter/rolodex/templates/rolodex/project_list.html:41
+msgid "Execution Window"
+msgstr "执行窗口"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:253
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:313
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:355
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:373
+msgid "REDACTED"
+msgstr "已隐去"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:269
+msgid "Edit this project"
+msgstr "编辑该项目"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:272
+msgid "Delete this project"
+msgstr "删除该项目"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:281
+msgid "This client has no project history."
+msgstr "该客户暂无项目历史。"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:289
+msgid "Domains Used with Client"
+msgstr "该客户使用的域名"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:293
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:334
+msgid ""
+"Some projects shown here will be hidden if you do not have access. You gain "
+"access to a project by being assigned to it or invited to have full access "
+"to the related client's history."
+msgstr ""
+"如果你没有相应权限，这里展示的部分项目会被隐藏。你需要被指派到该项目，或受邀"
+"获得该客户历史记录的完整访问权限。"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:300
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:924
+msgid "Domain"
+msgstr "域名"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:301
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:343
+msgid "Activity Type"
+msgstr "活动类型"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:303
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:345
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:713
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:807
+msgid "Checked Out By"
+msgstr "签出人"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:325
+msgid "No domain history for this client yet."
+msgstr "该客户暂无域名历史。"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:329
+#, python-format
+msgid "Servers Used with %(name)s"
+msgstr "%(name)s 使用的服务器"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:342
+msgid "Server"
+msgstr "服务器"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:382
+msgid "No server history for this client yet."
+msgstr "该客户暂无服务器历史。"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:386
+msgid "No infrastructure history for this client yet."
+msgstr "该客户暂无基础设施历史。"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:404
+msgid "Client Notes"
+msgstr "客户备注"
+
+#: ghostwriter/rolodex/templates/rolodex/client_detail.html:438
+msgid "No notes for this client."
+msgstr "该客户暂无备注。"
+
 #: ghostwriter/rolodex/templates/rolodex/client_form.html:5
 msgid "Client Form"
 msgstr "客户表单"
 
 #: ghostwriter/rolodex/templates/rolodex/client_form.html:18
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1085
 #: ghostwriter/templates/users/user_form.html:13
 msgid "Update"
 msgstr "更新"
@@ -2269,14 +2602,42 @@ msgstr "更新"
 msgid "New Client Form"
 msgstr "新建客户"
 
+#: ghostwriter/rolodex/templates/rolodex/client_form.html:27
+msgid "Setup a Client"
+msgstr "客户设置"
+
+#: ghostwriter/rolodex/templates/rolodex/client_form.html:29
+msgid ""
+"Use the tabs to provide basic client information and add points of contact:"
+msgstr "请使用各个选项卡填写客户基本信息并添加联系人："
+
+#: ghostwriter/rolodex/templates/rolodex/client_form.html:93
+#: ghostwriter/rolodex/templates/rolodex/project_form.html:203
+msgid "Updated the primary contact (there must be one and only one)."
+msgstr "已更新主要联系人（必须有且仅有一位）。"
+
+#: ghostwriter/rolodex/templates/rolodex/client_form.html:93
+#: ghostwriter/rolodex/templates/rolodex/project_form.html:203
+msgid "Contacts Updated"
+msgstr "联系人已更新"
+
 #: ghostwriter/rolodex/templates/rolodex/client_list.html:8
 msgid "Client List"
 msgstr "客户列表"
 
-#: ghostwriter/rolodex/templates/rolodex/client_list.html:14
-#: ghostwriter/templates/base_generic.html:170
-msgid "Clients"
-msgstr "客户"
+#: ghostwriter/rolodex/templates/rolodex/client_list.html:25
+msgid "Create Client"
+msgstr "新建客户"
+
+#: ghostwriter/rolodex/templates/rolodex/client_list.html:29
+msgid ""
+"There are no clients to see here yet, or your search returned no results. "
+"Create a client above or adjust your filters."
+msgstr "暂无客户，或搜索未返回结果。请在上方新建客户或调整筛选条件。"
+
+#: ghostwriter/rolodex/templates/rolodex/client_list.html:37
+msgid "Projects to Date"
+msgstr "已开展项目数"
 
 #: ghostwriter/rolodex/templates/rolodex/deconfliction_form.html:5
 msgid "Deconfliction Form"
@@ -2290,10 +2651,744 @@ msgstr "编辑冲突解除"
 msgid "New Deconfliction Form"
 msgstr "新建冲突解除"
 
+#: ghostwriter/rolodex/templates/rolodex/deconfliction_form.html:34
+msgid "Deconfliction"
+msgstr "冲突解除"
+
 #: ghostwriter/rolodex/templates/rolodex/project_detail.html:6
 #, python-format
 msgid "%(client)s %(project_type)s Details"
 msgstr "%(client)s %(project_type)s 详情"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:65
+msgid "Project Details"
+msgstr "项目详情"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:73
+msgid "Toggle the project&apos;s status between executing and complete"
+msgstr "在“执行中”和“已完成”之间切换该项目的状态"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:101
+msgid "Execution Dates"
+msgstr "执行日期"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:106
+msgid "Working Hours"
+msgstr "工作时间"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:108
+#, python-format
+msgid "%(start)s to %(end)s (%(tz)s)"
+msgstr "%(start)s 到 %(end)s (%(tz)s)"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:108
+msgid "No Working Hours Set"
+msgstr "未设置工作时间"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:112
+msgid "Slack Channel"
+msgstr "Slack 频道"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:114
+msgid "No Slack Channel"
+msgstr "未设置 Slack 频道"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:118
+#: ghostwriter/rolodex/templates/snippets/project_detail_modal.html:16
+msgid "Project Description"
+msgstr "项目说明"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:120
+msgid "Show Description"
+msgstr "显示说明"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:130
+#: ghostwriter/rolodex/templates/snippets/project_detail_modal.html:21
+#: ghostwriter/rolodex/templates/snippets/project_history_detail_modal.html:19
+#, python-format
+msgid ""
+"No one has added a description of this project. <a class=\"clickable\" "
+"href=\"%(fix_url)s\">Fix that here.</a>"
+msgstr ""
+"还没有人为该项目撰写说明。<a class=\"clickable\" href=\"%(fix_url)s\">点此补"
+"充。</a>"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:141
+msgid "Project Calendar"
+msgstr "项目日历"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:152
+msgid "Project Team Assignments"
+msgstr "项目团队分配"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:157
+msgid "Add & Edit Assignments"
+msgstr "添加并编辑分配"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:162
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:2174
+msgid "Operator"
+msgstr "执行人"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:163
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:805
+#: ghostwriter/users/templates/users/profile.html:86
+msgid "Role"
+msgstr "角色"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:164
+msgid "Dates"
+msgstr "日期"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:165
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:422
+#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:22
+#: ghostwriter/templates/account/snippets/already_logged_in.html:5
+#: ghostwriter/templates/note_form.html:5
+msgid "Note"
+msgstr "备注"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:188
+msgid "Edit this assignment"
+msgstr "编辑该分配"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:191
+msgid "Delete this assignment"
+msgstr "删除该分配"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:204
+msgid "There are no operators assigned to this project yet."
+msgstr "该项目尚未分配执行人。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:217
+msgid "Invited Collaborators"
+msgstr "受邀协作者"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:221
+msgid ""
+"Users listed here have view access to this project without appearing as "
+"assigned to do work."
+msgstr "此处列出的用户对该项目具有查看权限，但不会作为已分配的执行人出现。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:275
+#: ghostwriter/rolodex/templates/snippets/project_nav_tabs.html:15
+msgid "White Cards"
+msgstr "白卡"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:279
+msgid "Add & Edit White Cards"
+msgstr "添加并编辑白卡"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:291
+msgid "Date and time the client approved this white card."
+msgstr "客户批准该白卡的日期和时间。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:291
+msgid "Issued"
+msgstr "发布时间"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:305
+msgid "No one has added a description of this white card."
+msgstr "暂无该白卡的说明。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:312
+msgid "There are no white cards attached to this project yet."
+msgstr "该项目尚未附加任何白卡。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:320
+msgid "Scope Lists"
+msgstr "范围列表"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:324
+msgid "Add & Edit Scope Lists"
+msgstr "添加并编辑范围列表"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:326
+msgid ""
+"Create as many scope lists as you desire. Break-up large scopes into "
+"categories (e.g., External) or by objectives."
+msgstr "可创建任意多个范围列表。建议按类别（例如外部）或目标拆分大型范围。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:355
+#, python-format
+msgid "The first %(limit)s of %(total)s lines"
+msgstr "共 %(total)s 行，显示前 %(limit)s 行"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:357
+#, python-format
+msgid "The full scope, %(total)s lines"
+msgstr "完整范围，共 %(total)s 行"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:362
+msgid "Expand for more ..."
+msgstr "展开查看更多 ..."
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:373
+#, python-format
+msgid "View and copy the %(total)s lines in this scope"
+msgstr "查看并复制该范围的 %(total)s 行内容"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:378
+msgid "Edit this scope list"
+msgstr "编辑该范围列表"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:381
+msgid "Export the list as a text file"
+msgstr "将该列表导出为文本文件"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:386
+msgid "Delete this scope list"
+msgstr "删除该范围列表"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:397
+msgid "There are no scope lists attached to this project yet."
+msgstr "该项目尚未附加任何范围列表。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:409
+#: ghostwriter/rolodex/templates/snippets/project_nav_tabs.html:30
+msgid "Targets"
+msgstr "目标对象"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:413
+msgid "Add & Edit Targets"
+msgstr "添加并编辑目标对象"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:415
+msgid ""
+"Call-out specific targets to pursue, mark them as compromised, and make "
+"notes to remind you why they are interesting."
+msgstr "记录要重点关注的目标，并标记其攻陷状态，添加备注说明关注原因。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:420
+msgid "Owned"
+msgstr "已攻陷"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:421
+msgid "Target"
+msgstr "目标对象"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:446
+msgid "Toggle the target&apos;s compromised status"
+msgstr "切换该目标对象的攻陷状态"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:450
+msgid "Edit this target"
+msgstr "编辑该目标对象"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:453
+msgid "Delete this target"
+msgstr "删除该目标对象"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:465
+msgid "There are no targets attached to this project yet."
+msgstr "该项目尚未附加任何目标对象。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:477
+msgid "Start New Operation Log"
+msgstr "新建操作日志"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:478
+msgid "OR"
+msgstr "或"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:479
+msgid "Import Oplog"
+msgstr "导入操作日志"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:485
+msgid "ID"
+msgstr "ID"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:487
+msgid "Last Activity"
+msgstr "最近活动"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:488
+msgid "Export CSV"
+msgstr "导出 CSV"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:501
+msgid "No entries yet"
+msgstr "暂无条目"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:510
+msgid "Export a CSV"
+msgstr "导出 CSV"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:517
+msgid "There are no activity logs started for this project yet."
+msgstr "该项目尚未启动任何活动日志。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:525
+msgid "Generate Project Documents"
+msgstr "生成项目文档"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:529
+msgid ""
+"Generate JSON with project data or select a template to generate a project "
+"document (e.g., SOW, ROE)."
+msgstr ""
+"生成包含项目数据的 JSON，或选择模板生成项目文档（例如 SOW、ROE）。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:532
+msgid ""
+"No report data is available to these templates, so only the Word templates "
+"that are marked as project templates will be available."
+msgstr ""
+"这些模板无法访问报告数据，因此仅会显示标记为项目模板的 Word 模板。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:553
+msgid "Project Reports & Findings"
+msgstr "项目报告与发现项"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:557
+msgid ""
+"The project is marked as complete so no additional reports may be created."
+msgstr "该项目已标记为已完成，无法再创建新的报告。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:559
+msgid "Add a Report"
+msgstr "添加报告"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:562
+msgid "View and edit findings by opening the related report (click the link)."
+msgstr "点击链接打开相关报告即可查看和编辑发现项。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:570
+msgid "Created By"
+msgstr "创建人"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:581
+msgid "Complete, Awaiting Delivery"
+msgstr "已完成，等待交付"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:602
+msgid "Make a copy of this report on this project"
+msgstr "在该项目中复制此报告"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:607
+msgid "Archive this report"
+msgstr "归档该报告"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:612
+msgid "Delete this report"
+msgstr "删除该报告"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:622
+#, python-format
+msgid "Findings in %(title)s"
+msgstr "%(title)s 中的发现项"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:661
+msgid "Ready for Review"
+msgstr "可供审阅"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:669
+msgid "There are no findings for this project yet."
+msgstr "该项目暂无发现项。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:673
+msgid "There are no reports attached to this project yet."
+msgstr "该项目尚未附加任何报告。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:682
+msgid "Project Infrastructure"
+msgstr "项目基础设施"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:685
+msgid ""
+"Checked-out domains and servers will appear here. Add cloud servers here as "
+"they are created for the project.<br/>Associate your domains and subdomains "
+"with servers by creating connections."
+msgstr ""
+"已签出的域名和服务器会显示在这里。在为项目创建云服务器时也可在此添加。<br/>"
+"通过创建连接将域名和子域名与服务器关联起来。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:700
+msgid "Search domains by name or category..."
+msgstr "按名称或分类搜索域名..."
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:710
+msgid "Domain Name"
+msgstr "域名名称"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:711
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:804
+msgid "Purpose"
+msgstr "用途"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:712
+msgid "Date Range"
+msgstr "日期范围"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:720
+#, python-format
+msgid "Copy %(name)s"
+msgstr "复制 %(name)s"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:736
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:845
+msgid "Unknown/Deleted user"
+msgstr "未知/已删除用户"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:748
+msgid "View the domain in a new tab"
+msgstr "在新标签页中查看该域名"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:751
+msgid "Edit this domain checkout"
+msgstr "编辑该域名签出"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:754
+msgid "Delete this domain checkout"
+msgstr "删除该域名签出"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:762
+msgid "There are no domains tied to this project yet."
+msgstr "该项目尚未关联任何域名。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:780
+msgid "Search servers by hostname or IP..."
+msgstr "按主机名或 IP 搜索服务器..."
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:788
+msgid "Add a Cloud Server"
+msgstr "添加云服务器"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:796
+msgid "Primary IP"
+msgstr "主 IP"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:798
+msgid ""
+"The primary IP address is set in the database and used only to allow users "
+"to determine which IP address is used globally to refer to the server.<br/"
+">Only <em>static servers</em> will be links."
+msgstr ""
+"主 IP 地址在数据库中设置，仅用于让用户判断在全局范围内使用哪个 IP 来引用该"
+"服务器。<br/>仅 <em>静态服务器</em> 会显示为链接。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:802
+msgid "Other Addresses"
+msgstr "其他地址"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:806
+msgid "Provider"
+msgstr "供应商"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:816
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:824
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:872
+#, python-format
+msgid "Copy %(addr)s"
+msgstr "复制 %(addr)s"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:856
+msgid "View the server in a new tab"
+msgstr "在新标签页中查看该服务器"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:859
+msgid "Edit this server checkout"
+msgstr "编辑该服务器签出"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:862
+msgid "Delete this server checkout"
+msgstr "删除该服务器签出"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:891
+msgid "Edit this server"
+msgstr "编辑该服务器"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:894
+msgid "Delete this server"
+msgstr "删除该服务器"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:906
+msgid "There are no servers tied to this project yet."
+msgstr "该项目尚未关联任何服务器。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:912
+msgid "Domains and Servers"
+msgstr "域名与服务器"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:919
+msgid "Associate a Domain + Server"
+msgstr "关联域名和服务器"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:925
+msgid "Server IP"
+msgstr "服务器 IP"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:926
+msgid "Server name"
+msgstr "服务器名称"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:927
+msgid "CDN Endpoint"
+msgstr "CDN 端点"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:944
+msgid "No Endpoint"
+msgstr "无端点"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:950
+msgid "Edit this link"
+msgstr "编辑该关联"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:953
+msgid "Delete this link"
+msgstr "删除该关联"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:966
+msgid ""
+"Check-out/add at least one domain and one server to create an association."
+msgstr "至少签出/添加一个域名和一台服务器后才能创建关联。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:973
+msgid "Deconfliction Events"
+msgstr "冲突解除事件"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:977
+msgid "Record a Deconfliction"
+msgstr "记录冲突解除"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:992
+msgid "Source of the alert (e.g., EDR)."
+msgstr "告警来源（例如 EDR）。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:992
+msgid "Alert Source"
+msgstr "告警来源"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:998
+msgid "Date and time of the original alert."
+msgstr "原始告警的日期和时间。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:998
+msgid "Time Alert Triggered"
+msgstr "告警触发时间"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1004
+msgid "Log entries from the hour before the alert."
+msgstr "告警发生前一小时内的日志条目。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1004
+msgid "Log Entries"
+msgstr "日志条目"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1023
+#, python-format
+msgid "%(count)s Entry"
+msgid_plural "%(count)s Entries"
+msgstr[0] "%(count)s 条"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1026
+msgid "No entries"
+msgstr "暂无条目"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1039
+msgid "Date and time of when we were informed of the event."
+msgstr "我们获悉该事件的日期和时间。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1039
+msgid "Report Received"
+msgstr "收到报告"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1045
+msgid "Date and time of our response to the event."
+msgstr "我们响应该事件的日期和时间。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1045
+msgid "Response Sent"
+msgstr "响应已发送"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1051
+msgid "Time delay between report and response."
+msgstr "报告与响应之间的时延。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1051
+msgid "Response Delay"
+msgstr "响应时延"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1080
+#, python-format
+msgid ""
+"No one has added a description of this event. <a class=\"clickable\" "
+"href=\"%(fix_url)s\">Fix that here.</a>"
+msgstr ""
+"暂无该事件的说明。<a class=\"clickable\" href=\"%(fix_url)s\">点此补充。</a>"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1095
+msgid "There are no deconfliction events for this project."
+msgstr "该项目暂无冲突解除事件。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1104
+msgid "BloodHound"
+msgstr "BloodHound"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1109
+#, python-format
+msgid "Using Project-Specific Configuration: <em>%(url)s</em>"
+msgstr "使用项目专属配置：<em>%(url)s</em>"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1111
+#, python-format
+msgid "Using Shared Global Configuration: <em>%(url)s</em>"
+msgstr "使用共享的全局配置：<em>%(url)s</em>"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1113
+#: ghostwriter/users/templates/users/profile.html:61
+msgid "Unavailable"
+msgstr "暂无"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1118
+msgid ""
+"This project is using the shared global BloodHound configuration and cached "
+"results. Refreshing data here updates the shared cache used by other "
+"projects that rely on the same fallback."
+msgstr ""
+"该项目使用共享的全局 BloodHound 配置和缓存结果。在此刷新数据将更新所有依赖"
+"该备用配置的项目共用的缓存。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1126
+msgid "Fetch or refresh the data from BloodHound"
+msgstr "从 BloodHound 拉取或刷新数据"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1126
+msgid "Test BloodHound Connectivity"
+msgstr "测试 BloodHound 连接"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1134
+msgid "Fetch data from the project&apos;s configured BloodHound API"
+msgstr "从该项目配置的 BloodHound API 拉取数据"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1136
+msgid "Fetch data from the globally configured BloodHound API"
+msgstr "从全局配置的 BloodHound API 拉取数据"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1138
+msgid "Fetch BloodHound Data"
+msgstr "拉取 BloodHound 数据"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1148
+msgid "Collaborative Notes"
+msgstr "协作笔记"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1164
+msgid "Edit Extra Fields"
+msgstr "编辑扩展字段"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1175
+msgid "Project Legacy Comments"
+msgstr "项目历史评论"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1179
+msgid "Add a Comment"
+msgstr "添加评论"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1211
+msgid "There are no notes for this project."
+msgstr "该项目暂无备注。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1518
+#, python-format
+msgid ""
+"Create a %(group)s objective or drag-and-drop an objective here to update "
+"its priority."
+msgstr ""
+"创建一个 %(group)s 优先级的目标，或将已有目标拖放到此处以更新其优先级。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1616
+msgid "Project Update"
+msgstr "项目更新"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1654
+msgid "Target Update"
+msgstr "目标更新"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1734
+#: ghostwriter/templates/base_generic.html:238
+msgid "Execution"
+msgstr "执行阶段"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1826
+msgid "Objective Update"
+msgstr "目标更新"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1929
+msgid "Task Deleted"
+msgstr "任务已删除"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:1962
+msgid "Task Updated"
+msgstr "任务已更新"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:2106
+msgid "Testing BloodHound Connectivity"
+msgstr "测试 BloodHound 连接"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:2107
+msgid "Testing the configured BloodHound connection."
+msgstr "正在测试已配置的 BloodHound 连接。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:2108
+msgid "Connectivity Test Complete"
+msgstr "连接测试完成"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:2109
+msgid "Connectivity Test Failed"
+msgstr "连接测试失败"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:2113
+msgid "Fetching BloodHound Info"
+msgstr "正在拉取 BloodHound 信息"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:2114
+msgid "Please wait. Fetching can take several minutes."
+msgstr "请稍候，拉取可能需要数分钟。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:2115
+msgid "Fetch Completed"
+msgstr "拉取完成"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:2116
+msgid "Fetch Failed"
+msgstr "拉取失败"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:2139
+msgid "Copy to Clipboard"
+msgstr "复制到剪贴板"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:2156
+msgid "Related Log Entries"
+msgstr "相关日志条目"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:2163
+msgid ""
+"Log entries from the hour prior to the alert timestamp, sorted from most "
+"recent to oldest."
+msgstr ""
+"告警时间戳前一小时内的日志条目，按从新到旧排序。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:2168
+msgid "Destination"
+msgstr "目标地址"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:2169
+msgid "Tool"
+msgstr "工具"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:2170
+msgid "User"
+msgstr "用户"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:2171
+msgid "Command"
+msgstr "命令"
+
+#: ghostwriter/rolodex/templates/rolodex/project_detail.html:2173
+msgid "Comments"
+msgstr "备注"
 
 #: ghostwriter/rolodex/templates/rolodex/project_form.html:5
 msgid "Project Form"
@@ -2302,6 +3397,16 @@ msgstr "项目表单"
 #: ghostwriter/rolodex/templates/rolodex/project_form.html:30
 msgid "New Project Form"
 msgstr "新建项目"
+
+#: ghostwriter/rolodex/templates/rolodex/project_form.html:37
+msgid "Setup a Project"
+msgstr "项目设置"
+
+#: ghostwriter/rolodex/templates/rolodex/project_form.html:39
+msgid ""
+"Use the tabs to provide basic project parameters, notes, assignments, and "
+"objectives:"
+msgstr "请使用各个选项卡填写项目的基本参数、备注、分配以及目标："
 
 #: ghostwriter/rolodex/templates/rolodex/project_list.html:8
 msgid "Project List"
@@ -2312,13 +3417,35 @@ msgstr "项目列表"
 msgid "Projects"
 msgstr "项目"
 
+#: ghostwriter/rolodex/templates/rolodex/project_list.html:25
+msgid "Create Project"
+msgstr "新建项目"
+
+#: ghostwriter/rolodex/templates/rolodex/project_list.html:29
+msgid ""
+"Projects shown here are projects to which you have access. You gain access "
+"to a project by being assigned to it or invited to have full access to the "
+"related client's history."
+msgstr ""
+"此处展示的是你有权限访问的项目。被指派到该项目，或受邀获得相关客户历史记录的"
+"完整访问权限后，即可访问该项目。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_list.html:33
+msgid ""
+"There are no projects to see here yet, you lack access to the project(s), or "
+"your search returned no results. Create a project above or adjust your "
+"filters."
+msgstr ""
+"暂无项目，可能是没有访问权限，或搜索未返回结果。请在上方新建项目或调整筛选"
+"条件。"
+
+#: ghostwriter/rolodex/templates/rolodex/project_list.html:42
+msgid "Details"
+msgstr "详情"
+
 #: ghostwriter/rolodex/templates/snippets/client_nav_tabs.html:4
 msgid "General Info"
 msgstr "基本信息"
-
-#: ghostwriter/rolodex/templates/snippets/client_nav_tabs.html:10
-msgid "Invitations"
-msgstr "邀请"
 
 #: ghostwriter/rolodex/templates/snippets/client_nav_tabs.html:16
 msgid "Points of Contact"
@@ -2352,10 +3479,6 @@ msgstr ""
 msgid "Project Points of Contacts"
 msgstr "项目联系人"
 
-#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:9
-msgid "Add & Edit Contacts"
-msgstr "添加并编辑联系人"
-
 #: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:11
 msgid ""
 "These are points of contact for this project. You can create project-"
@@ -2366,30 +3489,10 @@ msgstr ""
 "这里展示该项目的联系人。你可以在此创建项目专属联系人，或从客户处导入联系人。"
 "如果某位联系人会出现在多个项目中，建议将其加入客户档案以便复用。"
 
-#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:17
-#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:26
-#: ghostwriter/templates/account/email.html:29
-msgid "Primary"
-msgstr "主要"
-
-#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:19
-msgid "Title/Role"
-msgstr "职位/角色"
-
 #: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:21
 #: ghostwriter/users/templates/users/profile.html:58
 msgid "Phone"
 msgstr "电话"
-
-#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:22
-#: ghostwriter/templates/account/snippets/already_logged_in.html:5
-#: ghostwriter/templates/note_form.html:5
-msgid "Note"
-msgstr "备注"
-
-#: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:26
-msgid "Not Primary"
-msgstr "非主要"
 
 #: ghostwriter/rolodex/templates/snippets/project_contacts_table.html:41
 msgid "Expand to view additional information"
@@ -2428,29 +3531,9 @@ msgstr "联系人更新"
 msgid "Additional Project Details"
 msgstr "更多项目详情"
 
-#: ghostwriter/rolodex/templates/snippets/project_detail_modal.html:16
-msgid "Project Description"
-msgstr "项目说明"
-
-#: ghostwriter/rolodex/templates/snippets/project_detail_modal.html:21
-#: ghostwriter/rolodex/templates/snippets/project_history_detail_modal.html:19
-#, python-format
-msgid ""
-"No one has added a description of this project. <a class=\"clickable\" "
-"href=\"%(fix_url)s\">Fix that here.</a>"
-msgstr ""
-"还没有人为该项目撰写说明。<a class=\"clickable\" href=\"%(fix_url)s\">点此补"
-"充。</a>"
-
 #: ghostwriter/rolodex/templates/snippets/project_detail_modal.html:24
 msgid "Team Assignments"
 msgstr "团队分配"
-
-#: ghostwriter/rolodex/templates/snippets/project_detail_modal.html:31
-#: ghostwriter/rolodex/templates/snippets/project_history_detail_modal.html:30
-#, python-format
-msgid "Missing Full Name (%(username)s)"
-msgstr "未填写全名 (%(username)s)"
 
 #: ghostwriter/rolodex/templates/snippets/project_detail_modal.html:39
 msgid "No Assignments"
@@ -2477,10 +3560,6 @@ msgstr "规划"
 msgid "People"
 msgstr "成员"
 
-#: ghostwriter/rolodex/templates/snippets/project_nav_tabs.html:15
-msgid "White Cards"
-msgstr "白卡"
-
 #: ghostwriter/rolodex/templates/snippets/project_nav_tabs.html:20
 msgid "Scope"
 msgstr "范围"
@@ -2488,10 +3567,6 @@ msgstr "范围"
 #: ghostwriter/rolodex/templates/snippets/project_nav_tabs.html:25
 msgid "Objectives"
 msgstr "目标"
-
-#: ghostwriter/rolodex/templates/snippets/project_nav_tabs.html:30
-msgid "Targets"
-msgstr "目标对象"
 
 #: ghostwriter/rolodex/templates/snippets/project_nav_tabs.html:35
 msgid "Logs"
@@ -2768,11 +3843,6 @@ msgstr "域名表单"
 msgid "Domain Catalog"
 msgstr "域名目录"
 
-#: ghostwriter/shepherd/templates/shepherd/domain_list.html:12
-#: ghostwriter/templates/base_generic.html:315
-msgid "Domains"
-msgstr "域名"
-
 #: ghostwriter/shepherd/templates/shepherd/server_checkout.html:5
 msgid "Server Check-out"
 msgstr "签出服务器"
@@ -2788,11 +3858,6 @@ msgstr "服务器表单"
 #: ghostwriter/shepherd/templates/shepherd/server_list.html:8
 msgid "Static Server Catalog"
 msgstr "静态服务器目录"
-
-#: ghostwriter/shepherd/templates/shepherd/server_list.html:14
-#: ghostwriter/templates/base_generic.html:299
-msgid "Servers"
-msgstr "服务器"
 
 #: ghostwriter/shepherd/templates/shepherd/server_search.html:4
 msgid "All Server Search"
@@ -2918,8 +3983,7 @@ msgstr "历史"
 msgid ""
 "Templatetag requires the model dotted path: 'app_label.ModelName'. Received "
 "'%s'."
-msgstr ""
-"模板标签需要使用点分路径 'app_label.ModelName'，但收到的是 '%s'。"
+msgstr "模板标签需要使用点分路径 'app_label.ModelName'，但收到的是 '%s'。"
 
 #: ghostwriter/singleton/templatetags/settings_tags.py:27
 #, python-format
@@ -3347,10 +4411,6 @@ msgstr "观察项库"
 #: ghostwriter/templates/base_generic.html:228
 msgid "Add New Observation"
 msgstr "新建观察项"
-
-#: ghostwriter/templates/base_generic.html:238
-msgid "Execution"
-msgstr "执行阶段"
 
 #: ghostwriter/templates/base_generic.html:242
 msgid "My Active Assets"
@@ -3894,7 +4954,10 @@ msgid_plural ""
 "\n"
 "                                    You have added %(count)s security keys.\n"
 "                                "
-msgstr[0] "\n                                    你已添加 %(count)s 个安全密钥。\n                                "
+msgstr[0] ""
+"\n"
+"                                    你已添加 %(count)s 个安全密钥。\n"
+"                                "
 
 #: ghostwriter/templates/mfa/index.html:66
 msgid "No security keys have been added."
@@ -3925,7 +4988,11 @@ msgid_plural ""
 "                                        There are %(unused_count)s out of "
 "%(total_count)s recovery codes available.\n"
 "                                    "
-msgstr[0] "\n                                        当前可用恢复代码 %(unused_count)s / %(total_count)s。\n                                    "
+msgstr[0] ""
+"\n"
+"                                        当前可用恢复代码 %(unused_count)s / "
+"%(total_count)s。\n"
+"                                    "
 
 #: ghostwriter/templates/mfa/index.html:101
 msgid "No recovery codes set up."
@@ -3947,8 +5014,7 @@ msgstr "步骤 1"
 msgid ""
 "Scan the QR code below with a token generator of your choice (for instance "
 "Google Authenticator)."
-msgstr ""
-"使用任意身份验证器（如 Google Authenticator）扫描下方二维码。"
+msgstr "使用任意身份验证器（如 Google Authenticator）扫描下方二维码。"
 
 #: ghostwriter/templates/mfa/totp/activate_form.html:36
 msgid "Step 2"
@@ -4055,8 +5121,8 @@ msgid ""
 "You are about to use your %(provider_name)s account to login to\n"
 "%(site_name)s. As a final step, please complete the following form:"
 msgstr ""
-"你即将使用 %(provider_name)s 账户登录 %(site_name)s。请填写以下表单完成最后"
-"一步："
+"你即将使用 %(provider_name)s 账户登录 %(site_name)s。请填写以下表单完成最后一"
+"步："
 
 #: ghostwriter/templates/users/user_detail.html:4
 #, python-format
@@ -4124,17 +5190,9 @@ msgstr "未填写全名"
 msgid "Username"
 msgstr "用户名"
 
-#: ghostwriter/users/templates/users/profile.html:61
-msgid "Unavailable"
-msgstr "暂无"
-
 #: ghostwriter/users/templates/users/profile.html:67
 msgid "Timezone"
 msgstr "时区"
-
-#: ghostwriter/users/templates/users/profile.html:86
-msgid "Role"
-msgstr "角色"
 
 #: ghostwriter/users/templates/users/profile.html:97
 msgid "Access"

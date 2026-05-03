@@ -11,7 +11,7 @@
   <nav aria-label="breadcrumb">
     <ul class="breadcrumb">
       <li class="breadcrumb-item"><a href="{% url 'home:dashboard' %}">{% trans "Dashboard" %}</a></li>
-      <li class="breadcrumb-item"><a href="{% url 'rolodex:clients' %}">Clients</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'rolodex:clients' %}">{% trans "Clients" %}</a></li>
       <li class="breadcrumb-item active" aria-current="page">{{ client.name }}</li>
     </ul>
   </nav>
@@ -28,8 +28,8 @@
         <div class="bar3"></div>
       </div>
       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="client-dropdown-btn">
-        <a class="dropdown-item icon edit-icon" href="{% url 'rolodex:client_update' client.id %}"> Edit</a>
-        <a class="dropdown-item icon trash-icon" href="{% url 'rolodex:client_delete' client.id %}"> Delete</a>
+        <a class="dropdown-item icon edit-icon" href="{% url 'rolodex:client_update' client.id %}"> {% trans "Edit" %}</a>
+        <a class="dropdown-item icon trash-icon" href="{% url 'rolodex:client_delete' client.id %}"> {% trans "Delete" %}</a>
       </div>
     </div>
   {% endif %}
@@ -61,31 +61,30 @@
     <!-- Info Tab -->
     <div class="tab-content">
       <div id="general" class="tab-pane in active">
-        <h4>Client Details</h4>
+        <h4>{% trans "Client Details" %}</h4>
         <hr/>
 
         <table class="table table-borderless project-details-table offset-2 col-8">
           <tr>
-            <td class="text-left bold">Short Name</td>
+            <td class="text-left bold">{% trans "Short Name" %}</td>
             <td class="text-left">
-              {% if client.short_name %} {{ client.short_name }} {% else %} No Short Name {% endif %}
+              {% if client.short_name %} {{ client.short_name }} {% else %} {% trans "No Short Name" %} {% endif %}
             </td>
           </tr>
           <tr>
-            <td class="text-left bold">Codename</td>
+            <td class="text-left bold">{% trans "Codename" %}</td>
             <td class="text-left">
-              {% if client.codename %} {{ client.codename }} {% else %} No Codename {% endif %}
+              {% if client.codename %} {{ client.codename }} {% else %} {% trans "No Codename" %} {% endif %}
             </td>
           </tr>
           <tr>
-            <td class="text-left bold">Client's Current Time</td>
+            <td class="text-left bold">{% trans "Client's Current Time" %}</td>
             <td class="text-left"><span class="client-datetime"></span></td>
           </tr>
           <tr>
-            <td class="text-left bold">Additional Information</td>
+            <td class="text-left bold">{% trans "Additional Information" %}</td>
             <td class="text-left">
-              <a href="javascript:void(0);" id="clientDescriptionDropdown" class="align-icon icon add-icon">Expand
-                Information</a>
+              <a href="javascript:void(0);" id="clientDescriptionDropdown" class="align-icon icon add-icon">{% trans "Expand Information" %}</a>
             </td>
           </tr>
         </table>
@@ -94,23 +93,21 @@
           {% if client.description %}
             {{ client.description|bleach }}
           {% else %}
-            <p class="text-center">No additional information provided for this client. <a class="clickable"
-                                                                                          href="{% url 'rolodex:client_update' client.id %}">Fix
-              that here.</a></p>
+            {% url 'rolodex:client_update' client.id as client_update_url %}
+            <p class="text-center">{% blocktrans with fix_url=client_update_url %}No additional information provided for this client. <a class="clickable" href="{{ fix_url }}">Fix that here.</a>{% endblocktrans %}</p>
           {% endif %}
         </div>
 
         <div class="hidden-element"></div>
 
-        <h5>Business Address</h5>
+        <h5>{% trans "Business Address" %}</h5>
         <hr>
 
         <div class="address">
           {% if client.address %}
             {{ client.address|bleach }}
           {% else %}
-            <div class="alert alert-warning offset-md-2 col-md-8 mt-1" role="alert">No address provided for this
-              client.
+            <div class="alert alert-warning offset-md-2 col-md-8 mt-1" role="alert">{% trans "No address provided for this client." %}
             </div>
           {% endif %}
         </div>
@@ -119,19 +116,18 @@
       {% comment %} Invitations {% endcomment %}
       {% if request.user|is_privileged %}
         <div id="invitations" class="tab-pane">
-          <h4>Invitations</h4>
+          <h4>{% trans "Invitations" %}</h4>
           <hr/>
           <a class="icon add-icon btn btn-primary mb-3 col-3"
-             href="{% url 'rolodex:client_update' client.id %}#invites">Add & Edit Invitations</a>
-          <p class="text-center offset-2 col-8">Users listed here have view access to this client and all of their
-            projects, infrastructure, etc.</p>
+             href="{% url 'rolodex:client_update' client.id %}#invites">{% trans "Add & Edit Invitations" %}</a>
+          <p class="text-center offset-2 col-8">{% trans "Users listed here have view access to this client and all of their projects, infrastructure, etc." %}</p>
           {% if client.clientinvite_set.all %}
             <table id="clientTable" class="tablesorter table table-striped">
               <thead>
               <tr>
-                <th class="align-middle pr-4 text-left">Name</th>
-                <th class="align-middle pr-4 text-left">Comment</th>
-                <th class="align-middle sorter-false">Options</th>
+                <th class="align-middle pr-4 text-left">{% trans "Name" %}</th>
+                <th class="align-middle pr-4 text-left">{% trans "Comment" %}</th>
+                <th class="align-middle sorter-false">{% trans "Options" %}</th>
               </tr>
               </thead>
               {% for invite in client.clientinvite_set.all %}
@@ -141,7 +137,7 @@
                       {% if invite.user.name %}
                         {{ invite.user.name }}
                       {% else %}
-                        Missing Full Name ({{ invite.user.username|capfirst }})
+                        {% blocktrans with username=invite.user.username|capfirst %}Missing Full Name ({{ username }}){% endblocktrans %}
                       {% endif %}
                     </a>
                   </td>
@@ -152,11 +148,11 @@
                   <td class="align-middle">
                     <div class="d-flex justify-content-center">
                         <a class="icon edit-icon"
-                           title="Edit this invitation"
+                           title="{% trans 'Edit this invitation' %}"
                            href="{% url 'rolodex:client_update' client.id %}#invites"></a>
                       <a class="icon trash-icon" id="invite-delete-button-{{ invite.id }}"
                            class="js-confirm-delete" data-toggle="modal" data-target="#confirm-delete-modal"
-                         title="Delete this invitation"
+                         title="{% trans 'Delete this invitation' %}"
                            href="javascript:void(0);" delete-target-csrftoken="{{ csrf_token }}"
                            delete-target-url="{% url 'rolodex:ajax_delete_client_invite' invite.id %}"
                            delete-target-id="{{ invite.id }}" delete-target-type="invitation"></a>
@@ -166,7 +162,7 @@
               {% endfor %}
             </table>
           {% else %}
-            <div class="alert alert-warning offset-md-2 col-md-8 mt-1" role="alert">There is nothing to see here yet.
+            <div class="alert alert-warning offset-md-2 col-md-8 mt-1" role="alert">{% trans "There is nothing to see here yet." %}
             </div>
           {% endif %}
         </div>
@@ -174,24 +170,24 @@
 
       <!-- POC Tab -->
       <div id="contacts" class="tab-pane">
-        <h4>Client Contacts</h4>
+        <h4>{% trans "Client Contacts" %}</h4>
         <hr/>
 
-        <a class="icon add-icon btn btn-primary mb-3 col-3" href="{% url 'rolodex:client_update' client.id %}#contacts">Add & Edit Contacts</a>
+        <a class="icon add-icon btn btn-primary mb-3 col-3" href="{% url 'rolodex:client_update' client.id %}#contacts">{% trans "Add & Edit Contacts" %}</a>
         {% if client.clientcontact_set.all %}
           <table id="clientTable" class="tablesorter table table-striped">
             <thead>
             <tr>
-              <th class="align-middle text-left">Primary</th>
-              <th class="align-middle text-left">Name</th>
-              <th class="align-middle text-left">Title/Role</th>
-              <th class="align-middle text-left">Email</th>
-              <th class="sorter-false">Options</th>
+              <th class="align-middle text-left">{% trans "Primary" %}</th>
+              <th class="align-middle text-left">{% trans "Name" %}</th>
+              <th class="align-middle text-left">{% trans "Title/Role" %}</th>
+              <th class="align-middle text-left">{% trans "Email" %}</th>
+              <th class="sorter-false">{% trans "Options" %}</th>
             </tr>
             </thead>
             {% for poc in client.clientcontact_set.all %}
               <tr>
-                <td class="align-middle text-left">{% if poc.primary %}<i class="fas fa-check healthy"><span class="sr-only">Primary</span></i>{% else %}<span class="sr-only">Not Primary</span>{% endif %}</td>
+                <td class="align-middle text-left">{% if poc.primary %}<i class="fas fa-check healthy"><span class="sr-only">{% trans "Primary" %}</span></i>{% else %}<span class="sr-only">{% trans "Not Primary" %}</span>{% endif %}</td>
                 <td class="align-middle text-left" id="delete-target-content-contact-{{ poc.id }}">{{ poc.name }}</td>
                 <td class="align-middle text-left">{% if poc.job_title %}{{ poc.job_title }}{% else %}--{% endif %}</td>
                 <td class="align-middle text-left">{% if poc.email %}{{ poc.email }}{% else %}--{% endif %}</td>
@@ -200,14 +196,14 @@
                   <div class="d-flex justify-content-center">
                     <span
                       class="icon preview-icon clickable-link"
-                      title="View additional information"
+                      title="{% trans 'View additional information' %}"
                       onclick="openModal('#client_contact_detail_{{ poc.id }}')"
                     ></span>
                     <a class="icon edit-icon"
-                       title="Edit this contact"
+                       title="{% trans 'Edit this contact' %}"
                          href="{% url 'rolodex:client_update' client.id %}#contacts"></a>
                     <a class="icon trash-icon" id="poc-delete-button-{{ poc.id }}"
-                       title="Delete this contact"
+                       title="{% trans 'Delete this contact' %}"
                        class="js-confirm-delete" data-toggle="modal" data-target="#confirm-delete-modal"
                        href="javascript:void(0);" delete-target-csrftoken="{{ csrf_token }}"
                        delete-target-url="{% url 'rolodex:ajax_delete_client_poc' poc.id %}"
@@ -218,23 +214,20 @@
             {% endfor %}
           </table>
         {% else %}
-          <div class="alert alert-warning offset-md-2 col-md-8 mt-1" role="alert">There is nothing to see here yet.
+          <div class="alert alert-warning offset-md-2 col-md-8 mt-1" role="alert">{% trans "There is nothing to see here yet." %}
           </div>
         {% endif %}
       </div>
 
       <!-- Project History Tab -->
       <div id="project-history" class="tab-pane">
-        <h4>Client Projects</h4>
+        <h4>{% trans "Client Projects" %}</h4>
         <hr/>
 
-        <a class="icon add-icon btn btn-primary mb-3 col-3" href="{% url 'rolodex:project_create' client.id %}">Add a
-          Project</a>
+        <a class="icon add-icon btn btn-primary mb-3 col-3" href="{% url 'rolodex:project_create' client.id %}">{% trans "Add a Project" %}</a>
 
         {% if not request.user|is_privileged %}
-          <div class="alert alert-success col-md-12 mt-3" role="alert">Some projects shown here may have incomplete
-            information if you do not have access. You gain access to a project by being assigned to it or invited to have full access
-            to the related client's history.
+          <div class="alert alert-success col-md-12 mt-3" role="alert">{% trans "Some projects shown here may have incomplete information if you do not have access. You gain access to a project by being assigned to it or invited to have full access to the related client's history." %}
           </div>
         {% endif %}
 
@@ -242,10 +235,10 @@
           <table id="projectTable" class="tablesorter table">
             <thead>
             <tr>
-              <th class="align-middle pr-4 text-left">Codename</th>
-              <th class="align-middle pr-4 text-left">Project Type</th>
-              <th class="sorter-date-range-dMMMyyyy pr-4 text-left">Execution Window</th>
-              <th class="sorter-false">Options</th>
+              <th class="align-middle pr-4 text-left">{% trans "Codename" %}</th>
+              <th class="align-middle pr-4 text-left">{% trans "Project Type" %}</th>
+              <th class="sorter-date-range-dMMMyyyy pr-4 text-left">{% trans "Execution Window" %}</th>
+              <th class="sorter-false">{% trans "Options" %}</th>
             </tr>
             </thead>
             {% for project in projects %}
@@ -255,7 +248,7 @@
                     <td class="align-middle text-left"><a class="clickable"
                                                 href="{{ project.get_absolute_url }}">{{ project.codename }}</a></td>
                   {% else %}
-                    <td class="align-middle text-left"><span class="blurry">REDACTED</span></td>
+                    <td class="align-middle text-left"><span class="blurry">{% trans "REDACTED" %}</span></td>
                   {% endif %}
                   <td class="align-middle text-left">{{ project.project_type }}</td>
                   <td class="align-middle text-left" data-text="{{ project.start_date|date:"Y-m-d" }}">{{ project.start_date|date:"DATE_FORMAT" }}
@@ -266,15 +259,15 @@
                       {% if has_access %}
                         <a
                           class="icon preview-icon clickable-link"
-                          title="Click to view additional information"
+                          title="{% trans 'Click to view additional information' %}"
                           onclick="openModal('#project_history_details_{{ project.id }}')"
                         ></a>
                       {% endif %}
                       <a class="icon edit-icon"
-                         title="Edit this project"
+                         title="{% trans 'Edit this project' %}"
                          href="{% url 'rolodex:project_update' project.id %}"></a>
                       <a class="icon trash-icon"
-                         title="Delete this project"
+                         title="{% trans 'Delete this project' %}"
                          href="{% url 'rolodex:project_delete' project.id %}"></a>
                     </div>
                   </td>
@@ -283,7 +276,7 @@
             {% endfor %}
           </table>
         {% else %}
-          <div class="alert alert-warning offset-md-2 col-md-8 mt-1" role="alert">This client has no project history.
+          <div class="alert alert-warning offset-md-2 col-md-8 mt-1" role="alert">{% trans "This client has no project history." %}
           </div>
         {% endif %}
       </div>
@@ -291,23 +284,21 @@
       <!-- Infrastructure History Tab -->
       <div id="infrastructure-history" class="tab-pane">
         {% if domains or servers or vps %}
-          <h4>Domains Used with Client</h4>
+          <h4>{% trans "Domains Used with Client" %}</h4>
           <hr/>
           {% if domains %}
             {% if not request.user|is_privileged %}
-              <div class="alert alert-success col-md-12 mt-3" role="alert">Some projects shown here will be hidden if you do
-                not have access. You gain access to a project by being assigned to it or invited to have full access
-                to the related client's history.
+              <div class="alert alert-success col-md-12 mt-3" role="alert">{% trans "Some projects shown here will be hidden if you do not have access. You gain access to a project by being assigned to it or invited to have full access to the related client's history." %}
               </div>
             {% endif %}
             <table id="domainTable" class="tablesorter table table-striped">
               <thead>
               <tr>
-                <th class="align-middle pr-4 text-left">Project</th>
-                <th class="align-middle pr-4 text-left">Domain</th>
-                <th class="align-middle pr-4 text-left">Activity Type</th>
-                <th class="align-middle pr-4 text-left">End Date</th>
-                <th class="align-middle pr-4 text-left">Checked Out By</th>
+                <th class="align-middle pr-4 text-left">{% trans "Project" %}</th>
+                <th class="align-middle pr-4 text-left">{% trans "Domain" %}</th>
+                <th class="align-middle pr-4 text-left">{% trans "Activity Type" %}</th>
+                <th class="align-middle pr-4 text-left">{% trans "End Date" %}</th>
+                <th class="align-middle pr-4 text-left">{% trans "Checked Out By" %}</th>
               </tr>
               </thead>
               {% for domain in domains %}
@@ -317,7 +308,7 @@
                                                 href="{{ domain.project.get_absolute_url }}">{{ domain.project.codename }}</a>
                     </td>
                   {% else %}
-                    <td class="align-middle text-left"><span class="blurry">REDACTED</span></td>
+                    <td class="align-middle text-left"><span class="blurry">{% trans "REDACTED" %}</span></td>
                   {% endif %}
                   <td class="align-middle text-left"><a class="clickable"
                                               href="{{ domain.domain.get_absolute_url }}">{{ domain.domain.name }}</a>
@@ -329,30 +320,27 @@
               {% endfor %}
             </table>
           {% else %}
-            <div class="alert alert-warning offset-md-2 col-md-8 mt-1" role="alert">No domain history for this
-              client yet.
+            <div class="alert alert-warning offset-md-2 col-md-8 mt-1" role="alert">{% trans "No domain history for this client yet." %}
             </div>
           {% endif %}
 
-          <h4>Servers Used with {{ client.name }}</h4>
+          <h4>{% blocktrans with name=client.name %}Servers Used with {{ name }}{% endblocktrans %}</h4>
           <hr/>
 
           {% if servers or vps %}
             {% if not request.user|is_privileged %}
-              <div class="alert alert-success col-md-12 mt-3" role="alert">Some projects shown here will be hidden if you do
-                not have access. You gain access to a project by being assigned to it or invited to have full access
-                to the related client's history.
+              <div class="alert alert-success col-md-12 mt-3" role="alert">{% trans "Some projects shown here will be hidden if you do not have access. You gain access to a project by being assigned to it or invited to have full access to the related client's history." %}
               </div>
             {% endif %}
 
             <table id="serverTable" class="tablesorter table table-striped">
               <thead>
               <tr>
-                <th class="align-middle pr-4 text-left">Project</th>
-                <th class="align-middle pr-4 text-left">Server</th>
-                <th class="align-middle pr-4 text-left">Activity Type</th>
-                <th class="align-middle pr-4 text-left">End Date</th>
-                <th class="align-middle text-left">Checked Out By</th>
+                <th class="align-middle pr-4 text-left">{% trans "Project" %}</th>
+                <th class="align-middle pr-4 text-left">{% trans "Server" %}</th>
+                <th class="align-middle pr-4 text-left">{% trans "Activity Type" %}</th>
+                <th class="align-middle pr-4 text-left">{% trans "End Date" %}</th>
+                <th class="align-middle text-left">{% trans "Checked Out By" %}</th>
               </tr>
               </thead>
               {% for server in servers %}
@@ -362,7 +350,7 @@
                                                 href="{{ server.project.get_absolute_url }}">{{ server.project.codename }}</a>
                     </td>
                   {% else %}
-                    <td class="align-middle text-left"><span class="blurry">REDACTED</span></td>
+                    <td class="align-middle text-left"><span class="blurry">{% trans "REDACTED" %}</span></td>
                   {% endif %}
                   <td class="align-middle text-left"><a class="clickable"
                                               href="{{ server.server.get_absolute_url }}">{{ server.server.ip_address }}</a>
@@ -380,7 +368,7 @@
                                                 href="{{ server.project.get_absolute_url }}">{{ server.project.codename }}</a>
                     </td>
                   {% else %}
-                    <td class="align-middle text-left"><span class="blurry">REDACTED</span></td>
+                    <td class="align-middle text-left"><span class="blurry">{% trans "REDACTED" %}</span></td>
                   {% endif %}
                   <td class="align-middle text-left">{{ server.ip_address }}</td>
                   <td class="align-middle text-left">{{ server.activity_type }}</td>
@@ -389,13 +377,11 @@
               {% endfor %}
             </table>
           {% else %}
-            <div class="alert alert-warning offset-md-2 col-md-8 mt-1" role="alert">No server history for this
-              client yet.
+            <div class="alert alert-warning offset-md-2 col-md-8 mt-1" role="alert">{% trans "No server history for this client yet." %}
             </div>
           {% endif %}
         {% else %}
-          <div class="alert alert-warning offset-md-2 col-md-8 mt-1" role="alert">No infrastructure history for this
-            client yet.
+          <div class="alert alert-warning offset-md-2 col-md-8 mt-1" role="alert">{% trans "No infrastructure history for this client yet." %}
           </div>
         {% endif %}
       </div>
@@ -403,7 +389,7 @@
       {% comment %} Extra Fields Tab {% endcomment %}
       {% if client_extra_fields_spec %}
         <div id="extra_fields" class="tab-pane">
-          <h4>Extra Fields</h4>
+          <h4>{% trans "Extra Fields" %}</h4>
           <hr/>
 
           {% include "user_extra_fields/field_preview_display.html" with object=client object_extra_fields_spec=client_extra_fields_spec %}
@@ -412,11 +398,10 @@
 
       <!-- Notes Tab -->
       <div id="notes" class="tab-pane">
-        <h4>Client Notes</h4>
+        <h4>{% trans "Client Notes" %}</h4>
         <hr/>
 
-        <a class="icon add-icon btn btn-primary mb-3 col-3" href="{% url 'rolodex:client_note_add' client.id %}">Add a
-          Note</a>
+        <a class="icon add-icon btn btn-primary mb-3 col-3" href="{% url 'rolodex:client_note_add' client.id %}">{% trans "Add a Note" %}</a>
 
         {% if client.clientnote_set.all %}
           {% for note in client.clientnote_set.all reversed %}
@@ -429,7 +414,7 @@
                 <div class="float-right col-2 col-md-2 col-sm-4">
                   <div>{% if note.operator %}<a class="note-link"
                                                 href="{% url 'users:user_detail' note.operator.username %}">{{ note.operator.username }}</a>{% else %}
-                    <span class="note-link">Deleted</span>{% endif %}</div>
+                    <span class="note-link">{% trans "Deleted" %}</span>{% endif %}</div>
                   <div><p class="note-time">{{ note.timestamp }}</p></div>
                 </div>
               </div>
@@ -437,17 +422,17 @@
 
             {% if request.user == note.operator or request.user|is_privileged %}
               <div class="pb-3">
-                <a class="note-link" href="{% url 'rolodex:client_note_edit' note.id %}">Edit</a> |
+                <a class="note-link" href="{% url 'rolodex:client_note_edit' note.id %}">{% trans "Edit" %}</a> |
                 <a id="note-delete-button-{{ note.id }}" class="js-confirm-delete note-link" data-toggle="modal"
                    data-target="#confirm-delete-modal" href="javascript:void(0);"
                    delete-target-csrftoken="{{ csrf_token }}"
                    delete-target-url="{% url 'rolodex:ajax_delete_client_note' note.id %}"
-                   delete-target-id="{{ note.id }}" delete-target-type="note">Delete</a>
+                   delete-target-id="{{ note.id }}" delete-target-type="note">{% trans "Delete" %}</a>
               </div>
             {% endif %}
           {% endfor %}
         {% else %}
-          <div class="alert alert-warning offset-md-2 col-md-8 mt-1" role="alert">No notes for this client.</div>
+          <div class="alert alert-warning offset-md-2 col-md-8 mt-1" role="alert">{% trans "No notes for this client." %}</div>
         {% endif %}
       </div>
     </div>

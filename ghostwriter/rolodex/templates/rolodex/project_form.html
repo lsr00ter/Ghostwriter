@@ -31,9 +31,9 @@
 {% endblock %}
 
 {% block content %}
-  <strong class="icon project-icon">Setup a Project</strong>
+  <strong class="icon project-icon">{% trans "Setup a Project" %}</strong>
   <hr>
-  <p>Use the tabs to provide basic project parameters, notes, assignments, and objectives:</p>
+  <p>{% trans "Use the tabs to provide basic project parameters, notes, assignments, and objectives:" %}</p>
 
   <!-- Form Error Section -->
   {% if form.errors %}
@@ -193,7 +193,7 @@
       for (let i = 0; i < cbs.length; i++) {
         cbs[i].checked = false;
       }
-      displayToastTop({type: 'success', string: 'Updated the primary contact (there must be one and only one).', title: 'Contacts Updated'})
+      displayToastTop({type: 'success', string: '{% trans "Updated the primary contact (there must be one and only one)." %}', title: '{% trans "Contacts Updated" %}'})
       obj.checked = true;
     }
   </script>
